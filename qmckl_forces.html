@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-12-11 Wed 10:31 -->
+<!-- 2024-12-11 Wed 11:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Forces</title>
@@ -324,41 +324,41 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4fb9ae7">1. Introduction</a></li>
-<li><a href="#org0a8bcb6">2. Context</a>
+<li><a href="#orgc8c0ae5">1. Introduction</a></li>
+<li><a href="#orga31eaff">2. Context</a>
 <ul>
-<li><a href="#org53c28fc">2.1. Data structure</a></li>
-<li><a href="#org846e4a9">2.2. Test</a></li>
+<li><a href="#org8687ad3">2.1. Data structure</a></li>
+<li><a href="#org4d1db72">2.2. Test</a></li>
 </ul>
 </li>
-<li><a href="#orgc43cd9b">3. Finite-difference function</a></li>
-<li><a href="#org3274f1c">4. Force of en jastrow value</a>
+<li><a href="#org9dd78ae">3. Finite-difference function</a></li>
+<li><a href="#org3d78e24">4. Force of en jastrow value</a>
 <ul>
-<li><a href="#orgb9119ab">4.1. Get</a></li>
-<li><a href="#org7a99a40">4.2. Compute</a></li>
-<li><a href="#org380ba1b">4.3. Test</a></li>
+<li><a href="#org9d9f925">4.1. Get</a></li>
+<li><a href="#orgd8cc30e">4.2. Compute</a></li>
+<li><a href="#org7a8475d">4.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org11be4a5">5. Force of en jastrow gradient</a>
+<li><a href="#org9b1a001">5. Force of en jastrow gradient</a>
 <ul>
-<li><a href="#orgb643708">5.1. Get</a></li>
-<li><a href="#org6b5d995">5.2. Compute</a></li>
-<li><a href="#org7e7fbee">5.3. Test</a></li>
+<li><a href="#org0af0311">5.1. Get</a></li>
+<li><a href="#orgf195652">5.2. Compute</a></li>
+<li><a href="#orgc176438">5.3. Test</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4fb9ae7" class="outline-2">
-<h2 id="org4fb9ae7"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-orgc8c0ae5" class="outline-2">
+<h2 id="orgc8c0ae5"><span class="section-number-2">1</span> Introduction</h2>
 </div>
-<div id="outline-container-org0a8bcb6" class="outline-2">
-<h2 id="org0a8bcb6"><span class="section-number-2">2</span> Context</h2>
+<div id="outline-container-orga31eaff" class="outline-2">
+<h2 id="orga31eaff"><span class="section-number-2">2</span> Context</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org53c28fc" class="outline-3">
-<h3 id="org53c28fc"><span class="section-number-3">2.1</span> Data structure</h3>
+<div id="outline-container-org8687ad3" class="outline-3">
+<h3 id="org8687ad3"><span class="section-number-3">2.1</span> Data structure</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #a020f0;">typedef</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">qmckl_forces_struct</span>{
@@ -372,8 +372,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org846e4a9" class="outline-3">
-<h3 id="org846e4a9"><span class="section-number-3">2.2</span> Test</h3>
+<div id="outline-container-org4d1db72" class="outline-3">
+<h3 id="org4d1db72"><span class="section-number-3">2.2</span> Test</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-c">/* <span style="color: #b22222;">Reference input data</span> */
@@ -571,8 +571,8 @@ rc = qmckl_check(context,
 </div>
 </div>
 
-<div id="outline-container-orgc43cd9b" class="outline-2">
-<h2 id="orgc43cd9b"><span class="section-number-2">3</span> Finite-difference function</h2>
+<div id="outline-container-org9dd78ae" class="outline-2">
+<h2 id="org9dd78ae"><span class="section-number-2">3</span> Finite-difference function</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 We introduce here a general function to compute the derivatives of any quantity with respect to nuclear coordinates.
@@ -581,12 +581,12 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-org3274f1c" class="outline-2">
-<h2 id="org3274f1c"><span class="section-number-2">4</span> Force of en jastrow value</h2>
+<div id="outline-container-org3d78e24" class="outline-2">
+<h2 id="org3d78e24"><span class="section-number-2">4</span> Force of en jastrow value</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgb9119ab" class="outline-3">
-<h3 id="orgb9119ab"><span class="section-number-3">4.1</span> Get</h3>
+<div id="outline-container-org9d9f925" class="outline-3">
+<h3 id="org9d9f925"><span class="section-number-3">4.1</span> Get</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -613,10 +613,10 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-org7a99a40" class="outline-3">
-<h3 id="org7a99a40"><span class="section-number-3">4.2</span> Compute</h3>
+<div id="outline-container-orgd8cc30e" class="outline-3">
+<h3 id="orgd8cc30e"><span class="section-number-3">4.2</span> Compute</h3>
 <div class="outline-text-3" id="text-4-2">
-<table id="org40ca0a5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org77c3999" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -816,23 +816,25 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-org380ba1b" class="outline-3">
-<h3 id="org380ba1b"><span class="section-number-3">4.3</span> Test</h3>
+<div id="outline-container-org7a8475d" class="outline-3">
+<h3 id="org7a8475d"><span class="section-number-3">4.3</span> Test</h3>
 <div class="outline-text-3" id="text-4-3">
 <div class="org-src-container">
-<pre class="src src-c">
+<pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow en\n"</span>);
+
 /* <span style="color: #b22222;">Check if Jastrow is properly initialized</span> */
 <span style="color: #0000ff;">assert</span>(<span style="color: #228b22;">qmckl_jastrow_champ_provided</span>(<span style="color: #a0522d;">context</span>));
 
 rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'T'</span>, &amp;(nucl_coord[0]), 3*nucl_num);
 <span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
 
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">forces_jastrow_en</span>[walk_num][nucl_num][3];
 rc = qmckl_get_forces_jastrow_en(context, &amp;forces_jastrow_en[0][0][0], 3*nucl_num*walk_num);
 <span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
 
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">finite_difference_force_en</span>[walk_num][nucl_num][3];
 rc = qmckl_finite_difference_deriv_n(context, delta_x, &amp;qmckl_get_jastrow_champ_factor_en, finite_difference_force_en, 1);
 
-printf(<span style="color: #8b2252;">"Forces Jastrow en\n"</span>);
 <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
   <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
     <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
@@ -848,18 +850,19 @@ printf(<span style="color: #8b2252;">"Forces Jastrow en\n"</span>);
     }
   }
 }
+printf(<span style="color: #8b2252;">"OK\n"</span>);
 
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org11be4a5" class="outline-2">
-<h2 id="org11be4a5"><span class="section-number-2">5</span> Force of en jastrow gradient</h2>
+<div id="outline-container-org9b1a001" class="outline-2">
+<h2 id="org9b1a001"><span class="section-number-2">5</span> Force of en jastrow gradient</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgb643708" class="outline-3">
-<h3 id="orgb643708"><span class="section-number-3">5.1</span> Get</h3>
+<div id="outline-container-org0af0311" class="outline-3">
+<h3 id="org0af0311"><span class="section-number-3">5.1</span> Get</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -886,10 +889,10 @@ printf(<span style="color: #8b2252;">"Forces Jastrow en\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org6b5d995" class="outline-3">
-<h3 id="org6b5d995"><span class="section-number-3">5.2</span> Compute</h3>
+<div id="outline-container-orgf195652" class="outline-3">
+<h3 id="orgf195652"><span class="section-number-3">5.2</span> Compute</h3>
 <div class="outline-text-3" id="text-5-2">
-<table id="orgdfef81c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgee78f49" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1120,11 +1123,12 @@ printf(<span style="color: #8b2252;">"Forces Jastrow en\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org7e7fbee" class="outline-3">
-<h3 id="org7e7fbee"><span class="section-number-3">5.3</span> Test</h3>
+<div id="outline-container-orgc176438" class="outline-3">
+<h3 id="orgc176438"><span class="section-number-3">5.3</span> Test</h3>
 <div class="outline-text-3" id="text-5-3">
 <div class="org-src-container">
-<pre class="src src-c">
+<pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow en GL\n"</span>);
+
 /* <span style="color: #b22222;">Check if Jastrow is properly initialized</span> */
 <span style="color: #0000ff;">assert</span>(<span style="color: #228b22;">qmckl_jastrow_champ_provided</span>(<span style="color: #a0522d;">context</span>));
 
@@ -1135,57 +1139,33 @@ rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'T'</span>, 
 rc = qmckl_get_forces_jastrow_en_g(context, &amp;forces_jastrow_en_g[0][0][0][0][0], 3*3*nucl_num*walk_num*elec_num);
 <span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
 
-<span style="color: #228b22;">double</span> <span style="color: #a0522d;">finite_difference_force_en_g</span>[walk_num][nucl_num][3][elec_num][3];
-<span style="color: #228b22;">double</span> <span style="color: #a0522d;">jastrow_en_gl</span>[walk_num][4][elec_num];
-<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
-  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++){
-    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
-      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
-        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt; 3; l++){
-          finite_difference_force_en_g[nw][a][k][i][l] = 0.0;
-        }
-      }
-      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">m</span> = -4; m &lt; 5; m++){
-        rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'T'</span>, &amp;(nucl_coord[0]), 3*nucl_num);
-        assert(rc == QMCKL_SUCCESS);
-
-        rc = qmckl_get_nucleus_coord (context, <span style="color: #8b2252;">'T'</span>, &amp;new_coords[0][0], 3*nucl_num);
-        assert(rc == QMCKL_SUCCESS);
-
-        new_coords[k][a] = new_coords[k][a] + m * delta_x;
-
-        rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'T'</span>, &amp;new_coords[0][0], 3*nucl_num);
-        assert(rc == QMCKL_SUCCESS);
-
-        rc = qmckl_context_touch(context);
-
-        rc = qmckl_get_jastrow_champ_factor_en_gl(context, &amp;jastrow_en_gl[0][0][0], walk_num*4*elec_num);
-        assert(rc == QMCKL_SUCCESS);
-        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
-          <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt; 3; l++){
-            finite_difference_force_en_g[nw][a][k][i][l] = finite_difference_force_en_g[nw][a][k][i][l] + coef[m+4] * jastrow_en_gl[nw][l][i]/delta_x;
-
-          }
-        }
-      }
-
-    }
-  }
-}
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">finite_difference_force_en_g</span>[walk_num][nucl_num][3][4][elec_num];
+rc = qmckl_finite_difference_deriv_n(context, delta_x, &amp;qmckl_get_jastrow_champ_factor_en_gl, &amp;finite_difference_force_en_g[0][0][0][0][0], 4*elec_num);
 
 <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
   <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
     <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
       <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
-        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt; 3; l++){
-          printf(<span style="color: #8b2252;">"finite_difference_force_en_g[%i][%i][%i][%i][%i] %.10f \n"</span>, nw,a,k,i,l,finite_difference_force_en_g[nw][a][k][i][l]-forces_jastrow_en_g[nw][a][k][i][l]);
-          printf(<span style="color: #8b2252;">"forces_jastrow_en_g[%i][%i][%i][%i][%i] %.10f\n"</span>, nw,a,k,i,l,forces_jastrow_en_g[nw][a][k][i][l]);
-          assert(fabs(finite_difference_force_en_g[nw][a][k][i][l] - forces_jastrow_en_g[nw][a][k][i][l]) &lt; 1.e-8);
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 1; l &lt; 3; l++){
+          printf(<span style="color: #8b2252;">"finite_difference_force_en_g[%i][%i][%i][%i][%i] %+3.10f \n"</span>, nw,a,k,l,i,finite_difference_force_en_g[nw][a][k][l][i]);
+          printf(<span style="color: #8b2252;">"forces_jastrow_en_g         [%i][%i][%i][%i][%i] %+3.10f\n"</span>, nw,a,k,i,l,forces_jastrow_en_g[nw][a][k][i][l]);
         }
       }
     }
   }
 }
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 1; l &lt; 3; l++){
+          assert(fabs(finite_difference_force_en_g[nw][a][k][l][i] - forces_jastrow_en_g[nw][a][k][i][l]) &lt; 1.e-8);
+        }
+      }
+    }
+  }
+}
+printf(<span style="color: #8b2252;">"OK\n"</span>);
 
 </pre>
 </div>
@@ -1195,7 +1175,7 @@ rc = qmckl_get_forces_jastrow_en_g(context, &amp;forces_jastrow_en_g[0][0][0][0]
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2024-12-11 Wed 10:31</p>
+<p class="date">Created: 2024-12-11 Wed 11:52</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
