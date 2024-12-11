@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-12-11 Wed 13:47 -->
+<!-- 2024-12-11 Wed 14:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CHAMP Jastrow Factor Single</title>
@@ -346,156 +346,156 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org71c9a4f">1. Introduction</a></li>
-<li><a href="#org0e4d4a6">2. Context</a>
+<li><a href="#orgbe893e2">1. Introduction</a></li>
+<li><a href="#org0a41a22">2. Context</a>
 <ul>
-<li><a href="#org1e4f124">2.1. Data structure</a></li>
-<li><a href="#org4d9bff5">2.2. Test</a></li>
+<li><a href="#orgca38062">2.1. Data structure</a></li>
+<li><a href="#org26d8d77">2.2. Test</a></li>
 </ul>
 </li>
-<li><a href="#orgf924097">3. Single point</a>
+<li><a href="#orgde32885">3. Single point</a>
 <ul>
-<li><a href="#orge491922">3.1. Set</a></li>
+<li><a href="#org3345cf6">3.1. Set</a></li>
 </ul>
 </li>
-<li><a href="#org59c71db">4. Electron-electron distances single point</a>
+<li><a href="#orgb4d30ac">4. Electron-electron distances single point</a>
 <ul>
-<li><a href="#orgd3fd3b2">4.1. Get</a></li>
-<li><a href="#org6ee48e1">4.2. Compute</a></li>
-<li><a href="#org905e7bf">4.3. test</a></li>
+<li><a href="#org6b46afb">4.1. Get</a></li>
+<li><a href="#orgee371ee">4.2. Compute</a></li>
+<li><a href="#org7e5fc18">4.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org4042b37">5. ee distance rescaled single point</a>
+<li><a href="#orgb6a0905">5. ee distance rescaled single point</a>
 <ul>
-<li><a href="#orgef13462">5.1. Get</a></li>
-<li><a href="#org1f420f3">5.2. Compute</a></li>
-<li><a href="#org0f46c45">5.3. test</a></li>
+<li><a href="#org432cbb1">5.1. Get</a></li>
+<li><a href="#orge2f3f3d">5.2. Compute</a></li>
+<li><a href="#org1ad7204">5.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org749283e">6. Electron-nucleus distances single point</a>
+<li><a href="#org2209786">6. Electron-nucleus distances single point</a>
 <ul>
-<li><a href="#org227f422">6.1. Get</a></li>
-<li><a href="#org5755b75">6.2. Compute</a></li>
-<li><a href="#org9e1c9dd">6.3. test</a></li>
+<li><a href="#org4aff269">6.1. Get</a></li>
+<li><a href="#org8844744">6.2. Compute</a></li>
+<li><a href="#orgf438e11">6.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org1f203dc">7. en distance rescaled single point</a>
+<li><a href="#org0a19a53">7. en distance rescaled single point</a>
 <ul>
-<li><a href="#orgbfa05ec">7.1. Get</a></li>
-<li><a href="#org959e24a">7.2. Compute</a></li>
-<li><a href="#org458e772">7.3. test</a></li>
+<li><a href="#orgb6f4f85">7.1. Get</a></li>
+<li><a href="#org11f5bc0">7.2. Compute</a></li>
+<li><a href="#org11682ae">7.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org7f071ca">8. Delta p</a>
+<li><a href="#orgb9c01c1">8. Delta p</a>
 <ul>
-<li><a href="#org1e26d30">8.1. Get</a></li>
-<li><a href="#org025317d">8.2. provide</a></li>
-<li><a href="#org05b0be7">8.3. Compute</a></li>
-<li><a href="#org62f0c3d">8.4. test</a></li>
+<li><a href="#orga9a55e5">8.1. Get</a></li>
+<li><a href="#org1919713">8.2. provide</a></li>
+<li><a href="#orga0b1b8b">8.3. Compute</a></li>
+<li><a href="#org3e79a94">8.4. test</a></li>
 </ul>
 </li>
-<li><a href="#orgee9087d">9. Delta e-e-n</a>
+<li><a href="#orgba426a2">9. Delta e-e-n</a>
 <ul>
-<li><a href="#org92b6153">9.1. get</a></li>
-<li><a href="#org9d78fc0">9.2. Compute</a></li>
-<li><a href="#orgbecce6a">9.3. test</a></li>
+<li><a href="#org1d46bb5">9.1. get</a></li>
+<li><a href="#org2694b3d">9.2. Compute</a></li>
+<li><a href="#org3c01991">9.3. test</a></li>
 </ul>
 </li>
-<li><a href="#orgeb5f649">10. ee distance rescaled single point</a>
+<li><a href="#org212a47c">10. ee distance rescaled single point</a>
 <ul>
-<li><a href="#org605faef">10.1. Get</a></li>
-<li><a href="#orgfa5da17">10.2. Compute</a></li>
-<li><a href="#orgc9001c6">10.3. test</a></li>
+<li><a href="#orgd0ec48e">10.1. Get</a></li>
+<li><a href="#org639b75f">10.2. Compute</a></li>
+<li><a href="#org6d80e05">10.3. test</a></li>
 </ul>
 </li>
-<li><a href="#orgbbf6ba8">11. en distance rescaled single point</a>
+<li><a href="#orgfa99524">11. en distance rescaled single point</a>
 <ul>
-<li><a href="#org379eccc">11.1. Get</a></li>
-<li><a href="#org922a974">11.2. Compute</a></li>
-<li><a href="#orgc45e694">11.3. test</a></li>
+<li><a href="#org31aefb9">11.1. Get</a></li>
+<li><a href="#org7364b71">11.2. Compute</a></li>
+<li><a href="#org4769915">11.3. test</a></li>
 </ul>
 </li>
-<li><a href="#orgc0dd128">12. Delta ee</a>
+<li><a href="#orgfcfa5aa">12. Delta ee</a>
 <ul>
-<li><a href="#orgd36ddc3">12.1. Get</a></li>
-<li><a href="#orgbd3f023">12.2. Compute</a></li>
-<li><a href="#org9ee7637">12.3. test</a></li>
-<li><a href="#org7cc411c">12.4. Compute</a></li>
+<li><a href="#org797d831">12.1. Get</a></li>
+<li><a href="#org48500d1">12.2. Compute</a></li>
+<li><a href="#orgd469db1">12.3. test</a></li>
+<li><a href="#org4b5907d">12.4. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org2409759">13. En rescaled derivative een</a>
+<li><a href="#org4f61d02">13. En rescaled derivative een</a>
 <ul>
-<li><a href="#org6bc44ab">13.1. Get</a></li>
-<li><a href="#org7ee6392">13.2. Compute</a></li>
-<li><a href="#orgebfe44d">13.3. test</a></li>
+<li><a href="#org5fe16d4">13.1. Get</a></li>
+<li><a href="#orgb4df896">13.2. Compute</a></li>
+<li><a href="#org8c02d70">13.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org2dbc70a">14. EE rescaled distance derivative for een</a>
+<li><a href="#orge8256fb">14. EE rescaled distance derivative for een</a>
 <ul>
-<li><a href="#org1f9897d">14.1. Get</a></li>
-<li><a href="#orga2a980f">14.2. Compute</a></li>
-<li><a href="#org52f6543">14.3. test</a></li>
+<li><a href="#org4dad718">14.1. Get</a></li>
+<li><a href="#org77d06b4">14.2. Compute</a></li>
+<li><a href="#orgb86e130">14.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org91bed8c">15. gl delta p</a>
+<li><a href="#orgae3f83e">15. gl delta p</a>
 <ul>
-<li><a href="#orgf97f8e8">15.1. Get</a></li>
-<li><a href="#orga9baa38">15.2. provide</a></li>
-<li><a href="#orga3805f5">15.3. Compute</a></li>
-<li><a href="#orgdea2a54">15.4. test</a></li>
+<li><a href="#orgbdc0476">15.1. Get</a></li>
+<li><a href="#orgdf08095">15.2. provide</a></li>
+<li><a href="#orgaa50db7">15.3. Compute</a></li>
+<li><a href="#orgdbbfa2c">15.4. test</a></li>
 </ul>
 </li>
-<li><a href="#orgd9ea4ca">16. Delta grad e-e-n</a>
+<li><a href="#org5a234d8">16. Delta grad e-e-n</a>
 <ul>
-<li><a href="#org9bdcc51">16.1. get</a></li>
-<li><a href="#org560b5c1">16.2. Compute</a></li>
-<li><a href="#org92aa6ff">16.3. test</a></li>
+<li><a href="#orgd0169bd">16.1. get</a></li>
+<li><a href="#orga8b6c09">16.2. Compute</a></li>
+<li><a href="#orgfb51f2a">16.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org28b7d06">17. ee distance rescaled single point gl</a>
+<li><a href="#org8d3e2aa">17. ee distance rescaled single point gl</a>
 <ul>
-<li><a href="#orgbc03279">17.1. Get</a></li>
-<li><a href="#org531595e">17.2. Compute</a></li>
-<li><a href="#org2a23a9e">17.3. test</a></li>
+<li><a href="#orgb487976">17.1. Get</a></li>
+<li><a href="#org4ab59ed">17.2. Compute</a></li>
+<li><a href="#org1e03a42">17.3. test</a></li>
 </ul>
 </li>
-<li><a href="#orgb4137d5">18. en distance rescaled single point gl</a>
+<li><a href="#org279b0ff">18. en distance rescaled single point gl</a>
 <ul>
-<li><a href="#orgbb05922">18.1. Get</a></li>
-<li><a href="#orgb63d179">18.2. Provide</a></li>
-<li><a href="#orge71fa0f">18.3. Compute</a></li>
-<li><a href="#org379be8b">18.4. test</a></li>
+<li><a href="#orgd61c23a">18.1. Get</a></li>
+<li><a href="#orga6bf258">18.2. Provide</a></li>
+<li><a href="#org86431a4">18.3. Compute</a></li>
+<li><a href="#orgf4d3b2d">18.4. test</a></li>
 </ul>
 </li>
-<li><a href="#org251e578">19. Delta ee gl</a>
+<li><a href="#org080b51a">19. Delta ee gl</a>
 <ul>
-<li><a href="#orgaae7875">19.1. Get</a></li>
-<li><a href="#org70ed0b3">19.2. Compute</a></li>
-<li><a href="#orgbf72643">19.3. test</a></li>
+<li><a href="#orga4e47cf">19.1. Get</a></li>
+<li><a href="#org8202afc">19.2. Compute</a></li>
+<li><a href="#org0db08d7">19.3. test</a></li>
 </ul>
 </li>
-<li><a href="#orge60d6d3">20. Delta en gl</a>
+<li><a href="#org67c97d4">20. Delta en gl</a>
 <ul>
-<li><a href="#orgc35e5eb">20.1. Get</a></li>
-<li><a href="#org8c2ec87">20.2. Compute</a></li>
-<li><a href="#org14a3519">20.3. test</a></li>
+<li><a href="#orgdd478a3">20.1. Get</a></li>
+<li><a href="#orgc136f6b">20.2. Compute</a></li>
+<li><a href="#org600578c">20.3. test</a></li>
 </ul>
 </li>
-<li><a href="#orgd41a0a9">21. Accept single electron move</a></li>
+<li><a href="#org922f47e">21. Accept single electron move</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org71c9a4f" class="outline-2">
-<h2 id="org71c9a4f"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-orgbe893e2" class="outline-2">
+<h2 id="orgbe893e2"><span class="section-number-2">1</span> Introduction</h2>
 </div>
 
-<div id="outline-container-org0e4d4a6" class="outline-2">
-<h2 id="org0e4d4a6"><span class="section-number-2">2</span> Context</h2>
+<div id="outline-container-org0a41a22" class="outline-2">
+<h2 id="org0a41a22"><span class="section-number-2">2</span> Context</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org1e4f124" class="outline-3">
-<h3 id="org1e4f124"><span class="section-number-3">2.1</span> Data structure</h3>
+<div id="outline-container-orgca38062" class="outline-3">
+<h3 id="orgca38062"><span class="section-number-3">2.1</span> Data structure</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #a020f0;">typedef</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">qmckl_jastrow_champ_single_struct</span>{
@@ -545,8 +545,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org4d9bff5" class="outline-3">
-<h3 id="org4d9bff5"><span class="section-number-3">2.2</span> Test</h3>
+<div id="outline-container-org26d8d77" class="outline-3">
+<h3 id="org26d8d77"><span class="section-number-3">2.2</span> Test</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-c">/* <span style="color: #b22222;">Reference input data</span> */
@@ -744,12 +744,12 @@ rc = qmckl_check(context,
 </div>
 </div>
 
-<div id="outline-container-orgf924097" class="outline-2">
-<h2 id="orgf924097"><span class="section-number-2">3</span> Single point</h2>
+<div id="outline-container-orgde32885" class="outline-2">
+<h2 id="orgde32885"><span class="section-number-2">3</span> Single point</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orge491922" class="outline-3">
-<h3 id="orge491922"><span class="section-number-3">3.1</span> Set</h3>
+<div id="outline-container-org3345cf6" class="outline-3">
+<h3 id="org3345cf6"><span class="section-number-3">3.1</span> Set</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 We set the coordinates of the <code>num</code>-th electron for all walkers.
@@ -901,12 +901,12 @@ indexing.
 </div>
 </div>
 
-<div id="outline-container-org59c71db" class="outline-2">
-<h2 id="org59c71db"><span class="section-number-2">4</span> Electron-electron distances single point</h2>
+<div id="outline-container-orgb4d30ac" class="outline-2">
+<h2 id="orgb4d30ac"><span class="section-number-2">4</span> Electron-electron distances single point</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgd3fd3b2" class="outline-3">
-<h3 id="orgd3fd3b2"><span class="section-number-3">4.1</span> Get</h3>
+<div id="outline-container-org6b46afb" class="outline-3">
+<h3 id="org6b46afb"><span class="section-number-3">4.1</span> Get</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_single_electron_ee_distance</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>, <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">distance</span>);
@@ -915,10 +915,10 @@ indexing.
 </div>
 </div>
 
-<div id="outline-container-org6ee48e1" class="outline-3">
-<h3 id="org6ee48e1"><span class="section-number-3">4.2</span> Compute</h3>
+<div id="outline-container-orgee371ee" class="outline-3">
+<h3 id="orgee371ee"><span class="section-number-3">4.2</span> Compute</h3>
 <div class="outline-text-3" id="text-4-2">
-<table id="org41b5cdb" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org7dc69fd" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1020,7 +1020,7 @@ indexing.
   <span style="color: #a020f0;">do</span> k=1,walk_num
      info = qmckl_distance(context, <span style="color: #8b2252;">'T'</span>, <span style="color: #8b2252;">'T'</span>, 1_8, elec_num, <span style="color: #a020f0;">&amp;</span>
           single_coord(1,k), 1_8, <span style="color: #a020f0;">&amp;</span>
-          coord(1,k,1), elec_num * walk_num * 1_8, <span style="color: #a020f0;">&amp;</span>
+          coord(1,1,k), elec_num * walk_num * 1_8, <span style="color: #a020f0;">&amp;</span>
           single_ee_distance(1,k), 1_8)
      <span style="color: #a020f0;">if</span> (info /= QMCKL_SUCCESS) <span style="color: #a020f0;">then</span>
         <span style="color: #a020f0;">exit</span>
@@ -1033,8 +1033,8 @@ indexing.
 </div>
 </div>
 
-<div id="outline-container-org905e7bf" class="outline-3">
-<h3 id="org905e7bf"><span class="section-number-3">4.3</span> test</h3>
+<div id="outline-container-org7e5fc18" class="outline-3">
+<h3 id="org7e5fc18"><span class="section-number-3">4.3</span> test</h3>
 <div class="outline-text-3" id="text-4-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -1082,12 +1082,12 @@ rc = qmckl_get_electron_ee_distance(context, &amp;ee_distance[0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-org4042b37" class="outline-2">
-<h2 id="org4042b37"><span class="section-number-2">5</span> ee distance rescaled single point</h2>
+<div id="outline-container-orgb6a0905" class="outline-2">
+<h2 id="orgb6a0905"><span class="section-number-2">5</span> ee distance rescaled single point</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgef13462" class="outline-3">
-<h3 id="orgef13462"><span class="section-number-3">5.1</span> Get</h3>
+<div id="outline-container-org432cbb1" class="outline-3">
+<h3 id="org432cbb1"><span class="section-number-3">5.1</span> Get</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1099,10 +1099,10 @@ rc = qmckl_get_electron_ee_distance(context, &amp;ee_distance[0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-org1f420f3" class="outline-3">
-<h3 id="org1f420f3"><span class="section-number-3">5.2</span> Compute</h3>
+<div id="outline-container-orge2f3f3d" class="outline-3">
+<h3 id="orge2f3f3d"><span class="section-number-3">5.2</span> Compute</h3>
 <div class="outline-text-3" id="text-5-2">
-<table id="org0a92e23" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org6bd67d5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1309,8 +1309,8 @@ rc = qmckl_get_electron_ee_distance(context, &amp;ee_distance[0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-org0f46c45" class="outline-3">
-<h3 id="org0f46c45"><span class="section-number-3">5.3</span> test</h3>
+<div id="outline-container-org1ad7204" class="outline-3">
+<h3 id="org1ad7204"><span class="section-number-3">5.3</span> test</h3>
 <div class="outline-text-3" id="text-5-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -1357,12 +1357,12 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e(context,  &amp;rescaled_een_ee_dista
 </div>
 </div>
 
-<div id="outline-container-org749283e" class="outline-2">
-<h2 id="org749283e"><span class="section-number-2">6</span> Electron-nucleus distances single point</h2>
+<div id="outline-container-org2209786" class="outline-2">
+<h2 id="org2209786"><span class="section-number-2">6</span> Electron-nucleus distances single point</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org227f422" class="outline-3">
-<h3 id="org227f422"><span class="section-number-3">6.1</span> Get</h3>
+<div id="outline-container-org4aff269" class="outline-3">
+<h3 id="org4aff269"><span class="section-number-3">6.1</span> Get</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 Electron-nucleus distance between the single electron and all
@@ -1377,10 +1377,10 @@ Dimension is <code>[walk_num][nucl_num]</code>.
 </div>
 </div>
 
-<div id="outline-container-org5755b75" class="outline-3">
-<h3 id="org5755b75"><span class="section-number-3">6.2</span> Compute</h3>
+<div id="outline-container-org8844744" class="outline-3">
+<h3 id="org8844744"><span class="section-number-3">6.2</span> Compute</h3>
 <div class="outline-text-3" id="text-6-2">
-<table id="org670e8b4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgd48a9ec" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1482,8 +1482,8 @@ Dimension is <code>[walk_num][nucl_num]</code>.
 </div>
 </div>
 
-<div id="outline-container-org9e1c9dd" class="outline-3">
-<h3 id="org9e1c9dd"><span class="section-number-3">6.3</span> test</h3>
+<div id="outline-container-orgf438e11" class="outline-3">
+<h3 id="orgf438e11"><span class="section-number-3">6.3</span> test</h3>
 <div class="outline-text-3" id="text-6-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -1525,12 +1525,12 @@ rc = qmckl_get_electron_en_distance(context, &amp;en_distance[0][0]);
 </div>
 </div>
 
-<div id="outline-container-org1f203dc" class="outline-2">
-<h2 id="org1f203dc"><span class="section-number-2">7</span> en distance rescaled single point</h2>
+<div id="outline-container-org0a19a53" class="outline-2">
+<h2 id="org0a19a53"><span class="section-number-2">7</span> en distance rescaled single point</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orgbfa05ec" class="outline-3">
-<h3 id="orgbfa05ec"><span class="section-number-3">7.1</span> Get</h3>
+<div id="outline-container-orgb6f4f85" class="outline-3">
+<h3 id="orgb6f4f85"><span class="section-number-3">7.1</span> Get</h3>
 <div class="outline-text-3" id="text-7-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1542,10 +1542,10 @@ rc = qmckl_get_electron_en_distance(context, &amp;en_distance[0][0]);
 </div>
 </div>
 
-<div id="outline-container-org959e24a" class="outline-3">
-<h3 id="org959e24a"><span class="section-number-3">7.2</span> Compute</h3>
+<div id="outline-container-org11f5bc0" class="outline-3">
+<h3 id="org11f5bc0"><span class="section-number-3">7.2</span> Compute</h3>
 <div class="outline-text-3" id="text-7-2">
-<table id="org2988de4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgacc75f9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1726,8 +1726,8 @@ rc = qmckl_get_electron_en_distance(context, &amp;en_distance[0][0]);
 </div>
 </div>
 
-<div id="outline-container-org458e772" class="outline-3">
-<h3 id="org458e772"><span class="section-number-3">7.3</span> test</h3>
+<div id="outline-container-org11682ae" class="outline-3">
+<h3 id="org11682ae"><span class="section-number-3">7.3</span> test</h3>
 <div class="outline-text-3" id="text-7-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -1774,12 +1774,12 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n(context,  &amp;rescaled_een_en_dista
 </div>
 </div>
 
-<div id="outline-container-org7f071ca" class="outline-2">
-<h2 id="org7f071ca"><span class="section-number-2">8</span> Delta p</h2>
+<div id="outline-container-orgb9c01c1" class="outline-2">
+<h2 id="orgb9c01c1"><span class="section-number-2">8</span> Delta p</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org1e26d30" class="outline-3">
-<h3 id="org1e26d30"><span class="section-number-3">8.1</span> Get</h3>
+<div id="outline-container-orga9a55e5" class="outline-3">
+<h3 id="orga9a55e5"><span class="section-number-3">8.1</span> Get</h3>
 <div class="outline-text-3" id="text-8-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1791,14 +1791,14 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n(context,  &amp;rescaled_een_en_dista
 </div>
 </div>
 
-<div id="outline-container-org025317d" class="outline-3">
-<h3 id="org025317d"><span class="section-number-3">8.2</span> provide</h3>
+<div id="outline-container-org1919713" class="outline-3">
+<h3 id="org1919713"><span class="section-number-3">8.2</span> provide</h3>
 </div>
 
-<div id="outline-container-org05b0be7" class="outline-3">
-<h3 id="org05b0be7"><span class="section-number-3">8.3</span> Compute</h3>
+<div id="outline-container-orga0b1b8b" class="outline-3">
+<h3 id="orga0b1b8b"><span class="section-number-3">8.3</span> Compute</h3>
 <div class="outline-text-3" id="text-8-3">
-<table id="org4e4330d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org516f5e8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1965,8 +1965,8 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n(context,  &amp;rescaled_een_en_dista
 </div>
 </div>
 
-<div id="outline-container-org62f0c3d" class="outline-3">
-<h3 id="org62f0c3d"><span class="section-number-3">8.4</span> test</h3>
+<div id="outline-container-org3e79a94" class="outline-3">
+<h3 id="org3e79a94"><span class="section-number-3">8.4</span> test</h3>
 <div class="outline-text-3" id="text-8-4">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -2019,12 +2019,12 @@ rc = qmckl_get_jastrow_champ_tmp_c(context,  &amp;p_new[0][0][0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-orgee9087d" class="outline-2">
-<h2 id="orgee9087d"><span class="section-number-2">9</span> Delta e-e-n</h2>
+<div id="outline-container-orgba426a2" class="outline-2">
+<h2 id="orgba426a2"><span class="section-number-2">9</span> Delta e-e-n</h2>
 <div class="outline-text-2" id="text-9">
 </div>
-<div id="outline-container-org92b6153" class="outline-3">
-<h3 id="org92b6153"><span class="section-number-3">9.1</span> get</h3>
+<div id="outline-container-org1d46bb5" class="outline-3">
+<h3 id="org1d46bb5"><span class="section-number-3">9.1</span> get</h3>
 <div class="outline-text-3" id="text-9-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2051,10 +2051,10 @@ rc = qmckl_get_jastrow_champ_tmp_c(context,  &amp;p_new[0][0][0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-org9d78fc0" class="outline-3">
-<h3 id="org9d78fc0"><span class="section-number-3">9.2</span> Compute</h3>
+<div id="outline-container-org2694b3d" class="outline-3">
+<h3 id="org2694b3d"><span class="section-number-3">9.2</span> Compute</h3>
 <div class="outline-text-3" id="text-9-2">
-<table id="orga1eeb4e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgcc67348" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2263,8 +2263,8 @@ rc = qmckl_get_jastrow_champ_tmp_c(context,  &amp;p_new[0][0][0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-orgbecce6a" class="outline-3">
-<h3 id="orgbecce6a"><span class="section-number-3">9.3</span> test</h3>
+<div id="outline-container-org3c01991" class="outline-3">
+<h3 id="org3c01991"><span class="section-number-3">9.3</span> test</h3>
 <div class="outline-text-3" id="text-9-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -2318,12 +2318,12 @@ rc = qmckl_get_jastrow_champ_factor_een(context, &amp;jastrow_een_new[0], walk_n
 </div>
 </div>
 
-<div id="outline-container-orgeb5f649" class="outline-2">
-<h2 id="orgeb5f649"><span class="section-number-2">10</span> ee distance rescaled single point</h2>
+<div id="outline-container-org212a47c" class="outline-2">
+<h2 id="org212a47c"><span class="section-number-2">10</span> ee distance rescaled single point</h2>
 <div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-org605faef" class="outline-3">
-<h3 id="org605faef"><span class="section-number-3">10.1</span> Get</h3>
+<div id="outline-container-orgd0ec48e" class="outline-3">
+<h3 id="orgd0ec48e"><span class="section-number-3">10.1</span> Get</h3>
 <div class="outline-text-3" id="text-10-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2335,10 +2335,10 @@ rc = qmckl_get_jastrow_champ_factor_een(context, &amp;jastrow_een_new[0], walk_n
 </div>
 </div>
 
-<div id="outline-container-orgfa5da17" class="outline-3">
-<h3 id="orgfa5da17"><span class="section-number-3">10.2</span> Compute</h3>
+<div id="outline-container-org639b75f" class="outline-3">
+<h3 id="org639b75f"><span class="section-number-3">10.2</span> Compute</h3>
 <div class="outline-text-3" id="text-10-2">
-<table id="org260b08b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgb428f4c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2453,8 +2453,8 @@ rc = qmckl_get_jastrow_champ_factor_een(context, &amp;jastrow_een_new[0], walk_n
 </div>
 </div>
 
-<div id="outline-container-orgc9001c6" class="outline-3">
-<h3 id="orgc9001c6"><span class="section-number-3">10.3</span> test</h3>
+<div id="outline-container-org6d80e05" class="outline-3">
+<h3 id="org6d80e05"><span class="section-number-3">10.3</span> test</h3>
 <div class="outline-text-3" id="text-10-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -2503,12 +2503,12 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled(context, &amp;ee_rescaled[0][0
 </div>
 </div>
 
-<div id="outline-container-orgbbf6ba8" class="outline-2">
-<h2 id="orgbbf6ba8"><span class="section-number-2">11</span> en distance rescaled single point</h2>
+<div id="outline-container-orgfa99524" class="outline-2">
+<h2 id="orgfa99524"><span class="section-number-2">11</span> en distance rescaled single point</h2>
 <div class="outline-text-2" id="text-11">
 </div>
-<div id="outline-container-org379eccc" class="outline-3">
-<h3 id="org379eccc"><span class="section-number-3">11.1</span> Get</h3>
+<div id="outline-container-org31aefb9" class="outline-3">
+<h3 id="org31aefb9"><span class="section-number-3">11.1</span> Get</h3>
 <div class="outline-text-3" id="text-11-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2520,10 +2520,10 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled(context, &amp;ee_rescaled[0][0
 </div>
 </div>
 
-<div id="outline-container-org922a974" class="outline-3">
-<h3 id="org922a974"><span class="section-number-3">11.2</span> Compute</h3>
+<div id="outline-container-org7364b71" class="outline-3">
+<h3 id="org7364b71"><span class="section-number-3">11.2</span> Compute</h3>
 <div class="outline-text-3" id="text-11-2">
-<table id="org22d5700" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org619c311" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2662,8 +2662,8 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled(context, &amp;ee_rescaled[0][0
 </div>
 
 
-<div id="outline-container-orgc45e694" class="outline-3">
-<h3 id="orgc45e694"><span class="section-number-3">11.3</span> test</h3>
+<div id="outline-container-org4769915" class="outline-3">
+<h3 id="org4769915"><span class="section-number-3">11.3</span> test</h3>
 <div class="outline-text-3" id="text-11-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -2711,12 +2711,12 @@ rc = qmckl_get_electron_en_distance_rescaled(context, &amp;en_rescaled[0][0][0])
 </div>
 </div>
 
-<div id="outline-container-orgc0dd128" class="outline-2">
-<h2 id="orgc0dd128"><span class="section-number-2">12</span> Delta ee</h2>
+<div id="outline-container-orgfcfa5aa" class="outline-2">
+<h2 id="orgfcfa5aa"><span class="section-number-2">12</span> Delta ee</h2>
 <div class="outline-text-2" id="text-12">
 </div>
-<div id="outline-container-orgd36ddc3" class="outline-3">
-<h3 id="orgd36ddc3"><span class="section-number-3">12.1</span> Get</h3>
+<div id="outline-container-org797d831" class="outline-3">
+<h3 id="org797d831"><span class="section-number-3">12.1</span> Get</h3>
 <div class="outline-text-3" id="text-12-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2743,10 +2743,10 @@ rc = qmckl_get_electron_en_distance_rescaled(context, &amp;en_rescaled[0][0][0])
 </div>
 </div>
 
-<div id="outline-container-orgbd3f023" class="outline-3">
-<h3 id="orgbd3f023"><span class="section-number-3">12.2</span> Compute</h3>
+<div id="outline-container-org48500d1" class="outline-3">
+<h3 id="org48500d1"><span class="section-number-3">12.2</span> Compute</h3>
 <div class="outline-text-3" id="text-12-2">
-<table id="org8f5e044" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orge5332f7" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2954,8 +2954,8 @@ rc = qmckl_get_electron_en_distance_rescaled(context, &amp;en_rescaled[0][0][0])
 </div>
 </div>
 
-<div id="outline-container-org9ee7637" class="outline-3">
-<h3 id="org9ee7637"><span class="section-number-3">12.3</span> test</h3>
+<div id="outline-container-orgd469db1" class="outline-3">
+<h3 id="orgd469db1"><span class="section-number-3">12.3</span> test</h3>
 <div class="outline-text-3" id="text-12-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -3032,10 +3032,10 @@ rc = qmckl_get_jastrow_champ_factor_ee(context, &amp;jastrow_ee_new[0], walk_num
 </div>
 </div>
 
-<div id="outline-container-org7cc411c" class="outline-3">
-<h3 id="org7cc411c"><span class="section-number-3">12.4</span> Compute</h3>
+<div id="outline-container-org4b5907d" class="outline-3">
+<h3 id="org4b5907d"><span class="section-number-3">12.4</span> Compute</h3>
 <div class="outline-text-3" id="text-12-4">
-<table id="orge9517a8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org8fccb1b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3318,12 +3318,12 @@ rc = qmckl_get_jastrow_champ_factor_en(context, &amp;jastrow_en_new[0], walk_num
 </div>
 </div>
 
-<div id="outline-container-org2409759" class="outline-2">
-<h2 id="org2409759"><span class="section-number-2">13</span> En rescaled derivative een</h2>
+<div id="outline-container-org4f61d02" class="outline-2">
+<h2 id="org4f61d02"><span class="section-number-2">13</span> En rescaled derivative een</h2>
 <div class="outline-text-2" id="text-13">
 </div>
-<div id="outline-container-org6bc44ab" class="outline-3">
-<h3 id="org6bc44ab"><span class="section-number-3">13.1</span> Get</h3>
+<div id="outline-container-org5fe16d4" class="outline-3">
+<h3 id="org5fe16d4"><span class="section-number-3">13.1</span> Get</h3>
 <div class="outline-text-3" id="text-13-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3335,10 +3335,10 @@ rc = qmckl_get_jastrow_champ_factor_en(context, &amp;jastrow_en_new[0], walk_num
 </div>
 </div>
 
-<div id="outline-container-org7ee6392" class="outline-3">
-<h3 id="org7ee6392"><span class="section-number-3">13.2</span> Compute</h3>
+<div id="outline-container-orgb4df896" class="outline-3">
+<h3 id="orgb4df896"><span class="section-number-3">13.2</span> Compute</h3>
 <div class="outline-text-3" id="text-13-2">
-<table id="orge4d5f02" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org12c6ce6" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3535,8 +3535,8 @@ rc = qmckl_get_jastrow_champ_factor_en(context, &amp;jastrow_en_new[0], walk_num
 </div>
 </div>
 
-<div id="outline-container-orgebfe44d" class="outline-3">
-<h3 id="orgebfe44d"><span class="section-number-3">13.3</span> test</h3>
+<div id="outline-container-org8c02d70" class="outline-3">
+<h3 id="org8c02d70"><span class="section-number-3">13.3</span> test</h3>
 <div class="outline-text-3" id="text-13-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -3588,12 +3588,12 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n_gl(context, &amp;een_rescaled_en_gl[
 </div>
 </div>
 
-<div id="outline-container-org2dbc70a" class="outline-2">
-<h2 id="org2dbc70a"><span class="section-number-2">14</span> EE rescaled distance derivative for een</h2>
+<div id="outline-container-orge8256fb" class="outline-2">
+<h2 id="orge8256fb"><span class="section-number-2">14</span> EE rescaled distance derivative for een</h2>
 <div class="outline-text-2" id="text-14">
 </div>
-<div id="outline-container-org1f9897d" class="outline-3">
-<h3 id="org1f9897d"><span class="section-number-3">14.1</span> Get</h3>
+<div id="outline-container-org4dad718" class="outline-3">
+<h3 id="org4dad718"><span class="section-number-3">14.1</span> Get</h3>
 <div class="outline-text-3" id="text-14-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3605,10 +3605,10 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n_gl(context, &amp;een_rescaled_en_gl[
 </div>
 </div>
 
-<div id="outline-container-orga2a980f" class="outline-3">
-<h3 id="orga2a980f"><span class="section-number-3">14.2</span> Compute</h3>
+<div id="outline-container-org77d06b4" class="outline-3">
+<h3 id="org77d06b4"><span class="section-number-3">14.2</span> Compute</h3>
 <div class="outline-text-3" id="text-14-2">
-<table id="org2745fb9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgaa9d87f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3824,8 +3824,8 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n_gl(context, &amp;een_rescaled_en_gl[
 </div>
 </div>
 
-<div id="outline-container-org52f6543" class="outline-3">
-<h3 id="org52f6543"><span class="section-number-3">14.3</span> test</h3>
+<div id="outline-container-orgb86e130" class="outline-3">
+<h3 id="orgb86e130"><span class="section-number-3">14.3</span> test</h3>
 <div class="outline-text-3" id="text-14-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -3890,12 +3890,12 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
 </div>
 </div>
 
-<div id="outline-container-org91bed8c" class="outline-2">
-<h2 id="org91bed8c"><span class="section-number-2">15</span> gl delta p</h2>
+<div id="outline-container-orgae3f83e" class="outline-2">
+<h2 id="orgae3f83e"><span class="section-number-2">15</span> gl delta p</h2>
 <div class="outline-text-2" id="text-15">
 </div>
-<div id="outline-container-orgf97f8e8" class="outline-3">
-<h3 id="orgf97f8e8"><span class="section-number-3">15.1</span> Get</h3>
+<div id="outline-container-orgbdc0476" class="outline-3">
+<h3 id="orgbdc0476"><span class="section-number-3">15.1</span> Get</h3>
 <div class="outline-text-3" id="text-15-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3907,14 +3907,14 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
 </div>
 </div>
 
-<div id="outline-container-orga9baa38" class="outline-3">
-<h3 id="orga9baa38"><span class="section-number-3">15.2</span> provide</h3>
+<div id="outline-container-orgdf08095" class="outline-3">
+<h3 id="orgdf08095"><span class="section-number-3">15.2</span> provide</h3>
 </div>
 
-<div id="outline-container-orga3805f5" class="outline-3">
-<h3 id="orga3805f5"><span class="section-number-3">15.3</span> Compute</h3>
+<div id="outline-container-orgaa50db7" class="outline-3">
+<h3 id="orgaa50db7"><span class="section-number-3">15.3</span> Compute</h3>
 <div class="outline-text-3" id="text-15-3">
-<table id="org15eaf15" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org9586188" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4239,8 +4239,8 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
 </div>
 </div>
 
-<div id="outline-container-orgdea2a54" class="outline-3">
-<h3 id="orgdea2a54"><span class="section-number-3">15.4</span> test</h3>
+<div id="outline-container-orgdbbfa2c" class="outline-3">
+<h3 id="orgdbbfa2c"><span class="section-number-3">15.4</span> test</h3>
 <div class="outline-text-3" id="text-15-4">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -4301,12 +4301,12 @@ rc = qmckl_get_jastrow_champ_dtmp_c(context,  &amp;p_gl_new[0][0][0][0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-orgd9ea4ca" class="outline-2">
-<h2 id="orgd9ea4ca"><span class="section-number-2">16</span> Delta grad e-e-n</h2>
+<div id="outline-container-org5a234d8" class="outline-2">
+<h2 id="org5a234d8"><span class="section-number-2">16</span> Delta grad e-e-n</h2>
 <div class="outline-text-2" id="text-16">
 </div>
-<div id="outline-container-org9bdcc51" class="outline-3">
-<h3 id="org9bdcc51"><span class="section-number-3">16.1</span> get</h3>
+<div id="outline-container-orgd0169bd" class="outline-3">
+<h3 id="orgd0169bd"><span class="section-number-3">16.1</span> get</h3>
 <div class="outline-text-3" id="text-16-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -4333,10 +4333,10 @@ rc = qmckl_get_jastrow_champ_dtmp_c(context,  &amp;p_gl_new[0][0][0][0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-org560b5c1" class="outline-3">
-<h3 id="org560b5c1"><span class="section-number-3">16.2</span> Compute</h3>
+<div id="outline-container-orga8b6c09" class="outline-3">
+<h3 id="orga8b6c09"><span class="section-number-3">16.2</span> Compute</h3>
 <div class="outline-text-3" id="text-16-2">
-<table id="orgd73e1c4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org94cdb89" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4588,8 +4588,8 @@ rc = qmckl_get_jastrow_champ_dtmp_c(context,  &amp;p_gl_new[0][0][0][0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-org92aa6ff" class="outline-3">
-<h3 id="org92aa6ff"><span class="section-number-3">16.3</span> test</h3>
+<div id="outline-container-orgfb51f2a" class="outline-3">
+<h3 id="orgfb51f2a"><span class="section-number-3">16.3</span> test</h3>
 <div class="outline-text-3" id="text-16-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -4643,12 +4643,12 @@ rc = qmckl_get_jastrow_champ_factor_een_gl(context, &amp;een_gl_new[0][0][0], wa
 </div>
 </div>
 
-<div id="outline-container-org28b7d06" class="outline-2">
-<h2 id="org28b7d06"><span class="section-number-2">17</span> ee distance rescaled single point gl</h2>
+<div id="outline-container-org8d3e2aa" class="outline-2">
+<h2 id="org8d3e2aa"><span class="section-number-2">17</span> ee distance rescaled single point gl</h2>
 <div class="outline-text-2" id="text-17">
 </div>
-<div id="outline-container-orgbc03279" class="outline-3">
-<h3 id="orgbc03279"><span class="section-number-3">17.1</span> Get</h3>
+<div id="outline-container-orgb487976" class="outline-3">
+<h3 id="orgb487976"><span class="section-number-3">17.1</span> Get</h3>
 <div class="outline-text-3" id="text-17-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_ee_rescaled_single_gl</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>, <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">distance_rescaled_gl</span>);
@@ -4657,10 +4657,10 @@ rc = qmckl_get_jastrow_champ_factor_een_gl(context, &amp;een_gl_new[0][0][0], wa
 </div>
 </div>
 
-<div id="outline-container-org531595e" class="outline-3">
-<h3 id="org531595e"><span class="section-number-3">17.2</span> Compute</h3>
+<div id="outline-container-org4ab59ed" class="outline-3">
+<h3 id="org4ab59ed"><span class="section-number-3">17.2</span> Compute</h3>
 <div class="outline-text-3" id="text-17-2">
-<table id="org58852c5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgc9813da" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4827,8 +4827,8 @@ rc = qmckl_get_jastrow_champ_factor_een_gl(context, &amp;een_gl_new[0][0][0], wa
 </div>
 </div>
 
-<div id="outline-container-org2a23a9e" class="outline-3">
-<h3 id="org2a23a9e"><span class="section-number-3">17.3</span> test</h3>
+<div id="outline-container-org1e03a42" class="outline-3">
+<h3 id="org1e03a42"><span class="section-number-3">17.3</span> test</h3>
 <div class="outline-text-3" id="text-17-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -4882,12 +4882,12 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled_gl(context, &amp;ee_rescaled_g
 </div>
 </div>
 
-<div id="outline-container-orgb4137d5" class="outline-2">
-<h2 id="orgb4137d5"><span class="section-number-2">18</span> en distance rescaled single point gl</h2>
+<div id="outline-container-org279b0ff" class="outline-2">
+<h2 id="org279b0ff"><span class="section-number-2">18</span> en distance rescaled single point gl</h2>
 <div class="outline-text-2" id="text-18">
 </div>
-<div id="outline-container-orgbb05922" class="outline-3">
-<h3 id="orgbb05922"><span class="section-number-3">18.1</span> Get</h3>
+<div id="outline-container-orgd61c23a" class="outline-3">
+<h3 id="orgd61c23a"><span class="section-number-3">18.1</span> Get</h3>
 <div class="outline-text-3" id="text-18-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_en_rescaled_single_gl</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>, <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">distance_rescaled_gl</span>);
@@ -4896,14 +4896,14 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled_gl(context, &amp;ee_rescaled_g
 </div>
 </div>
 
-<div id="outline-container-orgb63d179" class="outline-3">
-<h3 id="orgb63d179"><span class="section-number-3">18.2</span> Provide</h3>
+<div id="outline-container-orga6bf258" class="outline-3">
+<h3 id="orga6bf258"><span class="section-number-3">18.2</span> Provide</h3>
 </div>
 
-<div id="outline-container-orge71fa0f" class="outline-3">
-<h3 id="orge71fa0f"><span class="section-number-3">18.3</span> Compute</h3>
+<div id="outline-container-org86431a4" class="outline-3">
+<h3 id="org86431a4"><span class="section-number-3">18.3</span> Compute</h3>
 <div class="outline-text-3" id="text-18-3">
-<table id="org7296e8e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgbfd3fc3" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5072,8 +5072,8 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled_gl(context, &amp;ee_rescaled_g
 </div>
 </div>
 
-<div id="outline-container-org379be8b" class="outline-3">
-<h3 id="org379be8b"><span class="section-number-3">18.4</span> test</h3>
+<div id="outline-container-orgf4d3b2d" class="outline-3">
+<h3 id="orgf4d3b2d"><span class="section-number-3">18.4</span> test</h3>
 <div class="outline-text-3" id="text-18-4">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -5124,12 +5124,12 @@ rc = qmckl_get_electron_en_distance_rescaled_gl(context, &amp;en_rescaled_gl[0][
 </div>
 </div>
 
-<div id="outline-container-org251e578" class="outline-2">
-<h2 id="org251e578"><span class="section-number-2">19</span> Delta ee gl</h2>
+<div id="outline-container-org080b51a" class="outline-2">
+<h2 id="org080b51a"><span class="section-number-2">19</span> Delta ee gl</h2>
 <div class="outline-text-2" id="text-19">
 </div>
-<div id="outline-container-orgaae7875" class="outline-3">
-<h3 id="orgaae7875"><span class="section-number-3">19.1</span> Get</h3>
+<div id="outline-container-orga4e47cf" class="outline-3">
+<h3 id="orga4e47cf"><span class="section-number-3">19.1</span> Get</h3>
 <div class="outline-text-3" id="text-19-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -5156,10 +5156,10 @@ rc = qmckl_get_electron_en_distance_rescaled_gl(context, &amp;en_rescaled_gl[0][
 </div>
 </div>
 
-<div id="outline-container-org70ed0b3" class="outline-3">
-<h3 id="org70ed0b3"><span class="section-number-3">19.2</span> Compute</h3>
+<div id="outline-container-org8202afc" class="outline-3">
+<h3 id="org8202afc"><span class="section-number-3">19.2</span> Compute</h3>
 <div class="outline-text-3" id="text-19-2">
-<table id="org00521fa" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org23710c5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5462,8 +5462,8 @@ rc = qmckl_get_electron_en_distance_rescaled_gl(context, &amp;en_rescaled_gl[0][
 </div>
 </div>
 
-<div id="outline-container-orgbf72643" class="outline-3">
-<h3 id="orgbf72643"><span class="section-number-3">19.3</span> test</h3>
+<div id="outline-container-org0db08d7" class="outline-3">
+<h3 id="org0db08d7"><span class="section-number-3">19.3</span> test</h3>
 <div class="outline-text-3" id="text-19-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -5517,12 +5517,12 @@ rc = qmckl_get_jastrow_champ_factor_ee_gl(context, &amp;ee_gl_new[0][0][0], walk
 </div>
 </div>
 
-<div id="outline-container-orge60d6d3" class="outline-2">
-<h2 id="orge60d6d3"><span class="section-number-2">20</span> Delta en gl</h2>
+<div id="outline-container-org67c97d4" class="outline-2">
+<h2 id="org67c97d4"><span class="section-number-2">20</span> Delta en gl</h2>
 <div class="outline-text-2" id="text-20">
 </div>
-<div id="outline-container-orgc35e5eb" class="outline-3">
-<h3 id="orgc35e5eb"><span class="section-number-3">20.1</span> Get</h3>
+<div id="outline-container-orgdd478a3" class="outline-3">
+<h3 id="orgdd478a3"><span class="section-number-3">20.1</span> Get</h3>
 <div class="outline-text-3" id="text-20-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -5549,10 +5549,10 @@ rc = qmckl_get_jastrow_champ_factor_ee_gl(context, &amp;ee_gl_new[0][0][0], walk
 </div>
 </div>
 
-<div id="outline-container-org8c2ec87" class="outline-3">
-<h3 id="org8c2ec87"><span class="section-number-3">20.2</span> Compute</h3>
+<div id="outline-container-orgc136f6b" class="outline-3">
+<h3 id="orgc136f6b"><span class="section-number-3">20.2</span> Compute</h3>
 <div class="outline-text-3" id="text-20-2">
-<table id="org0536a84" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orge61a4e3" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5803,8 +5803,8 @@ rc = qmckl_get_jastrow_champ_factor_ee_gl(context, &amp;ee_gl_new[0][0][0], walk
 </div>
 </div>
 
-<div id="outline-container-org14a3519" class="outline-3">
-<h3 id="org14a3519"><span class="section-number-3">20.3</span> test</h3>
+<div id="outline-container-org600578c" class="outline-3">
+<h3 id="org600578c"><span class="section-number-3">20.3</span> test</h3>
 <div class="outline-text-3" id="text-20-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -5855,8 +5855,8 @@ rc = qmckl_get_jastrow_champ_factor_en_gl(context, &amp;en_gl_new[0][0][0], walk
 </div>
 </div>
 
-<div id="outline-container-orgd41a0a9" class="outline-2">
-<h2 id="orgd41a0a9"><span class="section-number-2">21</span> Accept single electron move</h2>
+<div id="outline-container-org922f47e" class="outline-2">
+<h2 id="org922f47e"><span class="section-number-2">21</span> Accept single electron move</h2>
 <div class="outline-text-2" id="text-21">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -5880,7 +5880,7 @@ rc = qmckl_get_jastrow_champ_factor_en_gl(context, &amp;en_gl_new[0][0][0], walk
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2024-12-11 Wed 13:47</p>
+<p class="date">Created: 2024-12-11 Wed 14:39</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
