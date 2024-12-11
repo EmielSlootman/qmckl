@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-12-11 Wed 17:12 -->
+<!-- 2024-12-11 Wed 23:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Forces</title>
@@ -324,48 +324,48 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4d5f16e">1. Introduction</a></li>
-<li><a href="#org10605de">2. Context</a>
+<li><a href="#orgdb2935a">1. Introduction</a></li>
+<li><a href="#org2aa8b74">2. Context</a>
 <ul>
-<li><a href="#orga9cd1a2">2.1. Data structure</a></li>
-<li><a href="#org6e14c9c">2.2. Test</a></li>
+<li><a href="#org5cb29ee">2.1. Data structure</a></li>
+<li><a href="#orgcfc17d3">2.2. Test</a></li>
 </ul>
 </li>
-<li><a href="#org370e4b6">3. Finite-difference function</a></li>
-<li><a href="#org12350b9">4. Force of en jastrow value</a>
+<li><a href="#orge969fb9">3. Finite-difference function</a></li>
+<li><a href="#org0b895dc">4. Force of en jastrow value</a>
 <ul>
-<li><a href="#org263f6ac">4.1. Get</a></li>
-<li><a href="#org84f50a1">4.2. Compute</a></li>
-<li><a href="#org05a464e">4.3. Test</a></li>
+<li><a href="#org5dfa1d2">4.1. Get</a></li>
+<li><a href="#org185b713">4.2. Compute</a></li>
+<li><a href="#org64f9955">4.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#orgdc5201f">5. Force of en jastrow gradient</a>
+<li><a href="#org37cc247">5. Force of en jastrow gradient</a>
 <ul>
-<li><a href="#org7b4f4f0">5.1. Get</a></li>
-<li><a href="#org72a2569">5.2. Compute</a></li>
-<li><a href="#orge98ba6e">5.3. Test</a></li>
+<li><a href="#orga17bbb1">5.1. Get</a></li>
+<li><a href="#org8301021">5.2. Compute</a></li>
+<li><a href="#org9b400b3">5.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org2248ec6">6. Force of en jastrow laplacien</a>
+<li><a href="#org17abc49">6. Force of en jastrow laplacien</a>
 <ul>
-<li><a href="#org6e52dd0">6.1. Get</a></li>
-<li><a href="#org6566ea3">6.2. Compute</a></li>
-<li><a href="#org0df3540">6.3. Test</a></li>
+<li><a href="#orga136a40">6.1. Get</a></li>
+<li><a href="#org091d51d">6.2. Compute</a></li>
+<li><a href="#org33d31dd">6.3. Test</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4d5f16e" class="outline-2">
-<h2 id="org4d5f16e"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-orgdb2935a" class="outline-2">
+<h2 id="orgdb2935a"><span class="section-number-2">1</span> Introduction</h2>
 </div>
-<div id="outline-container-org10605de" class="outline-2">
-<h2 id="org10605de"><span class="section-number-2">2</span> Context</h2>
+<div id="outline-container-org2aa8b74" class="outline-2">
+<h2 id="org2aa8b74"><span class="section-number-2">2</span> Context</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orga9cd1a2" class="outline-3">
-<h3 id="orga9cd1a2"><span class="section-number-3">2.1</span> Data structure</h3>
+<div id="outline-container-org5cb29ee" class="outline-3">
+<h3 id="org5cb29ee"><span class="section-number-3">2.1</span> Data structure</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #a020f0;">typedef</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">qmckl_forces_struct</span>{
@@ -381,8 +381,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org6e14c9c" class="outline-3">
-<h3 id="org6e14c9c"><span class="section-number-3">2.2</span> Test</h3>
+<div id="outline-container-orgcfc17d3" class="outline-3">
+<h3 id="orgcfc17d3"><span class="section-number-3">2.2</span> Test</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-c">/* <span style="color: #b22222;">Reference input data</span> */
@@ -577,8 +577,8 @@ rc = qmckl_check(context,
 </div>
 </div>
 
-<div id="outline-container-org370e4b6" class="outline-2">
-<h2 id="org370e4b6"><span class="section-number-2">3</span> Finite-difference function</h2>
+<div id="outline-container-orge969fb9" class="outline-2">
+<h2 id="orge969fb9"><span class="section-number-2">3</span> Finite-difference function</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 We introduce here a general function to compute the derivatives of any quantity with respect to nuclear coordinates.
@@ -587,12 +587,12 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-org12350b9" class="outline-2">
-<h2 id="org12350b9"><span class="section-number-2">4</span> Force of en jastrow value</h2>
+<div id="outline-container-org0b895dc" class="outline-2">
+<h2 id="org0b895dc"><span class="section-number-2">4</span> Force of en jastrow value</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org263f6ac" class="outline-3">
-<h3 id="org263f6ac"><span class="section-number-3">4.1</span> Get</h3>
+<div id="outline-container-org5dfa1d2" class="outline-3">
+<h3 id="org5dfa1d2"><span class="section-number-3">4.1</span> Get</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -619,10 +619,10 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-org84f50a1" class="outline-3">
-<h3 id="org84f50a1"><span class="section-number-3">4.2</span> Compute</h3>
+<div id="outline-container-org185b713" class="outline-3">
+<h3 id="org185b713"><span class="section-number-3">4.2</span> Compute</h3>
 <div class="outline-text-3" id="text-4-2">
-<table id="org8ad7160" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org427c0fe" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -822,8 +822,8 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-org05a464e" class="outline-3">
-<h3 id="org05a464e"><span class="section-number-3">4.3</span> Test</h3>
+<div id="outline-container-org64f9955" class="outline-3">
+<h3 id="org64f9955"><span class="section-number-3">4.3</span> Test</h3>
 <div class="outline-text-3" id="text-4-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow en\n"</span>);
@@ -865,12 +865,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 
 
-<div id="outline-container-orgdc5201f" class="outline-2">
-<h2 id="orgdc5201f"><span class="section-number-2">5</span> Force of en jastrow gradient</h2>
+<div id="outline-container-org37cc247" class="outline-2">
+<h2 id="org37cc247"><span class="section-number-2">5</span> Force of en jastrow gradient</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org7b4f4f0" class="outline-3">
-<h3 id="org7b4f4f0"><span class="section-number-3">5.1</span> Get</h3>
+<div id="outline-container-orga17bbb1" class="outline-3">
+<h3 id="orga17bbb1"><span class="section-number-3">5.1</span> Get</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -897,10 +897,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org72a2569" class="outline-3">
-<h3 id="org72a2569"><span class="section-number-3">5.2</span> Compute</h3>
+<div id="outline-container-org8301021" class="outline-3">
+<h3 id="org8301021"><span class="section-number-3">5.2</span> Compute</h3>
 <div class="outline-text-3" id="text-5-2">
-<table id="orgd72fa18" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org8406cec" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1131,8 +1131,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-orge98ba6e" class="outline-3">
-<h3 id="orge98ba6e"><span class="section-number-3">5.3</span> Test</h3>
+<div id="outline-container-org9b400b3" class="outline-3">
+<h3 id="org9b400b3"><span class="section-number-3">5.3</span> Test</h3>
 <div class="outline-text-3" id="text-5-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow en G\n"</span>);
@@ -1181,12 +1181,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org2248ec6" class="outline-2">
-<h2 id="org2248ec6"><span class="section-number-2">6</span> Force of en jastrow laplacien</h2>
+<div id="outline-container-org17abc49" class="outline-2">
+<h2 id="org17abc49"><span class="section-number-2">6</span> Force of en jastrow laplacien</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org6e52dd0" class="outline-3">
-<h3 id="org6e52dd0"><span class="section-number-3">6.1</span> Get</h3>
+<div id="outline-container-orga136a40" class="outline-3">
+<h3 id="orga136a40"><span class="section-number-3">6.1</span> Get</h3>
 <div class="outline-text-3" id="text-6-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1213,10 +1213,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org6566ea3" class="outline-3">
-<h3 id="org6566ea3"><span class="section-number-3">6.2</span> Compute</h3>
+<div id="outline-container-org091d51d" class="outline-3">
+<h3 id="org091d51d"><span class="section-number-3">6.2</span> Compute</h3>
 <div class="outline-text-3" id="text-6-2">
-<table id="orgcebc04a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org2d01c80" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1445,8 +1445,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org0df3540" class="outline-3">
-<h3 id="org0df3540"><span class="section-number-3">6.3</span> Test</h3>
+<div id="outline-container-org33d31dd" class="outline-3">
+<h3 id="org33d31dd"><span class="section-number-3">6.3</span> Test</h3>
 <div class="outline-text-3" id="text-6-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow en L\n"</span>);
@@ -1503,7 +1503,7 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2024-12-11 Wed 17:12</p>
+<p class="date">Created: 2024-12-11 Wed 23:23</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
