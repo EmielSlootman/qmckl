@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-12-11 Wed 13:19 -->
+<!-- 2024-12-11 Wed 13:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CHAMP Jastrow Factor Single</title>
@@ -346,155 +346,156 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge089ad5">1. Introduction</a></li>
-<li><a href="#orgf662e75">2. Context</a>
+<li><a href="#org71c9a4f">1. Introduction</a></li>
+<li><a href="#org0e4d4a6">2. Context</a>
 <ul>
-<li><a href="#org1513ddb">2.1. Data structure</a></li>
-<li><a href="#orga8e0235">2.2. Test</a></li>
+<li><a href="#org1e4f124">2.1. Data structure</a></li>
+<li><a href="#org4d9bff5">2.2. Test</a></li>
 </ul>
 </li>
-<li><a href="#orge619beb">3. Single point</a>
+<li><a href="#orgf924097">3. Single point</a>
 <ul>
-<li><a href="#org0d4b05d">3.1. Set</a></li>
+<li><a href="#orge491922">3.1. Set</a></li>
 </ul>
 </li>
-<li><a href="#org5c8b749">4. Electron-electron distances single point</a>
+<li><a href="#org59c71db">4. Electron-electron distances single point</a>
 <ul>
-<li><a href="#orgac1d167">4.1. Get</a></li>
-<li><a href="#org5ca1ebb">4.2. Compute</a></li>
-<li><a href="#org7b3e124">4.3. test</a></li>
+<li><a href="#orgd3fd3b2">4.1. Get</a></li>
+<li><a href="#org6ee48e1">4.2. Compute</a></li>
+<li><a href="#org905e7bf">4.3. test</a></li>
 </ul>
 </li>
-<li><a href="#orgc43b73c">5. ee distance rescaled single point</a>
+<li><a href="#org4042b37">5. ee distance rescaled single point</a>
 <ul>
-<li><a href="#org500eb83">5.1. Get</a></li>
-<li><a href="#orgd587bf2">5.2. Compute</a></li>
-<li><a href="#org40c3ed2">5.3. test</a></li>
+<li><a href="#orgef13462">5.1. Get</a></li>
+<li><a href="#org1f420f3">5.2. Compute</a></li>
+<li><a href="#org0f46c45">5.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org063a5fe">6. Electron-nucleus distances single point</a>
+<li><a href="#org749283e">6. Electron-nucleus distances single point</a>
 <ul>
-<li><a href="#org23ea783">6.1. Get</a></li>
-<li><a href="#org22d2b53">6.2. Compute</a></li>
-<li><a href="#org0786f90">6.3. test</a></li>
+<li><a href="#org227f422">6.1. Get</a></li>
+<li><a href="#org5755b75">6.2. Compute</a></li>
+<li><a href="#org9e1c9dd">6.3. test</a></li>
 </ul>
 </li>
-<li><a href="#orgea58f02">7. en distance rescaled single point</a>
+<li><a href="#org1f203dc">7. en distance rescaled single point</a>
 <ul>
-<li><a href="#org56b78ae">7.1. Get</a></li>
-<li><a href="#orgee4672b">7.2. Compute</a></li>
-<li><a href="#org5461902">7.3. test</a></li>
+<li><a href="#orgbfa05ec">7.1. Get</a></li>
+<li><a href="#org959e24a">7.2. Compute</a></li>
+<li><a href="#org458e772">7.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org87a654b">8. Delta p</a>
+<li><a href="#org7f071ca">8. Delta p</a>
 <ul>
-<li><a href="#orga84bd2f">8.1. Get</a></li>
-<li><a href="#org3d8bde0">8.2. provide</a></li>
-<li><a href="#orge17e97d">8.3. Compute</a></li>
-<li><a href="#org1a70ac3">8.4. test</a></li>
+<li><a href="#org1e26d30">8.1. Get</a></li>
+<li><a href="#org025317d">8.2. provide</a></li>
+<li><a href="#org05b0be7">8.3. Compute</a></li>
+<li><a href="#org62f0c3d">8.4. test</a></li>
 </ul>
 </li>
-<li><a href="#org8e281f2">9. Delta e-e-n</a>
+<li><a href="#orgee9087d">9. Delta e-e-n</a>
 <ul>
-<li><a href="#orgbc6e39d">9.1. get</a></li>
-<li><a href="#org9da86cb">9.2. Compute</a></li>
-<li><a href="#org668a4d4">9.3. test</a></li>
+<li><a href="#org92b6153">9.1. get</a></li>
+<li><a href="#org9d78fc0">9.2. Compute</a></li>
+<li><a href="#orgbecce6a">9.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org3b4f0fd">10. ee distance rescaled single point</a>
+<li><a href="#orgeb5f649">10. ee distance rescaled single point</a>
 <ul>
-<li><a href="#org76f8c45">10.1. Get</a></li>
-<li><a href="#org05d7888">10.2. Compute</a></li>
-<li><a href="#org24ca35a">10.3. test</a></li>
+<li><a href="#org605faef">10.1. Get</a></li>
+<li><a href="#orgfa5da17">10.2. Compute</a></li>
+<li><a href="#orgc9001c6">10.3. test</a></li>
 </ul>
 </li>
-<li><a href="#orgc406f3a">11. en distance rescaled single point</a>
+<li><a href="#orgbbf6ba8">11. en distance rescaled single point</a>
 <ul>
-<li><a href="#org80ec905">11.1. Get</a></li>
-<li><a href="#org625f0e6">11.2. Compute</a></li>
-<li><a href="#org03f7623">11.3. test</a></li>
+<li><a href="#org379eccc">11.1. Get</a></li>
+<li><a href="#org922a974">11.2. Compute</a></li>
+<li><a href="#orgc45e694">11.3. test</a></li>
 </ul>
 </li>
-<li><a href="#orge01977e">12. Delta ee</a>
+<li><a href="#orgc0dd128">12. Delta ee</a>
 <ul>
-<li><a href="#orgf55476a">12.1. Get</a></li>
-<li><a href="#org7bbf4d3">12.2. Compute</a></li>
-<li><a href="#orgf02d40c">12.3. Compute</a></li>
+<li><a href="#orgd36ddc3">12.1. Get</a></li>
+<li><a href="#orgbd3f023">12.2. Compute</a></li>
+<li><a href="#org9ee7637">12.3. test</a></li>
+<li><a href="#org7cc411c">12.4. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org49cf0fa">13. En rescaled derivative een</a>
+<li><a href="#org2409759">13. En rescaled derivative een</a>
 <ul>
-<li><a href="#orgdeaa5c6">13.1. Get</a></li>
-<li><a href="#org4ba2a2d">13.2. Compute</a></li>
-<li><a href="#org1800f70">13.3. test</a></li>
+<li><a href="#org6bc44ab">13.1. Get</a></li>
+<li><a href="#org7ee6392">13.2. Compute</a></li>
+<li><a href="#orgebfe44d">13.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org80d7514">14. EE rescaled distance derivative for een</a>
+<li><a href="#org2dbc70a">14. EE rescaled distance derivative for een</a>
 <ul>
-<li><a href="#org03ddd24">14.1. Get</a></li>
-<li><a href="#org5b3f882">14.2. Compute</a></li>
-<li><a href="#orgb061d13">14.3. test</a></li>
+<li><a href="#org1f9897d">14.1. Get</a></li>
+<li><a href="#orga2a980f">14.2. Compute</a></li>
+<li><a href="#org52f6543">14.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org4f9a568">15. gl delta p</a>
+<li><a href="#org91bed8c">15. gl delta p</a>
 <ul>
-<li><a href="#org6933cd1">15.1. Get</a></li>
-<li><a href="#orgeca6e28">15.2. provide</a></li>
-<li><a href="#orge7f11ef">15.3. Compute</a></li>
-<li><a href="#org93d9339">15.4. test</a></li>
+<li><a href="#orgf97f8e8">15.1. Get</a></li>
+<li><a href="#orga9baa38">15.2. provide</a></li>
+<li><a href="#orga3805f5">15.3. Compute</a></li>
+<li><a href="#orgdea2a54">15.4. test</a></li>
 </ul>
 </li>
-<li><a href="#org6fdf4ed">16. Delta grad e-e-n</a>
+<li><a href="#orgd9ea4ca">16. Delta grad e-e-n</a>
 <ul>
-<li><a href="#org8c2bf39">16.1. get</a></li>
-<li><a href="#orgee42d8d">16.2. Compute</a></li>
-<li><a href="#orge6fefc5">16.3. test</a></li>
+<li><a href="#org9bdcc51">16.1. get</a></li>
+<li><a href="#org560b5c1">16.2. Compute</a></li>
+<li><a href="#org92aa6ff">16.3. test</a></li>
 </ul>
 </li>
-<li><a href="#orgc03584c">17. ee distance rescaled single point gl</a>
+<li><a href="#org28b7d06">17. ee distance rescaled single point gl</a>
 <ul>
-<li><a href="#orgbb8cea9">17.1. Get</a></li>
-<li><a href="#orga24763d">17.2. Compute</a></li>
-<li><a href="#orgc6c96cb">17.3. test</a></li>
+<li><a href="#orgbc03279">17.1. Get</a></li>
+<li><a href="#org531595e">17.2. Compute</a></li>
+<li><a href="#org2a23a9e">17.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org3e21427">18. en distance rescaled single point gl</a>
+<li><a href="#orgb4137d5">18. en distance rescaled single point gl</a>
 <ul>
-<li><a href="#orgfbc56ce">18.1. Get</a></li>
-<li><a href="#org3db9fd5">18.2. Provide</a></li>
-<li><a href="#org65e8e32">18.3. Compute</a></li>
-<li><a href="#org06f1235">18.4. test</a></li>
+<li><a href="#orgbb05922">18.1. Get</a></li>
+<li><a href="#orgb63d179">18.2. Provide</a></li>
+<li><a href="#orge71fa0f">18.3. Compute</a></li>
+<li><a href="#org379be8b">18.4. test</a></li>
 </ul>
 </li>
-<li><a href="#org528c4c8">19. Delta ee gl</a>
+<li><a href="#org251e578">19. Delta ee gl</a>
 <ul>
-<li><a href="#orgf2af73b">19.1. Get</a></li>
-<li><a href="#org7ef6dbb">19.2. Compute</a></li>
-<li><a href="#org6558996">19.3. test</a></li>
+<li><a href="#orgaae7875">19.1. Get</a></li>
+<li><a href="#org70ed0b3">19.2. Compute</a></li>
+<li><a href="#orgbf72643">19.3. test</a></li>
 </ul>
 </li>
-<li><a href="#org168d501">20. Delta en gl</a>
+<li><a href="#orge60d6d3">20. Delta en gl</a>
 <ul>
-<li><a href="#orgfe401cd">20.1. Get</a></li>
-<li><a href="#org7bb1bae">20.2. Compute</a></li>
-<li><a href="#org1214114">20.3. test</a></li>
+<li><a href="#orgc35e5eb">20.1. Get</a></li>
+<li><a href="#org8c2ec87">20.2. Compute</a></li>
+<li><a href="#org14a3519">20.3. test</a></li>
 </ul>
 </li>
-<li><a href="#orgcd7c97e">21. Accept single electron move</a></li>
+<li><a href="#orgd41a0a9">21. Accept single electron move</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge089ad5" class="outline-2">
-<h2 id="orge089ad5"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-org71c9a4f" class="outline-2">
+<h2 id="org71c9a4f"><span class="section-number-2">1</span> Introduction</h2>
 </div>
 
-<div id="outline-container-orgf662e75" class="outline-2">
-<h2 id="orgf662e75"><span class="section-number-2">2</span> Context</h2>
+<div id="outline-container-org0e4d4a6" class="outline-2">
+<h2 id="org0e4d4a6"><span class="section-number-2">2</span> Context</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org1513ddb" class="outline-3">
-<h3 id="org1513ddb"><span class="section-number-3">2.1</span> Data structure</h3>
+<div id="outline-container-org1e4f124" class="outline-3">
+<h3 id="org1e4f124"><span class="section-number-3">2.1</span> Data structure</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #a020f0;">typedef</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">qmckl_jastrow_champ_single_struct</span>{
@@ -544,8 +545,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orga8e0235" class="outline-3">
-<h3 id="orga8e0235"><span class="section-number-3">2.2</span> Test</h3>
+<div id="outline-container-org4d9bff5" class="outline-3">
+<h3 id="org4d9bff5"><span class="section-number-3">2.2</span> Test</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-c">/* <span style="color: #b22222;">Reference input data</span> */
@@ -743,21 +744,38 @@ rc = qmckl_check(context,
 </div>
 </div>
 
-<div id="outline-container-orge619beb" class="outline-2">
-<h2 id="orge619beb"><span class="section-number-2">3</span> Single point</h2>
+<div id="outline-container-orgf924097" class="outline-2">
+<h2 id="orgf924097"><span class="section-number-2">3</span> Single point</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org0d4b05d" class="outline-3">
-<h3 id="org0d4b05d"><span class="section-number-3">3.1</span> Set</h3>
+<div id="outline-container-orge491922" class="outline-3">
+<h3 id="orge491922"><span class="section-number-3">3.1</span> Set</h3>
 <div class="outline-text-3" id="text-3-1">
+<p>
+We set the coordinates of the <code>num</code>-th electron for all walkers.
+The dimension of <code>coord</code> is
+</p>
+<ul class="org-ul">
+<li>[walk<sub>num</sub>][3] if <code>transp</code> is <code>'N'</code></li>
+<li>[3][walk<sub>num</sub>] if <code>transp</code> is <code>'T'</code></li>
+</ul>
+
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_set_single_point</span> (<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
                                  <span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> <span style="color: #a0522d;">transp</span>,
                                  <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">num</span>,
                                  <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">coord</span>,
                                  <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">size_max</span>);
+</pre>
+</div>
 
-<span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_set_single_point_f</span> (<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
+<p>
+The Fortran function shifts the <code>num</code> by 1 because of 1-based
+indexing.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_set_single_point_f</span> (<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
                                  <span style="color: #a020f0;">const</span> <span style="color: #228b22;">char</span> <span style="color: #a0522d;">transp</span>,
                                  <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">num</span>,
                                  <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">coord</span>,
@@ -787,13 +805,6 @@ rc = qmckl_check(context,
                              <span style="color: #8b2252;">"Incorrect point number"</span>);
   }
 
-  <span style="color: #a020f0;">if</span> (size_max != 3) {
-      <span style="color: #a020f0;">return</span> qmckl_failwith( context,
-                             QMCKL_INVALID_ARG_4,
-                             <span style="color: #8b2252;">"qmckl_set_single_point"</span>,
-                             <span style="color: #8b2252;">"Array too small"</span>);
-  }
-
   <span style="color: #a020f0;">if</span> (transp != <span style="color: #8b2252;">'N'</span> &amp;&amp; transp != <span style="color: #8b2252;">'T'</span>) {
     <span style="color: #a020f0;">return</span> qmckl_failwith( context,
                            QMCKL_INVALID_ARG_2,
@@ -811,39 +822,46 @@ rc = qmckl_check(context,
   <span style="color: #228b22;">qmckl_context_struct</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">ctx</span> = (<span style="color: #228b22;">qmckl_context_struct</span>*) context;
   assert (ctx != <span style="color: #008b8b;">NULL</span>);
 
+  <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span> = ctx-&gt;electron.walker.num;
+
+  <span style="color: #a020f0;">if</span> (size_max &lt; 3*walk_num) {
+      <span style="color: #a020f0;">return</span> qmckl_failwith( context,
+                             QMCKL_INVALID_ARG_4,
+                             <span style="color: #8b2252;">"qmckl_set_single_point"</span>,
+                             <span style="color: #8b2252;">"Array too small"</span>);
+  }
+
   <span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #a0522d;">rc</span>;
 
-    <span style="color: #a020f0;">if</span> (ctx-&gt;single_point.coord.data != <span style="color: #008b8b;">NULL</span>) {
-        rc = qmckl_matrix_free(context, &amp;(ctx-&gt;single_point.coord));
-        assert (rc == QMCKL_SUCCESS);
-    }
+  <span style="color: #a020f0;">if</span> (ctx-&gt;single_point.coord.data != <span style="color: #008b8b;">NULL</span>) {
+    rc = qmckl_matrix_free(context, &amp;(ctx-&gt;single_point.coord));
+    assert (rc == QMCKL_SUCCESS);
+  }
 
-    ctx-&gt;single_point.coord = qmckl_matrix_alloc(context, 1, 3);
-    <span style="color: #a020f0;">if</span> (ctx-&gt;single_point.coord.data == <span style="color: #008b8b;">NULL</span>) {
-        <span style="color: #a020f0;">return</span> qmckl_failwith( context,
-                                QMCKL_ALLOCATION_FAILED,
-                                <span style="color: #8b2252;">"qmckl_set_single_point"</span>,
-                                <span style="color: #008b8b;">NULL</span>);
-    }
+  ctx-&gt;single_point.coord = qmckl_matrix_alloc(context, walk_num, 3);
+  <span style="color: #a020f0;">if</span> (ctx-&gt;single_point.coord.data == <span style="color: #008b8b;">NULL</span>) {
+    <span style="color: #a020f0;">return</span> qmckl_failwith( context,
+                           QMCKL_ALLOCATION_FAILED,
+                           <span style="color: #8b2252;">"qmckl_set_single_point"</span>,
+                           <span style="color: #008b8b;">NULL</span>);
+  }
 
   ctx-&gt;single_point.num = num;
 
   <span style="color: #a020f0;">if</span> (transp == <span style="color: #8b2252;">'T'</span>) {
     <span style="color: #228b22;">double</span> *<span style="color: #a0522d;">a</span> = ctx-&gt;single_point.coord.data;
-<span style="color: #483d8b;">#ifdef</span> HAVE_OPENMP
-<span style="color: #483d8b;">    #pragma</span> omp <span style="color: #a020f0;">for</span>
-<span style="color: #483d8b;">#endif</span>
-    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">i</span>=0 ; i&lt;3 ; ++i) {
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">i</span>=0 ; i&lt;3*walk_num ; ++i) {
       a[i] = coord[i];
     }
   } <span style="color: #a020f0;">else</span> {
-    qmckl_mat(ctx-&gt;single_point.coord, 0, 0) = coord[0];
-    qmckl_mat(ctx-&gt;single_point.coord, 0, 1) = coord[1];
-    qmckl_mat(ctx-&gt;single_point.coord, 0, 2) = coord[2];
-
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">i</span>=0 ; i&lt;walk_num ; ++i) {
+      qmckl_mat(ctx-&gt;single_point.coord, i, 0) = coord[0];
+      qmckl_mat(ctx-&gt;single_point.coord, i, 1) = coord[1];
+      qmckl_mat(ctx-&gt;single_point.coord, i, 2) = coord[2];
+    }
   }
 
-  /* <span style="color: #b22222;">Increment the date of the context</span> */
+  /* <span style="color: #b22222;">Increment the date of the single point</span> */
   ctx-&gt;single_point.date += 1UL;
 
   <span style="color: #a020f0;">return</span> QMCKL_SUCCESS;
@@ -883,12 +901,12 @@ rc = qmckl_check(context,
 </div>
 </div>
 
-<div id="outline-container-org5c8b749" class="outline-2">
-<h2 id="org5c8b749"><span class="section-number-2">4</span> Electron-electron distances single point</h2>
+<div id="outline-container-org59c71db" class="outline-2">
+<h2 id="org59c71db"><span class="section-number-2">4</span> Electron-electron distances single point</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgac1d167" class="outline-3">
-<h3 id="orgac1d167"><span class="section-number-3">4.1</span> Get</h3>
+<div id="outline-container-orgd3fd3b2" class="outline-3">
+<h3 id="orgd3fd3b2"><span class="section-number-3">4.1</span> Get</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_single_electron_ee_distance</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>, <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">distance</span>);
@@ -897,10 +915,10 @@ rc = qmckl_check(context,
 </div>
 </div>
 
-<div id="outline-container-org5ca1ebb" class="outline-3">
-<h3 id="org5ca1ebb"><span class="section-number-3">4.2</span> Compute</h3>
+<div id="outline-container-org6ee48e1" class="outline-3">
+<h3 id="org6ee48e1"><span class="section-number-3">4.2</span> Compute</h3>
 <div class="outline-text-3" id="text-4-2">
-<table id="org2828196" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org41b5cdb" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -966,17 +984,18 @@ rc = qmckl_check(context,
 </table>
 
 <div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">integer </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_compute_single_ee_distance_f</span><span style="color: #000000; background-color: #ffffff;">(context, elec_num, walk_num, coord, single_coord, single_ee_distance)</span><span style="color: #a0522d;"> </span><span style="color: #a020f0;">&amp;</span>
-     <span style="color: #a020f0;">result</span>(info)
+<pre class="src src-f90"><span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_compute_single_ee_distance(context, </span><span style="color: #a020f0;">&amp;</span>
+     elec_num, walk_num, coord, single_coord, single_ee_distance) <span style="color: #a020f0;">&amp;</span>
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
   <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
   <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
   <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> elec_num</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> walk_num</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> coord(elec_num,walk_num,3)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> single_coord(1,3)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> single_ee_distance(elec_num,walk_num)</span>
-
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>) , <span style="color: #a020f0;">intent</span>(in)  , <span style="color: #a020f0;">value</span> ::<span style="color: #a0522d;"> elec_num</span>
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>) , <span style="color: #a020f0;">intent</span>(in)  , <span style="color: #a020f0;">value</span> ::<span style="color: #a0522d;"> walk_num</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> coord(elec_num,3,walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> single_coord(3,walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(out)         ::<span style="color: #a0522d;"> single_ee_distance(elec_num,walk_num)</span>
 
   <span style="color: #228b22;">integer</span>*8 ::<span style="color: #a0522d;"> k, i, j</span>
   <span style="color: #228b22;">double precision</span> ::<span style="color: #a0522d;"> x, y, z</span>
@@ -1000,7 +1019,7 @@ rc = qmckl_check(context,
 
   <span style="color: #a020f0;">do</span> k=1,walk_num
      info = qmckl_distance(context, <span style="color: #8b2252;">'T'</span>, <span style="color: #8b2252;">'T'</span>, 1_8, elec_num, <span style="color: #a020f0;">&amp;</span>
-          single_coord(1,1), 1_8, <span style="color: #a020f0;">&amp;</span>
+          single_coord(1,k), 1_8, <span style="color: #a020f0;">&amp;</span>
           coord(1,k,1), elec_num * walk_num * 1_8, <span style="color: #a020f0;">&amp;</span>
           single_ee_distance(1,k), 1_8)
      <span style="color: #a020f0;">if</span> (info /= QMCKL_SUCCESS) <span style="color: #a020f0;">then</span>
@@ -1008,14 +1027,14 @@ rc = qmckl_check(context,
      <span style="color: #a020f0;">endif</span>
   <span style="color: #a020f0;">end do</span>
 
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_single_ee_distance_f</span>
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_single_ee_distance</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org7b3e124" class="outline-3">
-<h3 id="org7b3e124"><span class="section-number-3">4.3</span> test</h3>
+<div id="outline-container-org905e7bf" class="outline-3">
+<h3 id="org905e7bf"><span class="section-number-3">4.3</span> test</h3>
 <div class="outline-text-3" id="text-4-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -1063,12 +1082,12 @@ rc = qmckl_get_electron_ee_distance(context, &amp;ee_distance[0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-orgc43b73c" class="outline-2">
-<h2 id="orgc43b73c"><span class="section-number-2">5</span> ee distance rescaled single point</h2>
+<div id="outline-container-org4042b37" class="outline-2">
+<h2 id="org4042b37"><span class="section-number-2">5</span> ee distance rescaled single point</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org500eb83" class="outline-3">
-<h3 id="org500eb83"><span class="section-number-3">5.1</span> Get</h3>
+<div id="outline-container-orgef13462" class="outline-3">
+<h3 id="orgef13462"><span class="section-number-3">5.1</span> Get</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1080,10 +1099,10 @@ rc = qmckl_get_electron_ee_distance(context, &amp;ee_distance[0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-orgd587bf2" class="outline-3">
-<h3 id="orgd587bf2"><span class="section-number-3">5.2</span> Compute</h3>
+<div id="outline-container-org1f420f3" class="outline-3">
+<h3 id="org1f420f3"><span class="section-number-3">5.2</span> Compute</h3>
 <div class="outline-text-3" id="text-5-2">
-<table id="org0d9a975" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org0a92e23" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1170,21 +1189,23 @@ rc = qmckl_get_electron_ee_distance(context, &amp;ee_distance[0][0][0]);
 </table>
 
 <div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_een_rescaled_single_e_doc_f( </span><span style="color: #a020f0;">&amp;</span>
+<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_een_rescaled_single_e_doc( </span><span style="color: #a020f0;">&amp;</span>
      context, num_in, walk_num, elec_num, cord_num, rescale_factor_ee,  <span style="color: #a020f0;">&amp;</span>
      single_ee_distance, een_rescaled_e, een_rescaled_single_e) <span style="color: #a020f0;">&amp;</span>
-     <span style="color: #a020f0;">result</span>(info)
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
   <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
   <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
-  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> num_in</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> walk_num</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> elec_num</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> cord_num</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> rescale_factor_ee</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> single_ee_distance(elec_num,walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e(elec_num,elec_num,0:cord_num,walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> een_rescaled_single_e(elec_num,0:cord_num,walk_num)</span>
+  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> context</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> num_in</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> walk_num</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> elec_num</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> cord_num</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> rescale_factor_ee</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> single_ee_distance(elec_num,walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> een_rescaled_e(elec_num,elec_num,0:cord_num,walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(out)        ::<span style="color: #a0522d;"> een_rescaled_single_e(elec_num,0:cord_num,walk_num)</span>
+
   <span style="color: #228b22;">double precision</span>,<span style="color: #a020f0;">allocatable</span>        ::<span style="color: #a0522d;"> een_rescaled_single_e_ij(:,:)</span>
   <span style="color: #228b22;">double precision</span>                    ::<span style="color: #a0522d;"> x</span>
   <span style="color: #228b22;">integer</span>*8                           ::<span style="color: #a0522d;"> i, j, k, l, nw, num</span>
@@ -1231,7 +1252,7 @@ rc = qmckl_get_electron_ee_distance(context, &amp;ee_distance[0][0][0]);
      <span style="color: #a020f0;">end do</span>
 
      ! <span style="color: #b22222;">prepare the actual een table</span>
-     een_rescaled_single_e( :, 0, nw) = 1.0d0
+     een_rescaled_single_e(:,0,nw) = 1.0d0
 
      <span style="color: #a020f0;">do</span> l = 1, cord_num
         <span style="color: #a020f0;">do</span> j = 1, elec_num
@@ -1245,7 +1266,7 @@ rc = qmckl_get_electron_ee_distance(context, &amp;ee_distance[0][0][0]);
 
   <span style="color: #a020f0;">end do</span>
 
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_een_rescaled_single_e_doc_f</span>
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_een_rescaled_single_e_doc</span>
 </pre>
 </div>
 
@@ -1264,31 +1285,32 @@ rc = qmckl_get_electron_ee_distance(context, &amp;ee_distance[0][0][0]);
 </div>
 
 <div class="org-src-container">
-<pre class="src src-c">    <span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_een_rescaled_single_e</span> (
-          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
-          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">num</span>,
-          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
-          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">elec_num</span>,
-          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">cord_num</span>,
-          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">rescale_factor_ee</span>,
-          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">single_ee_distance</span>,
-          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">een_rescaled_e</span>,
-          <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">een_rescaled_single_e</span> ) {
+<pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
+<span style="color: #0000ff;">qmckl_compute_een_rescaled_single_e</span> (<span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
+                                     <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">num</span>,
+                                     <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
+                                     <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">elec_num</span>,
+                                     <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">cord_num</span>,
+                                     <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">rescale_factor_ee</span>,
+                                     <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">single_ee_distance</span>,
+                                     <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">een_rescaled_e</span>,
+                                     <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">een_rescaled_single_e</span> )
+{
 
 <span style="color: #483d8b;">#ifdef</span> HAVE_HPC
-    <span style="color: #a020f0;">return</span> qmckl_compute_een_rescaled_single_e_doc
+  <span style="color: #a020f0;">return</span> qmckl_compute_een_rescaled_single_e_doc
 <span style="color: #483d8b;">#else</span>
-    <span style="color: #a020f0;">return</span> qmckl_compute_een_rescaled_single_e_doc
+  <span style="color: #a020f0;">return</span> qmckl_compute_een_rescaled_single_e_doc
 <span style="color: #483d8b;">#endif</span>
-      (context, num, walk_num, elec_num, cord_num, rescale_factor_ee, single_ee_distance, een_rescaled_e, een_rescaled_single_e);
-    }
+    (context, num, walk_num, elec_num, cord_num, rescale_factor_ee, single_ee_distance, een_rescaled_e, een_rescaled_single_e);
+}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org40c3ed2" class="outline-3">
-<h3 id="org40c3ed2"><span class="section-number-3">5.3</span> test</h3>
+<div id="outline-container-org0f46c45" class="outline-3">
+<h3 id="org0f46c45"><span class="section-number-3">5.3</span> test</h3>
 <div class="outline-text-3" id="text-5-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -1335,13 +1357,19 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e(context,  &amp;rescaled_een_ee_dista
 </div>
 </div>
 
-<div id="outline-container-org063a5fe" class="outline-2">
-<h2 id="org063a5fe"><span class="section-number-2">6</span> Electron-nucleus distances single point</h2>
+<div id="outline-container-org749283e" class="outline-2">
+<h2 id="org749283e"><span class="section-number-2">6</span> Electron-nucleus distances single point</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org23ea783" class="outline-3">
-<h3 id="org23ea783"><span class="section-number-3">6.1</span> Get</h3>
+<div id="outline-container-org227f422" class="outline-3">
+<h3 id="org227f422"><span class="section-number-3">6.1</span> Get</h3>
 <div class="outline-text-3" id="text-6-1">
+<p>
+Electron-nucleus distance between the single electron and all
+nuclei for all walkers.
+Dimension is <code>[walk_num][nucl_num]</code>.
+</p>
+
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_single_electron_en_distance</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>, <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">distance</span>);
 </pre>
@@ -1349,10 +1377,10 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e(context,  &amp;rescaled_een_ee_dista
 </div>
 </div>
 
-<div id="outline-container-org22d2b53" class="outline-3">
-<h3 id="org22d2b53"><span class="section-number-3">6.2</span> Compute</h3>
+<div id="outline-container-org5755b75" class="outline-3">
+<h3 id="org5755b75"><span class="section-number-3">6.2</span> Compute</h3>
 <div class="outline-text-3" id="text-6-2">
-<table id="org9cba0d1" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org670e8b4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1388,6 +1416,13 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e(context,  &amp;rescaled_een_ee_dista
 </tr>
 
 <tr>
+<td class="org-left"><code>walk_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of walkers</td>
+</tr>
+
+<tr>
 <td class="org-left"><code>elec_coord</code></td>
 <td class="org-left"><code>double[3]</code></td>
 <td class="org-left">in</td>
@@ -1411,15 +1446,16 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e(context,  &amp;rescaled_een_ee_dista
 </table>
 
 <div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">integer </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_compute_single_en_distance_f</span><span style="color: #000000; background-color: #ffffff;">(context, nucl_num, elec_coord, nucl_coord, single_en_distance)</span><span style="color: #a0522d;"> </span><span style="color: #a020f0;">&amp;</span>
-     <span style="color: #a020f0;">result</span>(info)
+<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_single_en_distance(context, nucl_num, walk_num,  </span><span style="color: #a020f0;">&amp;</span>
+     elec_coord, nucl_coord, single_en_distance) <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
   <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
   <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
-  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> nucl_num</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> elec_coord(3)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> nucl_coord(nucl_num,3)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> single_en_distance(nucl_num)</span>
+  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)        ::<span style="color: #a0522d;"> context</span>
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>) , <span style="color: #a020f0;">intent</span>(in)  , <span style="color: #a020f0;">value</span> ::<span style="color: #a0522d;"> nucl_num, walk_num</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> elec_coord(3)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> nucl_coord(nucl_num,3)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(out)         ::<span style="color: #a0522d;"> single_en_distance(nucl_num)</span>
 
   <span style="color: #228b22;">integer</span>*8 ::<span style="color: #a0522d;"> k</span>
 
@@ -1437,17 +1473,17 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e(context,  &amp;rescaled_een_ee_dista
 
   info = qmckl_distance(context, <span style="color: #8b2252;">'T'</span>, <span style="color: #8b2252;">'T'</span>, nucl_num, 1_8, <span style="color: #a020f0;">&amp;</span>
           nucl_coord, nucl_num, <span style="color: #a020f0;">&amp;</span>
-          elec_coord, 1_8, <span style="color: #a020f0;">&amp;</span>
+          elec_coord, walk_num, <span style="color: #a020f0;">&amp;</span>
           single_en_distance, nucl_num)
 
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_single_en_distance_f</span>
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_single_en_distance</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0786f90" class="outline-3">
-<h3 id="org0786f90"><span class="section-number-3">6.3</span> test</h3>
+<div id="outline-container-org9e1c9dd" class="outline-3">
+<h3 id="org9e1c9dd"><span class="section-number-3">6.3</span> test</h3>
 <div class="outline-text-3" id="text-6-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -1489,12 +1525,12 @@ rc = qmckl_get_electron_en_distance(context, &amp;en_distance[0][0]);
 </div>
 </div>
 
-<div id="outline-container-orgea58f02" class="outline-2">
-<h2 id="orgea58f02"><span class="section-number-2">7</span> en distance rescaled single point</h2>
+<div id="outline-container-org1f203dc" class="outline-2">
+<h2 id="org1f203dc"><span class="section-number-2">7</span> en distance rescaled single point</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org56b78ae" class="outline-3">
-<h3 id="org56b78ae"><span class="section-number-3">7.1</span> Get</h3>
+<div id="outline-container-orgbfa05ec" class="outline-3">
+<h3 id="orgbfa05ec"><span class="section-number-3">7.1</span> Get</h3>
 <div class="outline-text-3" id="text-7-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1506,10 +1542,10 @@ rc = qmckl_get_electron_en_distance(context, &amp;en_distance[0][0]);
 </div>
 </div>
 
-<div id="outline-container-orgee4672b" class="outline-3">
-<h3 id="orgee4672b"><span class="section-number-3">7.2</span> Compute</h3>
+<div id="outline-container-org959e24a" class="outline-3">
+<h3 id="org959e24a"><span class="section-number-3">7.2</span> Compute</h3>
 <div class="outline-text-3" id="text-7-2">
-<table id="orge1ac211" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org2988de4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1617,25 +1653,27 @@ rc = qmckl_get_electron_en_distance(context, &amp;en_distance[0][0]);
 </table>
 
 <div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_een_rescaled_single_n_f( </span><span style="color: #a020f0;">&amp;</span>
+<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_een_rescaled_single_n( </span><span style="color: #a020f0;">&amp;</span>
      context, num_in, walk_num, elec_num, nucl_num, <span style="color: #a020f0;">&amp;</span>
      type_nucl_num, type_nucl_vector, cord_num, rescale_factor_en,  <span style="color: #a020f0;">&amp;</span>
      single_en_distance, een_rescaled_n, een_rescaled_single_n) <span style="color: #a020f0;">&amp;</span>
-     <span style="color: #a020f0;">result</span>(info)
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
   <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
   <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
   <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> num_in</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> walk_num</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> elec_num</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> nucl_num</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> type_nucl_num</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> type_nucl_vector(nucl_num)</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> cord_num</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> rescale_factor_en(type_nucl_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> single_en_distance(nucl_num,walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n(elec_num,nucl_num,0:cord_num,walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> een_rescaled_single_n(nucl_num,0:cord_num,walk_num)</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> num_in</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> walk_num</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> elec_num</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> nucl_num</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> type_nucl_num</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> type_nucl_vector(nucl_num)</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> cord_num</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> rescale_factor_en(type_nucl_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> single_en_distance(nucl_num,walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> een_rescaled_n(elec_num,nucl_num,0:cord_num,walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(out)        ::<span style="color: #a0522d;"> een_rescaled_single_n(nucl_num,0:cord_num,walk_num)</span>
+
   <span style="color: #228b22;">double precision</span>                    ::<span style="color: #a0522d;"> x</span>
   <span style="color: #228b22;">integer</span>*8                           ::<span style="color: #a0522d;"> i, a, k, l, nw, num</span>
 
@@ -1674,7 +1712,7 @@ rc = qmckl_get_electron_en_distance(context, &amp;en_distance[0][0]);
 
      <span style="color: #a020f0;">do</span> l = 2, cord_num
         <span style="color: #a020f0;">do</span> a = 1, nucl_num
-            een_rescaled_single_n(a, l, nw) = een_rescaled_single_n(a, l - 1, nw) * een_rescaled_single_n(a, 1, nw)
+           een_rescaled_single_n(a, l, nw) = een_rescaled_single_n(a, l - 1, nw) * een_rescaled_single_n(a, 1, nw)
         <span style="color: #a020f0;">end do</span>
      <span style="color: #a020f0;">end do</span>
 
@@ -1682,14 +1720,14 @@ rc = qmckl_get_electron_en_distance(context, &amp;en_distance[0][0]);
 
   <span style="color: #a020f0;">end do</span>
 
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_een_rescaled_single_n_f</span>
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_een_rescaled_single_n</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5461902" class="outline-3">
-<h3 id="org5461902"><span class="section-number-3">7.3</span> test</h3>
+<div id="outline-container-org458e772" class="outline-3">
+<h3 id="org458e772"><span class="section-number-3">7.3</span> test</h3>
 <div class="outline-text-3" id="text-7-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -1736,12 +1774,12 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n(context,  &amp;rescaled_een_en_dista
 </div>
 </div>
 
-<div id="outline-container-org87a654b" class="outline-2">
-<h2 id="org87a654b"><span class="section-number-2">8</span> Delta p</h2>
+<div id="outline-container-org7f071ca" class="outline-2">
+<h2 id="org7f071ca"><span class="section-number-2">8</span> Delta p</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-orga84bd2f" class="outline-3">
-<h3 id="orga84bd2f"><span class="section-number-3">8.1</span> Get</h3>
+<div id="outline-container-org1e26d30" class="outline-3">
+<h3 id="org1e26d30"><span class="section-number-3">8.1</span> Get</h3>
 <div class="outline-text-3" id="text-8-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1753,14 +1791,14 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n(context,  &amp;rescaled_een_en_dista
 </div>
 </div>
 
-<div id="outline-container-org3d8bde0" class="outline-3">
-<h3 id="org3d8bde0"><span class="section-number-3">8.2</span> provide</h3>
+<div id="outline-container-org025317d" class="outline-3">
+<h3 id="org025317d"><span class="section-number-3">8.2</span> provide</h3>
 </div>
 
-<div id="outline-container-orge17e97d" class="outline-3">
-<h3 id="orge17e97d"><span class="section-number-3">8.3</span> Compute</h3>
+<div id="outline-container-org05b0be7" class="outline-3">
+<h3 id="org05b0be7"><span class="section-number-3">8.3</span> Compute</h3>
 <div class="outline-text-3" id="text-8-3">
-<table id="org22f6c5a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org4e4330d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1861,19 +1899,20 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n(context,  &amp;rescaled_een_en_dista
 </table>
 
 <div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_jastrow_champ_delta_p_doc_f( </span><span style="color: #a020f0;">&amp;</span>
+<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_jastrow_champ_delta_p_doc( </span><span style="color: #a020f0;">&amp;</span>
      context, num_in, walk_num, elec_num, nucl_num, cord_num,   <span style="color: #a020f0;">&amp;</span>
      een_rescaled_n, een_rescaled_e, een_rescaled_single_n, een_rescaled_single_e, delta_p) <span style="color: #a020f0;">&amp;</span>
-     <span style="color: #a020f0;">result</span>(info)
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
   <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
   <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
   <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> num_in, walk_num, elec_num, cord_num, nucl_num</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n(elec_num, nucl_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e(elec_num, elec_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_n(nucl_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_e(elec_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(out)  ::<span style="color: #a0522d;"> delta_p(elec_num, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> num_in, walk_num, elec_num, cord_num, nucl_num</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>) , <span style="color: #a020f0;">intent</span>(in)            ::<span style="color: #a0522d;"> een_rescaled_n(elec_num, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>) , <span style="color: #a020f0;">intent</span>(in)            ::<span style="color: #a0522d;"> een_rescaled_e(elec_num, elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>) , <span style="color: #a020f0;">intent</span>(in)            ::<span style="color: #a0522d;"> een_rescaled_single_n(nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>) , <span style="color: #a020f0;">intent</span>(in)            ::<span style="color: #a0522d;"> een_rescaled_single_e(elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>) , <span style="color: #a020f0;">intent</span>(out)           ::<span style="color: #a0522d;"> delta_p(elec_num, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
 
   <span style="color: #228b22;">double precision</span>        ::<span style="color: #a0522d;"> een_rescaled_delta_e(elec_num)</span>
 
@@ -1905,7 +1944,7 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n(context,  &amp;rescaled_een_en_dista
               dn = een_rescaled_single_n(a,c,nw) - een_rescaled_n(num,a,c,nw)
               dn2 = dn + een_rescaled_n(num,a,c,nw)
               <span style="color: #a020f0;">do</span> j=1,elec_num
-                delta_p(j,a,c,i,nw) = een_rescaled_e(j,num,i,nw)*dn + een_rescaled_delta_e(j) * dn2
+                 delta_p(j,a,c,i,nw) = een_rescaled_e(j,num,i,nw)*dn + een_rescaled_delta_e(j) * dn2
               <span style="color: #a020f0;">enddo</span>
            <span style="color: #a020f0;">end do</span>
         <span style="color: #a020f0;">end do</span>
@@ -1920,14 +1959,14 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n(context,  &amp;rescaled_een_en_dista
 
   <span style="color: #a020f0;">end do</span>
 
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_delta_p_doc_f</span>
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_delta_p_doc</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1a70ac3" class="outline-3">
-<h3 id="org1a70ac3"><span class="section-number-3">8.4</span> test</h3>
+<div id="outline-container-org62f0c3d" class="outline-3">
+<h3 id="org62f0c3d"><span class="section-number-3">8.4</span> test</h3>
 <div class="outline-text-3" id="text-8-4">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -1980,12 +2019,12 @@ rc = qmckl_get_jastrow_champ_tmp_c(context,  &amp;p_new[0][0][0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-org8e281f2" class="outline-2">
-<h2 id="org8e281f2"><span class="section-number-2">9</span> Delta e-e-n</h2>
+<div id="outline-container-orgee9087d" class="outline-2">
+<h2 id="orgee9087d"><span class="section-number-2">9</span> Delta e-e-n</h2>
 <div class="outline-text-2" id="text-9">
 </div>
-<div id="outline-container-orgbc6e39d" class="outline-3">
-<h3 id="orgbc6e39d"><span class="section-number-3">9.1</span> get</h3>
+<div id="outline-container-org92b6153" class="outline-3">
+<h3 id="org92b6153"><span class="section-number-3">9.1</span> get</h3>
 <div class="outline-text-3" id="text-9-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2012,10 +2051,10 @@ rc = qmckl_get_jastrow_champ_tmp_c(context,  &amp;p_new[0][0][0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-org9da86cb" class="outline-3">
-<h3 id="org9da86cb"><span class="section-number-3">9.2</span> Compute</h3>
+<div id="outline-container-org9d78fc0" class="outline-3">
+<h3 id="org9d78fc0"><span class="section-number-3">9.2</span> Compute</h3>
 <div class="outline-text-3" id="text-9-2">
-<table id="orgb5241b5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orga1eeb4e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2151,25 +2190,26 @@ rc = qmckl_get_jastrow_champ_tmp_c(context,  &amp;p_new[0][0][0][0][0]);
 </table>
 
 <div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_jastrow_champ_factor_single_een_doc_f( </span><span style="color: #a020f0;">&amp;</span>
+<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_jastrow_champ_factor_single_een_doc( </span><span style="color: #a020f0;">&amp;</span>
      context, num_in, walk_num, elec_num, nucl_num, cord_num,   <span style="color: #a020f0;">&amp;</span>
      dim_c_vector, c_vector_full, lkpm_combined_index, <span style="color: #a020f0;">&amp;</span>
      tmp_c, delta_p, een_rescaled_n, een_rescaled_e, een_rescaled_single_n, <span style="color: #a020f0;">&amp;</span>
      een_rescaled_single_e, delta_een) <span style="color: #a020f0;">&amp;</span>
-     <span style="color: #a020f0;">result</span>(info)
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
   <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
   <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
   <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> num_in, walk_num, elec_num, cord_num, nucl_num, dim_c_vector</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> lkpm_combined_index(dim_c_vector,4)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> c_vector_full(nucl_num, dim_c_vector)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> tmp_c(elec_num, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> delta_p(elec_num, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n(elec_num, nucl_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e(elec_num, elec_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_n(nucl_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_e(elec_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> delta_een(walk_num)</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> num_in, walk_num, elec_num, cord_num, nucl_num, dim_c_vector</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> lkpm_combined_index(dim_c_vector,4)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> c_vector_full(nucl_num, dim_c_vector)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> tmp_c(elec_num, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> delta_p(elec_num, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n(elec_num, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e(elec_num, elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_n(nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_e(elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> delta_een(walk_num)</span>
 
   <span style="color: #228b22;">double precision</span>        ::<span style="color: #a0522d;"> delta_c(nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
   <span style="color: #228b22;">double precision</span>        ::<span style="color: #a0522d;"> delta_c2(elec_num, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
@@ -2217,14 +2257,14 @@ rc = qmckl_get_jastrow_champ_tmp_c(context,  &amp;p_new[0][0][0][0][0]);
      <span style="color: #a020f0;">end do</span>
   <span style="color: #a020f0;">end do</span>
 
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_factor_single_een_doc_f</span>
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_factor_single_een_doc</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org668a4d4" class="outline-3">
-<h3 id="org668a4d4"><span class="section-number-3">9.3</span> test</h3>
+<div id="outline-container-orgbecce6a" class="outline-3">
+<h3 id="orgbecce6a"><span class="section-number-3">9.3</span> test</h3>
 <div class="outline-text-3" id="text-9-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -2278,12 +2318,12 @@ rc = qmckl_get_jastrow_champ_factor_een(context, &amp;jastrow_een_new[0], walk_n
 </div>
 </div>
 
-<div id="outline-container-org3b4f0fd" class="outline-2">
-<h2 id="org3b4f0fd"><span class="section-number-2">10</span> ee distance rescaled single point</h2>
+<div id="outline-container-orgeb5f649" class="outline-2">
+<h2 id="orgeb5f649"><span class="section-number-2">10</span> ee distance rescaled single point</h2>
 <div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-org76f8c45" class="outline-3">
-<h3 id="org76f8c45"><span class="section-number-3">10.1</span> Get</h3>
+<div id="outline-container-org605faef" class="outline-3">
+<h3 id="org605faef"><span class="section-number-3">10.1</span> Get</h3>
 <div class="outline-text-3" id="text-10-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2295,10 +2335,10 @@ rc = qmckl_get_jastrow_champ_factor_een(context, &amp;jastrow_een_new[0], walk_n
 </div>
 </div>
 
-<div id="outline-container-org05d7888" class="outline-3">
-<h3 id="org05d7888"><span class="section-number-3">10.2</span> Compute</h3>
+<div id="outline-container-orgfa5da17" class="outline-3">
+<h3 id="orgfa5da17"><span class="section-number-3">10.2</span> Compute</h3>
 <div class="outline-text-3" id="text-10-2">
-<table id="org7687502" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org260b08b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2413,8 +2453,8 @@ rc = qmckl_get_jastrow_champ_factor_een(context, &amp;jastrow_een_new[0], walk_n
 </div>
 </div>
 
-<div id="outline-container-org24ca35a" class="outline-3">
-<h3 id="org24ca35a"><span class="section-number-3">10.3</span> test</h3>
+<div id="outline-container-orgc9001c6" class="outline-3">
+<h3 id="orgc9001c6"><span class="section-number-3">10.3</span> test</h3>
 <div class="outline-text-3" id="text-10-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -2463,12 +2503,12 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled(context, &amp;ee_rescaled[0][0
 </div>
 </div>
 
-<div id="outline-container-orgc406f3a" class="outline-2">
-<h2 id="orgc406f3a"><span class="section-number-2">11</span> en distance rescaled single point</h2>
+<div id="outline-container-orgbbf6ba8" class="outline-2">
+<h2 id="orgbbf6ba8"><span class="section-number-2">11</span> en distance rescaled single point</h2>
 <div class="outline-text-2" id="text-11">
 </div>
-<div id="outline-container-org80ec905" class="outline-3">
-<h3 id="org80ec905"><span class="section-number-3">11.1</span> Get</h3>
+<div id="outline-container-org379eccc" class="outline-3">
+<h3 id="org379eccc"><span class="section-number-3">11.1</span> Get</h3>
 <div class="outline-text-3" id="text-11-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2480,10 +2520,10 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled(context, &amp;ee_rescaled[0][0
 </div>
 </div>
 
-<div id="outline-container-org625f0e6" class="outline-3">
-<h3 id="org625f0e6"><span class="section-number-3">11.2</span> Compute</h3>
+<div id="outline-container-org922a974" class="outline-3">
+<h3 id="org922a974"><span class="section-number-3">11.2</span> Compute</h3>
 <div class="outline-text-3" id="text-11-2">
-<table id="orgc7c707b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org22d5700" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2572,8 +2612,8 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled(context, &amp;ee_rescaled[0][0
 
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">function</span> <span style="color: #0000ff;">qmckl_compute_en_rescaled_single_doc</span>(context, <span style="color: #a020f0;">&amp;</span>
-     nucl_num, type_nucl_num, <span style="color: #a020f0;">&amp;</span>
-     type_nucl_vector, rescale_factor_en, walk_num, single_en_distance, en_rescaled_single) <span style="color: #a020f0;">&amp;</span>
+     nucl_num, type_nucl_num, type_nucl_vector, rescale_factor_en, <span style="color: #a020f0;">&amp;</span>
+     walk_num, single_en_distance, en_rescaled_single) <span style="color: #a020f0;">&amp;</span>
      <span style="color: #a020f0;">bind</span>(C) <span style="color: #a020f0;">result</span>(info)
   <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
   <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -2622,8 +2662,8 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled(context, &amp;ee_rescaled[0][0
 </div>
 
 
-<div id="outline-container-org03f7623" class="outline-3">
-<h3 id="org03f7623"><span class="section-number-3">11.3</span> test</h3>
+<div id="outline-container-orgc45e694" class="outline-3">
+<h3 id="orgc45e694"><span class="section-number-3">11.3</span> test</h3>
 <div class="outline-text-3" id="text-11-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -2671,12 +2711,12 @@ rc = qmckl_get_electron_en_distance_rescaled(context, &amp;en_rescaled[0][0][0])
 </div>
 </div>
 
-<div id="outline-container-orge01977e" class="outline-2">
-<h2 id="orge01977e"><span class="section-number-2">12</span> Delta ee</h2>
+<div id="outline-container-orgc0dd128" class="outline-2">
+<h2 id="orgc0dd128"><span class="section-number-2">12</span> Delta ee</h2>
 <div class="outline-text-2" id="text-12">
 </div>
-<div id="outline-container-orgf55476a" class="outline-3">
-<h3 id="orgf55476a"><span class="section-number-3">12.1</span> Get</h3>
+<div id="outline-container-orgd36ddc3" class="outline-3">
+<h3 id="orgd36ddc3"><span class="section-number-3">12.1</span> Get</h3>
 <div class="outline-text-3" id="text-12-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2703,10 +2743,10 @@ rc = qmckl_get_electron_en_distance_rescaled(context, &amp;en_rescaled[0][0][0])
 </div>
 </div>
 
-<div id="outline-container-org7bbf4d3" class="outline-3">
-<h3 id="org7bbf4d3"><span class="section-number-3">12.2</span> Compute</h3>
+<div id="outline-container-orgbd3f023" class="outline-3">
+<h3 id="orgbd3f023"><span class="section-number-3">12.2</span> Compute</h3>
 <div class="outline-text-3" id="text-12-2">
-<table id="orgab20ad8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org8f5e044" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2911,11 +2951,12 @@ rc = qmckl_get_electron_en_distance_rescaled(context, &amp;en_rescaled[0][0][0])
 }
 </pre>
 </div>
+</div>
+</div>
 
-<p>
-** test
-</p>
-
+<div id="outline-container-org9ee7637" class="outline-3">
+<h3 id="org9ee7637"><span class="section-number-3">12.3</span> test</h3>
+<div class="outline-text-3" id="text-12-3">
 <div class="org-src-container">
 <pre class="src src-c">
 
@@ -2991,10 +3032,10 @@ rc = qmckl_get_jastrow_champ_factor_ee(context, &amp;jastrow_ee_new[0], walk_num
 </div>
 </div>
 
-<div id="outline-container-orgf02d40c" class="outline-3">
-<h3 id="orgf02d40c"><span class="section-number-3">12.3</span> Compute</h3>
-<div class="outline-text-3" id="text-12-3">
-<table id="org58aab37" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-org7cc411c" class="outline-3">
+<h3 id="org7cc411c"><span class="section-number-3">12.4</span> Compute</h3>
+<div class="outline-text-3" id="text-12-4">
+<table id="orge9517a8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3277,13 +3318,12 @@ rc = qmckl_get_jastrow_champ_factor_en(context, &amp;jastrow_en_new[0], walk_num
 </div>
 </div>
 
-
-<div id="outline-container-org49cf0fa" class="outline-2">
-<h2 id="org49cf0fa"><span class="section-number-2">13</span> En rescaled derivative een</h2>
+<div id="outline-container-org2409759" class="outline-2">
+<h2 id="org2409759"><span class="section-number-2">13</span> En rescaled derivative een</h2>
 <div class="outline-text-2" id="text-13">
 </div>
-<div id="outline-container-orgdeaa5c6" class="outline-3">
-<h3 id="orgdeaa5c6"><span class="section-number-3">13.1</span> Get</h3>
+<div id="outline-container-org6bc44ab" class="outline-3">
+<h3 id="org6bc44ab"><span class="section-number-3">13.1</span> Get</h3>
 <div class="outline-text-3" id="text-13-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3295,10 +3335,10 @@ rc = qmckl_get_jastrow_champ_factor_en(context, &amp;jastrow_en_new[0], walk_num
 </div>
 </div>
 
-<div id="outline-container-org4ba2a2d" class="outline-3">
-<h3 id="org4ba2a2d"><span class="section-number-3">13.2</span> Compute</h3>
+<div id="outline-container-org7ee6392" class="outline-3">
+<h3 id="org7ee6392"><span class="section-number-3">13.2</span> Compute</h3>
 <div class="outline-text-3" id="text-13-2">
-<table id="org088956a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orge4d5f02" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3406,28 +3446,30 @@ rc = qmckl_get_jastrow_champ_factor_en(context, &amp;jastrow_en_new[0], walk_num
 </table>
 
 <div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_een_rescaled_single_n_gl_f( </span><span style="color: #a020f0;">&amp;</span>
+<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_een_rescaled_single_n_gl( </span><span style="color: #a020f0;">&amp;</span>
      context, walk_num, nucl_num, type_nucl_num, type_nucl_vector, <span style="color: #a020f0;">&amp;</span>
-     cord_num, rescale_factor_en, <span style="color: #a020f0;">&amp;</span>
-     coord_ee, coord_n, single_en_distance, een_rescaled_single_n, een_rescaled_single_n_gl) <span style="color: #a020f0;">&amp;</span>
-     <span style="color: #a020f0;">result</span>(info)
+     cord_num, rescale_factor_en, coord_ee, coord_n, single_en_distance, <span style="color: #a020f0;">&amp;</span>
+     een_rescaled_single_n, een_rescaled_single_n_gl) <span style="color: #a020f0;">&amp;</span>
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
   <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
   <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
-  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> walk_num</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> nucl_num</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> type_nucl_num</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> type_nucl_vector(nucl_num)</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> cord_num</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> rescale_factor_en(type_nucl_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> coord_ee(3)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> coord_n(nucl_num,3)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> single_en_distance(nucl_num,walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_n(nucl_num,0:cord_num,walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> een_rescaled_single_n_gl(4,nucl_num,0:cord_num,walk_num)</span>
-  <span style="color: #228b22;">double precision</span>,<span style="color: #a020f0;">dimension</span>(:,:),<span style="color: #a020f0;">allocatable</span> ::<span style="color: #a0522d;"> elnuc_dist_gl</span>
-  <span style="color: #228b22;">double precision</span>                    ::<span style="color: #a0522d;"> x, ria_inv, kappa_l</span>
-  <span style="color: #228b22;">integer</span>*8                           ::<span style="color: #a0522d;"> i, a, k, l, nw, ii</span>
+  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> context</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> walk_num</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> nucl_num</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> type_nucl_num</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> type_nucl_vector(nucl_num)</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> cord_num</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> rescale_factor_en(type_nucl_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> coord_ee(3,walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> coord_n(nucl_num,3)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> single_en_distance(nucl_num,walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)         ::<span style="color: #a0522d;"> een_rescaled_single_n(nucl_num,0:cord_num,walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(out)        ::<span style="color: #a0522d;"> een_rescaled_single_n_gl(4,nucl_num,0:cord_num,walk_num)</span>
+
+  <span style="color: #228b22;">double precision</span>,<span style="color: #a020f0;">allocatable</span>   ::<span style="color: #a0522d;"> elnuc_dist_gl(:,:)</span>
+  <span style="color: #228b22;">double precision</span>               ::<span style="color: #a0522d;"> x, ria_inv, kappa_l</span>
+  <span style="color: #228b22;">integer</span>*8                      ::<span style="color: #a0522d;"> i, a, k, l, nw, ii</span>
 
   <span style="color: #a020f0;">allocate</span>(elnuc_dist_gl(4, nucl_num))
 
@@ -3462,7 +3504,7 @@ rc = qmckl_get_jastrow_champ_factor_en(context, &amp;jastrow_en_new[0], walk_num
      <span style="color: #a020f0;">do</span> a = 1, nucl_num
         ria_inv = 1.0d0 / single_en_distance(a, nw)
         <span style="color: #a020f0;">do</span> ii = 1, 3
-          elnuc_dist_gl(ii, a) = (coord_ee(ii) - coord_n(a, ii)) * ria_inv
+           elnuc_dist_gl(ii, a) = (coord_ee(ii,nw) - coord_n(a, ii)) * ria_inv
         <span style="color: #a020f0;">end do</span>
         elnuc_dist_gl(4, a) = 2.0d0 * ria_inv
      <span style="color: #a020f0;">end do</span>
@@ -3470,34 +3512,31 @@ rc = qmckl_get_jastrow_champ_factor_en(context, &amp;jastrow_en_new[0], walk_num
      <span style="color: #a020f0;">do</span> l = 0, cord_num
         <span style="color: #a020f0;">do</span> a = 1, nucl_num
            kappa_l = - <span style="color: #a020f0;">dble</span>(l) * rescale_factor_en(type_nucl_vector(a)+1)
-            een_rescaled_single_n_gl(1, a, l, nw) = kappa_l * elnuc_dist_gl(1, a)
-            een_rescaled_single_n_gl(2, a, l, nw) = kappa_l * elnuc_dist_gl(2, a)
-            een_rescaled_single_n_gl(3, a, l, nw) = kappa_l * elnuc_dist_gl(3, a)
-            een_rescaled_single_n_gl(4, a, l, nw) = kappa_l * elnuc_dist_gl(4, a)
+           een_rescaled_single_n_gl(1, a, l, nw) = kappa_l * elnuc_dist_gl(1, a)
+           een_rescaled_single_n_gl(2, a, l, nw) = kappa_l * elnuc_dist_gl(2, a)
+           een_rescaled_single_n_gl(3, a, l, nw) = kappa_l * elnuc_dist_gl(3, a)
+           een_rescaled_single_n_gl(4, a, l, nw) = kappa_l * (elnuc_dist_gl(4, a) + kappa_l)
 
-            een_rescaled_single_n_gl(4, a, l, nw) = een_rescaled_single_n_gl(4, a, l, nw) + <span style="color: #a020f0;">&amp;</span>
-                  kappa_l * kappa_l
-
-            een_rescaled_single_n_gl(1, a, l, nw) = een_rescaled_single_n_gl(1, a, l, nw) * <span style="color: #a020f0;">&amp;</span>
-                  een_rescaled_single_n(a, l, nw)
-            een_rescaled_single_n_gl(2, a, l, nw) = een_rescaled_single_n_gl(2, a, l, nw) * <span style="color: #a020f0;">&amp;</span>
-                  een_rescaled_single_n(a, l, nw)
-            een_rescaled_single_n_gl(3, a, l, nw) = een_rescaled_single_n_gl(3, a, l, nw) * <span style="color: #a020f0;">&amp;</span>
-                  een_rescaled_single_n(a, l, nw)
-            een_rescaled_single_n_gl(4, a, l, nw) = een_rescaled_single_n_gl(4, a, l, nw) * <span style="color: #a020f0;">&amp;</span>
-                  een_rescaled_single_n(a, l, nw)
+           een_rescaled_single_n_gl(1, a, l, nw) = een_rescaled_single_n_gl(1, a, l, nw) * <span style="color: #a020f0;">&amp;</span>
+                een_rescaled_single_n(a, l, nw)
+           een_rescaled_single_n_gl(2, a, l, nw) = een_rescaled_single_n_gl(2, a, l, nw) * <span style="color: #a020f0;">&amp;</span>
+                een_rescaled_single_n(a, l, nw)
+           een_rescaled_single_n_gl(3, a, l, nw) = een_rescaled_single_n_gl(3, a, l, nw) * <span style="color: #a020f0;">&amp;</span>
+                een_rescaled_single_n(a, l, nw)
+           een_rescaled_single_n_gl(4, a, l, nw) = een_rescaled_single_n_gl(4, a, l, nw) * <span style="color: #a020f0;">&amp;</span>
+                een_rescaled_single_n(a, l, nw)
         <span style="color: #a020f0;">end do</span>
      <span style="color: #a020f0;">end do</span>
   <span style="color: #a020f0;">end do</span>
 
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_een_rescaled_single_n_gl_f</span>
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_een_rescaled_single_n_gl</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1800f70" class="outline-3">
-<h3 id="org1800f70"><span class="section-number-3">13.3</span> test</h3>
+<div id="outline-container-orgebfe44d" class="outline-3">
+<h3 id="orgebfe44d"><span class="section-number-3">13.3</span> test</h3>
 <div class="outline-text-3" id="text-13-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -3549,12 +3588,12 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n_gl(context, &amp;een_rescaled_en_gl[
 </div>
 </div>
 
-<div id="outline-container-org80d7514" class="outline-2">
-<h2 id="org80d7514"><span class="section-number-2">14</span> EE rescaled distance derivative for een</h2>
+<div id="outline-container-org2dbc70a" class="outline-2">
+<h2 id="org2dbc70a"><span class="section-number-2">14</span> EE rescaled distance derivative for een</h2>
 <div class="outline-text-2" id="text-14">
 </div>
-<div id="outline-container-org03ddd24" class="outline-3">
-<h3 id="org03ddd24"><span class="section-number-3">14.1</span> Get</h3>
+<div id="outline-container-org1f9897d" class="outline-3">
+<h3 id="org1f9897d"><span class="section-number-3">14.1</span> Get</h3>
 <div class="outline-text-3" id="text-14-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3566,10 +3605,10 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n_gl(context, &amp;een_rescaled_en_gl[
 </div>
 </div>
 
-<div id="outline-container-org5b3f882" class="outline-3">
-<h3 id="org5b3f882"><span class="section-number-3">14.2</span> Compute</h3>
+<div id="outline-container-orga2a980f" class="outline-3">
+<h3 id="orga2a980f"><span class="section-number-3">14.2</span> Compute</h3>
 <div class="outline-text-3" id="text-14-2">
-<table id="org1f1fd95" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org2745fb9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3670,26 +3709,28 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n_gl(context, &amp;een_rescaled_en_gl[
 </table>
 
 <div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_een_rescaled_single_e_gl_f( </span><span style="color: #a020f0;">&amp;</span>
+<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_een_rescaled_single_e_gl_doc( </span><span style="color: #a020f0;">&amp;</span>
      context, num_in, walk_num, elec_num, cord_num, rescale_factor_ee,  <span style="color: #a020f0;">&amp;</span>
      coord, coord_ee, single_ee_distance, een_rescaled_single_e, een_rescaled_single_e_gl) <span style="color: #a020f0;">&amp;</span>
-     <span style="color: #a020f0;">result</span>(info)
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
   <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
   <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
-  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> num_in</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> walk_num</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> elec_num</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> cord_num</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> rescale_factor_ee</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> coord(3)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> coord_ee(elec_num,3,walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> single_ee_distance(elec_num,walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_e(elec_num,0:cord_num,walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> een_rescaled_single_e_gl(4,elec_num,0:cord_num,walk_num)</span>
-  <span style="color: #228b22;">double precision</span>,<span style="color: #a020f0;">dimension</span>(:,:),<span style="color: #a020f0;">allocatable</span>  ::<span style="color: #a0522d;"> elec_dist_gl</span>
-  <span style="color: #228b22;">double precision</span>                    ::<span style="color: #a0522d;"> x, rij_inv, kappa_l</span>
-  <span style="color: #228b22;">integer</span>*8                           ::<span style="color: #a0522d;"> i, j, k, l, nw, ii, num</span>
+  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)        ::<span style="color: #a0522d;"> context</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span> ::<span style="color: #a0522d;"> num_in</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span> ::<span style="color: #a0522d;"> walk_num</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span> ::<span style="color: #a0522d;"> elec_num</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span> ::<span style="color: #a0522d;"> cord_num</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span> ::<span style="color: #a0522d;"> rescale_factor_ee</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)        ::<span style="color: #a0522d;"> coord(3,walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)        ::<span style="color: #a0522d;"> coord_ee(elec_num,3,walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)        ::<span style="color: #a0522d;"> single_ee_distance(elec_num,walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)        ::<span style="color: #a0522d;"> een_rescaled_single_e(elec_num,0:cord_num,walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(out)       ::<span style="color: #a0522d;"> een_rescaled_single_e_gl(4,elec_num,0:cord_num,walk_num)</span>
+
+  <span style="color: #228b22;">double precision</span>,<span style="color: #a020f0;">allocatable</span>   ::<span style="color: #a0522d;"> elec_dist_gl(:,:)</span>
+  <span style="color: #228b22;">double precision</span>               ::<span style="color: #a0522d;"> x, rij_inv, kappa_l</span>
+  <span style="color: #228b22;">integer</span>*8                      ::<span style="color: #a0522d;"> i, j, k, l, nw, ii, num</span>
 
   num = num_in + 1
 
@@ -3717,45 +3758,42 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n_gl(context, &amp;een_rescaled_en_gl[
      <span style="color: #a020f0;">return</span>
   <span style="color: #a020f0;">endif</span>
 
-!   <span style="color: #b22222;">Not necessary: should be set to zero by qmckl_malloc</span>
-!   <span style="color: #b22222;">een_rescaled_single_e_gl = 0.0d0</span>
+  !   <span style="color: #b22222;">Not necessary: should be set to zero by qmckl_malloc</span>
+  !   <span style="color: #b22222;">een_rescaled_single_e_gl = 0.0d0</span>
 
   ! <span style="color: #b22222;">Prepare table of exponentiated distances raised to appropriate power</span>
 
   <span style="color: #a020f0;">do</span> nw = 1, walk_num
-    <span style="color: #a020f0;">do</span> i = 1, elec_num
+     <span style="color: #a020f0;">do</span> i = 1, elec_num
         rij_inv = 1.0d0 / single_ee_distance(i, nw)
         <span style="color: #a020f0;">do</span> ii = 1, 3
-          elec_dist_gl(ii, i) = (coord(ii) - coord_ee(i, ii, nw)) * rij_inv
+           elec_dist_gl(ii, i) = (coord(ii,nw) - coord_ee(i, ii, nw)) * rij_inv
         <span style="color: #a020f0;">end do</span>
         elec_dist_gl(4, i) = 2.0d0 * rij_inv
-      <span style="color: #a020f0;">end do</span>
+     <span style="color: #a020f0;">end do</span>
 
-    elec_dist_gl(:, num) = 0.0d0
+     elec_dist_gl(:, num) = 0.0d0
 
-    <span style="color: #a020f0;">do</span> l = 1, cord_num
-      kappa_l = - <span style="color: #a020f0;">dble</span>(l) * rescale_factor_ee
-      <span style="color: #a020f0;">do</span> i = 1, elec_num
-          een_rescaled_single_e_gl(1, i, l, nw) = kappa_l * elec_dist_gl(1, i)
-          een_rescaled_single_e_gl(2, i, l, nw) = kappa_l * elec_dist_gl(2, i)
-          een_rescaled_single_e_gl(3, i, l, nw) = kappa_l * elec_dist_gl(3, i)
-          een_rescaled_single_e_gl(4, i, l, nw) = kappa_l * elec_dist_gl(4, i)
+     <span style="color: #a020f0;">do</span> l = 1, cord_num
+        kappa_l = - <span style="color: #a020f0;">dble</span>(l) * rescale_factor_ee
+        <span style="color: #a020f0;">do</span> i = 1, elec_num
+           een_rescaled_single_e_gl(1, i, l, nw) = kappa_l * elec_dist_gl(1, i)
+           een_rescaled_single_e_gl(2, i, l, nw) = kappa_l * elec_dist_gl(2, i)
+           een_rescaled_single_e_gl(3, i, l, nw) = kappa_l * elec_dist_gl(3, i)
+           een_rescaled_single_e_gl(4, i, l, nw) = kappa_l * (elec_dist_gl(4, i) + kappa_l)
 
-          een_rescaled_single_e_gl(4, i, l, nw) = een_rescaled_single_e_gl(4, i, l, nw) + <span style="color: #a020f0;">&amp;</span>
-                kappa_l * kappa_l
+           een_rescaled_single_e_gl(1,i,l,nw) = een_rescaled_single_e_gl(1,i,l,nw) * een_rescaled_single_e(i,l,nw)
+           een_rescaled_single_e_gl(2,i,l,nw) = een_rescaled_single_e_gl(2,i,l,nw) * een_rescaled_single_e(i,l,nw)
+           een_rescaled_single_e_gl(3,i,l,nw) = een_rescaled_single_e_gl(3,i,l,nw) * een_rescaled_single_e(i,l,nw)
+           een_rescaled_single_e_gl(4,i,l,nw) = een_rescaled_single_e_gl(4,i,l,nw) * een_rescaled_single_e(i,l,nw)
 
-          een_rescaled_single_e_gl(1,i,l,nw) = een_rescaled_single_e_gl(1,i,l,nw) * een_rescaled_single_e(i,l,nw)
-          een_rescaled_single_e_gl(2,i,l,nw) = een_rescaled_single_e_gl(2,i,l,nw) * een_rescaled_single_e(i,l,nw)
-          een_rescaled_single_e_gl(3,i,l,nw) = een_rescaled_single_e_gl(3,i,l,nw) * een_rescaled_single_e(i,l,nw)
-          een_rescaled_single_e_gl(4,i,l,nw) = een_rescaled_single_e_gl(4,i,l,nw) * een_rescaled_single_e(i,l,nw)
-
-    <span style="color: #a020f0;">end do</span>
+        <span style="color: #a020f0;">end do</span>
+     <span style="color: #a020f0;">end do</span>
   <span style="color: #a020f0;">end do</span>
-<span style="color: #a020f0;">end do</span>
 
 
 
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_een_rescaled_single_e_gl_f</span>
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_een_rescaled_single_e_gl_doc</span>
 </pre>
 </div>
 
@@ -3786,8 +3824,8 @@ rc = qmckl_get_jastrow_champ_een_rescaled_n_gl(context, &amp;een_rescaled_en_gl[
 </div>
 </div>
 
-<div id="outline-container-orgb061d13" class="outline-3">
-<h3 id="orgb061d13"><span class="section-number-3">14.3</span> test</h3>
+<div id="outline-container-org52f6543" class="outline-3">
+<h3 id="org52f6543"><span class="section-number-3">14.3</span> test</h3>
 <div class="outline-text-3" id="text-14-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -3852,13 +3890,12 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
 </div>
 </div>
 
-
-<div id="outline-container-org4f9a568" class="outline-2">
-<h2 id="org4f9a568"><span class="section-number-2">15</span> gl delta p</h2>
+<div id="outline-container-org91bed8c" class="outline-2">
+<h2 id="org91bed8c"><span class="section-number-2">15</span> gl delta p</h2>
 <div class="outline-text-2" id="text-15">
 </div>
-<div id="outline-container-org6933cd1" class="outline-3">
-<h3 id="org6933cd1"><span class="section-number-3">15.1</span> Get</h3>
+<div id="outline-container-orgf97f8e8" class="outline-3">
+<h3 id="orgf97f8e8"><span class="section-number-3">15.1</span> Get</h3>
 <div class="outline-text-3" id="text-15-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3870,14 +3907,14 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
 </div>
 </div>
 
-<div id="outline-container-orgeca6e28" class="outline-3">
-<h3 id="orgeca6e28"><span class="section-number-3">15.2</span> provide</h3>
+<div id="outline-container-orga9baa38" class="outline-3">
+<h3 id="orga9baa38"><span class="section-number-3">15.2</span> provide</h3>
 </div>
 
-<div id="outline-container-orge7f11ef" class="outline-3">
-<h3 id="orge7f11ef"><span class="section-number-3">15.3</span> Compute</h3>
+<div id="outline-container-orga3805f5" class="outline-3">
+<h3 id="orga3805f5"><span class="section-number-3">15.3</span> Compute</h3>
 <div class="outline-text-3" id="text-15-3">
-<table id="org34b8194" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org15eaf15" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4006,34 +4043,34 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
 </table>
 
 <div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_jastrow_champ_delta_p_gl_doc_f( </span><span style="color: #a020f0;">&amp;</span>
+<pre class="src src-f90"><span style="color: #228b22;">integer</span><span style="color: #a0522d;"> function qmckl_compute_jastrow_champ_delta_p_gl_doc( </span><span style="color: #a020f0;">&amp;</span>
      context, num_in, walk_num, elec_num, nucl_num, cord_num,   <span style="color: #a020f0;">&amp;</span>
      een_rescaled_n, een_rescaled_e, een_rescaled_single_n, een_rescaled_single_e, <span style="color: #a020f0;">&amp;</span>
      een_rescaled_n_gl, een_rescaled_e_gl, een_rescaled_single_n_gl, een_rescaled_single_e_gl, delta_p_gl) <span style="color: #a020f0;">&amp;</span>
-     <span style="color: #a020f0;">result</span>(info)
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
   <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
   <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
   <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
-  <span style="color: #228b22;">integer</span>*8             , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> num_in, walk_num, elec_num, cord_num, nucl_num</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n(elec_num, nucl_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e(elec_num, elec_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_n(nucl_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_e(elec_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n_gl(elec_num, 4, nucl_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e_gl(elec_num, 4, elec_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_n_gl(4, nucl_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_e_gl(4,elec_num, 0:cord_num, walk_num)</span>
-  <span style="color: #228b22;">double precision</span>      , <span style="color: #a020f0;">intent</span>(out)  ::<span style="color: #a0522d;"> delta_p_gl(elec_num,4,nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> num_in, walk_num, elec_num, cord_num, nucl_num</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n(elec_num, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e(elec_num, elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_n(nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_e(elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n_gl(elec_num, 4, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e_gl(elec_num, 4, elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_n_gl(4, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_single_e_gl(4,elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(out)  ::<span style="color: #a0522d;"> delta_p_gl(elec_num,4,nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
 
   <span style="color: #228b22;">double precision</span>        ::<span style="color: #a0522d;"> delta_e_gl(4,elec_num, 0:cord_num, walk_num)</span>
 
   <span style="color: #228b22;">double precision</span>        ::<span style="color: #a0522d;"> delta_e_gl_2(elec_num, 0:cord_num, walk_num)</span>
   <span style="color: #228b22;">double precision</span>        ::<span style="color: #a0522d;"> een_rescaled_e_gl_2(elec_num, elec_num, 0:cord_num, walk_num)</span>
 
-  <span style="color: #228b22;">double precision</span>        ::<span style="color: #a0522d;"> een_rescaled_delta_n(nucl_num, 0:cord_num, walk_num)</span>
-
-  <span style="color: #228b22;">double precision</span>        ::<span style="color: #a0522d;"> delta_c(nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
-  <span style="color: #228b22;">double precision</span>        ::<span style="color: #a0522d;"> delta_c2(elec_num, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">double precision</span>        ::<span style="color: #a0522d;"> een_rescaled_delta_n(nucl_num, 0:cord_num)</span>
+  <span style="color: #228b22;">double precision</span>        ::<span style="color: #a0522d;"> delta_c(nucl_num,0:cord_num)</span>
+  <span style="color: #228b22;">double precision</span>        ::<span style="color: #a0522d;"> delta_c2(elec_num, nucl_num,0:cord_num)</span>
 
   <span style="color: #228b22;">integer</span>*8 ::<span style="color: #a0522d;"> i, a, j, l, k, p, m, n, nw, num</span>
   <span style="color: #228b22;">double precision</span> ::<span style="color: #a0522d;"> accu, accu2, cn</span>
@@ -4058,8 +4095,6 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
 
   delta_e_gl(:, num, :, :) = 0.0d0
 
-  een_rescaled_delta_n(:,:,:) = een_rescaled_single_n(:,:,:) - een_rescaled_n(num, :, :, :)
-
   delta_c = 0.0d0
   delta_c2 = 0.0d0
   delta_p_gl = 0.0d0
@@ -4070,6 +4105,8 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
      ! <span style="color: #b22222;">Compute using loops</span>
 
      <span style="color: #a020f0;">do</span> nw=1, walk_num
+        een_rescaled_delta_n(:,:) = een_rescaled_single_n(:,:,nw) - een_rescaled_n(num, :, :, nw)
+
         <span style="color: #a020f0;">do</span> m=0, cord_num-1
            <span style="color: #a020f0;">do</span> a = 1, nucl_num
               <span style="color: #a020f0;">do</span> l=0, cord_num
@@ -4082,10 +4119,10 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
 
 
                        delta_p_gl(j,k,a,l,m,nw) =   delta_p_gl(j,k,a,l,m,nw) + <span style="color: #a020f0;">&amp;</span>
-                            een_rescaled_e_gl(j,k,num,m,nw) * een_rescaled_delta_n(a,l,nw)
+                            een_rescaled_e_gl(j,k,num,m,nw) * een_rescaled_delta_n(a,l)
 
                        delta_p_gl(j,k,a,l,m,nw) =   delta_p_gl(j,k,a,l,m,nw) - <span style="color: #a020f0;">&amp;</span>
-                            delta_e_gl(k,j,m,nw) * een_rescaled_delta_n(a,l,nw)
+                            delta_e_gl(k,j,m,nw) * een_rescaled_delta_n(a,l)
 
 
                     <span style="color: #a020f0;">end do</span>
@@ -4095,10 +4132,10 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
                          delta_e_gl(4,j,m,nw) * een_rescaled_n(num,a,l,nw)
 
                     delta_p_gl(j,4,a,l,m,nw) =   delta_p_gl(j,4,a,l,m,nw) + <span style="color: #a020f0;">&amp;</span>
-                         een_rescaled_e_gl(num,4,j,m,nw) * een_rescaled_delta_n(a,l,nw)
+                         een_rescaled_e_gl(num,4,j,m,nw) * een_rescaled_delta_n(a,l)
 
                     delta_p_gl(j,4,a,l,m,nw) =   delta_p_gl(j,4,a,l,m,nw) + <span style="color: #a020f0;">&amp;</span>
-                         delta_e_gl(4,j,m,nw) * een_rescaled_delta_n(a,l,nw)
+                         delta_e_gl(4,j,m,nw) * een_rescaled_delta_n(a,l)
 
                  <span style="color: #a020f0;">end do</span>
               <span style="color: #a020f0;">end do</span>
@@ -4111,6 +4148,7 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
      ! <span style="color: #b22222;">Use DGEMM</span>
 
      <span style="color: #a020f0;">do</span> nw=1, walk_num
+        een_rescaled_delta_n(:,:) = een_rescaled_single_n(:,:,nw) - een_rescaled_n(num, :, :, nw)
         <span style="color: #a020f0;">do</span> m=0, cord_num-1
 
            <span style="color: #a020f0;">do</span> k = 1, 3
@@ -4121,35 +4159,35 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
                    delta_e_gl_2(1,m,nw),elec_num,     <span style="color: #a020f0;">&amp;</span>
                    een_rescaled_n(1,1,0,nw),elec_num, <span style="color: #a020f0;">&amp;</span>
                    0.0d0,                                       <span style="color: #a020f0;">&amp;</span>
-                   delta_c(1,0,m,nw),1_8)
+                   delta_c,1_8)
 
               info = qmckl_dgemm(context, <span style="color: #8b2252;">'N'</span>, <span style="color: #8b2252;">'N'</span>, elec_num, nucl_num * (cord_num+1), 1_8, -1.0d0, <span style="color: #a020f0;">&amp;</span>
                    delta_e_gl_2(1,m,nw),elec_num,               <span style="color: #a020f0;">&amp;</span>
                    een_rescaled_n(num,1,0,nw),elec_num,         <span style="color: #a020f0;">&amp;</span>
                    0.0d0,                                       <span style="color: #a020f0;">&amp;</span>
-                   delta_c2(1,1,0,m,nw),elec_num)
+                   delta_c2(1,1,0),elec_num)
 
-              delta_c2(num,:,:,m,nw) = delta_c2(num,:,:,m,nw) + delta_c(:,:,m,nw)        
-              delta_p_gl(:,k,:,:,m,nw) = delta_c2(:,:,:,m,nw)
+              delta_c2(num,:,:) = delta_c2(num,:,:) + delta_c(:,:)        
+              delta_p_gl(:,k,:,:,m,nw) = delta_c2(:,:,:)
 
 
               info = qmckl_dgemm(context, <span style="color: #8b2252;">'N'</span>, <span style="color: #8b2252;">'T'</span>, elec_num, nucl_num * (cord_num+1), 1_8, 1.0d0, <span style="color: #a020f0;">&amp;</span>
                    een_rescaled_e_gl_2(:,num,m,nw),elec_num,               <span style="color: #a020f0;">&amp;</span>
-                   een_rescaled_delta_n(:,:,nw),nucl_num* (cord_num+1),    <span style="color: #a020f0;">&amp;</span>
+                   een_rescaled_delta_n,nucl_num* (cord_num+1),    <span style="color: #a020f0;">&amp;</span>
                    0.0d0,                                       <span style="color: #a020f0;">&amp;</span>
-                   delta_c2(:,:,:,m,nw),elec_num)
+                   delta_c2,elec_num)
 
 
 
-              delta_p_gl(:,k,:,:,m,nw) = delta_p_gl(:,k,:,:,m,nw) + delta_c2(:,:,:,m,nw)
+              delta_p_gl(:,k,:,:,m,nw) = delta_p_gl(:,k,:,:,m,nw) + delta_c2(:,:,:)
 
               info = qmckl_dgemm(context, <span style="color: #8b2252;">'N'</span>, <span style="color: #8b2252;">'T'</span>, elec_num, nucl_num * (cord_num+1), 1_8, -1.0d0, <span style="color: #a020f0;">&amp;</span>
                    delta_e_gl_2(:,m,nw),elec_num,                       <span style="color: #a020f0;">&amp;</span>
-                   een_rescaled_delta_n(:,:,nw),nucl_num* (cord_num+1), <span style="color: #a020f0;">&amp;</span>
+                   een_rescaled_delta_n,nucl_num* (cord_num+1), <span style="color: #a020f0;">&amp;</span>
                    0.0d0,                                               <span style="color: #a020f0;">&amp;</span>
-                   delta_c2(:,:,:,m,nw),elec_num)
+                   delta_c2(:,:,:),elec_num)
 
-              delta_p_gl(:,k,:,:,m,nw) = delta_p_gl(:,k,:,:,m,nw) + delta_c2(:,:,:,m,nw)
+              delta_p_gl(:,k,:,:,m,nw) = delta_p_gl(:,k,:,:,m,nw) + delta_c2(:,:,:)
 
 
            <span style="color: #a020f0;">end do</span>
@@ -4161,49 +4199,48 @@ rc = qmckl_get_jastrow_champ_een_rescaled_e_gl(context, &amp;een_rescaled_ee_gl[
                 delta_e_gl_2(1,m,nw),elec_num,               <span style="color: #a020f0;">&amp;</span>
                 een_rescaled_n(1,1,0,nw),elec_num,           <span style="color: #a020f0;">&amp;</span>
                 0.0d0,                                       <span style="color: #a020f0;">&amp;</span>
-                delta_c(1,0,m,nw),1_8)
+                delta_c,1_8)
 
            info = qmckl_dgemm(context, <span style="color: #8b2252;">'N'</span>, <span style="color: #8b2252;">'N'</span>, elec_num, nucl_num * (cord_num+1), 1_8, 1.0d0,     <span style="color: #a020f0;">&amp;</span>
                 delta_e_gl_2(1,m,nw),elec_num,               <span style="color: #a020f0;">&amp;</span>
                 een_rescaled_n(num,1,0,nw),elec_num,         <span style="color: #a020f0;">&amp;</span>
                 0.0d0,                                       <span style="color: #a020f0;">&amp;</span>
-                delta_c2(1,1,0,m,nw),elec_num)
+                delta_c2,elec_num)
 
-           delta_c2(num,:,:,m,nw) = delta_c2(num,:,:,m,nw) + delta_c(:,:,m,nw)        
-           delta_p_gl(:,k,:,:,m,nw) = delta_c2(:,:,:,m,nw)
+           delta_c2(num,:,:) = delta_c2(num,:,:) + delta_c(:,:)        
+           delta_p_gl(:,k,:,:,m,nw) = delta_c2(:,:,:)
 
 
            info = qmckl_dgemm(context, <span style="color: #8b2252;">'N'</span>, <span style="color: #8b2252;">'T'</span>, elec_num, nucl_num * (cord_num+1), 1_8, 1.0d0,     <span style="color: #a020f0;">&amp;</span>
                 een_rescaled_e_gl_2(:,num,m,nw),elec_num,                     <span style="color: #a020f0;">&amp;</span>
-                een_rescaled_delta_n(:,:,nw),nucl_num* (cord_num+1),          <span style="color: #a020f0;">&amp;</span>
+                een_rescaled_delta_n,nucl_num* (cord_num+1),          <span style="color: #a020f0;">&amp;</span>
                 0.0d0,                                       <span style="color: #a020f0;">&amp;</span>
-                delta_c2(:,:,:,m,nw),elec_num)
+                delta_c2(:,:,:),elec_num)
 
 
-           delta_p_gl(:,k,:,:,m,nw) = delta_p_gl(:,k,:,:,m,nw) + delta_c2(:,:,:,m,nw)
+           delta_p_gl(:,k,:,:,m,nw) = delta_p_gl(:,k,:,:,m,nw) + delta_c2(:,:,:)
 
            info = qmckl_dgemm(context, <span style="color: #8b2252;">'N'</span>, <span style="color: #8b2252;">'T'</span>, elec_num, nucl_num * (cord_num+1), 1_8, 1.0d0,     <span style="color: #a020f0;">&amp;</span>
                 delta_e_gl_2(:,m,nw),elec_num,                     <span style="color: #a020f0;">&amp;</span>
-                een_rescaled_delta_n(:,:,nw),nucl_num* (cord_num+1),                     <span style="color: #a020f0;">&amp;</span>
+                een_rescaled_delta_n,nucl_num* (cord_num+1),                     <span style="color: #a020f0;">&amp;</span>
                 0.0d0,                                       <span style="color: #a020f0;">&amp;</span>
-                delta_c2(:,:,:,m,nw),elec_num)
+                delta_c2(:,:,:),elec_num)
 
-           delta_p_gl(:,k,:,:,m,nw) = delta_p_gl(:,k,:,:,m,nw) + delta_c2(:,:,:,m,nw)
+           delta_p_gl(:,k,:,:,m,nw) = delta_p_gl(:,k,:,:,m,nw) + delta_c2(:,:,:)
         <span style="color: #a020f0;">end do</span>
      <span style="color: #a020f0;">end do</span>
   <span style="color: #a020f0;">end if</span>
 
 
 
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_delta_p_gl_doc_f</span>
-
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_delta_p_gl_doc</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org93d9339" class="outline-3">
-<h3 id="org93d9339"><span class="section-number-3">15.4</span> test</h3>
+<div id="outline-container-orgdea2a54" class="outline-3">
+<h3 id="orgdea2a54"><span class="section-number-3">15.4</span> test</h3>
 <div class="outline-text-3" id="text-15-4">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -4264,12 +4301,12 @@ rc = qmckl_get_jastrow_champ_dtmp_c(context,  &amp;p_gl_new[0][0][0][0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-org6fdf4ed" class="outline-2">
-<h2 id="org6fdf4ed"><span class="section-number-2">16</span> Delta grad e-e-n</h2>
+<div id="outline-container-orgd9ea4ca" class="outline-2">
+<h2 id="orgd9ea4ca"><span class="section-number-2">16</span> Delta grad e-e-n</h2>
 <div class="outline-text-2" id="text-16">
 </div>
-<div id="outline-container-org8c2bf39" class="outline-3">
-<h3 id="org8c2bf39"><span class="section-number-3">16.1</span> get</h3>
+<div id="outline-container-org9bdcc51" class="outline-3">
+<h3 id="org9bdcc51"><span class="section-number-3">16.1</span> get</h3>
 <div class="outline-text-3" id="text-16-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -4296,10 +4333,10 @@ rc = qmckl_get_jastrow_champ_dtmp_c(context,  &amp;p_gl_new[0][0][0][0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-orgee42d8d" class="outline-3">
-<h3 id="orgee42d8d"><span class="section-number-3">16.2</span> Compute</h3>
+<div id="outline-container-org560b5c1" class="outline-3">
+<h3 id="org560b5c1"><span class="section-number-3">16.2</span> Compute</h3>
 <div class="outline-text-3" id="text-16-2">
-<table id="org0aea503" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgd73e1c4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4551,8 +4588,8 @@ rc = qmckl_get_jastrow_champ_dtmp_c(context,  &amp;p_gl_new[0][0][0][0][0][0]);
 </div>
 </div>
 
-<div id="outline-container-orge6fefc5" class="outline-3">
-<h3 id="orge6fefc5"><span class="section-number-3">16.3</span> test</h3>
+<div id="outline-container-org92aa6ff" class="outline-3">
+<h3 id="org92aa6ff"><span class="section-number-3">16.3</span> test</h3>
 <div class="outline-text-3" id="text-16-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -4606,12 +4643,12 @@ rc = qmckl_get_jastrow_champ_factor_een_gl(context, &amp;een_gl_new[0][0][0], wa
 </div>
 </div>
 
-<div id="outline-container-orgc03584c" class="outline-2">
-<h2 id="orgc03584c"><span class="section-number-2">17</span> ee distance rescaled single point gl</h2>
+<div id="outline-container-org28b7d06" class="outline-2">
+<h2 id="org28b7d06"><span class="section-number-2">17</span> ee distance rescaled single point gl</h2>
 <div class="outline-text-2" id="text-17">
 </div>
-<div id="outline-container-orgbb8cea9" class="outline-3">
-<h3 id="orgbb8cea9"><span class="section-number-3">17.1</span> Get</h3>
+<div id="outline-container-orgbc03279" class="outline-3">
+<h3 id="orgbc03279"><span class="section-number-3">17.1</span> Get</h3>
 <div class="outline-text-3" id="text-17-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_ee_rescaled_single_gl</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>, <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">distance_rescaled_gl</span>);
@@ -4620,10 +4657,10 @@ rc = qmckl_get_jastrow_champ_factor_een_gl(context, &amp;een_gl_new[0][0][0], wa
 </div>
 </div>
 
-<div id="outline-container-orga24763d" class="outline-3">
-<h3 id="orga24763d"><span class="section-number-3">17.2</span> Compute</h3>
+<div id="outline-container-org531595e" class="outline-3">
+<h3 id="org531595e"><span class="section-number-3">17.2</span> Compute</h3>
 <div class="outline-text-3" id="text-17-2">
-<table id="org545cf30" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org58852c5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4790,8 +4827,8 @@ rc = qmckl_get_jastrow_champ_factor_een_gl(context, &amp;een_gl_new[0][0][0], wa
 </div>
 </div>
 
-<div id="outline-container-orgc6c96cb" class="outline-3">
-<h3 id="orgc6c96cb"><span class="section-number-3">17.3</span> test</h3>
+<div id="outline-container-org2a23a9e" class="outline-3">
+<h3 id="org2a23a9e"><span class="section-number-3">17.3</span> test</h3>
 <div class="outline-text-3" id="text-17-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -4845,12 +4882,12 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled_gl(context, &amp;ee_rescaled_g
 </div>
 </div>
 
-<div id="outline-container-org3e21427" class="outline-2">
-<h2 id="org3e21427"><span class="section-number-2">18</span> en distance rescaled single point gl</h2>
+<div id="outline-container-orgb4137d5" class="outline-2">
+<h2 id="orgb4137d5"><span class="section-number-2">18</span> en distance rescaled single point gl</h2>
 <div class="outline-text-2" id="text-18">
 </div>
-<div id="outline-container-orgfbc56ce" class="outline-3">
-<h3 id="orgfbc56ce"><span class="section-number-3">18.1</span> Get</h3>
+<div id="outline-container-orgbb05922" class="outline-3">
+<h3 id="orgbb05922"><span class="section-number-3">18.1</span> Get</h3>
 <div class="outline-text-3" id="text-18-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_en_rescaled_single_gl</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>, <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">distance_rescaled_gl</span>);
@@ -4859,14 +4896,14 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled_gl(context, &amp;ee_rescaled_g
 </div>
 </div>
 
-<div id="outline-container-org3db9fd5" class="outline-3">
-<h3 id="org3db9fd5"><span class="section-number-3">18.2</span> Provide</h3>
+<div id="outline-container-orgb63d179" class="outline-3">
+<h3 id="orgb63d179"><span class="section-number-3">18.2</span> Provide</h3>
 </div>
 
-<div id="outline-container-org65e8e32" class="outline-3">
-<h3 id="org65e8e32"><span class="section-number-3">18.3</span> Compute</h3>
+<div id="outline-container-orge71fa0f" class="outline-3">
+<h3 id="orge71fa0f"><span class="section-number-3">18.3</span> Compute</h3>
 <div class="outline-text-3" id="text-18-3">
-<table id="org7059512" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org7296e8e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5035,8 +5072,8 @@ rc = qmckl_get_jastrow_champ_ee_distance_rescaled_gl(context, &amp;ee_rescaled_g
 </div>
 </div>
 
-<div id="outline-container-org06f1235" class="outline-3">
-<h3 id="org06f1235"><span class="section-number-3">18.4</span> test</h3>
+<div id="outline-container-org379be8b" class="outline-3">
+<h3 id="org379be8b"><span class="section-number-3">18.4</span> test</h3>
 <div class="outline-text-3" id="text-18-4">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -5087,12 +5124,12 @@ rc = qmckl_get_electron_en_distance_rescaled_gl(context, &amp;en_rescaled_gl[0][
 </div>
 </div>
 
-<div id="outline-container-org528c4c8" class="outline-2">
-<h2 id="org528c4c8"><span class="section-number-2">19</span> Delta ee gl</h2>
+<div id="outline-container-org251e578" class="outline-2">
+<h2 id="org251e578"><span class="section-number-2">19</span> Delta ee gl</h2>
 <div class="outline-text-2" id="text-19">
 </div>
-<div id="outline-container-orgf2af73b" class="outline-3">
-<h3 id="orgf2af73b"><span class="section-number-3">19.1</span> Get</h3>
+<div id="outline-container-orgaae7875" class="outline-3">
+<h3 id="orgaae7875"><span class="section-number-3">19.1</span> Get</h3>
 <div class="outline-text-3" id="text-19-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -5119,10 +5156,10 @@ rc = qmckl_get_electron_en_distance_rescaled_gl(context, &amp;en_rescaled_gl[0][
 </div>
 </div>
 
-<div id="outline-container-org7ef6dbb" class="outline-3">
-<h3 id="org7ef6dbb"><span class="section-number-3">19.2</span> Compute</h3>
+<div id="outline-container-org70ed0b3" class="outline-3">
+<h3 id="org70ed0b3"><span class="section-number-3">19.2</span> Compute</h3>
 <div class="outline-text-3" id="text-19-2">
-<table id="org22ec662" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org00521fa" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5425,8 +5462,8 @@ rc = qmckl_get_electron_en_distance_rescaled_gl(context, &amp;en_rescaled_gl[0][
 </div>
 </div>
 
-<div id="outline-container-org6558996" class="outline-3">
-<h3 id="org6558996"><span class="section-number-3">19.3</span> test</h3>
+<div id="outline-container-orgbf72643" class="outline-3">
+<h3 id="orgbf72643"><span class="section-number-3">19.3</span> test</h3>
 <div class="outline-text-3" id="text-19-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -5480,12 +5517,12 @@ rc = qmckl_get_jastrow_champ_factor_ee_gl(context, &amp;ee_gl_new[0][0][0], walk
 </div>
 </div>
 
-<div id="outline-container-org168d501" class="outline-2">
-<h2 id="org168d501"><span class="section-number-2">20</span> Delta en gl</h2>
+<div id="outline-container-orge60d6d3" class="outline-2">
+<h2 id="orge60d6d3"><span class="section-number-2">20</span> Delta en gl</h2>
 <div class="outline-text-2" id="text-20">
 </div>
-<div id="outline-container-orgfe401cd" class="outline-3">
-<h3 id="orgfe401cd"><span class="section-number-3">20.1</span> Get</h3>
+<div id="outline-container-orgc35e5eb" class="outline-3">
+<h3 id="orgc35e5eb"><span class="section-number-3">20.1</span> Get</h3>
 <div class="outline-text-3" id="text-20-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -5512,10 +5549,10 @@ rc = qmckl_get_jastrow_champ_factor_ee_gl(context, &amp;ee_gl_new[0][0][0], walk
 </div>
 </div>
 
-<div id="outline-container-org7bb1bae" class="outline-3">
-<h3 id="org7bb1bae"><span class="section-number-3">20.2</span> Compute</h3>
+<div id="outline-container-org8c2ec87" class="outline-3">
+<h3 id="org8c2ec87"><span class="section-number-3">20.2</span> Compute</h3>
 <div class="outline-text-3" id="text-20-2">
-<table id="org61797e9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org0536a84" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5766,8 +5803,8 @@ rc = qmckl_get_jastrow_champ_factor_ee_gl(context, &amp;ee_gl_new[0][0][0], walk
 </div>
 </div>
 
-<div id="outline-container-org1214114" class="outline-3">
-<h3 id="org1214114"><span class="section-number-3">20.3</span> test</h3>
+<div id="outline-container-org14a3519" class="outline-3">
+<h3 id="org14a3519"><span class="section-number-3">20.3</span> test</h3>
 <div class="outline-text-3" id="text-20-3">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -5818,8 +5855,8 @@ rc = qmckl_get_jastrow_champ_factor_en_gl(context, &amp;en_gl_new[0][0][0], walk
 </div>
 </div>
 
-<div id="outline-container-orgcd7c97e" class="outline-2">
-<h2 id="orgcd7c97e"><span class="section-number-2">21</span> Accept single electron move</h2>
+<div id="outline-container-orgd41a0a9" class="outline-2">
+<h2 id="orgd41a0a9"><span class="section-number-2">21</span> Accept single electron move</h2>
 <div class="outline-text-2" id="text-21">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -5843,7 +5880,7 @@ rc = qmckl_get_jastrow_champ_factor_en_gl(context, &amp;en_gl_new[0][0][0], walk
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2024-12-11 Wed 13:19</p>
+<p class="date">Created: 2024-12-11 Wed 13:47</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

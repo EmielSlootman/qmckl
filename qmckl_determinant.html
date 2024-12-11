@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-12-11 Wed 13:19 -->
+<!-- 2024-12-11 Wed 13:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Slater Determinant</title>
@@ -324,32 +324,32 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga3c7ce0">1. Context</a>
+<li><a href="#org9c37f74">1. Context</a>
 <ul>
-<li><a href="#orgfb6a454">1.1. Data structure</a></li>
-<li><a href="#orgfd7fa7c">1.2. Access functions</a></li>
-<li><a href="#org7faa8b4">1.3. Initialization functions</a></li>
-<li><a href="#orgfb7b008">1.4. Fortran Interfaces</a></li>
-<li><a href="#orgd14777c">1.5. Test</a></li>
+<li><a href="#org148df8a">1.1. Data structure</a></li>
+<li><a href="#org1d4fc97">1.2. Access functions</a></li>
+<li><a href="#org73ccee3">1.3. Initialization functions</a></li>
+<li><a href="#orga355f96">1.4. Fortran Interfaces</a></li>
+<li><a href="#orgc04c507">1.5. Test</a></li>
 </ul>
 </li>
-<li><a href="#orgeb9c3d8">2. Computation</a>
+<li><a href="#org99b12bc">2. Computation</a>
 <ul>
-<li><a href="#org7a9dac0">2.1. Determinant matrix</a>
+<li><a href="#org368db5d">2.1. Determinant matrix</a>
 <ul>
-<li><a href="#orgbdd10b1">2.1.1. Get</a></li>
-<li><a href="#org0a07433">2.1.2. Provide</a></li>
-<li><a href="#org89ecf41">2.1.3. Compute alpha</a></li>
-<li><a href="#org0f3fb42">2.1.4. Compute beta</a></li>
-<li><a href="#org181d473">2.1.5. Test</a></li>
+<li><a href="#org7ee0460">2.1.1. Get</a></li>
+<li><a href="#orgd10c161">2.1.2. Provide</a></li>
+<li><a href="#org2d8b9f8">2.1.3. Compute alpha</a></li>
+<li><a href="#org0ff673a">2.1.4. Compute beta</a></li>
+<li><a href="#org45fe7e8">2.1.5. Test</a></li>
 </ul>
 </li>
-<li><a href="#org43d6c3c">2.2. Inverse of Determinant matrix</a>
+<li><a href="#orgb827d31">2.2. Inverse of Determinant matrix</a>
 <ul>
-<li><a href="#org455cd01">2.2.1. Get</a></li>
-<li><a href="#org10b221b">2.2.2. Provide</a></li>
-<li><a href="#org6f3315a">2.2.3. Compute alpha</a></li>
-<li><a href="#org6d02443">2.2.4. Compute beta</a></li>
+<li><a href="#orgb449d56">2.2.1. Get</a></li>
+<li><a href="#orga6c273e">2.2.2. Provide</a></li>
+<li><a href="#org437ef86">2.2.3. Compute alpha</a></li>
+<li><a href="#orga266adf">2.2.4. Compute beta</a></li>
 </ul>
 </li>
 </ul>
@@ -358,8 +358,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orga3c7ce0" class="outline-2">
-<h2 id="orga3c7ce0"><span class="section-number-2">1</span> Context</h2>
+<div id="outline-container-org9c37f74" class="outline-2">
+<h2 id="org9c37f74"><span class="section-number-2">1</span> Context</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The following arrays are stored in the context:
@@ -535,8 +535,8 @@ Computed data:
 </table>
 </div>
 
-<div id="outline-container-orgfb6a454" class="outline-3">
-<h3 id="orgfb6a454"><span class="section-number-3">1.1</span> Data structure</h3>
+<div id="outline-container-org148df8a" class="outline-3">
+<h3 id="org148df8a"><span class="section-number-3">1.1</span> Data structure</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #a020f0;">typedef</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">qmckl_determinant_struct</span> {
@@ -604,8 +604,8 @@ this mechanism.
 </div>
 </div>
 
-<div id="outline-container-orgfd7fa7c" class="outline-3">
-<h3 id="orgfd7fa7c"><span class="section-number-3">1.2</span> Access functions</h3>
+<div id="outline-container-org1d4fc97" class="outline-3">
+<h3 id="org1d4fc97"><span class="section-number-3">1.2</span> Access functions</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 When all the data for the slater determinants have been provided, the following
@@ -619,8 +619,8 @@ function returns <code>true</code>.
 </div>
 </div>
 
-<div id="outline-container-org7faa8b4" class="outline-3">
-<h3 id="org7faa8b4"><span class="section-number-3">1.3</span> Initialization functions</h3>
+<div id="outline-container-org73ccee3" class="outline-3">
+<h3 id="org73ccee3"><span class="section-number-3">1.3</span> Initialization functions</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 To set the basis set, all the following functions need to be
@@ -643,24 +643,24 @@ computed to accelerate the calculations.
 </div>
 </div>
 
-<div id="outline-container-orgfb7b008" class="outline-3">
-<h3 id="orgfb7b008"><span class="section-number-3">1.4</span> Fortran Interfaces</h3>
+<div id="outline-container-orga355f96" class="outline-3">
+<h3 id="orga355f96"><span class="section-number-3">1.4</span> Fortran Interfaces</h3>
 </div>
-<div id="outline-container-orgd14777c" class="outline-3">
-<h3 id="orgd14777c"><span class="section-number-3">1.5</span> Test</h3>
+<div id="outline-container-orgc04c507" class="outline-3">
+<h3 id="orgc04c507"><span class="section-number-3">1.5</span> Test</h3>
 </div>
 </div>
-<div id="outline-container-orgeb9c3d8" class="outline-2">
-<h2 id="orgeb9c3d8"><span class="section-number-2">2</span> Computation</h2>
+<div id="outline-container-org99b12bc" class="outline-2">
+<h2 id="org99b12bc"><span class="section-number-2">2</span> Computation</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org7a9dac0" class="outline-3">
-<h3 id="org7a9dac0"><span class="section-number-3">2.1</span> Determinant matrix</h3>
+<div id="outline-container-org368db5d" class="outline-3">
+<h3 id="org368db5d"><span class="section-number-3">2.1</span> Determinant matrix</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
 
-<div id="outline-container-orgbdd10b1" class="outline-4">
-<h4 id="orgbdd10b1"><span class="section-number-4">2.1.1</span> Get</h4>
+<div id="outline-container-org7ee0460" class="outline-4">
+<h4 id="org7ee0460"><span class="section-number-4">2.1.1</span> Get</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_det_vgl_alpha</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>, <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">det_vgl_alpha</span>);
@@ -670,14 +670,14 @@ computed to accelerate the calculations.
 </div>
 </div>
 
-<div id="outline-container-org0a07433" class="outline-4">
-<h4 id="org0a07433"><span class="section-number-4">2.1.2</span> Provide</h4>
+<div id="outline-container-orgd10c161" class="outline-4">
+<h4 id="orgd10c161"><span class="section-number-4">2.1.2</span> Provide</h4>
 </div>
 
-<div id="outline-container-org89ecf41" class="outline-4">
-<h4 id="org89ecf41"><span class="section-number-4">2.1.3</span> Compute alpha</h4>
+<div id="outline-container-org2d8b9f8" class="outline-4">
+<h4 id="org2d8b9f8"><span class="section-number-4">2.1.3</span> Compute alpha</h4>
 <div class="outline-text-4" id="text-2-1-3">
-<table id="orgad37d5b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgb333a6e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -851,10 +851,10 @@ computed to accelerate the calculations.
 </div>
 </div>
 
-<div id="outline-container-org0f3fb42" class="outline-4">
-<h4 id="org0f3fb42"><span class="section-number-4">2.1.4</span> Compute beta</h4>
+<div id="outline-container-org0ff673a" class="outline-4">
+<h4 id="org0ff673a"><span class="section-number-4">2.1.4</span> Compute beta</h4>
 <div class="outline-text-4" id="text-2-1-4">
-<table id="orgc3e15c4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org7533fcd" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1028,18 +1028,18 @@ computed to accelerate the calculations.
 </div>
 </div>
 
-<div id="outline-container-org181d473" class="outline-4">
-<h4 id="org181d473"><span class="section-number-4">2.1.5</span> Test</h4>
+<div id="outline-container-org45fe7e8" class="outline-4">
+<h4 id="org45fe7e8"><span class="section-number-4">2.1.5</span> Test</h4>
 </div>
 </div>
 
-<div id="outline-container-org43d6c3c" class="outline-3">
-<h3 id="org43d6c3c"><span class="section-number-3">2.2</span> Inverse of Determinant matrix</h3>
+<div id="outline-container-orgb827d31" class="outline-3">
+<h3 id="orgb827d31"><span class="section-number-3">2.2</span> Inverse of Determinant matrix</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
 
-<div id="outline-container-org455cd01" class="outline-4">
-<h4 id="org455cd01"><span class="section-number-4">2.2.1</span> Get</h4>
+<div id="outline-container-orgb449d56" class="outline-4">
+<h4 id="orgb449d56"><span class="section-number-4">2.2.1</span> Get</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_det_inv_matrix_alpha</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>, <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">det_inv_matrix_alpha</span>);
@@ -1053,14 +1053,14 @@ computed to accelerate the calculations.
 </div>
 </div>
 
-<div id="outline-container-org10b221b" class="outline-4">
-<h4 id="org10b221b"><span class="section-number-4">2.2.2</span> Provide</h4>
+<div id="outline-container-orga6c273e" class="outline-4">
+<h4 id="orga6c273e"><span class="section-number-4">2.2.2</span> Provide</h4>
 </div>
 
-<div id="outline-container-org6f3315a" class="outline-4">
-<h4 id="org6f3315a"><span class="section-number-4">2.2.3</span> Compute alpha</h4>
+<div id="outline-container-org437ef86" class="outline-4">
+<h4 id="org437ef86"><span class="section-number-4">2.2.3</span> Compute alpha</h4>
 <div class="outline-text-4" id="text-2-2-3">
-<table id="org38c31c4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orga9fa9b5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1222,10 +1222,10 @@ computed to accelerate the calculations.
 </div>
 </div>
 
-<div id="outline-container-org6d02443" class="outline-4">
-<h4 id="org6d02443"><span class="section-number-4">2.2.4</span> Compute beta</h4>
+<div id="outline-container-orga266adf" class="outline-4">
+<h4 id="orga266adf"><span class="section-number-4">2.2.4</span> Compute beta</h4>
 <div class="outline-text-4" id="text-2-2-4">
-<table id="org35d4abe" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org7581281" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1392,7 +1392,7 @@ computed to accelerate the calculations.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2024-12-11 Wed 13:19</p>
+<p class="date">Created: 2024-12-11 Wed 13:47</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
