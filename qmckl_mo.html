@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-12-11 Wed 08:41 -->
+<!-- 2024-12-11 Wed 10:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Molecular Orbitals</title>
@@ -346,72 +346,72 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf251ec5">1. Context</a>
+<li><a href="#org0658ee1">1. Context</a>
 <ul>
-<li><a href="#org0a3ad45">1.1. Data structure</a></li>
-<li><a href="#orgc684086">1.2. Initialization functions</a></li>
-<li><a href="#org89205bf">1.3. Cusp adjsutment functions</a></li>
-<li><a href="#org2af05d1">1.4. Access functions</a>
+<li><a href="#org7eb7a9e">1.1. Data structure</a></li>
+<li><a href="#orga6956ea">1.2. Initialization functions</a></li>
+<li><a href="#org05cff2c">1.3. Cusp adjsutment functions</a></li>
+<li><a href="#org0f79a53">1.4. Access functions</a>
 <ul>
-<li><a href="#org2ce2a61">1.4.1. Fortran interfaces</a></li>
+<li><a href="#orge9f3cd4">1.4.1. Fortran interfaces</a></li>
 </ul>
 </li>
-<li><a href="#org51b63d4">1.5. Update</a>
+<li><a href="#org5ac5165">1.5. Update</a>
 <ul>
-<li><a href="#orgf5ff6aa">1.5.1. Fortran interface</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgbd914d8">2. Computation</a>
-<ul>
-<li><a href="#org69f8046">2.1. Parameters of the cusp-correction functions</a></li>
-<li><a href="#orgaa11c06">2.2. Computation of MOs: values only</a>
-<ul>
-<li><a href="#orge08a001">2.2.1. Get</a></li>
-<li><a href="#orgfeedd1b">2.2.2. Provide</a></li>
-<li><a href="#org14124c6">2.2.3. Compute</a></li>
-<li><a href="#org68eba96">2.2.4. HPC version</a>
-<ul>
-<li><a href="#orgfcc93ae">2.2.4.1. Single-precision</a></li>
-<li><a href="#org36ba780">2.2.4.2. Double-precision</a></li>
+<li><a href="#org2bf82db">1.5.1. Fortran interface</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3b99862">2.3. Computation of MOs: values, gradient, Laplacian</a>
+<li><a href="#org7d200f5">2. Computation</a>
 <ul>
-<li><a href="#orgd866f9e">2.3.1. Get</a></li>
-<li><a href="#org96e553e">2.3.2. Provide</a></li>
-<li><a href="#orge3d86da">2.3.3. Compute</a></li>
+<li><a href="#org34dc3ed">2.1. Parameters of the cusp-correction functions</a></li>
+<li><a href="#orgcac1a72">2.2. Computation of MOs: values only</a>
+<ul>
+<li><a href="#org9fe3d23">2.2.1. Get</a></li>
+<li><a href="#orgeaffe49">2.2.2. Provide</a></li>
+<li><a href="#org160db02">2.2.3. Compute</a></li>
+<li><a href="#orga94fd39">2.2.4. HPC version</a>
+<ul>
+<li><a href="#org9e4d1b7">2.2.4.1. Single-precision</a></li>
+<li><a href="#org7b2267c">2.2.4.2. Double-precision</a></li>
 </ul>
 </li>
-<li><a href="#orgc40e9f8">2.4. Computation of cusp-corrected MOs: values only</a>
-<ul>
-<li><a href="#org1a6b08f">2.4.1. Compute</a></li>
-<li><a href="#org571eec2">2.4.2. HPC version</a></li>
 </ul>
 </li>
-<li><a href="#orgfb90c06">2.5. Computation of cusp-corrected MOs: values, gradient, Laplacian</a>
+<li><a href="#org65eea40">2.3. Computation of MOs: values, gradient, Laplacian</a>
 <ul>
-<li><a href="#org77d05c2">2.5.1. Compute</a></li>
-<li><a href="#orga5f3137">2.5.2. HPC version</a></li>
+<li><a href="#orgebf6379">2.3.1. Get</a></li>
+<li><a href="#orgd8406f6">2.3.2. Provide</a></li>
+<li><a href="#org3646224">2.3.3. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org824efd5">2.6. Rescaling of MO coefficients</a>
+<li><a href="#orgda7ccf3">2.4. Computation of cusp-corrected MOs: values only</a>
 <ul>
-<li><a href="#org5955867">2.6.1. Fortran interface</a></li>
+<li><a href="#org64989cf">2.4.1. Compute</a></li>
+<li><a href="#orgf8e7d9b">2.4.2. HPC version</a></li>
 </ul>
 </li>
-<li><a href="#orgc35c8ad">2.7. Test</a></li>
+<li><a href="#org46b964c">2.5. Computation of cusp-corrected MOs: values, gradient, Laplacian</a>
+<ul>
+<li><a href="#org8644d58">2.5.1. Compute</a></li>
+<li><a href="#org6f5cb8e">2.5.2. HPC version</a></li>
+</ul>
+</li>
+<li><a href="#orge70fe8f">2.6. Rescaling of MO coefficients</a>
+<ul>
+<li><a href="#orged6b6f5">2.6.1. Fortran interface</a></li>
+</ul>
+</li>
+<li><a href="#orgaab3ada">2.7. Test</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf251ec5" class="outline-2">
-<h2 id="orgf251ec5"><span class="section-number-2">1</span> Context</h2>
+<div id="outline-container-org0658ee1" class="outline-2">
+<h2 id="org0658ee1"><span class="section-number-2">1</span> Context</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The following arrays are stored in the context:
@@ -490,8 +490,8 @@ Computed data:
 </table>
 </div>
 
-<div id="outline-container-org0a3ad45" class="outline-3">
-<h3 id="org0a3ad45"><span class="section-number-3">1.1</span> Data structure</h3>
+<div id="outline-container-org7eb7a9e" class="outline-3">
+<h3 id="org7eb7a9e"><span class="section-number-3">1.1</span> Data structure</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #a020f0;">typedef</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">qmckl_mo_basis_struct</span> {
@@ -548,8 +548,8 @@ this mechanism.
 </div>
 </div>
 
-<div id="outline-container-orgc684086" class="outline-3">
-<h3 id="orgc684086"><span class="section-number-3">1.2</span> Initialization functions</h3>
+<div id="outline-container-orga6956ea" class="outline-3">
+<h3 id="orga6956ea"><span class="section-number-3">1.2</span> Initialization functions</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 To set the basis set, all the following functions need to be
@@ -570,8 +570,8 @@ computed to accelerate the calculations.
 </div>
 </div>
 
-<div id="outline-container-org89205bf" class="outline-3">
-<h3 id="org89205bf"><span class="section-number-3">1.3</span> Cusp adjsutment functions</h3>
+<div id="outline-container-org05cff2c" class="outline-3">
+<h3 id="org05cff2c"><span class="section-number-3">1.3</span> Cusp adjsutment functions</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 To activate the cusp adjustment, the user must enter the radius of
@@ -586,8 +586,8 @@ of the non-\(s\) AOs at the center.
 </div>
 </div>
 
-<div id="outline-container-org2af05d1" class="outline-3">
-<h3 id="org2af05d1"><span class="section-number-3">1.4</span> Access functions</h3>
+<div id="outline-container-org0f79a53" class="outline-3">
+<h3 id="org0f79a53"><span class="section-number-3">1.4</span> Access functions</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 When all the data for the AOs have been provided, the following
@@ -600,13 +600,13 @@ function returns <code>true</code>.
 </div>
 </div>
 
-<div id="outline-container-org2ce2a61" class="outline-4">
-<h4 id="org2ce2a61"><span class="section-number-4">1.4.1</span> Fortran interfaces</h4>
+<div id="outline-container-orge9f3cd4" class="outline-4">
+<h4 id="orge9f3cd4"><span class="section-number-4">1.4.1</span> Fortran interfaces</h4>
 </div>
 </div>
 
-<div id="outline-container-org51b63d4" class="outline-3">
-<h3 id="org51b63d4"><span class="section-number-3">1.5</span> Update</h3>
+<div id="outline-container-org5ac5165" class="outline-3">
+<h3 id="org5ac5165"><span class="section-number-3">1.5</span> Update</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 It may be desirable to remove certain molecular orbitals (MOs) that
@@ -633,25 +633,25 @@ calculation. If the integer is non-zero, the MO will be kept.
 </div>
 </div>
 
-<div id="outline-container-orgf5ff6aa" class="outline-4">
-<h4 id="orgf5ff6aa"><span class="section-number-4">1.5.1</span> Fortran interface</h4>
+<div id="outline-container-org2bf82db" class="outline-4">
+<h4 id="org2bf82db"><span class="section-number-4">1.5.1</span> Fortran interface</h4>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgbd914d8" class="outline-2">
-<h2 id="orgbd914d8"><span class="section-number-2">2</span> Computation</h2>
+<div id="outline-container-org7d200f5" class="outline-2">
+<h2 id="org7d200f5"><span class="section-number-2">2</span> Computation</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org69f8046" class="outline-3">
-<h3 id="org69f8046"><span class="section-number-3">2.1</span> Parameters of the cusp-correction functions</h3>
+<div id="outline-container-org34dc3ed" class="outline-3">
+<h3 id="org34dc3ed"><span class="section-number-3">2.1</span> Parameters of the cusp-correction functions</h3>
 </div>
-<div id="outline-container-orgaa11c06" class="outline-3">
-<h3 id="orgaa11c06"><span class="section-number-3">2.2</span> Computation of MOs: values only</h3>
+<div id="outline-container-orgcac1a72" class="outline-3">
+<h3 id="orgcac1a72"><span class="section-number-3">2.2</span> Computation of MOs: values only</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-orge08a001" class="outline-4">
-<h4 id="orge08a001"><span class="section-number-4">2.2.1</span> Get</h4>
+<div id="outline-container-org9fe3d23" class="outline-4">
+<h4 id="org9fe3d23"><span class="section-number-4">2.2.1</span> Get</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -675,8 +675,8 @@ Uses the given array to compute the values.
 </div>
 </div>
 
-<div id="outline-container-orgfeedd1b" class="outline-4">
-<h4 id="orgfeedd1b"><span class="section-number-4">2.2.2</span> Provide</h4>
+<div id="outline-container-orgeaffe49" class="outline-4">
+<h4 id="orgeaffe49"><span class="section-number-4">2.2.2</span> Provide</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_provide_mo_basis_mo_value</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>);
@@ -761,10 +761,10 @@ Uses the given array to compute the values.
 </div>
 </div>
 
-<div id="outline-container-org14124c6" class="outline-4">
-<h4 id="org14124c6"><span class="section-number-4">2.2.3</span> Compute</h4>
+<div id="outline-container-org160db02" class="outline-4">
+<h4 id="org160db02"><span class="section-number-4">2.2.3</span> Compute</h4>
 <div class="outline-text-4" id="text-2-2-3">
-<table id="orgcbef8d2" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org07de0c9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -919,8 +919,8 @@ matrix multiplication instead of a dgemm, as exposed in
 </div>
 </div>
 
-<div id="outline-container-org68eba96" class="outline-4">
-<h4 id="org68eba96"><span class="section-number-4">2.2.4</span> HPC version</h4>
+<div id="outline-container-orga94fd39" class="outline-4">
+<h4 id="orga94fd39"><span class="section-number-4">2.2.4</span> HPC version</h4>
 <div class="outline-text-4" id="text-2-2-4">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #483d8b;">#ifdef</span> HAVE_HPC
@@ -947,8 +947,8 @@ matrix multiplication instead of a dgemm, as exposed in
 </div>
 
 
-<div id="outline-container-orgfcc93ae" class="outline-5">
-<h5 id="orgfcc93ae"><span class="section-number-5">2.2.4.1</span> Single-precision</h5>
+<div id="outline-container-org9e4d1b7" class="outline-5">
+<h5 id="org9e4d1b7"><span class="section-number-5">2.2.4.1</span> Single-precision</h5>
 <div class="outline-text-5" id="text-2-2-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #483d8b;">#ifdef</span> HAVE_HPC
@@ -1069,8 +1069,8 @@ matrix multiplication instead of a dgemm, as exposed in
 </div>
 </div>
 
-<div id="outline-container-org36ba780" class="outline-5">
-<h5 id="org36ba780"><span class="section-number-5">2.2.4.2</span> Double-precision</h5>
+<div id="outline-container-org7b2267c" class="outline-5">
+<h5 id="org7b2267c"><span class="section-number-5">2.2.4.2</span> Double-precision</h5>
 <div class="outline-text-5" id="text-2-2-4-2">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #483d8b;">#ifdef</span> HAVE_HPC
@@ -1187,12 +1187,12 @@ matrix multiplication instead of a dgemm, as exposed in
 </div>
 </div>
 
-<div id="outline-container-org3b99862" class="outline-3">
-<h3 id="org3b99862"><span class="section-number-3">2.3</span> Computation of MOs: values, gradient, Laplacian</h3>
+<div id="outline-container-org65eea40" class="outline-3">
+<h3 id="org65eea40"><span class="section-number-3">2.3</span> Computation of MOs: values, gradient, Laplacian</h3>
 <div class="outline-text-3" id="text-2-3">
 </div>
-<div id="outline-container-orgd866f9e" class="outline-4">
-<h4 id="orgd866f9e"><span class="section-number-4">2.3.1</span> Get</h4>
+<div id="outline-container-orgebf6379" class="outline-4">
+<h4 id="orgebf6379"><span class="section-number-4">2.3.1</span> Get</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1216,8 +1216,8 @@ Uses the given array to compute the VGL.
 </div>
 </div>
 
-<div id="outline-container-org96e553e" class="outline-4">
-<h4 id="org96e553e"><span class="section-number-4">2.3.2</span> Provide</h4>
+<div id="outline-container-orgd8406f6" class="outline-4">
+<h4 id="orgd8406f6"><span class="section-number-4">2.3.2</span> Provide</h4>
 <div class="outline-text-4" id="text-2-3-2">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_provide_mo_basis_mo_vgl</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>);
@@ -1301,10 +1301,10 @@ Uses the given array to compute the VGL.
 </div>
 </div>
 
-<div id="outline-container-orge3d86da" class="outline-4">
-<h4 id="orge3d86da"><span class="section-number-4">2.3.3</span> Compute</h4>
+<div id="outline-container-org3646224" class="outline-4">
+<h4 id="org3646224"><span class="section-number-4">2.3.3</span> Compute</h4>
 <div class="outline-text-4" id="text-2-3-3">
-<table id="org4eca761" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org5ddb95e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1473,14 +1473,14 @@ matrix multiplication instead of a dgemm, as exposed in
 </div>
 </div>
 
-<div id="outline-container-orgc40e9f8" class="outline-3">
-<h3 id="orgc40e9f8"><span class="section-number-3">2.4</span> Computation of cusp-corrected MOs: values only</h3>
+<div id="outline-container-orgda7ccf3" class="outline-3">
+<h3 id="orgda7ccf3"><span class="section-number-3">2.4</span> Computation of cusp-corrected MOs: values only</h3>
 <div class="outline-text-3" id="text-2-4">
 </div>
-<div id="outline-container-org1a6b08f" class="outline-4">
-<h4 id="org1a6b08f"><span class="section-number-4">2.4.1</span> Compute</h4>
+<div id="outline-container-org64989cf" class="outline-4">
+<h4 id="org64989cf"><span class="section-number-4">2.4.1</span> Compute</h4>
 <div class="outline-text-4" id="text-2-4-1">
-<table id="org85ed65a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org2f1ed95" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1719,8 +1719,8 @@ matrix multiplication instead of a dgemm, as exposed in
 </div>
 </div>
 
-<div id="outline-container-org571eec2" class="outline-4">
-<h4 id="org571eec2"><span class="section-number-4">2.4.2</span> HPC version</h4>
+<div id="outline-container-orgf8e7d9b" class="outline-4">
+<h4 id="orgf8e7d9b"><span class="section-number-4">2.4.2</span> HPC version</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #483d8b;">#ifdef</span> HAVE_HPC
@@ -1858,14 +1858,14 @@ IVDEP
 </div>
 </div>
 
-<div id="outline-container-orgfb90c06" class="outline-3">
-<h3 id="orgfb90c06"><span class="section-number-3">2.5</span> Computation of cusp-corrected MOs: values, gradient, Laplacian</h3>
+<div id="outline-container-org46b964c" class="outline-3">
+<h3 id="org46b964c"><span class="section-number-3">2.5</span> Computation of cusp-corrected MOs: values, gradient, Laplacian</h3>
 <div class="outline-text-3" id="text-2-5">
 </div>
-<div id="outline-container-org77d05c2" class="outline-4">
-<h4 id="org77d05c2"><span class="section-number-4">2.5.1</span> Compute</h4>
+<div id="outline-container-org8644d58" class="outline-4">
+<h4 id="org8644d58"><span class="section-number-4">2.5.1</span> Compute</h4>
 <div class="outline-text-4" id="text-2-5-1">
-<table id="orgd480833" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org0dd90e5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2165,8 +2165,8 @@ IVDEP
 </div>
 </div>
 
-<div id="outline-container-orga5f3137" class="outline-4">
-<h4 id="orga5f3137"><span class="section-number-4">2.5.2</span> HPC version</h4>
+<div id="outline-container-org6f5cb8e" class="outline-4">
+<h4 id="org6f5cb8e"><span class="section-number-4">2.5.2</span> HPC version</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #483d8b;">#ifdef</span> HAVE_HPC
@@ -2365,8 +2365,8 @@ IVDEP
 </div>
 </div>
 
-<div id="outline-container-org824efd5" class="outline-3">
-<h3 id="org824efd5"><span class="section-number-3">2.6</span> Rescaling of MO coefficients</h3>
+<div id="outline-container-orge70fe8f" class="outline-3">
+<h3 id="orge70fe8f"><span class="section-number-3">2.6</span> Rescaling of MO coefficients</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 When evaluating Slater determinants, the value of the determinants
@@ -2383,19 +2383,19 @@ correct range.
 </div>
 </div>
 
-<div id="outline-container-org5955867" class="outline-4">
-<h4 id="org5955867"><span class="section-number-4">2.6.1</span> Fortran interface</h4>
+<div id="outline-container-orged6b6f5" class="outline-4">
+<h4 id="orged6b6f5"><span class="section-number-4">2.6.1</span> Fortran interface</h4>
 </div>
 </div>
 
-<div id="outline-container-orgc35c8ad" class="outline-3">
-<h3 id="orgc35c8ad"><span class="section-number-3">2.7</span> Test</h3>
+<div id="outline-container-orgaab3ada" class="outline-3">
+<h3 id="orgaab3ada"><span class="section-number-3">2.7</span> Test</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2024-12-11 Wed 08:41</p>
+<p class="date">Created: 2024-12-11 Wed 10:25</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
