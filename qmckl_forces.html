@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-12-12 Thu 08:58 -->
+<!-- 2024-12-12 Thu 09:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Forces</title>
@@ -324,48 +324,90 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8b11592">1. Introduction</a></li>
-<li><a href="#orgee3401d">2. Context</a>
+<li><a href="#org11c3f2a">1. Introduction</a></li>
+<li><a href="#orgb9250e0">2. Context</a>
 <ul>
-<li><a href="#org5fcf8db">2.1. Data structure</a></li>
-<li><a href="#orgda1afb0">2.2. Test</a></li>
+<li><a href="#orga0f14cc">2.1. Data structure</a></li>
+<li><a href="#orgcf59c05">2.2. Test</a></li>
 </ul>
 </li>
-<li><a href="#org76ea55c">3. Finite-difference function</a></li>
-<li><a href="#orge8e3780">4. Force of en jastrow value</a>
+<li><a href="#orgd5d834a">3. Finite-difference function</a></li>
+<li><a href="#org48739a9">4. Force of en jastrow value</a>
 <ul>
-<li><a href="#org6d640b5">4.1. Get</a></li>
-<li><a href="#orge2a1242">4.2. Compute</a></li>
-<li><a href="#org7d8cb78">4.3. Test</a></li>
+<li><a href="#orgf4ffbe8">4.1. Get</a></li>
+<li><a href="#orge63963b">4.2. Compute</a></li>
+<li><a href="#org1996995">4.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org5a2c481">5. Force of en jastrow gradient</a>
+<li><a href="#orge33d590">5. Force of en jastrow gradient</a>
 <ul>
-<li><a href="#orge5a12d2">5.1. Get</a></li>
-<li><a href="#org77ec225">5.2. Compute</a></li>
-<li><a href="#orgf036c96">5.3. Test</a></li>
+<li><a href="#org5d00874">5.1. Get</a></li>
+<li><a href="#orgfcf2f5d">5.2. Compute</a></li>
+<li><a href="#orgabce3c8">5.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org736db91">6. Force of en jastrow laplacien</a>
+<li><a href="#org893e144">6. Force of en jastrow laplacien</a>
 <ul>
-<li><a href="#org43262d1">6.1. Get</a></li>
-<li><a href="#org8a2eb62">6.2. Compute</a></li>
-<li><a href="#orga8b8a34">6.3. Test</a></li>
+<li><a href="#orga0e7056">6.1. Get</a></li>
+<li><a href="#orgbe3fa5b">6.2. Compute</a></li>
+<li><a href="#org743d64c">6.3. Test</a></li>
+</ul>
+</li>
+<li><a href="#org490d320">7. Force of tmp<sub>c</sub> matrix</a>
+<ul>
+<li><a href="#orgdb51082">7.1. Get</a></li>
+<li><a href="#orge29a15c">7.2. Compute</a></li>
+<li><a href="#org2c4edf6">7.3. Test</a></li>
+</ul>
+</li>
+<li><a href="#orgbd18c37">8. Force of dtmp<sub>c</sub> matrix</a>
+<ul>
+<li><a href="#org5240d17">8.1. Get</a></li>
+<li><a href="#orgdef3507">8.2. Compute</a></li>
+<li><a href="#orga9d00da">8.3. Test</a></li>
+</ul>
+</li>
+<li><a href="#org74f9bcb">9. Force of een jastrow value</a>
+<ul>
+<li><a href="#org55cd790">9.1. Get</a></li>
+<li><a href="#org2df186d">9.2. Compute</a></li>
+<li><a href="#org0d33c65">9.3. Test</a></li>
+</ul>
+</li>
+<li><a href="#org39d5461">10. Force of een<sub>rescaled</sub><sub>n</sub><sub>gl</sub></a>
+<ul>
+<li><a href="#orge053dbf">10.1. Get</a></li>
+<li><a href="#org7124477">10.2. Compute</a></li>
+<li><a href="#org22ae90a">10.3. Test</a></li>
+</ul>
+</li>
+<li><a href="#orgb354864">11. Force of een jastrow gradient</a>
+<ul>
+<li><a href="#orga04df27">11.1. Get</a></li>
+<li><a href="#org44cc826">11.2. Compute</a></li>
+<li><a href="#org15bc9b7">11.3. Test</a></li>
+</ul>
+</li>
+<li><a href="#orgb5bf8d0">12. Force of een jastrow laplacian</a>
+<ul>
+<li><a href="#orgfd20b23">12.1. Get</a></li>
+<li><a href="#org88736dc">12.2. Compute</a></li>
+<li><a href="#org0322db5">12.3. Test</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8b11592" class="outline-2">
-<h2 id="org8b11592"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-org11c3f2a" class="outline-2">
+<h2 id="org11c3f2a"><span class="section-number-2">1</span> Introduction</h2>
 </div>
-<div id="outline-container-orgee3401d" class="outline-2">
-<h2 id="orgee3401d"><span class="section-number-2">2</span> Context</h2>
+<div id="outline-container-orgb9250e0" class="outline-2">
+<h2 id="orgb9250e0"><span class="section-number-2">2</span> Context</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org5fcf8db" class="outline-3">
-<h3 id="org5fcf8db"><span class="section-number-3">2.1</span> Data structure</h3>
+<div id="outline-container-orga0f14cc" class="outline-3">
+<h3 id="orga0f14cc"><span class="section-number-3">2.1</span> Data structure</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #a020f0;">typedef</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">qmckl_forces_struct</span>{
@@ -375,14 +417,26 @@ for the JavaScript code in this tag.
     <span style="color: #228b22;">uint64_t</span>  <span style="color: #a0522d;">forces_jastrow_en_g_date</span>;
     <span style="color: #228b22;">double</span>  * <span style="color: #a020f0;">restrict</span> <span style="color: #a0522d;">forces_jastrow_en_l</span>;
     <span style="color: #228b22;">uint64_t</span>  <span style="color: #a0522d;">forces_jastrow_en_l_date</span>;
+    <span style="color: #228b22;">double</span>  * <span style="color: #a020f0;">restrict</span> <span style="color: #a0522d;">forces_tmp_c</span>;
+    <span style="color: #228b22;">uint64_t</span>  <span style="color: #a0522d;">forces_tmp_c_date</span>;
+    <span style="color: #228b22;">double</span>  * <span style="color: #a020f0;">restrict</span> <span style="color: #a0522d;">forces_dtmp_c</span>;
+    <span style="color: #228b22;">uint64_t</span>  <span style="color: #a0522d;">forces_dtmp_c_date</span>;
+    <span style="color: #228b22;">double</span>  * <span style="color: #a020f0;">restrict</span> <span style="color: #a0522d;">forces_een_n</span>;
+    <span style="color: #228b22;">uint64_t</span>  <span style="color: #a0522d;">forces_een_n_date</span>;
+    <span style="color: #228b22;">double</span>  * <span style="color: #a020f0;">restrict</span> <span style="color: #a0522d;">forces_jastrow_een</span>;
+    <span style="color: #228b22;">uint64_t</span>  <span style="color: #a0522d;">forces_jastrow_een_date</span>;
+    <span style="color: #228b22;">double</span>  * <span style="color: #a020f0;">restrict</span> <span style="color: #a0522d;">forces_jastrow_een_g</span>;
+    <span style="color: #228b22;">uint64_t</span>  <span style="color: #a0522d;">forces_jastrow_een_g_date</span>;
+    <span style="color: #228b22;">double</span>  * <span style="color: #a020f0;">restrict</span> <span style="color: #a0522d;">forces_jastrow_een_l</span>;
+    <span style="color: #228b22;">uint64_t</span>  <span style="color: #a0522d;">forces_jastrow_een_l_date</span>;
 } <span style="color: #228b22;">qmckl_forces_struct</span>;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgda1afb0" class="outline-3">
-<h3 id="orgda1afb0"><span class="section-number-3">2.2</span> Test</h3>
+<div id="outline-container-orgcf59c05" class="outline-3">
+<h3 id="orgcf59c05"><span class="section-number-3">2.2</span> Test</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-c">/* <span style="color: #b22222;">Reference input data</span> */
@@ -570,6 +624,7 @@ rc = qmckl_check(context,
 <span style="color: #0000ff;">assert</span>(<span style="color: #228b22;">qmckl_jastrow_champ_provided</span>(<span style="color: #a0522d;">context</span>));
 
 <span style="color: #228b22;">double</span> <span style="color: #a0522d;">delta_x</span> = 0.00001;
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">coef</span>[9] = { 1.0/280.0, -4.0/105.0, 1.0/5.0, -4.0/5.0, 0.0, 4.0/5.0, -1.0/5.0, 4.0/105.0, -1.0/280.0 };
 
 </pre>
 </div>
@@ -577,8 +632,8 @@ rc = qmckl_check(context,
 </div>
 </div>
 
-<div id="outline-container-org76ea55c" class="outline-2">
-<h2 id="org76ea55c"><span class="section-number-2">3</span> Finite-difference function</h2>
+<div id="outline-container-orgd5d834a" class="outline-2">
+<h2 id="orgd5d834a"><span class="section-number-2">3</span> Finite-difference function</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 We introduce here a general function to compute the derivatives of any quantity with respect to nuclear coordinates.
@@ -587,12 +642,12 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-orge8e3780" class="outline-2">
-<h2 id="orge8e3780"><span class="section-number-2">4</span> Force of en jastrow value</h2>
+<div id="outline-container-org48739a9" class="outline-2">
+<h2 id="org48739a9"><span class="section-number-2">4</span> Force of en jastrow value</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org6d640b5" class="outline-3">
-<h3 id="org6d640b5"><span class="section-number-3">4.1</span> Get</h3>
+<div id="outline-container-orgf4ffbe8" class="outline-3">
+<h3 id="orgf4ffbe8"><span class="section-number-3">4.1</span> Get</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -619,10 +674,10 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-orge2a1242" class="outline-3">
-<h3 id="orge2a1242"><span class="section-number-3">4.2</span> Compute</h3>
+<div id="outline-container-orge63963b" class="outline-3">
+<h3 id="orge63963b"><span class="section-number-3">4.2</span> Compute</h3>
 <div class="outline-text-3" id="text-4-2">
-<table id="org8fab9e4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org33733f0" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -822,8 +877,8 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-org7d8cb78" class="outline-3">
-<h3 id="org7d8cb78"><span class="section-number-3">4.3</span> Test</h3>
+<div id="outline-container-org1996995" class="outline-3">
+<h3 id="org1996995"><span class="section-number-3">4.3</span> Test</h3>
 <div class="outline-text-3" id="text-4-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow en\n"</span>);
@@ -865,12 +920,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 
 
-<div id="outline-container-org5a2c481" class="outline-2">
-<h2 id="org5a2c481"><span class="section-number-2">5</span> Force of en jastrow gradient</h2>
+<div id="outline-container-orge33d590" class="outline-2">
+<h2 id="orge33d590"><span class="section-number-2">5</span> Force of en jastrow gradient</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orge5a12d2" class="outline-3">
-<h3 id="orge5a12d2"><span class="section-number-3">5.1</span> Get</h3>
+<div id="outline-container-org5d00874" class="outline-3">
+<h3 id="org5d00874"><span class="section-number-3">5.1</span> Get</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -897,10 +952,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org77ec225" class="outline-3">
-<h3 id="org77ec225"><span class="section-number-3">5.2</span> Compute</h3>
+<div id="outline-container-orgfcf2f5d" class="outline-3">
+<h3 id="orgfcf2f5d"><span class="section-number-3">5.2</span> Compute</h3>
 <div class="outline-text-3" id="text-5-2">
-<table id="org59ec881" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgb680e13" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1093,7 +1148,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
               forces_jastrow_en_g(m,i,l,a,nw) = forces_jastrow_en_g(m,i,l,a,nw) - f  * invdist / expk
             <span style="color: #a020f0;">end if</span>
 
-            forces_jastrow_en_g(m,i,l,a,nw) = forces_jastrow_en_g(m,i,l,a,nw) + f * dx(m) * dx(l) * invdist * expk
+            forces_jastrow_en_g(m,i,l,a,nw) = forces_jastrow_en_g(m,i,l,a,nw) + <span style="color: #a020f0;">&amp;</span>
+               f * dx(m) * dx(l) * invdist * expk
             forces_jastrow_en_g(m,i,l,a,nw) = forces_jastrow_en_g(m,i,l,a,nw) + 2.d0 * f * invdenom * <span style="color: #a020f0;">&amp;</span>
               a_vector(2, type_nucl_vector(a)+1) * dx(m) * dx(l)
           <span style="color: #a020f0;">end do</span>
@@ -1131,8 +1187,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-orgf036c96" class="outline-3">
-<h3 id="orgf036c96"><span class="section-number-3">5.3</span> Test</h3>
+<div id="outline-container-orgabce3c8" class="outline-3">
+<h3 id="orgabce3c8"><span class="section-number-3">5.3</span> Test</h3>
 <div class="outline-text-3" id="text-5-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow en G\n"</span>);
@@ -1181,12 +1237,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org736db91" class="outline-2">
-<h2 id="org736db91"><span class="section-number-2">6</span> Force of en jastrow laplacien</h2>
+<div id="outline-container-org893e144" class="outline-2">
+<h2 id="org893e144"><span class="section-number-2">6</span> Force of en jastrow laplacien</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org43262d1" class="outline-3">
-<h3 id="org43262d1"><span class="section-number-3">6.1</span> Get</h3>
+<div id="outline-container-orga0e7056" class="outline-3">
+<h3 id="orga0e7056"><span class="section-number-3">6.1</span> Get</h3>
 <div class="outline-text-3" id="text-6-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1213,10 +1269,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org8a2eb62" class="outline-3">
-<h3 id="org8a2eb62"><span class="section-number-3">6.2</span> Compute</h3>
+<div id="outline-container-orgbe3fa5b" class="outline-3">
+<h3 id="orgbe3fa5b"><span class="section-number-3">6.2</span> Compute</h3>
 <div class="outline-text-3" id="text-6-2">
-<table id="orge88da77" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgc1f9e78" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1445,8 +1501,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-orga8b8a34" class="outline-3">
-<h3 id="orga8b8a34"><span class="section-number-3">6.3</span> Test</h3>
+<div id="outline-container-org743d64c" class="outline-3">
+<h3 id="org743d64c"><span class="section-number-3">6.3</span> Test</h3>
 <div class="outline-text-3" id="text-6-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow en L\n"</span>);
@@ -1500,10 +1556,1852 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 </div>
+
+<div id="outline-container-org490d320" class="outline-2">
+<h2 id="org490d320"><span class="section-number-2">7</span> Force of tmp<sub>c</sub> matrix</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-orgdb51082" class="outline-3">
+<h3 id="orgdb51082"><span class="section-number-3">7.1</span> Get</h3>
+<div class="outline-text-3" id="text-7-1">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
+<span style="color: #0000ff;">qmckl_get_forces_tmp_c</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
+                                    <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">forces_tmp_c</span>,
+                                    <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">size_max</span>);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge29a15c" class="outline-3">
+<h3 id="orge29a15c"><span class="section-number-3">7.2</span> Compute</h3>
+<div class="outline-text-3" id="text-7-2">
+<table id="orgf677547" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Variable</th>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">In/Out</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>context</code></td>
+<td class="org-left"><code>qmckl_context</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Global state</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>walk_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of walkers</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>elec_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of electrons</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>nucl_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of nuclei</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>cord_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">order of polynomials</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_e</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][elec_num][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus rescaled</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_n_gl</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_tmp_c</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][nucl_num][4][elec_num]</code></td>
+<td class="org-left">out</td>
+<td class="org-left">vector of non-zero coefficients</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-f90"><span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_compute_forces_tmp_c( </span><span style="color: #a020f0;">&amp;</span>
+     context, walk_num, elec_num, nucl_num, cord_num,<span style="color: #a020f0;">&amp;</span>
+     een_rescaled_e, een_rescaled_n_gl, forces_tmp_c) <span style="color: #a020f0;">&amp;</span>
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
+  <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
+  <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
+  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> context</span>
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>)   , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>   ::<span style="color: #a0522d;"> walk_num, elec_num, cord_num, nucl_num</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> een_rescaled_e(elec_num, elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> een_rescaled_n_gl(elec_num, 4, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(out)         ::<span style="color: #a0522d;"> forces_tmp_c(elec_num, 4, nucl_num,0:cord_num, 0:cord_num-1, walk_num)</span>
+
+  <span style="color: #228b22;">integer</span>*8 ::<span style="color: #a0522d;"> nw, i</span>
+
+  <span style="color: #228b22;">integer</span>*8 ::<span style="color: #a0522d;"> l, m, k, a,j</span>
+
+  info = QMCKL_SUCCESS
+
+  <span style="color: #a020f0;">if</span> (context == QMCKL_NULL_CONTEXT) info = QMCKL_INVALID_CONTEXT
+  <span style="color: #a020f0;">if</span> (walk_num &lt;= 0)                 info = QMCKL_INVALID_ARG_2
+  <span style="color: #a020f0;">if</span> (elec_num &lt;= 0)                 info = QMCKL_INVALID_ARG_3
+  <span style="color: #a020f0;">if</span> (nucl_num &lt;= 0)                 info = QMCKL_INVALID_ARG_4
+  <span style="color: #a020f0;">if</span> (cord_num &lt;  0)                 info = QMCKL_INVALID_ARG_5
+  <span style="color: #a020f0;">if</span> (info /= QMCKL_SUCCESS)         <span style="color: #a020f0;">return</span>
+
+  <span style="color: #a020f0;">do</span> nw=1, walk_num
+    <span style="color: #a020f0;">do</span> i=0, cord_num-1
+      info = qmckl_dgemm(context,<span style="color: #8b2252;">'N'</span>,<span style="color: #8b2252;">'N'</span>,elec_num*1_8,<span style="color: #a020f0;">&amp;</span>
+            nucl_num*(cord_num+1)*4_8, elec_num*1_8, -1.0d0,     <span style="color: #a020f0;">&amp;</span>
+            een_rescaled_e(1,1,i,nw),1_8*elec_num,              <span style="color: #a020f0;">&amp;</span>
+            een_rescaled_n_gl(1,1,1,0,nw),elec_num*1_8,         <span style="color: #a020f0;">&amp;</span>
+            0.0d0,                                              <span style="color: #a020f0;">&amp;</span>
+            forces_tmp_c(1,1,1,0,i,nw),1_8*elec_num)
+    <span style="color: #a020f0;">end do</span>
+  <span style="color: #a020f0;">end do</span>
+
+
+
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_forces_tmp_c</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org2c4edf6" class="outline-3">
+<h3 id="org2c4edf6"><span class="section-number-3">7.3</span> Test</h3>
+<div class="outline-text-3" id="text-7-3">
+<div class="org-src-container">
+<pre class="src src-c">printf(<span style="color: #8b2252;">"Forces tmp_c\n"</span>);
+
+/* <span style="color: #b22222;">Check if Jastrow is properly initialized</span> */
+<span style="color: #0000ff;">assert</span>(<span style="color: #228b22;">qmckl_jastrow_champ_provided</span>(<span style="color: #a0522d;">context</span>));
+
+rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'T'</span>, &amp;(nucl_coord[0]), 3*nucl_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">forces_tmp_c</span>[walk_num][cord_num][cord_num+1][nucl_num][4][elec_num];
+rc = qmckl_get_forces_tmp_c(context, &amp;forces_tmp_c[0][0][0][0][0][0], 4*nucl_num*walk_num*elec_num*(cord_num+1)*cord_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">finite_difference_force_tmp_c</span>[walk_num][cord_num][cord_num+1][nucl_num][3][elec_num];
+
+<span style="color: #228b22;">double</span>* <span style="color: #a0522d;">nucleus_coord</span> = (<span style="color: #228b22;">double</span>*) malloc(3 * nucl_num * <span style="color: #a020f0;">sizeof</span>(<span style="color: #228b22;">double</span>));
+<span style="color: #a020f0;">if</span> (nucleus_coord == <span style="color: #008b8b;">NULL</span>) {
+  <span style="color: #a020f0;">return</span> QMCKL_ALLOCATION_FAILED;
+}
+
+rc = qmckl_get_nucleus_coord(context, <span style="color: #8b2252;">'N'</span>, nucleus_coord, 3*nucl_num);
+
+<span style="color: #228b22;">double</span>* <span style="color: #a0522d;">temp_coord</span> = (<span style="color: #228b22;">double</span>*) malloc(3 * nucl_num * <span style="color: #a020f0;">sizeof</span>(<span style="color: #228b22;">double</span>));
+<span style="color: #a020f0;">if</span> (temp_coord == <span style="color: #008b8b;">NULL</span>) {
+  free(nucleus_coord);
+  <span style="color: #a020f0;">return</span> QMCKL_ALLOCATION_FAILED;
+}
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">output</span>[walk_num][cord_num][cord_num+1][nucl_num][elec_num];
+
+// <span style="color: #b22222;">Copy original coordinates</span>
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; 3 * nucl_num; i++) {
+  temp_coord[i] = nucleus_coord[i];
+}
+
+
+
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++) {
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">m</span> = -4; m &lt;= 4; m++) {
+
+      // <span style="color: #b22222;">Apply finite difference displacement</span>
+      temp_coord[k+a*3] = nucleus_coord[k+3*a] + (<span style="color: #228b22;">double</span>) <span style="color: #228b22;">m</span> * <span style="color: #a0522d;">delta_x</span>;
+
+      // <span style="color: #b22222;">Update coordinates in the context</span>
+      rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'N'</span>, temp_coord, 3*nucl_num);
+      assert(rc == QMCKL_SUCCESS);
+
+      rc = qmckl_context_touch(context);
+      assert(rc == QMCKL_SUCCESS);
+
+      // <span style="color: #b22222;">Call the provided function</span>
+      rc = qmckl_get_jastrow_champ_tmp_c(context,&amp;output[0][0][0][0][0]);
+      assert(rc == QMCKL_SUCCESS);
+
+      // <span style="color: #b22222;">Accumulate derivative using finite-difference coefficients</span>
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span>=0 ; nw&lt;walk_num ; nw++) {
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt; cord_num; l++) {
+          <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">mm</span> = 0; mm &lt;= cord_num; mm++) {
+            <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++) {
+
+              <span style="color: #a020f0;">if</span> (m == -4) {
+                finite_difference_force_tmp_c[nw][l][mm][a][k][i] = 0.0;
+              }
+              finite_difference_force_tmp_c[nw][l][mm][a][k][i] += coef[m + 4] * output[nw][l][mm][a][i]/delta_x;
+            }
+          }
+        }
+      }
+    }
+    temp_coord[k+a*3] = nucleus_coord[k+3*a];
+  }
+}
+
+// <span style="color: #b22222;">Reset coordinates in the context</span>
+rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'N'</span>, temp_coord, 3*nucl_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+rc = qmckl_context_touch(context);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+<span style="color: #0000ff;">free</span>(nucleus_coord);
+<span style="color: #0000ff;">free</span>(temp_coord);
+
+
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt; cord_num; l++){
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">m</span> = 0; m &lt;= cord_num; m++){
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+          <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
+            //<span style="color: #b22222;">printf("nw=%i l=%i m=%i a=%i k=%i i=%i\n",nw,l,m,a,k,i);</span>
+            //<span style="color: #b22222;">printf("%.10f\t", finite_difference_force_tmp_c[nw][l][m][a][k][i]);</span>
+            //<span style="color: #b22222;">printf("%.10f\n", forces_tmp_c[nw][l][m][a][k][i]);</span>
+
+          }
+        }
+      }
+    }
+  }
+}
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt; cord_num; l++){
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">m</span> = 0; m &lt;= cord_num; m++){
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+          <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
+            assert(fabs(finite_difference_force_tmp_c[nw][l][m][a][k][i] - forces_tmp_c[nw][l][m][a][k][i]) &lt; 1.e-8);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+printf(<span style="color: #8b2252;">"OK\n"</span>);
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbd18c37" class="outline-2">
+<h2 id="orgbd18c37"><span class="section-number-2">8</span> Force of dtmp<sub>c</sub> matrix</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org5240d17" class="outline-3">
+<h3 id="org5240d17"><span class="section-number-3">8.1</span> Get</h3>
+<div class="outline-text-3" id="text-8-1">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
+<span style="color: #0000ff;">qmckl_get_forces_tmp_dc</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
+                                    <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">forces_dtmp_c</span>,
+                                    <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">size_max</span>);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdef3507" class="outline-3">
+<h3 id="orgdef3507"><span class="section-number-3">8.2</span> Compute</h3>
+<div class="outline-text-3" id="text-8-2">
+<table id="org989f28c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Variable</th>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">In/Out</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>context</code></td>
+<td class="org-left"><code>qmckl_context</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Global state</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>walk_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of walkers</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>elec_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of electrons</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>nucl_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of nuclei</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>cord_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">order of polynomials</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_e_gl</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][elec_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus rescaled</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_n_gl</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_dtmp_c</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][4][nucl_num][4][elec_num]</code></td>
+<td class="org-left">out</td>
+<td class="org-left">vector of non-zero coefficients</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-f90"><span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_compute_forces_dtmp_c( </span><span style="color: #a020f0;">&amp;</span>
+     context, walk_num, elec_num, nucl_num, cord_num,<span style="color: #a020f0;">&amp;</span>
+     een_rescaled_e_gl, een_rescaled_n_gl, forces_dtmp_c) <span style="color: #a020f0;">&amp;</span>
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
+  <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
+  <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
+  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> context</span>
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>)   , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>   ::<span style="color: #a0522d;"> walk_num, elec_num, cord_num, nucl_num</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> een_rescaled_e_gl(elec_num, 4, elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> een_rescaled_n_gl(elec_num, 4, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(out)         ::<span style="color: #a0522d;"> forces_dtmp_c(elec_num, 4, nucl_num,4,0:cord_num, 0:cord_num-1, walk_num)</span>
+
+  <span style="color: #228b22;">integer</span>*8 ::<span style="color: #a0522d;"> nw, i, k</span>
+
+  <span style="color: #228b22;">integer</span>*8 ::<span style="color: #a0522d;"> l, m, a,j, kk</span>
+
+  info = QMCKL_SUCCESS
+
+  <span style="color: #a020f0;">if</span> (context == QMCKL_NULL_CONTEXT) info = QMCKL_INVALID_CONTEXT
+  <span style="color: #a020f0;">if</span> (walk_num &lt;= 0)                 info = QMCKL_INVALID_ARG_2
+  <span style="color: #a020f0;">if</span> (elec_num &lt;= 0)                 info = QMCKL_INVALID_ARG_3
+  <span style="color: #a020f0;">if</span> (nucl_num &lt;= 0)                 info = QMCKL_INVALID_ARG_4
+  <span style="color: #a020f0;">if</span> (cord_num &lt;  0)                 info = QMCKL_INVALID_ARG_5
+  <span style="color: #a020f0;">if</span> (info /= QMCKL_SUCCESS)         <span style="color: #a020f0;">return</span>
+
+  <span style="color: #a020f0;">do</span> nw=1, walk_num
+    <span style="color: #a020f0;">do</span> i=0, cord_num-1
+    <span style="color: #a020f0;">do</span> k =1, 4
+      info = qmckl_dgemm(context,<span style="color: #8b2252;">'N'</span>,<span style="color: #8b2252;">'N'</span>,elec_num*1_8,<span style="color: #a020f0;">&amp;</span>
+            nucl_num*(cord_num+1)*4_8, elec_num*1_8, -1.0d0,     <span style="color: #a020f0;">&amp;</span>
+            een_rescaled_e_gl(1,k,1,i,nw),4_8*elec_num,              <span style="color: #a020f0;">&amp;</span>
+            een_rescaled_n_gl(1,1,1,0,nw),elec_num*1_8,         <span style="color: #a020f0;">&amp;</span>
+            0.0d0,                                              <span style="color: #a020f0;">&amp;</span>
+            forces_dtmp_c(1,k,1,1,0,i,nw),4_8*elec_num)
+      <span style="color: #a020f0;">end do</span>
+    <span style="color: #a020f0;">end do</span>
+  <span style="color: #a020f0;">end do</span>
+
+  <span style="color: #a020f0;">if</span> (<span style="color: #a020f0;">.true.</span>) <span style="color: #a020f0;">then</span>
+  <span style="color: #a020f0;">do</span> nw = 1, walk_num
+    <span style="color: #a020f0;">do</span> l = 0, cord_num-1
+      <span style="color: #a020f0;">do</span> m = 0, cord_num
+        <span style="color: #a020f0;">do</span> k = 1, 4
+          <span style="color: #a020f0;">do</span> a = 1, nucl_num
+            <span style="color: #a020f0;">do</span> kk = 1, 4
+              <span style="color: #a020f0;">do</span> i = 1, elec_num
+                forces_dtmp_c(i,kk,a,k,m,l,nw) = 0.0
+                <span style="color: #a020f0;">do</span> j = 1, elec_num
+                  forces_dtmp_c(i,kk,a,k,m,l,nw) = forces_dtmp_c(i,kk,a,k,m,l,nw) - een_rescaled_e_gl(i,kk,j,l,nw) * een_rescaled_n_gl(j,k,a,m,nw)
+                <span style="color: #a020f0;">end do</span>
+              <span style="color: #a020f0;">end do</span>
+            <span style="color: #a020f0;">end do</span>
+          <span style="color: #a020f0;">end do</span>
+        <span style="color: #a020f0;">end do</span>
+      <span style="color: #a020f0;">end do</span>
+    <span style="color: #a020f0;">end do</span>
+  <span style="color: #a020f0;">end do</span>
+  <span style="color: #a020f0;">end if</span>
+
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_forces_dtmp_c</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga9d00da" class="outline-3">
+<h3 id="orga9d00da"><span class="section-number-3">8.3</span> Test</h3>
+<div class="outline-text-3" id="text-8-3">
+<div class="org-src-container">
+<pre class="src src-c">printf(<span style="color: #8b2252;">"Forces dtmp_c\n"</span>);
+
+/* <span style="color: #b22222;">Check if Jastrow is properly initialized</span> */
+<span style="color: #0000ff;">assert</span>(<span style="color: #228b22;">qmckl_jastrow_champ_provided</span>(<span style="color: #a0522d;">context</span>));
+
+rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'T'</span>, &amp;(nucl_coord[0]), 3*nucl_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">forces_dtmp_c</span>[walk_num][cord_num][cord_num+1][4][nucl_num][4][elec_num];
+rc = qmckl_get_forces_dtmp_c(context, &amp;forces_dtmp_c[0][0][0][0][0][0][0], 4*4*nucl_num*walk_num*elec_num*(cord_num+1)*cord_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">finite_difference_force_dtmp_c</span>[walk_num][cord_num][cord_num+1][3][nucl_num][4][elec_num];
+
+nucleus_coord = (<span style="color: #228b22;">double</span>*) malloc(3 * nucl_num * <span style="color: #a020f0;">sizeof</span>(<span style="color: #228b22;">double</span>));
+<span style="color: #a020f0;">if</span> (nucleus_coord == <span style="color: #008b8b;">NULL</span>) {
+  <span style="color: #a020f0;">return</span> QMCKL_ALLOCATION_FAILED;
+}
+
+rc = qmckl_get_nucleus_coord(context, <span style="color: #8b2252;">'N'</span>, nucleus_coord, 3*nucl_num);
+
+temp_coord = (<span style="color: #228b22;">double</span>*) malloc(3 * nucl_num * <span style="color: #a020f0;">sizeof</span>(<span style="color: #228b22;">double</span>));
+<span style="color: #a020f0;">if</span> (temp_coord == <span style="color: #008b8b;">NULL</span>) {
+  free(nucleus_coord);
+  <span style="color: #a020f0;">return</span> QMCKL_ALLOCATION_FAILED;
+}
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">doutput</span>[walk_num][cord_num][cord_num+1][nucl_num][4][elec_num];
+
+// <span style="color: #b22222;">Copy original coordinates</span>
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; 3 * nucl_num; i++) {
+  temp_coord[i] = nucleus_coord[i];
+}
+
+
+
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++) {
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">m</span> = -4; m &lt;= 4; m++) {
+
+      // <span style="color: #b22222;">Apply finite difference displacement</span>
+      temp_coord[k+a*3] = nucleus_coord[k+3*a] + (<span style="color: #228b22;">double</span>) <span style="color: #228b22;">m</span> * <span style="color: #a0522d;">delta_x</span>;
+
+      // <span style="color: #b22222;">Update coordinates in the context</span>
+      rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'N'</span>, temp_coord, 3*nucl_num);
+      assert(rc == QMCKL_SUCCESS);
+
+      rc = qmckl_context_touch(context);
+      assert(rc == QMCKL_SUCCESS);
+
+      // <span style="color: #b22222;">Call the provided function</span>
+      rc = qmckl_get_jastrow_champ_dtmp_c(context,&amp;doutput[0][0][0][0][0][0]);
+      assert(rc == QMCKL_SUCCESS);
+
+      // <span style="color: #b22222;">Accumulate derivative using finite-difference coefficients</span>
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span>=0 ; nw&lt;walk_num ; nw++) {
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt; cord_num; l++) {
+          <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">mm</span> = 0; mm &lt;= cord_num; mm++) {
+            <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++) {
+              <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">j</span> = 0; j &lt; 4; j++) {
+                <span style="color: #a020f0;">if</span> (m == -4) {
+                  finite_difference_force_dtmp_c[nw][l][mm][k][a][j][i] = 0.0;
+                }
+                finite_difference_force_dtmp_c[nw][l][mm][k][a][j][i] += coef[m + 4] * doutput[nw][l][mm][a][j][i]/delta_x;
+              }
+
+            }
+          }
+        }
+      }
+    }
+    temp_coord[k+a*3] = nucleus_coord[k+3*a];
+  }
+}
+
+// <span style="color: #b22222;">Reset coordinates in the context</span>
+rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'N'</span>, temp_coord, 3*nucl_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+rc = qmckl_context_touch(context);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+<span style="color: #0000ff;">free</span>(nucleus_coord);
+<span style="color: #0000ff;">free</span>(temp_coord);
+
+
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt; cord_num; l++){
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">m</span> = 0; m &lt;= cord_num; m++){
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+          <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
+            <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">kk</span> = 0; kk&lt;4; kk++){
+            //<span style="color: #b22222;">printf("nw=%i l=%i m=%i k=%i a=%i kk=%i i=%i\n",nw,l,m,k,a,kk,i);</span>
+            //<span style="color: #b22222;">printf("%.10f\t", finite_difference_force_dtmp_c[nw][l][m][k][a][kk][i]);</span>
+            //<span style="color: #b22222;">printf("%.10f\n", forces_dtmp_c[nw][l][m][k][a][kk][i]);</span>
+            //<span style="color: #b22222;">assert(fabs(finite_difference_force_dtmp_c[nw][l][m][k][a][kk][i] - forces_dtmp_c[nw][l][m][k][a][kk][i]) &lt; 1.e-8);</span>
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt; cord_num; l++){
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">m</span> = 0; m &lt;= cord_num; m++){
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+          <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
+            <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">kk</span> = 0; kk&lt;4; kk++){
+              assert(fabs(finite_difference_force_dtmp_c[nw][l][m][k][a][kk][i] - forces_dtmp_c[nw][l][m][k][a][kk][i]) &lt; 1.e-8);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+printf(<span style="color: #8b2252;">"OK\n"</span>);
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org74f9bcb" class="outline-2">
+<h2 id="org74f9bcb"><span class="section-number-2">9</span> Force of een jastrow value</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-org55cd790" class="outline-3">
+<h3 id="org55cd790"><span class="section-number-3">9.1</span> Get</h3>
+<div class="outline-text-3" id="text-9-1">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
+<span style="color: #0000ff;">qmckl_get_forces_jastrow_een</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
+                                    <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">forces_jastrow_een</span>,
+                                    <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">size_max</span>);
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-f90"><span style="color: #a020f0;">interface</span>
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_forces_jastrow_een (context, </span><span style="color: #a020f0;">&amp;</span>
+        forces_jastrow_een, size_max) <span style="color: #a020f0;">bind</span>(C)
+     <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
+     <span style="color: #a020f0;">import</span>
+     <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
+     <span style="color: #228b22;">integer</span> (qmckl_context) , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span> ::<span style="color: #a0522d;"> context</span>
+     <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>       ::<span style="color: #a0522d;"> size_max</span>
+     <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(out)               ::<span style="color: #a0522d;"> forces_jastrow_een(size_max)</span>
+   <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_forces_jastrow_een</span>
+<span style="color: #a020f0;">end interface</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2df186d" class="outline-3">
+<h3 id="org2df186d"><span class="section-number-3">9.2</span> Compute</h3>
+<div class="outline-text-3" id="text-9-2">
+<table id="orgcb0be71" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Variable</th>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">In/Out</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>context</code></td>
+<td class="org-left"><code>qmckl_context</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Global state</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>walk_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of walkers</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>elec_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of electrons</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>nucl_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of nuclei</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>cord_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">order of polynomials</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>dim_c_vector</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">dimension of full coefficient vector</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>c_vector_full</code></td>
+<td class="org-left"><code>double[dim_c_vector][nucl_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">full coefficient vector</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>lkpm_combined_index</code></td>
+<td class="org-left"><code>int64_t[4][dim_c_vector]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">combined indices</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_e</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][elec_num][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus rescaled</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_n</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][nucl_num][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_n_gl</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>tmp_c</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][nucl_num][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">vector of non-zero coefficients</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_tmp_c</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">vector of non-zero coefficients</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_jastrow_een</code></td>
+<td class="org-left"><code>double[walk_num][nucl_num][3]</code></td>
+<td class="org-left">out</td>
+<td class="org-left">Electron-nucleus jastrow</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-f90"><span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_compute_forces_jastrow_een( </span><span style="color: #a020f0;">&amp;</span>
+     context, walk_num, elec_num, nucl_num, cord_num,<span style="color: #a020f0;">&amp;</span>
+     dim_c_vector, c_vector_full, lkpm_combined_index, <span style="color: #a020f0;">&amp;</span>
+     een_rescaled_e, een_rescaled_n, een_rescaled_n_gl, tmp_c, forces_tmp_c,forces_jastrow_een) <span style="color: #a020f0;">&amp;</span>
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
+  <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
+  <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
+  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>)   , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> walk_num, elec_num, cord_num, nucl_num, dim_c_vector</span>
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>)   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> lkpm_combined_index(dim_c_vector,4)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> c_vector_full(nucl_num, dim_c_vector)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e(elec_num, elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n(elec_num, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n_gl(elec_num, 4, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> tmp_c(elec_num, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> forces_tmp_c(elec_num,4, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> forces_jastrow_een(3, nucl_num, walk_num)</span>
+
+  <span style="color: #228b22;">integer</span>*8 ::<span style="color: #a0522d;"> i, a, j, l, k, p, m, n, nw, ii</span>
+  <span style="color: #228b22;">double precision</span> ::<span style="color: #a0522d;"> accu, accu2, cn</span>
+
+  info = QMCKL_SUCCESS
+
+  <span style="color: #a020f0;">if</span> (context == QMCKL_NULL_CONTEXT) info = QMCKL_INVALID_CONTEXT
+  <span style="color: #a020f0;">if</span> (walk_num &lt;= 0)                 info = QMCKL_INVALID_ARG_2
+  <span style="color: #a020f0;">if</span> (elec_num &lt;= 0)                 info = QMCKL_INVALID_ARG_3
+  <span style="color: #a020f0;">if</span> (nucl_num &lt;= 0)                 info = QMCKL_INVALID_ARG_4
+  <span style="color: #a020f0;">if</span> (cord_num &lt;  0)                 info = QMCKL_INVALID_ARG_5
+  <span style="color: #a020f0;">if</span> (info /= QMCKL_SUCCESS)         <span style="color: #a020f0;">return</span>
+
+  <span style="color: #a020f0;">do</span> nw =1, walk_num
+    <span style="color: #a020f0;">do</span> n = 1, dim_c_vector
+      l = lkpm_combined_index(n, 1)
+      k = lkpm_combined_index(n, 2)
+      p = lkpm_combined_index(n, 3)
+      m = lkpm_combined_index(n, 4)
+
+      <span style="color: #a020f0;">do</span> a = 1, nucl_num
+        cn = c_vector_full(a, n)
+        <span style="color: #a020f0;">if</span>(cn == 0.d0) <span style="color: #a020f0;">cycle</span>
+          <span style="color: #a020f0;">do</span> j = 1, elec_num
+            <span style="color: #a020f0;">do</span> ii = 1, 3
+              accu = een_rescaled_n(j,a,m,nw) * forces_tmp_c(j,ii,a,m+l,k,nw) 
+              accu = accu - een_rescaled_n_gl(j,ii,a,m,nw) * tmp_c(j,a,m+l,k,nw)
+
+              forces_jastrow_een(ii, a, nw) = forces_jastrow_een(ii, a, nw) + accu * cn
+            <span style="color: #a020f0;">end do</span>
+          <span style="color: #a020f0;">end do</span>
+      <span style="color: #a020f0;">end do</span>
+    <span style="color: #a020f0;">end do</span>
+  <span style="color: #a020f0;">end do</span>
+
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_forces_jastrow_een</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0d33c65" class="outline-3">
+<h3 id="org0d33c65"><span class="section-number-3">9.3</span> Test</h3>
+<div class="outline-text-3" id="text-9-3">
+<div class="org-src-container">
+<pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow een\n"</span>);
+
+/* <span style="color: #b22222;">Check if Jastrow is properly initialized</span> */
+<span style="color: #0000ff;">assert</span>(<span style="color: #228b22;">qmckl_jastrow_champ_provided</span>(<span style="color: #a0522d;">context</span>));
+
+rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'T'</span>, &amp;(nucl_coord[0]), 3*nucl_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">forces_jastrow_een</span>[walk_num][nucl_num][3];
+rc = qmckl_get_forces_jastrow_een(context, &amp;forces_jastrow_een[0][0][0], 3*nucl_num*walk_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">finite_difference_force_een</span>[walk_num][nucl_num][3];
+rc = qmckl_finite_difference_deriv_n(context, delta_x, &amp;qmckl_get_jastrow_champ_factor_een, &amp;(finite_difference_force_een[0][0][0]), 1);
+
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+      //<span style="color: #b22222;">printf("%.10f\t", finite_difference_force_een[nw][a][k]);</span>
+      //<span style="color: #b22222;">printf("%.10f\n", forces_jastrow_een[nw][a][k]);</span>
+    }
+  }
+}
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+      assert(fabs(finite_difference_force_een[nw][a][k] - forces_jastrow_een[nw][a][k]) &lt; 1.e-8);
+    }
+  }
+}
+printf(<span style="color: #8b2252;">"OK\n"</span>);
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org39d5461" class="outline-2">
+<h2 id="org39d5461"><span class="section-number-2">10</span> Force of een<sub>rescaled</sub><sub>n</sub><sub>gl</sub></h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-orge053dbf" class="outline-3">
+<h3 id="orge053dbf"><span class="section-number-3">10.1</span> Get</h3>
+<div class="outline-text-3" id="text-10-1">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
+<span style="color: #0000ff;">qmckl_get_forces_een_rescaled_n_gl</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
+                                         <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">forces_een_n</span>,
+                                         <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">size_max</span>);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7124477" class="outline-3">
+<h3 id="org7124477"><span class="section-number-3">10.2</span> Compute</h3>
+<div class="outline-text-3" id="text-10-2">
+<table id="org4eb7ddc" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Variable</th>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">In/Out</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>context</code></td>
+<td class="org-left"><code>qmckl_context</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Global state</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>walk_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of walkers</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>elec_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of electrons</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>nucl_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of atoms</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>type_nucl_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of atom types</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>type_nucl_vector</code></td>
+<td class="org-left"><code>int64_t[nucl_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Types of atoms</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>cord_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Order of polynomials</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>rescale_factor_en</code></td>
+<td class="org-left"><code>double[nucl_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Factor to rescale ee distances</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>en_distance</code></td>
+<td class="org-left"><code>double[walk_num][elec_num][nucl_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus distances</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_n</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][nucl_num][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus distances</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_n_gl</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus distances</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_een_n</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][3][nucl_num][4][elec_num]</code></td>
+<td class="org-left">out</td>
+<td class="org-left">Electron-nucleus rescaled distances</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-f90"><span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_compute_forces_een_rescaled_n_gl( </span><span style="color: #a020f0;">&amp;</span>
+     context, walk_num, elec_num, nucl_num, type_nucl_num, type_nucl_vector, <span style="color: #a020f0;">&amp;</span>
+     cord_num, rescale_factor_en, <span style="color: #a020f0;">&amp;</span>
+     en_distance, een_rescaled_n, een_rescaled_n_gl,forces_een_n) <span style="color: #a020f0;">&amp;</span>
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
+  <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
+  <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
+  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>)   , <span style="color: #a020f0;">intent</span>(in),<span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> walk_num, elec_num, nucl_num, type_nucl_num, cord_num</span>
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>)   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> type_nucl_vector(nucl_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> rescale_factor_en(type_nucl_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> en_distance(nucl_num,elec_num,walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n(elec_num,nucl_num,0:cord_num,walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n_gl(elec_num,4,nucl_num,0:cord_num,walk_num) </span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> forces_een_n(elec_num,4,nucl_num,3,0:cord_num,walk_num)</span>
+
+  <span style="color: #228b22;">double precision</span>                    ::<span style="color: #a0522d;"> x, ria_inv, kappa_l</span>
+  <span style="color: #228b22;">integer</span>*8                           ::<span style="color: #a0522d;"> i, a, k, l, nw, m, n</span>
+
+
+  info = QMCKL_SUCCESS
+
+  <span style="color: #a020f0;">if</span> (context == QMCKL_NULL_CONTEXT) <span style="color: #a020f0;">then</span>
+     info = QMCKL_INVALID_CONTEXT
+     <span style="color: #a020f0;">return</span>
+  <span style="color: #a020f0;">endif</span>
+
+  <span style="color: #a020f0;">if</span> (walk_num &lt;= 0) <span style="color: #a020f0;">then</span>
+     info = QMCKL_INVALID_ARG_2
+     <span style="color: #a020f0;">return</span>
+  <span style="color: #a020f0;">endif</span>
+
+  <span style="color: #a020f0;">if</span> (elec_num &lt;= 0) <span style="color: #a020f0;">then</span>
+     info = QMCKL_INVALID_ARG_3
+     <span style="color: #a020f0;">return</span>
+  <span style="color: #a020f0;">endif</span>
+
+  <span style="color: #a020f0;">if</span> (nucl_num &lt;= 0) <span style="color: #a020f0;">then</span>
+     info = QMCKL_INVALID_ARG_4
+     <span style="color: #a020f0;">return</span>
+  <span style="color: #a020f0;">endif</span>
+
+  <span style="color: #a020f0;">if</span> (cord_num &lt; 0) <span style="color: #a020f0;">then</span>
+     info = QMCKL_INVALID_ARG_5
+     <span style="color: #a020f0;">return</span>
+  <span style="color: #a020f0;">endif</span>
+
+
+
+    forces_een_n = 0.0d0
+    <span style="color: #a020f0;">do</span> nw = 1, walk_num
+    <span style="color: #a020f0;">do</span> i = 1, elec_num
+      <span style="color: #a020f0;">do</span> a = 1, nucl_num
+        <span style="color: #a020f0;">do</span> l = 0, cord_num
+          kappa_l = <span style="color: #a020f0;">dble</span>(l)*rescale_factor_en(type_nucl_vector(a)+1)
+          <span style="color: #a020f0;">do</span> m = 1, 4
+            <span style="color: #a020f0;">do</span> n = 1, 3
+              <span style="color: #a020f0;">if</span> (l == 0) <span style="color: #a020f0;">then</span>
+                forces_een_n(i,m,a,n,l,nw) = 0.0d0
+              <span style="color: #a020f0;">else</span>
+                <span style="color: #a020f0;">if</span> (m == n) <span style="color: #a020f0;">then</span>
+                  forces_een_n(i,m,a,n,l,nw) = forces_een_n(i,m,a,n,l,nw) + kappa_l*een_rescaled_n(i,a,l,nw)/en_distance(a,i,nw)
+                <span style="color: #a020f0;">end if</span>
+                <span style="color: #a020f0;">if</span> (m &lt; 4) <span style="color: #a020f0;">then</span>
+                forces_een_n(i,m,a,n,l,nw) = forces_een_n(i,m,a,n,l,nw) - <span style="color: #a020f0;">&amp;</span>
+                  een_rescaled_n_gl(i,m,a,l,nw) * een_rescaled_n_gl(i,n,a,l,nw) /(kappa_l*een_rescaled_n(i,a,l,nw)*en_distance(a,i,nw)) - <span style="color: #a020f0;">&amp;</span>
+                  een_rescaled_n_gl(i,m,a,l,nw) * een_rescaled_n_gl(i,n,a,l,nw)/een_rescaled_n(i,a,l,nw)
+                <span style="color: #a020f0;">else</span>
+                forces_een_n(i,m,a,n,l,nw) = forces_een_n(i,m,a,n,l,nw) + <span style="color: #a020f0;">&amp;</span>
+                  2.0d0 * een_rescaled_n_gl(i,n,a,l,nw) /(en_distance(a,i,nw)*en_distance(a,i,nw)) - <span style="color: #a020f0;">&amp;</span>
+                  een_rescaled_n_gl(i,m,a,l,nw) * een_rescaled_n_gl(i,n,a,l,nw)/een_rescaled_n(i,a,l,nw)
+                <span style="color: #a020f0;">end if</span>
+
+
+
+              <span style="color: #a020f0;">end if</span>
+            <span style="color: #a020f0;">end do</span>
+          <span style="color: #a020f0;">end do</span>
+        <span style="color: #a020f0;">end do</span>
+      <span style="color: #a020f0;">end do</span>
+    <span style="color: #a020f0;">end do</span>
+  <span style="color: #a020f0;">end do</span>
+
+
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_forces_een_rescaled_n_gl</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org22ae90a" class="outline-3">
+<h3 id="org22ae90a"><span class="section-number-3">10.3</span> Test</h3>
+<div class="outline-text-3" id="text-10-3">
+<div class="org-src-container">
+<pre class="src src-c">printf(<span style="color: #8b2252;">"Forces of een_rescaled_n_gl\n"</span>);
+
+/* <span style="color: #b22222;">Check if Jastrow is properly initialized</span> */
+<span style="color: #0000ff;">assert</span>(<span style="color: #228b22;">qmckl_jastrow_champ_provided</span>(<span style="color: #a0522d;">context</span>));
+
+rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'T'</span>, &amp;(nucl_coord[0]), 3*nucl_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">forces_een_n</span>[walk_num][cord_num+1][3][nucl_num][4][elec_num];
+rc = qmckl_get_forces_een_rescaled_n_gl(context, &amp;forces_een_n[0][0][0][0][0][0], 3*4*nucl_num*walk_num*elec_num*(cord_num+1));
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">finite_difference_force_een_n</span>[walk_num][cord_num+1][3][nucl_num][4][elec_num];
+
+nucleus_coord = (<span style="color: #228b22;">double</span>*) malloc(3 * nucl_num * <span style="color: #a020f0;">sizeof</span>(<span style="color: #228b22;">double</span>));
+<span style="color: #a020f0;">if</span> (nucleus_coord == <span style="color: #008b8b;">NULL</span>) {
+  <span style="color: #a020f0;">return</span> QMCKL_ALLOCATION_FAILED;
+}
+
+rc = qmckl_get_nucleus_coord(context, <span style="color: #8b2252;">'N'</span>, nucleus_coord, 3*nucl_num);
+
+temp_coord = (<span style="color: #228b22;">double</span>*) malloc(3 * nucl_num * <span style="color: #a020f0;">sizeof</span>(<span style="color: #228b22;">double</span>));
+<span style="color: #a020f0;">if</span> (temp_coord == <span style="color: #008b8b;">NULL</span>) {
+  free(nucleus_coord);
+  <span style="color: #a020f0;">return</span> QMCKL_ALLOCATION_FAILED;
+}
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">ddoutput</span>[walk_num][cord_num+1][nucl_num][4][elec_num];
+
+// <span style="color: #b22222;">Copy original coordinates</span>
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; 3 * nucl_num; i++) {
+  temp_coord[i] = nucleus_coord[i];
+}
+
+
+
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++) {
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">m</span> = -4; m &lt;= 4; m++) {
+
+      // <span style="color: #b22222;">Apply finite difference displacement</span>
+      temp_coord[k+a*3] = nucleus_coord[k+3*a] + (<span style="color: #228b22;">double</span>) <span style="color: #228b22;">m</span> * <span style="color: #a0522d;">delta_x</span>;
+
+      // <span style="color: #b22222;">Update coordinates in the context</span>
+      rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'N'</span>, temp_coord, 3*nucl_num);
+      assert(rc == QMCKL_SUCCESS);
+
+      rc = qmckl_context_touch(context);
+      assert(rc == QMCKL_SUCCESS);
+
+      // <span style="color: #b22222;">Call the provided function</span>
+      rc = qmckl_get_jastrow_champ_een_rescaled_n_gl(context,&amp;ddoutput[0][0][0][0][0], 4*elec_num*nucl_num*(cord_num+1)*walk_num);
+      assert(rc == QMCKL_SUCCESS);
+
+      // <span style="color: #b22222;">Accumulate derivative using finite-difference coefficients</span>
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span>=0 ; nw&lt;walk_num ; nw++) {
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt;= cord_num; l++) {
+            <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++) {
+              <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">j</span> = 0; j &lt; 4; j++) {
+                <span style="color: #a020f0;">if</span> (m == -4) {
+                  finite_difference_force_een_n[nw][l][k][a][j][i] = 0.0;
+                }
+                finite_difference_force_een_n[nw][l][k][a][j][i] += coef[m + 4] * ddoutput[nw][l][a][j][i]/delta_x;
+              }
+
+
+          }
+        }
+      }
+    }
+    temp_coord[k+a*3] = nucleus_coord[k+3*a];
+  }
+}
+
+// <span style="color: #b22222;">Reset coordinates in the context</span>
+rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'N'</span>, temp_coord, 3*nucl_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+rc = qmckl_context_touch(context);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+<span style="color: #0000ff;">free</span>(nucleus_coord);
+<span style="color: #0000ff;">free</span>(temp_coord);
+
+
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt;=cord_num; l++){
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+          <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
+            <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">kk</span> = 0; kk&lt;4; kk++){
+            //<span style="color: #b22222;">printf("nw=%i l=%i k=%i a=%i kk=%i i=%i\n",nw,l,k,a,kk,i);</span>
+            //<span style="color: #b22222;">printf("%.10f\t", finite_difference_force_een_n[nw][l][k][a][kk][i]);</span>
+            //<span style="color: #b22222;">printf("%.10f\n", forces_een_n[nw][l][k][a][kk][i]);</span>
+            //<span style="color: #b22222;">assert(fabs(finite_difference_force_een_n[nw][l][k][a][kk][i] - forces_een_n[nw][l][k][a][kk][i]) &lt; 1.e-6);</span>
+            }
+
+          }
+        }
+    }
+  }
+}
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt;= cord_num; l++){
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+          <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
+            <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">kk</span> = 0; kk&lt;4; kk++){
+              assert(fabs(finite_difference_force_een_n[nw][l][k][a][kk][i] - forces_een_n[nw][l][k][a][kk][i]) &lt; 1.e-6);
+            }
+          }
+      }
+    }
+  }
+}
+
+
+printf(<span style="color: #8b2252;">"OK\n"</span>);
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb354864" class="outline-2">
+<h2 id="orgb354864"><span class="section-number-2">11</span> Force of een jastrow gradient</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-orga04df27" class="outline-3">
+<h3 id="orga04df27"><span class="section-number-3">11.1</span> Get</h3>
+<div class="outline-text-3" id="text-11-1">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
+<span style="color: #0000ff;">qmckl_get_forces_jastrow_een_g</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
+                                     <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">forces_jastrow_een_g</span>,
+                                     <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">size_max</span>);
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-f90"><span style="color: #a020f0;">interface</span>
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_forces_jastrow_een_g (context, </span><span style="color: #a020f0;">&amp;</span>
+        forces_jastrow_een_g, size_max) <span style="color: #a020f0;">bind</span>(C)
+     <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
+     <span style="color: #a020f0;">import</span>
+     <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
+     <span style="color: #228b22;">integer</span> (qmckl_context) , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span> ::<span style="color: #a0522d;"> context</span>
+     <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>       ::<span style="color: #a0522d;"> size_max</span>
+     <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(out)               ::<span style="color: #a0522d;"> forces_jastrow_een_g(size_max)</span>
+   <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_forces_jastrow_een_g</span>
+<span style="color: #a020f0;">end interface</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org44cc826" class="outline-3">
+<h3 id="org44cc826"><span class="section-number-3">11.2</span> Compute</h3>
+<div class="outline-text-3" id="text-11-2">
+<table id="orga18813e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Variable</th>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">In/Out</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>context</code></td>
+<td class="org-left"><code>qmckl_context</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Global state</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>walk_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of walkers</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>elec_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of electrons</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>nucl_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of nuclei</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>cord_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">order of polynomials</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>dim_c_vector</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">dimension of full coefficient vector</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>c_vector_full</code></td>
+<td class="org-left"><code>double[dim_c_vector][nucl_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">full coefficient vector</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>lkpm_combined_index</code></td>
+<td class="org-left"><code>int64_t[4][dim_c_vector]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">combined indices</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>en_distance</code></td>
+<td class="org-left"><code>double[elec_num][nucl_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">En distance</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>tmp_c</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][nucl_num][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Temporary intermediate tensor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>dtmp_c</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">vector of non-zero coefficients</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_tmp_c</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Temporary intermediate tensor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_dtmp_c</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][4][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">vector of non-zero coefficients</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_een_n</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][3][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Derivative of Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_n</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][nucl_num][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_e</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][elec_num][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_n_gl</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Derivative of Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_e_gl</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][elec_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Derivative of Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_jastrow_een_g</code></td>
+<td class="org-left"><code>double[walk_num][3][nucl_num][3][elec_num]</code></td>
+<td class="org-left">out</td>
+<td class="org-left">Derivative of Electron-nucleus jastrow</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="org-src-container">
+<pre class="src src-f90"><span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_compute_forces_jastrow_een_g( </span><span style="color: #a020f0;">&amp;</span>
+     context, walk_num, elec_num, nucl_num, <span style="color: #a020f0;">&amp;</span>
+     cord_num, dim_c_vector, c_vector_full, lkpm_combined_index, <span style="color: #a020f0;">&amp;</span>
+     en_distance, tmp_c, dtmp_c, forces_tmp_c, forces_dtmp_c, forces_een_n, een_rescaled_n, <span style="color: #a020f0;">&amp;</span>
+     een_rescaled_e, een_rescaled_n_gl, een_rescaled_e_gl, forces_jastrow_een_g)<span style="color: #a020f0;">&amp;</span>
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
+  <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
+  <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
+  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>)   , <span style="color: #a020f0;">intent</span>(in),<span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> walk_num, elec_num, cord_num, nucl_num, dim_c_vector</span>
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>)   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> lkpm_combined_index(dim_c_vector,4)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> c_vector_full(nucl_num, dim_c_vector)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> en_distance(nucl_num, elec_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> tmp_c(elec_num, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> dtmp_c(elec_num, 4, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> forces_tmp_c(elec_num, 4,nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> forces_dtmp_c(elec_num, 4, nucl_num,4,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> forces_een_n(elec_num, 4, nucl_num, 3, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n(elec_num, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e(elec_num, elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n_gl(elec_num, 4, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e_gl(elec_num, 4, elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> forces_jastrow_een_g(elec_num,3,nucl_num,3,walk_num)</span>
+
+  <span style="color: #228b22;">integer</span>*8 ::<span style="color: #a0522d;"> i, a, j, l, k, m, n, nw, ii, jj</span>
+  <span style="color: #228b22;">double precision</span> ::<span style="color: #a0522d;"> accu, accu2, cn</span>
+
+
+  info = QMCKL_SUCCESS
+
+  <span style="color: #a020f0;">if</span> (context == QMCKL_NULL_CONTEXT) info = QMCKL_INVALID_CONTEXT
+  <span style="color: #a020f0;">if</span> (walk_num &lt;= 0)                 info = QMCKL_INVALID_ARG_2
+  <span style="color: #a020f0;">if</span> (elec_num &lt;= 0)                 info = QMCKL_INVALID_ARG_3
+  <span style="color: #a020f0;">if</span> (nucl_num &lt;= 0)                 info = QMCKL_INVALID_ARG_4
+  <span style="color: #a020f0;">if</span> (cord_num &lt;  0)                 info = QMCKL_INVALID_ARG_5
+  <span style="color: #a020f0;">if</span> (info /= QMCKL_SUCCESS)         <span style="color: #a020f0;">return</span>
+
+
+
+  <span style="color: #a020f0;">if</span> (cord_num == 0) <span style="color: #a020f0;">return</span>
+  forces_jastrow_een_g = 0.0d0
+  <span style="color: #a020f0;">do</span> nw =1, walk_num
+     <span style="color: #a020f0;">do</span> n = 1, dim_c_vector
+        l = lkpm_combined_index(n, 1)
+        k = lkpm_combined_index(n, 2)
+        m = lkpm_combined_index(n, 4)
+
+        <span style="color: #a020f0;">do</span> a = 1, nucl_num
+           cn = c_vector_full(a, n)
+           <span style="color: #a020f0;">if</span>(cn == 0.d0) <span style="color: #a020f0;">cycle</span>
+
+           <span style="color: #a020f0;">do</span> ii = 1, 3
+              <span style="color: #a020f0;">do</span> i = 1, elec_num
+                <span style="color: #a020f0;">do</span> jj = 1, 3
+                forces_jastrow_een_g(i, ii, a, jj, nw) = forces_jastrow_een_g(i, ii, a, jj, nw) + (<span style="color: #a020f0;">&amp;</span>
+                   tmp_c(i,a,              m,  k,nw) *  forces_een_n(i,ii,a,jj  ,m+l,nw) + <span style="color: #a020f0;">&amp;</span>
+                   forces_tmp_c(i,jj,a,    m,  k,nw) *  een_rescaled_n_gl(i,ii,a,m+l,nw) + <span style="color: #a020f0;">&amp;</span>
+                   tmp_c(i,a,              m+l,k,nw) *  forces_een_n(i,ii,a,jj,  m,  nw) + <span style="color: #a020f0;">&amp;</span>
+                   forces_tmp_c(i,jj,a,    m+l,k,nw) *  een_rescaled_n_gl(i,ii,a,m,  nw) + <span style="color: #a020f0;">&amp;</span>
+                   dtmp_c(i,ii,a,          m,  k,nw) * -een_rescaled_n_gl(i,jj,a,m+l,nw) + <span style="color: #a020f0;">&amp;</span>
+                   forces_dtmp_c(i,ii,a,jj,m,  k,nw) *  een_rescaled_n(i,a,      m+l,nw) + <span style="color: #a020f0;">&amp;</span>
+                   dtmp_c(i,ii,a,          m+l,k,nw) * -een_rescaled_n_gl(i,jj,a,m,  nw) + <span style="color: #a020f0;">&amp;</span>
+                   forces_dtmp_c(i,ii,a,jj,m+l,k,nw) *  een_rescaled_n(i,a,      m,  nw)   <span style="color: #a020f0;">&amp;</span>
+                 ) * cn
+
+                <span style="color: #a020f0;">end do</span>
+              <span style="color: #a020f0;">end do</span>
+           <span style="color: #a020f0;">end do</span>
+
+        <span style="color: #a020f0;">end do</span>
+     <span style="color: #a020f0;">end do</span>
+  <span style="color: #a020f0;">end do</span>
+
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_forces_jastrow_een_g</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org15bc9b7" class="outline-3">
+<h3 id="org15bc9b7"><span class="section-number-3">11.3</span> Test</h3>
+<div class="outline-text-3" id="text-11-3">
+<div class="org-src-container">
+<pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow een G\n"</span>);
+
+/* <span style="color: #b22222;">Check if Jastrow is properly initialized</span> */
+<span style="color: #0000ff;">assert</span>(<span style="color: #228b22;">qmckl_jastrow_champ_provided</span>(<span style="color: #a0522d;">context</span>));
+
+rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'T'</span>, &amp;(nucl_coord[0]), 3*nucl_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">forces_jastrow_een_g</span>[walk_num][3][nucl_num][3][elec_num];
+rc = qmckl_get_forces_jastrow_een_g(context, &amp;forces_jastrow_een_g[0][0][0][0][0], 3*3*nucl_num*walk_num*elec_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">finite_difference_force_een_g</span>[walk_num][nucl_num][3][4][elec_num];
+rc = qmckl_finite_difference_deriv_n(context, delta_x, &amp;qmckl_get_jastrow_champ_factor_een_gl, &amp;finite_difference_force_een_g[0][0][0][0][0], 4*elec_num);
+
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 0; l &lt; 3; l++){
+          //<span style="color: #b22222;">printf("finite_difference_force_een_g[%i][%i][%i][%i][%i] %+3.10f \n", nw,a,k,l,i,finite_difference_force_een_g[nw][a][k][l][i]);</span>
+          //<span style="color: #b22222;">printf("forces_jastrow_een_g         [%i][%i][%i][%i][%i] %+3.10f\n", nw,k,a,l,i,forces_jastrow_een_g[nw][k][a][l][i]);</span>
+          //<span style="color: #b22222;">assert(fabs(finite_difference_force_een_g[nw][a][k][l][i] - forces_jastrow_een_g[nw][k][a][l][i]) &lt; 1.e-8);</span>
+        }
+      }
+    }
+  }
+}
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
+        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">l</span> = 1; l &lt; 3; l++){
+          assert(fabs(finite_difference_force_een_g[nw][a][k][l][i] - forces_jastrow_een_g[nw][k][a][l][i]) &lt; 1.e-8);
+        }
+      }
+    }
+  }
+}
+printf(<span style="color: #8b2252;">"OK\n"</span>);
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb5bf8d0" class="outline-2">
+<h2 id="orgb5bf8d0"><span class="section-number-2">12</span> Force of een jastrow laplacian</h2>
+<div class="outline-text-2" id="text-12">
+</div>
+<div id="outline-container-orgfd20b23" class="outline-3">
+<h3 id="orgfd20b23"><span class="section-number-3">12.1</span> Get</h3>
+<div class="outline-text-3" id="text-12-1">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
+<span style="color: #0000ff;">qmckl_get_forces_jastrow_een_l</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
+                                     <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">forces_jastrow_een_l</span>,
+                                     <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">size_max</span>);
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-f90"><span style="color: #a020f0;">interface</span>
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_forces_jastrow_een_l (context, </span><span style="color: #a020f0;">&amp;</span>
+        forces_jastrow_een_l, size_max) <span style="color: #a020f0;">bind</span>(C)
+     <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
+     <span style="color: #a020f0;">import</span>
+     <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
+     <span style="color: #228b22;">integer</span> (qmckl_context) , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span> ::<span style="color: #a0522d;"> context</span>
+     <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>       ::<span style="color: #a0522d;"> size_max</span>
+     <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(out)               ::<span style="color: #a0522d;"> forces_jastrow_een_l(size_max)</span>
+   <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_forces_jastrow_een_l</span>
+<span style="color: #a020f0;">end interface</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org88736dc" class="outline-3">
+<h3 id="org88736dc"><span class="section-number-3">12.2</span> Compute</h3>
+<div class="outline-text-3" id="text-12-2">
+<table id="org9ac966e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Variable</th>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">In/Out</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>context</code></td>
+<td class="org-left"><code>qmckl_context</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Global state</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>walk_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of walkers</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>elec_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of electrons</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>nucl_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Number of nuclei</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>cord_num</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">order of polynomials</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>dim_c_vector</code></td>
+<td class="org-left"><code>int64_t</code></td>
+<td class="org-left">in</td>
+<td class="org-left">dimension of full coefficient vector</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>c_vector_full</code></td>
+<td class="org-left"><code>double[dim_c_vector][nucl_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">full coefficient vector</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>lkpm_combined_index</code></td>
+<td class="org-left"><code>int64_t[4][dim_c_vector]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">combined indices</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>en_distance</code></td>
+<td class="org-left"><code>double[elec_num][nucl_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">En distance</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>tmp_c</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][nucl_num][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Temporary intermediate tensor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>dtmp_c</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">vector of non-zero coefficients</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_tmp_c</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Temporary intermediate tensor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_dtmp_c</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][4][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">vector of non-zero coefficients</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_een_n</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][3][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Derivative of Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_n</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][nucl_num][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_e</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][elec_num][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_n_gl</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][nucl_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Derivative of Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>een_rescaled_e_gl</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num][elec_num][4][elec_num]</code></td>
+<td class="org-left">in</td>
+<td class="org-left">Derivative of Electron-nucleus rescaled factor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>forces_jastrow_een_l</code></td>
+<td class="org-left"><code>double[walk_num][3][nucl_num]</code></td>
+<td class="org-left">out</td>
+<td class="org-left">Derivative of Electron-nucleus jastrow</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="org-src-container">
+<pre class="src src-f90"><span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_compute_forces_jastrow_een_l( </span><span style="color: #a020f0;">&amp;</span>
+     context, walk_num, elec_num, nucl_num, <span style="color: #a020f0;">&amp;</span>
+     cord_num, dim_c_vector, c_vector_full, lkpm_combined_index, <span style="color: #a020f0;">&amp;</span>
+     en_distance, tmp_c, dtmp_c, forces_tmp_c, forces_dtmp_c, forces_een_n, een_rescaled_n, <span style="color: #a020f0;">&amp;</span>
+     een_rescaled_e, een_rescaled_n_gl, een_rescaled_e_gl, forces_jastrow_een_l)<span style="color: #a020f0;">&amp;</span>
+     <span style="color: #a020f0;">result</span>(info) <span style="color: #a020f0;">bind</span>(C)
+  <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
+  <span style="color: #a020f0;">use</span> <span style="color: #0000ff;">qmckl</span>
+  <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
+  <span style="color: #228b22;">integer</span>(qmckl_context), <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> context</span>
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>)   , <span style="color: #a020f0;">intent</span>(in),<span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> walk_num, elec_num, cord_num, nucl_num, dim_c_vector</span>
+  <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>)   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> lkpm_combined_index(dim_c_vector,4)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> c_vector_full(nucl_num, dim_c_vector)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> en_distance(nucl_num, elec_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> tmp_c(elec_num, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> dtmp_c(elec_num, 4, nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> forces_tmp_c(elec_num, 4,nucl_num,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> forces_dtmp_c(elec_num, 4, nucl_num,4,0:cord_num, 0:cord_num-1,  walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> forces_een_n(elec_num, 4, nucl_num, 3, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n(elec_num, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e(elec_num, elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n_gl(elec_num, 4, nucl_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e_gl(elec_num, 4, elec_num, 0:cord_num, walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> forces_jastrow_een_l(nucl_num,3,walk_num)</span>
+
+  <span style="color: #228b22;">integer</span>*8 ::<span style="color: #a0522d;"> i, a, j, l, k, m, n, nw, ii, jj</span>
+  <span style="color: #228b22;">double precision</span> ::<span style="color: #a0522d;"> accu, accu2, cn</span>
+
+
+  info = QMCKL_SUCCESS
+
+  <span style="color: #a020f0;">if</span> (context == QMCKL_NULL_CONTEXT) info = QMCKL_INVALID_CONTEXT
+  <span style="color: #a020f0;">if</span> (walk_num &lt;= 0)                 info = QMCKL_INVALID_ARG_2
+  <span style="color: #a020f0;">if</span> (elec_num &lt;= 0)                 info = QMCKL_INVALID_ARG_3
+  <span style="color: #a020f0;">if</span> (nucl_num &lt;= 0)                 info = QMCKL_INVALID_ARG_4
+  <span style="color: #a020f0;">if</span> (cord_num &lt;  0)                 info = QMCKL_INVALID_ARG_5
+  <span style="color: #a020f0;">if</span> (info /= QMCKL_SUCCESS)         <span style="color: #a020f0;">return</span>
+
+
+
+  <span style="color: #a020f0;">if</span> (cord_num == 0) <span style="color: #a020f0;">return</span>
+  forces_jastrow_een_l = 0.0d0
+  <span style="color: #a020f0;">do</span> nw =1, walk_num
+     <span style="color: #a020f0;">do</span> n = 1, dim_c_vector
+        l = lkpm_combined_index(n, 1)
+        k = lkpm_combined_index(n, 2)
+        m = lkpm_combined_index(n, 4)
+
+        <span style="color: #a020f0;">do</span> a = 1, nucl_num
+           cn = c_vector_full(a, n)
+           <span style="color: #a020f0;">if</span>(cn == 0.d0) <span style="color: #a020f0;">cycle</span>
+
+           <span style="color: #a020f0;">do</span> ii = 1, 3
+              <span style="color: #a020f0;">do</span> i = 1, elec_num
+                forces_jastrow_een_l(a, ii, nw) = forces_jastrow_een_l(a, ii, nw) + (<span style="color: #a020f0;">&amp;</span>
+                   tmp_c(i,a,              m,  k,nw) *  forces_een_n(i,4,a,ii  ,m+l,nw) + <span style="color: #a020f0;">&amp;</span>
+                   forces_tmp_c(i,ii,a,    m,  k,nw) *  een_rescaled_n_gl(i,4,a,m+l,nw) + <span style="color: #a020f0;">&amp;</span>
+                   tmp_c(i,a,              m+l,k,nw) *  forces_een_n(i,4,a,ii,  m,  nw) + <span style="color: #a020f0;">&amp;</span>
+                   forces_tmp_c(i,ii,a,    m+l,k,nw) *  een_rescaled_n_gl(i,4,a,m,  nw) + <span style="color: #a020f0;">&amp;</span>
+                   dtmp_c(i,4,a,          m,  k,nw) * -een_rescaled_n_gl(i,ii,a,m+l,nw) + <span style="color: #a020f0;">&amp;</span>
+                   forces_dtmp_c(i,4,a,ii,m,  k,nw) *  een_rescaled_n(i,a,      m+l,nw) + <span style="color: #a020f0;">&amp;</span>
+                   dtmp_c(i,4,a,          m+l,k,nw) * -een_rescaled_n_gl(i,ii,a,m,  nw) + <span style="color: #a020f0;">&amp;</span>
+                   forces_dtmp_c(i,4,a,ii,m+l,k,nw) *  een_rescaled_n(i,a,      m,  nw)   <span style="color: #a020f0;">&amp;</span>
+                 ) * cn
+              <span style="color: #a020f0;">end do</span>
+           <span style="color: #a020f0;">end do</span>
+
+           cn = cn + cn
+            <span style="color: #a020f0;">do</span> ii = 1, 3
+              <span style="color: #a020f0;">do</span> i = 1, elec_num
+                <span style="color: #a020f0;">do</span> jj = 1, 3
+                  forces_jastrow_een_l(a, ii, nw) = forces_jastrow_een_l(a, ii, nw) + (<span style="color: #a020f0;">&amp;</span>
+                      dtmp_c(i,jj,a,m, k,nw) * forces_een_n(i,jj,a,ii ,m+l,nw) + <span style="color: #a020f0;">&amp;</span>
+                      dtmp_c(i,jj,a,m+l, k,nw) * forces_een_n(i,jj,a,ii ,m,nw) + <span style="color: #a020f0;">&amp;</span>
+                      forces_dtmp_c(i,jj,a,ii,m, k,nw) * een_rescaled_n_gl(i,jj,a,m+l,nw) + <span style="color: #a020f0;">&amp;</span>
+                      forces_dtmp_c(i,jj,a,ii,m+l, k,nw) * een_rescaled_n_gl(i,jj,a,m,nw) <span style="color: #a020f0;">&amp;</span>
+                    ) * cn
+                <span style="color: #a020f0;">end do</span>
+              <span style="color: #a020f0;">end do</span>
+            <span style="color: #a020f0;">end do</span>
+        <span style="color: #a020f0;">end do</span>
+     <span style="color: #a020f0;">end do</span>
+  <span style="color: #a020f0;">end do</span>
+
+<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_forces_jastrow_een_l</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0322db5" class="outline-3">
+<h3 id="org0322db5"><span class="section-number-3">12.3</span> Test</h3>
+<div class="outline-text-3" id="text-12-3">
+<div class="org-src-container">
+<pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow een l\n"</span>);
+
+/* <span style="color: #b22222;">Check if Jastrow is properly initialized</span> */
+<span style="color: #0000ff;">assert</span>(<span style="color: #228b22;">qmckl_jastrow_champ_provided</span>(<span style="color: #a0522d;">context</span>));
+
+rc = qmckl_set_nucleus_coord(context, <span style="color: #8b2252;">'T'</span>, &amp;(nucl_coord[0]), 3*nucl_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">forces_jastrow_een_l</span>[walk_num][3][nucl_num];
+rc = qmckl_get_forces_jastrow_een_l(context, &amp;forces_jastrow_een_l[0][0][0], 3*nucl_num*walk_num);
+<span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">finite_difference_force_een_l</span>[walk_num][nucl_num][3][4][elec_num];
+rc = qmckl_finite_difference_deriv_n(context, delta_x, &amp;qmckl_get_jastrow_champ_factor_een_gl, &amp;finite_difference_force_een_l[0][0][0][0][0], 4*elec_num);
+
+<span style="color: #228b22;">double</span> <span style="color: #a0522d;">finite_difference_force_een_l_sum</span>[walk_num][nucl_num][3];
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+      finite_difference_force_een_l_sum[nw][a][k] = 0;
+      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num; i++){
+        finite_difference_force_een_l_sum[nw][a][k] = finite_difference_force_een_l_sum[nw][a][k] + finite_difference_force_een_l[nw][a][k][3][i];
+      }
+    }
+  }
+}
+
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+      printf(<span style="color: #8b2252;">"finite_difference_force_een_l_sum[%i][%i][%i] %+3.10f \n"</span>, nw,a,k,finite_difference_force_een_l_sum[nw][a][k]);
+      printf(<span style="color: #8b2252;">"forces_jastrow_een_l         [%i][%i][%i] %+3.10f\n"</span>, nw,k,a,forces_jastrow_een_l[nw][k][a]);
+      assert(fabs(finite_difference_force_een_l_sum[nw][a][k] - forces_jastrow_een_l[nw][k][a]) &lt; 1.e-8);
+    }
+  }
+}
+<span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; nw++){
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">a</span> = 0; a &lt; nucl_num; a++) {
+    <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">k</span> = 0; k &lt; 3; k++){
+      assert(fabs(finite_difference_force_een_l_sum[nw][a][k] - forces_jastrow_een_l[nw][k][a]) &lt; 1.e-8);
+    }
+  }
+}
+printf(<span style="color: #8b2252;">"OK\n"</span>);
+
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2024-12-12 Thu 08:58</p>
+<p class="date">Created: 2024-12-12 Thu 09:09</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

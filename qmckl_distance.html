@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-12-12 Thu 08:58 -->
+<!-- 2024-12-12 Thu 09:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Inter-particle distances</title>
@@ -346,54 +346,54 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1e19af6">1. Squared distance</a>
+<li><a href="#org4d6f1de">1. Squared distance</a>
 <ul>
-<li><a href="#orgc8325ae">1.1. <code>qmckl_distance_sq</code></a>
+<li><a href="#org73b1774">1.1. <code>qmckl_distance_sq</code></a>
 <ul>
-<li><a href="#orgba0208f">1.1.1. Performance</a></li>
+<li><a href="#org78194cb">1.1.1. Performance</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3a9c5f6">2. Distance</a>
+<li><a href="#orge8371df">2. Distance</a>
 <ul>
-<li><a href="#org88e22d3">2.1. <code>qmckl_distance</code></a>
+<li><a href="#org97d31d9">2.1. <code>qmckl_distance</code></a>
 <ul>
-<li><a href="#org7d08e48">2.1.1. Requirements</a></li>
-<li><a href="#org0b39bc0">2.1.2. C header</a></li>
-<li><a href="#orge709012">2.1.3. Source</a></li>
-<li><a href="#org93f8a45">2.1.4. Performance</a></li>
+<li><a href="#orgc7e6065">2.1.1. Requirements</a></li>
+<li><a href="#org8ac61d5">2.1.2. C header</a></li>
+<li><a href="#orgd82112e">2.1.3. Source</a></li>
+<li><a href="#orgbd5ce60">2.1.4. Performance</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgdf93a4c">3. Rescaled Distance</a>
+<li><a href="#org9c2b2ea">3. Rescaled Distance</a>
 <ul>
-<li><a href="#orge8cda3c">3.1. <code>qmckl_distance_rescaled</code></a>
+<li><a href="#org7f16681">3.1. <code>qmckl_distance_rescaled</code></a>
 <ul>
-<li><a href="#org7d61aea">3.1.1. Requirements</a></li>
-<li><a href="#org088272f">3.1.2. C header</a></li>
-<li><a href="#orgb895d47">3.1.3. Source</a></li>
-<li><a href="#org7e63903">3.1.4. Performance</a></li>
+<li><a href="#org1e6f4ea">3.1.1. Requirements</a></li>
+<li><a href="#orgb8e1cb4">3.1.2. C header</a></li>
+<li><a href="#org5256f55">3.1.3. Source</a></li>
+<li><a href="#org7bf6295">3.1.4. Performance</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org1f08dfe">4. Rescaled Distance Derivatives</a>
+<li><a href="#orgec05c3b">4. Rescaled Distance Derivatives</a>
 <ul>
-<li><a href="#org6a4467e">4.1. <code>qmckl_distance_rescaled_gl</code></a></li>
+<li><a href="#org8ee4b27">4.1. <code>qmckl_distance_rescaled_gl</code></a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org1e19af6" class="outline-2">
-<h2 id="org1e19af6"><span class="section-number-2">1</span> Squared distance</h2>
+<div id="outline-container-org4d6f1de" class="outline-2">
+<h2 id="org4d6f1de"><span class="section-number-2">1</span> Squared distance</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgc8325ae" class="outline-3">
-<h3 id="orgc8325ae"><span class="section-number-3">1.1</span> <code>qmckl_distance_sq</code></h3>
+<div id="outline-container-org73b1774" class="outline-3">
+<h3 id="org73b1774"><span class="section-number-3">1.1</span> <code>qmckl_distance_sq</code></h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 <code>qmckl_distance_sq</code> computes the matrix of the squared distances
@@ -406,7 +406,7 @@ between all pairs of points in two sets, one point within each set:
    \]
 </p>
 
-<table id="org374d2fa" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgec4ab96" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -678,8 +678,8 @@ Requirements:
 </div>
 </div>
 
-<div id="outline-container-orgba0208f" class="outline-4">
-<h4 id="orgba0208f"><span class="section-number-4">1.1.1</span> Performance</h4>
+<div id="outline-container-org78194cb" class="outline-4">
+<h4 id="org78194cb"><span class="section-number-4">1.1.1</span> Performance</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 This function is more efficient when <code>A</code> and <code>B</code> are
@@ -689,12 +689,12 @@ transposed.
 </div>
 </div>
 </div>
-<div id="outline-container-org3a9c5f6" class="outline-2">
-<h2 id="org3a9c5f6"><span class="section-number-2">2</span> Distance</h2>
+<div id="outline-container-orge8371df" class="outline-2">
+<h2 id="orge8371df"><span class="section-number-2">2</span> Distance</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org88e22d3" class="outline-3">
-<h3 id="org88e22d3"><span class="section-number-3">2.1</span> <code>qmckl_distance</code></h3>
+<div id="outline-container-org97d31d9" class="outline-3">
+<h3 id="org97d31d9"><span class="section-number-3">2.1</span> <code>qmckl_distance</code></h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 <code>qmckl_distance</code> computes the matrix of the distances between all
@@ -712,7 +712,7 @@ If the input array is normal (<code>'N'</code>), the xyz coordinates are in
 the leading dimension: <code>[n][3]</code> in C and <code>(3,n)</code> in Fortran.
 </p>
 
-<table id="orgdd7f83f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org85df089" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -813,8 +813,8 @@ the leading dimension: <code>[n][3]</code> in C and <code>(3,n)</code> in Fortra
 </table>
 </div>
 
-<div id="outline-container-org7d08e48" class="outline-4">
-<h4 id="org7d08e48"><span class="section-number-4">2.1.1</span> Requirements</h4>
+<div id="outline-container-orgc7e6065" class="outline-4">
+<h4 id="orgc7e6065"><span class="section-number-4">2.1.1</span> Requirements</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
 <li><code>context</code> is not <code>QMCKL_NULL_CONTEXT</code></li>
@@ -832,8 +832,8 @@ the leading dimension: <code>[n][3]</code> in C and <code>(3,n)</code> in Fortra
 </div>
 </div>
 
-<div id="outline-container-org0b39bc0" class="outline-4">
-<h4 id="org0b39bc0"><span class="section-number-4">2.1.2</span> C header</h4>
+<div id="outline-container-org8ac61d5" class="outline-4">
+<h4 id="org8ac61d5"><span class="section-number-4">2.1.2</span> C header</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_distance</span> (
@@ -853,8 +853,8 @@ the leading dimension: <code>[n][3]</code> in C and <code>(3,n)</code> in Fortra
 </div>
 </div>
 
-<div id="outline-container-orge709012" class="outline-4">
-<h4 id="orge709012"><span class="section-number-4">2.1.3</span> Source</h4>
+<div id="outline-container-orgd82112e" class="outline-4">
+<h4 id="orgd82112e"><span class="section-number-4">2.1.3</span> Source</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">function</span> <span style="color: #0000ff;">qmckl_distance</span>(context, transa, transb, m, n, <span style="color: #a020f0;">&amp;</span>
@@ -1004,8 +1004,8 @@ the leading dimension: <code>[n][3]</code> in C and <code>(3,n)</code> in Fortra
 </div>
 </div>
 
-<div id="outline-container-org93f8a45" class="outline-4">
-<h4 id="org93f8a45"><span class="section-number-4">2.1.4</span> Performance</h4>
+<div id="outline-container-orgbd5ce60" class="outline-4">
+<h4 id="orgbd5ce60"><span class="section-number-4">2.1.4</span> Performance</h4>
 <div class="outline-text-4" id="text-2-1-4">
 <p>
 This function is more efficient when <code>A</code> and <code>B</code> are transposed.
@@ -1015,12 +1015,12 @@ This function is more efficient when <code>A</code> and <code>B</code> are trans
 </div>
 </div>
 
-<div id="outline-container-orgdf93a4c" class="outline-2">
-<h2 id="orgdf93a4c"><span class="section-number-2">3</span> Rescaled Distance</h2>
+<div id="outline-container-org9c2b2ea" class="outline-2">
+<h2 id="org9c2b2ea"><span class="section-number-2">3</span> Rescaled Distance</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orge8cda3c" class="outline-3">
-<h3 id="orge8cda3c"><span class="section-number-3">3.1</span> <code>qmckl_distance_rescaled</code></h3>
+<div id="outline-container-org7f16681" class="outline-3">
+<h3 id="org7f16681"><span class="section-number-3">3.1</span> <code>qmckl_distance_rescaled</code></h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 <code>qmckl_distance_rescaled</code> computes the matrix of the rescaled distances between all
@@ -1038,7 +1038,7 @@ If the input array is normal (<code>'N'</code>), the xyz coordinates are in
 the leading dimension: <code>[n][3]</code> in C and <code>(3,n)</code> in Fortran.
 </p>
 
-<table id="orged2ff45" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org91c48be" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1146,8 +1146,8 @@ the leading dimension: <code>[n][3]</code> in C and <code>(3,n)</code> in Fortra
 </table>
 </div>
 
-<div id="outline-container-org7d61aea" class="outline-4">
-<h4 id="org7d61aea"><span class="section-number-4">3.1.1</span> Requirements</h4>
+<div id="outline-container-org1e6f4ea" class="outline-4">
+<h4 id="org1e6f4ea"><span class="section-number-4">3.1.1</span> Requirements</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
 <li><code>context</code> is not <code>QMCKL_NULL_CONTEXT</code></li>
@@ -1165,8 +1165,8 @@ the leading dimension: <code>[n][3]</code> in C and <code>(3,n)</code> in Fortra
 </div>
 </div>
 
-<div id="outline-container-org088272f" class="outline-4">
-<h4 id="org088272f"><span class="section-number-4">3.1.2</span> C header</h4>
+<div id="outline-container-orgb8e1cb4" class="outline-4">
+<h4 id="orgb8e1cb4"><span class="section-number-4">3.1.2</span> C header</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_distance_rescaled</span> (
@@ -1187,8 +1187,8 @@ the leading dimension: <code>[n][3]</code> in C and <code>(3,n)</code> in Fortra
 </div>
 </div>
 
-<div id="outline-container-orgb895d47" class="outline-4">
-<h4 id="orgb895d47"><span class="section-number-4">3.1.3</span> Source</h4>
+<div id="outline-container-org5256f55" class="outline-4">
+<h4 id="org5256f55"><span class="section-number-4">3.1.3</span> Source</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">function</span> <span style="color: #0000ff;">qmckl_distance_rescaled</span>(context, transa, transb, m, n, <span style="color: #a020f0;">&amp;</span>
@@ -1341,8 +1341,8 @@ the leading dimension: <code>[n][3]</code> in C and <code>(3,n)</code> in Fortra
 </div>
 </div>
 
-<div id="outline-container-org7e63903" class="outline-4">
-<h4 id="org7e63903"><span class="section-number-4">3.1.4</span> Performance</h4>
+<div id="outline-container-org7bf6295" class="outline-4">
+<h4 id="org7bf6295"><span class="section-number-4">3.1.4</span> Performance</h4>
 <div class="outline-text-4" id="text-3-1-4">
 <p>
 This function is more efficient when <code>A</code> and <code>B</code> are transposed.
@@ -1351,12 +1351,12 @@ This function is more efficient when <code>A</code> and <code>B</code> are trans
 </div>
 </div>
 </div>
-<div id="outline-container-org1f08dfe" class="outline-2">
-<h2 id="org1f08dfe"><span class="section-number-2">4</span> Rescaled Distance Derivatives</h2>
+<div id="outline-container-orgec05c3b" class="outline-2">
+<h2 id="orgec05c3b"><span class="section-number-2">4</span> Rescaled Distance Derivatives</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org6a4467e" class="outline-3">
-<h3 id="org6a4467e"><span class="section-number-3">4.1</span> <code>qmckl_distance_rescaled_gl</code></h3>
+<div id="outline-container-org8ee4b27" class="outline-3">
+<h3 id="org8ee4b27"><span class="section-number-3">4.1</span> <code>qmckl_distance_rescaled_gl</code></h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 <code>qmckl_distance_rescaled_gl</code> computes the matrix of the gradient and Laplacian of the
@@ -1411,7 +1411,7 @@ If the input array is normal (<code>'N'</code>), the xyz coordinates are in
 the leading dimension: <code>[n][3]</code> in C and <code>(3,n)</code> in Fortran.
 </p>
 
-<table id="orgb046da7" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org0a96a5f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1731,7 +1731,7 @@ This function is more efficient when <code>A</code> and <code>B</code> are trans
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2024-12-12 Thu 08:58</p>
+<p class="date">Created: 2024-12-12 Thu 09:09</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
