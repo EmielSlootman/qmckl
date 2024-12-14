@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-12-14 Sat 15:56 -->
+<!-- 2024-12-14 Sat 21:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Forces</title>
@@ -324,106 +324,106 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd3f5d10">1. Introduction</a></li>
-<li><a href="#orgd68d3fe">2. Context</a>
+<li><a href="#org8eef0ec">1. Introduction</a></li>
+<li><a href="#orgfef89c3">2. Context</a>
 <ul>
-<li><a href="#orgcb40094">2.1. Data structure</a></li>
-<li><a href="#org0d60e52">2.2. Test</a></li>
+<li><a href="#org7653f6a">2.1. Data structure</a></li>
+<li><a href="#org38c8f90">2.2. Test</a></li>
 </ul>
 </li>
-<li><a href="#org10216ec">3. Finite-difference function</a></li>
-<li><a href="#org8212d2f">4. Force of en jastrow value</a>
+<li><a href="#org54cc5e2">3. Finite-difference function</a></li>
+<li><a href="#orgf4d6be1">4. Force of en jastrow value</a>
 <ul>
-<li><a href="#org1bbea87">4.1. Get</a></li>
-<li><a href="#org44c2083">4.2. Compute</a></li>
-<li><a href="#org49aadfc">4.3. Test</a></li>
+<li><a href="#orgc250219">4.1. Get</a></li>
+<li><a href="#orge53411d">4.2. Compute</a></li>
+<li><a href="#orgc80e5fa">4.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#orgf494728">5. Force of en jastrow gradient</a>
+<li><a href="#org126588d">5. Force of en jastrow gradient</a>
 <ul>
-<li><a href="#orge63ff3a">5.1. Get</a></li>
-<li><a href="#org88c1411">5.2. Compute</a></li>
-<li><a href="#org7b34632">5.3. Test</a></li>
+<li><a href="#org362ca69">5.1. Get</a></li>
+<li><a href="#orgeb0155d">5.2. Compute</a></li>
+<li><a href="#orgd822433">5.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org4bc42ac">6. Force of en jastrow laplacien</a>
+<li><a href="#org1746e95">6. Force of en jastrow laplacien</a>
 <ul>
-<li><a href="#orgf9d8550">6.1. Get</a></li>
-<li><a href="#org49a9883">6.2. Compute</a></li>
-<li><a href="#org2b9b901">6.3. Test</a></li>
+<li><a href="#org1fa159f">6.1. Get</a></li>
+<li><a href="#orgc4b8737">6.2. Compute</a></li>
+<li><a href="#org73963ed">6.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org181e3b9">7. Force of tmp<sub>c</sub> matrix</a>
+<li><a href="#org9423d93">7. Force of tmp<sub>c</sub> matrix</a>
 <ul>
-<li><a href="#orgc14e9df">7.1. Get</a></li>
-<li><a href="#org78f0d9d">7.2. Compute</a></li>
-<li><a href="#org3e9d5ae">7.3. Test</a></li>
+<li><a href="#org0b83c11">7.1. Get</a></li>
+<li><a href="#orgd77bfd2">7.2. Compute</a></li>
+<li><a href="#org072e465">7.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org42a2533">8. Force of dtmp<sub>c</sub> matrix</a>
+<li><a href="#org034d13c">8. Force of dtmp<sub>c</sub> matrix</a>
 <ul>
-<li><a href="#orgf22f0e5">8.1. Get</a></li>
-<li><a href="#org0386c63">8.2. Compute</a></li>
-<li><a href="#orgdd89e75">8.3. Test</a></li>
+<li><a href="#org5b79451">8.1. Get</a></li>
+<li><a href="#orgcc97f6e">8.2. Compute</a></li>
+<li><a href="#org0957c47">8.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org453e3f4">9. Force of een jastrow value</a>
+<li><a href="#org7b1c52a">9. Force of een jastrow value</a>
 <ul>
-<li><a href="#org09f898a">9.1. Get</a></li>
-<li><a href="#org5d93a26">9.2. Compute</a></li>
-<li><a href="#org92e68a8">9.3. Test</a></li>
+<li><a href="#orgc15767b">9.1. Get</a></li>
+<li><a href="#org626a558">9.2. Compute</a></li>
+<li><a href="#orge4d94f8">9.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org87959c5">10. Force of een<sub>rescaled</sub><sub>n</sub><sub>gl</sub></a>
+<li><a href="#org374edca">10. Force of een<sub>rescaled</sub><sub>n</sub><sub>gl</sub></a>
 <ul>
-<li><a href="#orgd0a520f">10.1. Get</a></li>
-<li><a href="#org0c55626">10.2. Compute</a></li>
-<li><a href="#orgadc4483">10.3. Test</a></li>
+<li><a href="#org498e8d1">10.1. Get</a></li>
+<li><a href="#org5e7055b">10.2. Compute</a></li>
+<li><a href="#org31f8cd0">10.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org84a541a">11. Force of een jastrow gradient</a>
+<li><a href="#org3a3a4b3">11. Force of een jastrow gradient</a>
 <ul>
-<li><a href="#org319d038">11.1. Get</a></li>
-<li><a href="#org630ccc1">11.2. Compute</a></li>
-<li><a href="#orgf96acbf">11.3. Test</a></li>
+<li><a href="#org44a9d50">11.1. Get</a></li>
+<li><a href="#org0ad9228">11.2. Compute</a></li>
+<li><a href="#org9642ba8">11.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org3d871a4">12. Force of een jastrow laplacian</a>
+<li><a href="#orga3fe3ea">12. Force of een jastrow laplacian</a>
 <ul>
-<li><a href="#orgc991d85">12.1. Get</a></li>
-<li><a href="#orgd09adcd">12.2. Compute</a></li>
-<li><a href="#org9f0d821">12.3. Test</a></li>
+<li><a href="#org3ec0f69">12.1. Get</a></li>
+<li><a href="#org0b36a39">12.2. Compute</a></li>
+<li><a href="#org6a36809">12.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org89799e0">13. Reset test for orbitals</a></li>
-<li><a href="#orgd2274a7">14. Force of AO value</a>
+<li><a href="#org5acf53f">13. Reset test for orbitals</a></li>
+<li><a href="#org5118bbf">14. Force of AO value</a>
 <ul>
-<li><a href="#orgc01c239">14.1. Get</a></li>
-<li><a href="#org7b91ede">14.2. Compute</a></li>
-<li><a href="#org1e295a6">14.3. Test</a></li>
+<li><a href="#orgaede235">14.1. Get</a></li>
+<li><a href="#org9d79a57">14.2. Compute</a></li>
+<li><a href="#org07b011b">14.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#org1692d46">15. Force of MO value</a>
+<li><a href="#orgc1d323f">15. Force of MO value</a>
 <ul>
-<li><a href="#orgd6f1599">15.1. Get</a></li>
-<li><a href="#orga834170">15.2. Provide</a></li>
-<li><a href="#org2b012a8">15.3. Compute</a></li>
-<li><a href="#orgb8add0d">15.4. Test</a></li>
+<li><a href="#org49db53e">15.1. Get</a></li>
+<li><a href="#orga02947c">15.2. Provide</a></li>
+<li><a href="#orgd304d2b">15.3. Compute</a></li>
+<li><a href="#orgc7f0859">15.4. Test</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd3f5d10" class="outline-2">
-<h2 id="orgd3f5d10"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-org8eef0ec" class="outline-2">
+<h2 id="org8eef0ec"><span class="section-number-2">1</span> Introduction</h2>
 </div>
-<div id="outline-container-orgd68d3fe" class="outline-2">
-<h2 id="orgd68d3fe"><span class="section-number-2">2</span> Context</h2>
+<div id="outline-container-orgfef89c3" class="outline-2">
+<h2 id="orgfef89c3"><span class="section-number-2">2</span> Context</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgcb40094" class="outline-3">
-<h3 id="orgcb40094"><span class="section-number-3">2.1</span> Data structure</h3>
+<div id="outline-container-org7653f6a" class="outline-3">
+<h3 id="org7653f6a"><span class="section-number-3">2.1</span> Data structure</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #a020f0;">typedef</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">qmckl_forces_struct</span>{
@@ -455,8 +455,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org0d60e52" class="outline-3">
-<h3 id="org0d60e52"><span class="section-number-3">2.2</span> Test</h3>
+<div id="outline-container-org38c8f90" class="outline-3">
+<h3 id="org38c8f90"><span class="section-number-3">2.2</span> Test</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-c">/* <span style="color: #b22222;">Reference input data</span> */
@@ -652,8 +652,8 @@ rc = qmckl_check(context,
 </div>
 </div>
 
-<div id="outline-container-org10216ec" class="outline-2">
-<h2 id="org10216ec"><span class="section-number-2">3</span> Finite-difference function</h2>
+<div id="outline-container-org54cc5e2" class="outline-2">
+<h2 id="org54cc5e2"><span class="section-number-2">3</span> Finite-difference function</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 We introduce here a general function to compute the derivatives of any quantity with respect to nuclear coordinates.
@@ -662,12 +662,12 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-org8212d2f" class="outline-2">
-<h2 id="org8212d2f"><span class="section-number-2">4</span> Force of en jastrow value</h2>
+<div id="outline-container-orgf4d6be1" class="outline-2">
+<h2 id="orgf4d6be1"><span class="section-number-2">4</span> Force of en jastrow value</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org1bbea87" class="outline-3">
-<h3 id="org1bbea87"><span class="section-number-3">4.1</span> Get</h3>
+<div id="outline-container-orgc250219" class="outline-3">
+<h3 id="orgc250219"><span class="section-number-3">4.1</span> Get</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -694,10 +694,10 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-org44c2083" class="outline-3">
-<h3 id="org44c2083"><span class="section-number-3">4.2</span> Compute</h3>
+<div id="outline-container-orge53411d" class="outline-3">
+<h3 id="orge53411d"><span class="section-number-3">4.2</span> Compute</h3>
 <div class="outline-text-3" id="text-4-2">
-<table id="orgdbec0e2" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org8a2525c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -897,8 +897,8 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-org49aadfc" class="outline-3">
-<h3 id="org49aadfc"><span class="section-number-3">4.3</span> Test</h3>
+<div id="outline-container-orgc80e5fa" class="outline-3">
+<h3 id="orgc80e5fa"><span class="section-number-3">4.3</span> Test</h3>
 <div class="outline-text-3" id="text-4-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow en\n"</span>);
@@ -940,12 +940,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 
 
-<div id="outline-container-orgf494728" class="outline-2">
-<h2 id="orgf494728"><span class="section-number-2">5</span> Force of en jastrow gradient</h2>
+<div id="outline-container-org126588d" class="outline-2">
+<h2 id="org126588d"><span class="section-number-2">5</span> Force of en jastrow gradient</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orge63ff3a" class="outline-3">
-<h3 id="orge63ff3a"><span class="section-number-3">5.1</span> Get</h3>
+<div id="outline-container-org362ca69" class="outline-3">
+<h3 id="org362ca69"><span class="section-number-3">5.1</span> Get</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -972,10 +972,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org88c1411" class="outline-3">
-<h3 id="org88c1411"><span class="section-number-3">5.2</span> Compute</h3>
+<div id="outline-container-orgeb0155d" class="outline-3">
+<h3 id="orgeb0155d"><span class="section-number-3">5.2</span> Compute</h3>
 <div class="outline-text-3" id="text-5-2">
-<table id="org069ae79" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgb519c7d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1207,8 +1207,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org7b34632" class="outline-3">
-<h3 id="org7b34632"><span class="section-number-3">5.3</span> Test</h3>
+<div id="outline-container-orgd822433" class="outline-3">
+<h3 id="orgd822433"><span class="section-number-3">5.3</span> Test</h3>
 <div class="outline-text-3" id="text-5-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow en G\n"</span>);
@@ -1257,12 +1257,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org4bc42ac" class="outline-2">
-<h2 id="org4bc42ac"><span class="section-number-2">6</span> Force of en jastrow laplacien</h2>
+<div id="outline-container-org1746e95" class="outline-2">
+<h2 id="org1746e95"><span class="section-number-2">6</span> Force of en jastrow laplacien</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgf9d8550" class="outline-3">
-<h3 id="orgf9d8550"><span class="section-number-3">6.1</span> Get</h3>
+<div id="outline-container-org1fa159f" class="outline-3">
+<h3 id="org1fa159f"><span class="section-number-3">6.1</span> Get</h3>
 <div class="outline-text-3" id="text-6-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1289,10 +1289,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org49a9883" class="outline-3">
-<h3 id="org49a9883"><span class="section-number-3">6.2</span> Compute</h3>
+<div id="outline-container-orgc4b8737" class="outline-3">
+<h3 id="orgc4b8737"><span class="section-number-3">6.2</span> Compute</h3>
 <div class="outline-text-3" id="text-6-2">
-<table id="org4bcf2a6" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgf3a2768" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1521,8 +1521,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org2b9b901" class="outline-3">
-<h3 id="org2b9b901"><span class="section-number-3">6.3</span> Test</h3>
+<div id="outline-container-org73963ed" class="outline-3">
+<h3 id="org73963ed"><span class="section-number-3">6.3</span> Test</h3>
 <div class="outline-text-3" id="text-6-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow en L\n"</span>);
@@ -1577,12 +1577,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org181e3b9" class="outline-2">
-<h2 id="org181e3b9"><span class="section-number-2">7</span> Force of tmp<sub>c</sub> matrix</h2>
+<div id="outline-container-org9423d93" class="outline-2">
+<h2 id="org9423d93"><span class="section-number-2">7</span> Force of tmp<sub>c</sub> matrix</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orgc14e9df" class="outline-3">
-<h3 id="orgc14e9df"><span class="section-number-3">7.1</span> Get</h3>
+<div id="outline-container-org0b83c11" class="outline-3">
+<h3 id="org0b83c11"><span class="section-number-3">7.1</span> Get</h3>
 <div class="outline-text-3" id="text-7-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1594,10 +1594,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org78f0d9d" class="outline-3">
-<h3 id="org78f0d9d"><span class="section-number-3">7.2</span> Compute</h3>
+<div id="outline-container-orgd77bfd2" class="outline-3">
+<h3 id="orgd77bfd2"><span class="section-number-3">7.2</span> Compute</h3>
 <div class="outline-text-3" id="text-7-2">
-<table id="org9c36b9c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgb6fb28f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1723,8 +1723,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 
 
-<div id="outline-container-org3e9d5ae" class="outline-3">
-<h3 id="org3e9d5ae"><span class="section-number-3">7.3</span> Test</h3>
+<div id="outline-container-org072e465" class="outline-3">
+<h3 id="org072e465"><span class="section-number-3">7.3</span> Test</h3>
 <div class="outline-text-3" id="text-7-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces tmp_c\n"</span>);
@@ -1778,7 +1778,9 @@ rc = qmckl_get_nucleus_coord(context, <span style="color: #8b2252;">'N'</span>, 
       assert(rc == QMCKL_SUCCESS);
 
       // <span style="color: #b22222;">Call the provided function</span>
-      rc = qmckl_get_jastrow_champ_tmp_c(context,&amp;output[0][0][0][0][0]);
+      rc = qmckl_get_jastrow_champ_tmp_c(context,
+           &amp;output[0][0][0][0][0],
+           4*nucl_num*walk_num*elec_num*(cord_num+1)*cord_num);
       assert(rc == QMCKL_SUCCESS);
 
       // <span style="color: #b22222;">Accumulate derivative using finite-difference coefficients</span>
@@ -1850,12 +1852,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org42a2533" class="outline-2">
-<h2 id="org42a2533"><span class="section-number-2">8</span> Force of dtmp<sub>c</sub> matrix</h2>
+<div id="outline-container-org034d13c" class="outline-2">
+<h2 id="org034d13c"><span class="section-number-2">8</span> Force of dtmp<sub>c</sub> matrix</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-orgf22f0e5" class="outline-3">
-<h3 id="orgf22f0e5"><span class="section-number-3">8.1</span> Get</h3>
+<div id="outline-container-org5b79451" class="outline-3">
+<h3 id="org5b79451"><span class="section-number-3">8.1</span> Get</h3>
 <div class="outline-text-3" id="text-8-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1867,10 +1869,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org0386c63" class="outline-3">
-<h3 id="org0386c63"><span class="section-number-3">8.2</span> Compute</h3>
+<div id="outline-container-orgcc97f6e" class="outline-3">
+<h3 id="orgcc97f6e"><span class="section-number-3">8.2</span> Compute</h3>
 <div class="outline-text-3" id="text-8-2">
-<table id="org0bbb42e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org1eacf73" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2018,8 +2020,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 
 
-<div id="outline-container-orgdd89e75" class="outline-3">
-<h3 id="orgdd89e75"><span class="section-number-3">8.3</span> Test</h3>
+<div id="outline-container-org0957c47" class="outline-3">
+<h3 id="org0957c47"><span class="section-number-3">8.3</span> Test</h3>
 <div class="outline-text-3" id="text-8-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces dtmp_c\n"</span>);
@@ -2073,7 +2075,9 @@ temp_coord = (<span style="color: #228b22;">double</span>*) malloc(3 * nucl_num 
       assert(rc == QMCKL_SUCCESS);
 
       // <span style="color: #b22222;">Call the provided function</span>
-      rc = qmckl_get_jastrow_champ_dtmp_c(context,&amp;doutput[0][0][0][0][0][0]);
+      rc = qmckl_get_jastrow_champ_dtmp_c(context,
+              &amp;doutput[0][0][0][0][0][0],
+              4*4*nucl_num*walk_num*elec_num*(cord_num+1)*cord_num);
       assert(rc == QMCKL_SUCCESS);
 
       // <span style="color: #b22222;">Accumulate derivative using finite-difference coefficients</span>
@@ -2151,12 +2155,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 </div>
-<div id="outline-container-org453e3f4" class="outline-2">
-<h2 id="org453e3f4"><span class="section-number-2">9</span> Force of een jastrow value</h2>
+<div id="outline-container-org7b1c52a" class="outline-2">
+<h2 id="org7b1c52a"><span class="section-number-2">9</span> Force of een jastrow value</h2>
 <div class="outline-text-2" id="text-9">
 </div>
-<div id="outline-container-org09f898a" class="outline-3">
-<h3 id="org09f898a"><span class="section-number-3">9.1</span> Get</h3>
+<div id="outline-container-orgc15767b" class="outline-3">
+<h3 id="orgc15767b"><span class="section-number-3">9.1</span> Get</h3>
 <div class="outline-text-3" id="text-9-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2183,10 +2187,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org5d93a26" class="outline-3">
-<h3 id="org5d93a26"><span class="section-number-3">9.2</span> Compute</h3>
+<div id="outline-container-org626a558" class="outline-3">
+<h3 id="org626a558"><span class="section-number-3">9.2</span> Compute</h3>
 <div class="outline-text-3" id="text-9-2">
-<table id="org8c96e93" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orga67371e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2343,7 +2347,7 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
         <span style="color: #a020f0;">if</span>(cn == 0.d0) <span style="color: #a020f0;">cycle</span>
           <span style="color: #a020f0;">do</span> j = 1, elec_num
             <span style="color: #a020f0;">do</span> ii = 1, 3
-              accu = een_rescaled_n(j,a,m,nw) * forces_tmp_c(j,ii,a,m+l,k,nw) 
+              accu = een_rescaled_n(j,a,m,nw) * forces_tmp_c(j,ii,a,m+l,k,nw)
               accu = accu - een_rescaled_n_gl(j,ii,a,m,nw) * tmp_c(j,a,m+l,k,nw)
 
               forces_jastrow_een(ii, a, nw) = forces_jastrow_een(ii, a, nw) + accu * cn
@@ -2359,8 +2363,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org92e68a8" class="outline-3">
-<h3 id="org92e68a8"><span class="section-number-3">9.3</span> Test</h3>
+<div id="outline-container-orge4d94f8" class="outline-3">
+<h3 id="orge4d94f8"><span class="section-number-3">9.3</span> Test</h3>
 <div class="outline-text-3" id="text-9-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow een\n"</span>);
@@ -2401,12 +2405,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org87959c5" class="outline-2">
-<h2 id="org87959c5"><span class="section-number-2">10</span> Force of een<sub>rescaled</sub><sub>n</sub><sub>gl</sub></h2>
+<div id="outline-container-org374edca" class="outline-2">
+<h2 id="org374edca"><span class="section-number-2">10</span> Force of een<sub>rescaled</sub><sub>n</sub><sub>gl</sub></h2>
 <div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-orgd0a520f" class="outline-3">
-<h3 id="orgd0a520f"><span class="section-number-3">10.1</span> Get</h3>
+<div id="outline-container-org498e8d1" class="outline-3">
+<h3 id="org498e8d1"><span class="section-number-3">10.1</span> Get</h3>
 <div class="outline-text-3" id="text-10-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2418,10 +2422,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org0c55626" class="outline-3">
-<h3 id="org0c55626"><span class="section-number-3">10.2</span> Compute</h3>
+<div id="outline-container-org5e7055b" class="outline-3">
+<h3 id="org5e7055b"><span class="section-number-3">10.2</span> Compute</h3>
 <div class="outline-text-3" id="text-10-2">
-<table id="org17b577a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org549570a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2543,7 +2547,7 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
   <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> rescale_factor_en(type_nucl_num)</span>
   <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> en_distance(nucl_num,elec_num,walk_num)</span>
   <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n(elec_num,nucl_num,0:cord_num,walk_num)</span>
-  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n_gl(elec_num,4,nucl_num,0:cord_num,walk_num) </span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_n_gl(elec_num,4,nucl_num,0:cord_num,walk_num)</span>
   <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> )   , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> forces_een_n(elec_num,4,nucl_num,3,0:cord_num,walk_num)</span>
 
   <span style="color: #228b22;">double precision</span>                    ::<span style="color: #a0522d;"> x, ria_inv, kappa_l</span>
@@ -2624,8 +2628,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 
 
-<div id="outline-container-orgadc4483" class="outline-3">
-<h3 id="orgadc4483"><span class="section-number-3">10.3</span> Test</h3>
+<div id="outline-container-org31f8cd0" class="outline-3">
+<h3 id="org31f8cd0"><span class="section-number-3">10.3</span> Test</h3>
 <div class="outline-text-3" id="text-10-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces of een_rescaled_n_gl\n"</span>);
@@ -2753,12 +2757,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org84a541a" class="outline-2">
-<h2 id="org84a541a"><span class="section-number-2">11</span> Force of een jastrow gradient</h2>
+<div id="outline-container-org3a3a4b3" class="outline-2">
+<h2 id="org3a3a4b3"><span class="section-number-2">11</span> Force of een jastrow gradient</h2>
 <div class="outline-text-2" id="text-11">
 </div>
-<div id="outline-container-org319d038" class="outline-3">
-<h3 id="org319d038"><span class="section-number-3">11.1</span> Get</h3>
+<div id="outline-container-org44a9d50" class="outline-3">
+<h3 id="org44a9d50"><span class="section-number-3">11.1</span> Get</h3>
 <div class="outline-text-3" id="text-11-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2785,10 +2789,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org630ccc1" class="outline-3">
-<h3 id="org630ccc1"><span class="section-number-3">11.2</span> Compute</h3>
+<div id="outline-container-org0ad9228" class="outline-3">
+<h3 id="org0ad9228"><span class="section-number-3">11.2</span> Compute</h3>
 <div class="outline-text-3" id="text-11-2">
-<table id="orgfabd18b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org46c7f72" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3010,8 +3014,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-orgf96acbf" class="outline-3">
-<h3 id="orgf96acbf"><span class="section-number-3">11.3</span> Test</h3>
+<div id="outline-container-org9642ba8" class="outline-3">
+<h3 id="org9642ba8"><span class="section-number-3">11.3</span> Test</h3>
 <div class="outline-text-3" id="text-11-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow een G\n"</span>);
@@ -3061,12 +3065,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org3d871a4" class="outline-2">
-<h2 id="org3d871a4"><span class="section-number-2">12</span> Force of een jastrow laplacian</h2>
+<div id="outline-container-orga3fe3ea" class="outline-2">
+<h2 id="orga3fe3ea"><span class="section-number-2">12</span> Force of een jastrow laplacian</h2>
 <div class="outline-text-2" id="text-12">
 </div>
-<div id="outline-container-orgc991d85" class="outline-3">
-<h3 id="orgc991d85"><span class="section-number-3">12.1</span> Get</h3>
+<div id="outline-container-org3ec0f69" class="outline-3">
+<h3 id="org3ec0f69"><span class="section-number-3">12.1</span> Get</h3>
 <div class="outline-text-3" id="text-12-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3093,10 +3097,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-orgd09adcd" class="outline-3">
-<h3 id="orgd09adcd"><span class="section-number-3">12.2</span> Compute</h3>
+<div id="outline-container-org0b36a39" class="outline-3">
+<h3 id="org0b36a39"><span class="section-number-3">12.2</span> Compute</h3>
 <div class="outline-text-3" id="text-12-2">
-<table id="org8534ce0" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org9ebcad3" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3328,8 +3332,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org9f0d821" class="outline-3">
-<h3 id="org9f0d821"><span class="section-number-3">12.3</span> Test</h3>
+<div id="outline-container-org6a36809" class="outline-3">
+<h3 id="org6a36809"><span class="section-number-3">12.3</span> Test</h3>
 <div class="outline-text-3" id="text-12-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces Jastrow een l\n"</span>);
@@ -3383,8 +3387,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org89799e0" class="outline-2">
-<h2 id="org89799e0"><span class="section-number-2">13</span> Reset test for orbitals</h2>
+<div id="outline-container-org5acf53f" class="outline-2">
+<h2 id="org5acf53f"><span class="section-number-2">13</span> Reset test for orbitals</h2>
 <div class="outline-text-2" id="text-13">
 <div class="org-src-container">
 <pre class="src src-c">
@@ -3637,17 +3641,17 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 
 
-<div id="outline-container-orgd2274a7" class="outline-2">
-<h2 id="orgd2274a7"><span class="section-number-2">14</span> Force of AO value</h2>
+<div id="outline-container-org5118bbf" class="outline-2">
+<h2 id="org5118bbf"><span class="section-number-2">14</span> Force of AO value</h2>
 <div class="outline-text-2" id="text-14">
 <p>
-Here we compute the forces of the AO value. 
+Here we compute the forces of the AO value.
 </p>
 </div>
 
 
-<div id="outline-container-orgc01c239" class="outline-3">
-<h3 id="orgc01c239"><span class="section-number-3">14.1</span> Get</h3>
+<div id="outline-container-orgaede235" class="outline-3">
+<h3 id="orgaede235"><span class="section-number-3">14.1</span> Get</h3>
 <div class="outline-text-3" id="text-14-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3659,10 +3663,10 @@ Here we compute the forces of the AO value.
 </div>
 </div>
 
-<div id="outline-container-org7b91ede" class="outline-3">
-<h3 id="org7b91ede"><span class="section-number-3">14.2</span> Compute</h3>
+<div id="outline-container-org9d79a57" class="outline-3">
+<h3 id="org9d79a57"><span class="section-number-3">14.2</span> Compute</h3>
 <div class="outline-text-3" id="text-14-2">
-<table id="org077d874" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org8c18749" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3840,8 +3844,8 @@ Here we compute the forces of the AO value.
 </div>
 </div>
 
-<div id="outline-container-org1e295a6" class="outline-3">
-<h3 id="org1e295a6"><span class="section-number-3">14.3</span> Test</h3>
+<div id="outline-container-org07b011b" class="outline-3">
+<h3 id="org07b011b"><span class="section-number-3">14.3</span> Test</h3>
 <div class="outline-text-3" id="text-14-3">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces AO value\n"</span>);
@@ -3939,12 +3943,12 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org1692d46" class="outline-2">
-<h2 id="org1692d46"><span class="section-number-2">15</span> Force of MO value</h2>
+<div id="outline-container-orgc1d323f" class="outline-2">
+<h2 id="orgc1d323f"><span class="section-number-2">15</span> Force of MO value</h2>
 <div class="outline-text-2" id="text-15">
 </div>
-<div id="outline-container-orgd6f1599" class="outline-3">
-<h3 id="orgd6f1599"><span class="section-number-3">15.1</span> Get</h3>
+<div id="outline-container-org49db53e" class="outline-3">
+<h3 id="org49db53e"><span class="section-number-3">15.1</span> Get</h3>
 <div class="outline-text-3" id="text-15-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3956,8 +3960,8 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-orga834170" class="outline-3">
-<h3 id="orga834170"><span class="section-number-3">15.2</span> Provide</h3>
+<div id="outline-container-orga02947c" class="outline-3">
+<h3 id="orga02947c"><span class="section-number-3">15.2</span> Provide</h3>
 <div class="outline-text-3" id="text-15-2">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_provide_forces_mo_value</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>)
@@ -4039,10 +4043,10 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 </div>
 
-<div id="outline-container-org2b012a8" class="outline-3">
-<h3 id="org2b012a8"><span class="section-number-3">15.3</span> Compute</h3>
+<div id="outline-container-orgd304d2b" class="outline-3">
+<h3 id="orgd304d2b"><span class="section-number-3">15.3</span> Compute</h3>
 <div class="outline-text-3" id="text-15-3">
-<table id="org22d5498" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgae04b34" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4185,8 +4189,8 @@ matrix multiplication instead of a dgemm, as exposed in
 </div>
 </div>
 
-<div id="outline-container-orgb8add0d" class="outline-3">
-<h3 id="orgb8add0d"><span class="section-number-3">15.4</span> Test</h3>
+<div id="outline-container-orgc7f0859" class="outline-3">
+<h3 id="orgc7f0859"><span class="section-number-3">15.4</span> Test</h3>
 <div class="outline-text-3" id="text-15-4">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Forces MO value\n"</span>);
@@ -4199,7 +4203,7 @@ rc = qmckl_get_forces_mo_value(context, &amp;forces_mo_value[0][0][0][0], 3*nucl
 <span style="color: #0000ff;">assert</span>(rc == QMCKL_SUCCESS);
 
 <span style="color: #228b22;">double</span> <span style="color: #a0522d;">finite_difference_force_mo_value</span>[3][nucl_num][point_num][mo_num];
-printf(<span style="color: #8b2252;">"Mo num %i %i\n"</span>, mo_num, ao_num);
+printf(<span style="color: #8b2252;">"Mo num %ld %ld\n"</span>, mo_num, ao_num);
 
 nucleus_coord = (<span style="color: #228b22;">double</span>*) malloc(3 * nucl_num * <span style="color: #a020f0;">sizeof</span>(<span style="color: #228b22;">double</span>));
 <span style="color: #a020f0;">if</span> (nucleus_coord == <span style="color: #008b8b;">NULL</span>) {
@@ -4289,7 +4293,7 @@ printf(<span style="color: #8b2252;">"OK\n"</span>);
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2024-12-14 Sat 15:56</p>
+<p class="date">Created: 2024-12-14 Sat 21:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
