@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-12-14 Sat 21:40 -->
+<!-- 2025-04-03 Thu 12:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CHAMP Jastrow Factor</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="TREX CoE" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -40,22 +41,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -190,70 +191,17 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
 <link rel="stylesheet" title="Standard" href="qmckl.css" type="text/css" />
 
-<script type="text/javascript" src="org-info.js">
-/**
- *
- * @source: org-info.js
- *
- * @licstart  The following is the entire license notice for the
- *  JavaScript code in org-info.js.
- *
- * Copyright (C) 2012-2020 Free Software Foundation, Inc.
- *
- *
- * The JavaScript code in this tag is free software: you can
- * redistribute it and/or modify it under the terms of the GNU
- * General Public License (GNU GPL) as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option)
- * any later version.  The code is distributed WITHOUT ANY WARRANTY;
- * without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
- *
- * As additional permission under GNU GPL version 3 section 7, you
- * may distribute non-source (e.g., minimized or compacted) forms of
- * that code without the copy of the GNU GPL normally required by
- * section 4, provided you include this license notice and a URL
- * through which recipients can access the Corresponding Source.
- *
- * @licend  The above is the entire license notice
- * for the JavaScript code in org-info.js.
- *
- */
+<script src="org-info.js">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+// @license-end
 </script>
 
-<script type="text/javascript">
-
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-
-<!--/*--><![CDATA[/*><!--*/
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 org_html_manager.set("TOC_DEPTH", "4");
 org_html_manager.set("LINK_HOME", "index.html");
 org_html_manager.set("LINK_UP", "");
@@ -264,254 +212,218 @@ org_html_manager.set("FIXED_TOC", "0");
 org_html_manager.set("TOC", "1");
 org_html_manager.set("VIEW", "info");
 org_html_manager.setup();  // activate after the parameters are set
-/*]]>*///-->
+// @license-end
 </script>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
 
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="org-div-home-and-up">
  <a accesskey="h" href=""> UP </a>
  |
  <a accesskey="H" href="index.html"> HOME </a>
-</div><div id="content">
+</div><div id="content" class="content">
 <h1 class="title">CHAMP Jastrow Factor</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf9bf1c7">1. Introduction</a>
+<li><a href="#orgbb1b914">1. Introduction</a>
 <ul>
-<li><a href="#org6159ef1">1.1. Reformulation of the three-body part</a></li>
+<li><a href="#org036f06e">1.1. Reformulation of the three-body part</a></li>
 </ul>
 </li>
-<li><a href="#org793b377">2. Context</a>
+<li><a href="#org7da703c">2. Context</a>
 <ul>
-<li><a href="#orgec5ed5c">2.1. Data structure</a></li>
-<li><a href="#org817ea27">2.2. Initialization functions</a>
+<li><a href="#org0496e99">2.1. Data structure</a></li>
+<li><a href="#org6c13ae5">2.2. Initialization functions</a>
 <ul>
 <li>
 <ul>
-<li><a href="#org8bba1ac">2.2.0.1. Fortran interface</a></li>
+<li><a href="#orge529012">2.2.0.1. Fortran interface</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org8ed2964">2.3. Access functions</a>
+<li><a href="#org5a97852">2.3. Access functions</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orgdab865d">2.3.0.1. Fortran interface</a></li>
+<li><a href="#orgffc4542">2.3.0.1. Fortran interface</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org5823607">3. Computation</a>
+<li><a href="#org3f01fb1">3. Computation</a>
 <ul>
-<li><a href="#orgbe12d5a">3.1. Electron-electron component</a>
+<li><a href="#org4245105">3.1. Electron-electron component</a>
 <ul>
-<li><a href="#orgdcf5617">3.1.1. Asymptotic component</a>
+<li><a href="#org90d83c5">3.1.1. Asymptotic component</a>
 <ul>
-<li><a href="#org3ab2402">3.1.1.1. Get</a></li>
-<li><a href="#orga94c2c6">3.1.1.2. Compute</a></li>
+<li><a href="#org41cc5a8">3.1.1.1. Get</a></li>
+<li><a href="#org5fa272c">3.1.1.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#orgc1ccc3d">3.1.2. Electron-electron rescaled distances</a>
+<li><a href="#orgd6c9681">3.1.2. Electron-electron rescaled distances</a>
 <ul>
-<li><a href="#org7606911">3.1.2.1. Get</a></li>
-<li><a href="#orga694388">3.1.2.2. Compute</a></li>
+<li><a href="#org33f82d7">3.1.2.1. Get</a></li>
+<li><a href="#orgbba6758">3.1.2.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org1b1cb74">3.1.3. Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</a>
+<li><a href="#org0f2cc5e">3.1.3. Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</a>
 <ul>
-<li><a href="#orgac342b4">3.1.3.1. Get</a></li>
-<li><a href="#org1fd9728">3.1.3.2. Compute</a></li>
+<li><a href="#orgd92637b">3.1.3.1. Get</a></li>
+<li><a href="#orga242c12">3.1.3.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org377f30d">3.1.4. Electron-electron component</a>
+<li><a href="#org73f90de">3.1.4. Electron-electron component</a>
 <ul>
-<li><a href="#org9751c8d">3.1.4.1. Get</a></li>
-<li><a href="#org3837b84">3.1.4.2. Compute</a></li>
+<li><a href="#org77f2c4e">3.1.4.1. Get</a></li>
+<li><a href="#org82eb54a">3.1.4.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org2e2defc">3.1.5. Derivative</a>
+<li><a href="#org45ffa52">3.1.5. Derivative</a>
 <ul>
-<li><a href="#org5b61226">3.1.5.1. Get</a></li>
-<li><a href="#org23d9ca7">3.1.5.2. Compute</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgf17c3ff">3.2. Electron-nucleus component</a>
-<ul>
-<li><a href="#orgc29165c">3.2.1. Asymptotic component</a>
-<ul>
-<li><a href="#orgc78ee9b">3.2.1.1. Get</a></li>
-<li><a href="#orge3a3a30">3.2.1.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#org6fca63d">3.2.2. Electron-nucleus rescaled distances</a>
-<ul>
-<li><a href="#orgc15eb14">3.2.2.1. Get</a></li>
-<li><a href="#orgc2f232b">3.2.2.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#orgc7b8935">3.2.3. Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</a>
-<ul>
-<li><a href="#org814320f">3.2.3.1. Get</a></li>
-<li><a href="#org07eac62">3.2.3.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#org3fe7bfd">3.2.4. Electron-nucleus component</a>
-<ul>
-<li><a href="#org65babf1">3.2.4.1. Get</a></li>
-<li><a href="#org7897737">3.2.4.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#orga0ecd50">3.2.5. Derivative</a>
-<ul>
-<li><a href="#orgffe9e31">3.2.5.1. Get</a></li>
-<li><a href="#org2fffd6a">3.2.5.2. Compute</a></li>
-<li><a href="#org089bf4c">3.2.5.3. Test</a></li>
+<li><a href="#org1694932">3.1.5.1. Get</a></li>
+<li><a href="#orgd04af79">3.1.5.2. Compute</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge682cfc">3.3. Electron-electron-nucleus component</a>
+<li><a href="#org3acbe4c">3.2. Electron-nucleus component</a>
 <ul>
-<li><a href="#org3c4ca56">3.3.1. Electron-electron rescaled distances in \(J_\text{eeN}\)</a>
+<li><a href="#org34ea8f5">3.2.1. Asymptotic component</a>
 <ul>
-<li><a href="#orgf93a9a0">3.3.1.1. Get</a></li>
-<li><a href="#org190208b">3.3.1.2. Compute</a></li>
-<li><a href="#org9a4e7c3">3.3.1.3. Test</a></li>
+<li><a href="#org2ab1bb1">3.2.1.1. Get</a></li>
+<li><a href="#orga9614a2">3.2.1.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org3c5c0ca">3.3.2. Electron-electron rescaled distances derivatives in \(J_\text{eeN}\)</a>
+<li><a href="#org51c56eb">3.2.2. Electron-nucleus rescaled distances</a>
 <ul>
-<li><a href="#orgbaccb87">3.3.2.1. Get</a></li>
-<li><a href="#orge019586">3.3.2.2. Compute</a></li>
+<li><a href="#org0d284b2">3.2.2.1. Get</a></li>
+<li><a href="#org3524489">3.2.2.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org17e1686">3.3.3. Electron-nucleus rescaled distances in \(J_\text{eeN}\)</a>
+<li><a href="#org4f31dcd">3.2.3. Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</a>
 <ul>
-<li><a href="#org82ea625">3.3.3.1. Get</a></li>
-<li><a href="#orga8d0ee3">3.3.3.2. Compute</a></li>
+<li><a href="#org311cf2d">3.2.3.1. Get</a></li>
+<li><a href="#org7f75404">3.2.3.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org736d207">3.3.4. Electron-nucleus rescaled distances derivatives in \(J_\text{eeN}\)</a>
+<li><a href="#orgad293c4">3.2.4. Electron-nucleus component</a>
 <ul>
-<li><a href="#org23b75c0">3.3.4.1. Get</a></li>
-<li><a href="#orgd60825d">3.3.4.2. Compute</a></li>
+<li><a href="#orgd956dd3">3.2.4.1. Get</a></li>
+<li><a href="#org4cc3b79">3.2.4.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org37c41fb">3.3.5. Temporary arrays for electron-electron-nucleus Jastrow \(f_{een}\)</a>
+<li><a href="#org03dc7bf">3.2.5. Derivative</a>
 <ul>
-<li><a href="#org232308e">3.3.5.1. Compute dim<sub>c</sub><sub>vector</sub></a></li>
-<li><a href="#org7d81026">3.3.5.2. Get</a></li>
-<li><a href="#orga5565c1">3.3.5.3. Compute c<sub>vector</sub><sub>full</sub></a></li>
-<li><a href="#org9625b6a">3.3.5.4. Compute lkpm<sub>combined</sub><sub>index</sub></a></li>
-<li><a href="#orge49845b">3.3.5.5. Compute tmp<sub>c</sub></a></li>
-<li><a href="#orgc9e2aaa">3.3.5.6. Compute dtmp<sub>c</sub></a></li>
-</ul>
-</li>
-<li><a href="#org5e2372f">3.3.6. Electron-electron-nucleus Jastrow \(f_{een}\)</a>
-<ul>
-<li><a href="#org2f271cc">3.3.6.1. Get</a></li>
-<li><a href="#orgfda5611">3.3.6.2. Compute naive</a></li>
-<li><a href="#orgb1f8fa1">3.3.6.3. Compute</a></li>
-</ul>
-</li>
-<li><a href="#orgd8a54a2">3.3.7. Electron-electron-nucleus Jastrow \(f_{een}\) derivative</a>
-<ul>
-<li><a href="#org5d00c53">3.3.7.1. Get</a></li>
-<li><a href="#org92788ba">3.3.7.2. Compute Naive</a></li>
-<li><a href="#org2d53196">3.3.7.3. Compute GL</a></li>
-<li><a href="#orgbd8117e">3.3.7.4. Compute Gradient only</a></li>
+<li><a href="#org32a11df">3.2.5.1. Get</a></li>
+<li><a href="#org5e63e93">3.2.5.2. Compute</a></li>
+<li><a href="#org90af122">3.2.5.3. Test</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org34f97e5">3.4. Total Jastrow</a>
+<li><a href="#org3bd6636">3.3. Electron-electron-nucleus component</a>
 <ul>
-<li><a href="#orgbfb614c">3.4.1. Value</a>
+<li><a href="#org0d2b84f">3.3.1. Electron-electron rescaled distances in \(J_\text{eeN}\)</a>
 <ul>
-<li><a href="#org1737423">3.4.1.1. Get</a></li>
-<li><a href="#orga1b3daa">3.4.1.2. Compute</a></li>
+<li><a href="#org04f56a9">3.3.1.1. Get</a></li>
+<li><a href="#orga8139aa">3.3.1.2. Compute</a></li>
+<li><a href="#orgab1f98a">3.3.1.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#orgc45d25b">3.4.2. Derivatives</a>
+<li><a href="#org7e98ee1">3.3.2. Electron-electron rescaled distances derivatives in \(J_\text{eeN}\)</a>
 <ul>
-<li><a href="#org17ee591">3.4.2.1. Get</a></li>
-<li><a href="#org8c23bb4">3.4.2.2. Compute GL</a></li>
-<li><a href="#org288ff7f">3.4.2.3. Compute Gradient only</a></li>
+<li><a href="#orgcfee939">3.3.2.1. Get</a></li>
+<li><a href="#orgc76c392">3.3.2.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#org8a4530e">3.3.3. Electron-nucleus rescaled distances in \(J_\text{eeN}\)</a>
+<ul>
+<li><a href="#org6a7187a">3.3.3.1. Get</a></li>
+<li><a href="#orga4097cd">3.3.3.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#org8f276d6">3.3.4. Electron-nucleus rescaled distances derivatives in \(J_\text{eeN}\)</a>
+<ul>
+<li><a href="#org06caf91">3.3.4.1. Get</a></li>
+<li><a href="#org564f4f8">3.3.4.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#orgde6f67c">3.3.5. Temporary arrays for electron-electron-nucleus Jastrow \(f_{een}\)</a>
+<ul>
+<li><a href="#orgdd4e5f8">3.3.5.1. Compute dim<sub>c</sub><sub>vector</sub></a></li>
+<li><a href="#org6cd7516">3.3.5.2. Get</a></li>
+<li><a href="#orgb409589">3.3.5.3. Compute c<sub>vector</sub><sub>full</sub></a></li>
+<li><a href="#org7835eae">3.3.5.4. Compute lkpm<sub>combined</sub><sub>index</sub></a></li>
+<li><a href="#org38e0921">3.3.5.5. Compute tmp<sub>c</sub></a></li>
+<li><a href="#orge8d3ec6">3.3.5.6. Compute dtmp<sub>c</sub></a></li>
+</ul>
+</li>
+<li><a href="#org2fa465f">3.3.6. Electron-electron-nucleus Jastrow \(f_{een}\)</a>
+<ul>
+<li><a href="#orgd73c33b">3.3.6.1. Get</a></li>
+<li><a href="#org1c7eb94">3.3.6.2. Compute naive</a></li>
+<li><a href="#org8d36a22">3.3.6.3. Compute</a></li>
+</ul>
+</li>
+<li><a href="#org12c105f">3.3.7. Electron-electron-nucleus Jastrow \(f_{een}\) derivative</a>
+<ul>
+<li><a href="#orga0835ec">3.3.7.1. Get</a></li>
+<li><a href="#orga30e949">3.3.7.2. Compute Naive</a></li>
+<li><a href="#orgddcf96d">3.3.7.3. Compute GL</a></li>
+<li><a href="#orged73bbf">3.3.7.4. Compute Gradient only</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf116f28">3.4. Total Jastrow</a>
+<ul>
+<li><a href="#org0e32067">3.4.1. Value</a>
+<ul>
+<li><a href="#org4f31570">3.4.1.1. Get</a></li>
+<li><a href="#orga7c84d8">3.4.1.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#orgf700f4a">3.4.2. Derivatives</a>
+<ul>
+<li><a href="#orgef7c0c1">3.4.2.1. Get</a></li>
+<li><a href="#orgb5c8e28">3.4.2.2. Compute GL</a></li>
+<li><a href="#org7a6d13b">3.4.2.3. Compute Gradient only</a></li>
 </ul>
 </li>
 </ul>
@@ -522,8 +434,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgf9bf1c7" class="outline-2">
-<h2 id="orgf9bf1c7"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-orgbb1b914" class="outline-2">
+<h2 id="orgbb1b914"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The Jastrow factor depends on the electronic (\(\mathbf{r}\)) and
@@ -614,16 +526,17 @@ The derivatives are computed with respect to the electron \(i\) for
 </p>
 </div>
 
-<div id="outline-container-org6159ef1" class="outline-3">
-<h3 id="org6159ef1"><span class="section-number-3">1.1</span> Reformulation of the three-body part</h3>
+<div id="outline-container-org036f06e" class="outline-3">
+<h3 id="org036f06e"><span class="section-number-3">1.1.</span> Reformulation of the three-body part</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 To accelerate the computation of the three-body part, the Jastrow
-factor is re-expressed as follows:
+factor is re-expressed as follows, with \(m=(p-k)/2 -l/2\):
 </p>
 
+
 \begin{eqnarray*}
-   & & \sum_{\alpha=1}^{N_{\text{nucl}}}
+   J_{kpl} & = & \sum_{\alpha=1}^{N_{\text{nucl}}}
      \sum_{i=1}^{N_{\text{elec}}}
       \sum_{j=1}^{i-1}
            c_{lkp\alpha} \left[ g_\text{e}({r}_{ij}) \right]^k
@@ -645,19 +558,48 @@ factor is re-expressed as follows:
              \left[ \left[ g_\alpha({R}_{i\alpha}) \right]^{l+m} \left[ g_\alpha({R}_{j\alpha}) \right]^{m} +
                     \left[ g_\alpha({R}_{i\alpha}) \right]^{l} \left[
     g_\alpha({R}_{j\alpha}) \right]^{l+m} \right] \\
+   & = & 
+    \sum_{\alpha=1}^{N_{\text{nucl}}} c_{lkp\alpha}
+     \sum_{i=1}^{N_{\text{elec}}}
+      \sum_{j=1}^{N_{\text{elec}}} 
+             \left[ g_\alpha({R}_{i\alpha}) \right]^{l+m}
+             \left[ g_\text{e}({r}_{ij}) \right]^k
+             \left[ g_\alpha({R}_{j\alpha}) \right]^{m} \\
+   & = & 
+    \sum_{\alpha=1}^{N_{\text{nucl}}} c_{lkp\alpha}
+     \sum_{i=1}^{N_{\text{elec}}} 
+             \left[ g_\alpha({R}_{i\alpha}) \right]^{l+m}
+             P_{i\alpha}^{km}, \text{ with }
+             P_{i\alpha}^{km} =
+      \sum_{j=1}^{N_{\text{elec}}} 
+             \left[ g_\text{e}({r}_{ij}) \right]^k
+             \left[ g_\alpha({R}_{j\alpha}) \right]^{m}. \\
+J   & = & 
+   \sum_{p=2}^{N_{\text{ord}}}
+    \sum_{k=0}^{p-1}
+     \sum_{l=0}^{p-k-2\delta_{k,0}}
+      \sum_{\alpha=1}^{N_{\text{nucl}}} c_{lkp\alpha}
+       \sum_{i=1}^{N_{\text{elec}}}
+        \left[ g_\alpha({R}_{i\alpha}) \right]^{(p-k+l)/2}
+             P_{i\alpha}^{k, (p-k-l)/2}
    \end{eqnarray*}
+
+<p>
+The computation of \(P\) scales as   \(\mathcal{O}(N_\text{elec}^2 N_\text{nucl}n^2)\), and 
+the computation of \(J\) scales as \(\mathcal{O}(N_\text{elec}N_\text{nucl}n^2)\).
+</p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org793b377" class="outline-2">
-<h2 id="org793b377"><span class="section-number-2">2</span> Context</h2>
+<div id="outline-container-org7da703c" class="outline-2">
+<h2 id="org7da703c"><span class="section-number-2">2.</span> Context</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The following data stored in the context:
 </p>
 
-<table id="org5ed34dc" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org2bf5df0" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1050,8 +992,8 @@ Computed data:
 </table>
 </div>
 
-<div id="outline-container-orgec5ed5c" class="outline-3">
-<h3 id="orgec5ed5c"><span class="section-number-3">2.1</span> Data structure</h3>
+<div id="outline-container-org0496e99" class="outline-3">
+<h3 id="org0496e99"><span class="section-number-3">2.1.</span> Data structure</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #a020f0;">typedef</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">qmckl_jastrow_champ_struct</span>{
@@ -1164,8 +1106,8 @@ this mechanism.
 </div>
 </div>
 
-<div id="outline-container-org817ea27" class="outline-3">
-<h3 id="org817ea27"><span class="section-number-3">2.2</span> Initialization functions</h3>
+<div id="outline-container-org6c13ae5" class="outline-3">
+<h3 id="org6c13ae5"><span class="section-number-3">2.2.</span> Initialization functions</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 To prepare for the Jastrow and its derivative, all the following functions need to be
@@ -1194,13 +1136,13 @@ are precontracted using BLAS LEVEL 3 operations.
 </p>
 </div>
 
-<div id="outline-container-org8bba1ac" class="outline-5">
-<h5 id="org8bba1ac"><span class="section-number-5">2.2.0.1</span> Fortran interface</h5>
+<div id="outline-container-orge529012" class="outline-5">
+<h5 id="orge529012"><span class="section-number-5">2.2.0.1.</span> Fortran interface</h5>
 <div class="outline-text-5" id="text-2-2-0-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_set_jastrow_champ_rescale_factor_ee (context, </span><span style="color: #a020f0;">&amp;</span>
-        kappa_ee) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_set_jastrow_champ_rescale_factor_ee</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        kappa_ee) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1208,8 +1150,8 @@ are precontracted using BLAS LEVEL 3 operations.
      <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> kappa_ee</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_set_jastrow_champ_rescale_factor_ee</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_set_jastrow_champ_rescale_factor_en (context, </span><span style="color: #a020f0;">&amp;</span>
-        kappa_en, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_set_jastrow_champ_rescale_factor_en</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        kappa_en, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1218,8 +1160,8 @@ are precontracted using BLAS LEVEL 3 operations.
      <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(in) ::<span style="color: #a0522d;"> kappa_en(size_max)</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_set_jastrow_champ_rescale_factor_en</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_set_jastrow_champ_aord_num (context, </span><span style="color: #a020f0;">&amp;</span>
-        aord_num) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_set_jastrow_champ_aord_num</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        aord_num) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1227,8 +1169,8 @@ are precontracted using BLAS LEVEL 3 operations.
      <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> aord_num</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_set_jastrow_champ_aord_num</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_set_jastrow_champ_bord_num (context, </span><span style="color: #a020f0;">&amp;</span>
-        bord_num) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_set_jastrow_champ_bord_num</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        bord_num) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1236,8 +1178,8 @@ are precontracted using BLAS LEVEL 3 operations.
      <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> bord_num</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_set_jastrow_champ_bord_num</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_set_jastrow_champ_cord_num (context, </span><span style="color: #a020f0;">&amp;</span>
-        cord_num) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_set_jastrow_champ_cord_num</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        cord_num) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1245,8 +1187,8 @@ are precontracted using BLAS LEVEL 3 operations.
      <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> cord_num</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_set_jastrow_champ_cord_num</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_set_jastrow_champ_type_nucl_num (context, </span><span style="color: #a020f0;">&amp;</span>
-        type_nucl_num) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_set_jastrow_champ_type_nucl_num</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        type_nucl_num) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1254,8 +1196,8 @@ are precontracted using BLAS LEVEL 3 operations.
      <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> type_nucl_num</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_set_jastrow_champ_type_nucl_num</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_set_jastrow_champ_type_nucl_vector (context, </span><span style="color: #a020f0;">&amp;</span>
-        type_nucl_vector, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_set_jastrow_champ_type_nucl_vector</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        type_nucl_vector, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1264,8 +1206,8 @@ are precontracted using BLAS LEVEL 3 operations.
      <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(in) ::<span style="color: #a0522d;"> type_nucl_vector(size_max)</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_set_jastrow_champ_type_nucl_vector</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_set_jastrow_champ_a_vector(context, </span><span style="color: #a020f0;">&amp;</span>
-        a_vector, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_set_jastrow_champ_a_vector</span><span style="color: #a0522d;">(context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        a_vector, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1274,8 +1216,8 @@ are precontracted using BLAS LEVEL 3 operations.
      <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(in) ::<span style="color: #a0522d;"> a_vector(size_max)</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_set_jastrow_champ_a_vector</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_set_jastrow_champ_b_vector(context, </span><span style="color: #a020f0;">&amp;</span>
-        b_vector, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_set_jastrow_champ_b_vector</span><span style="color: #a0522d;">(context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        b_vector, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1284,8 +1226,8 @@ are precontracted using BLAS LEVEL 3 operations.
      <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(in) ::<span style="color: #a0522d;"> b_vector(size_max)</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_set_jastrow_champ_b_vector</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_set_jastrow_champ_c_vector(context, </span><span style="color: #a020f0;">&amp;</span>
-        c_vector, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_set_jastrow_champ_c_vector</span><span style="color: #a0522d;">(context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        c_vector, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1294,8 +1236,8 @@ are precontracted using BLAS LEVEL 3 operations.
      <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(in) ::<span style="color: #a0522d;"> c_vector(size_max)</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_set_jastrow_champ_c_vector</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_set_jastrow_champ_spin_independent(context, </span><span style="color: #a020f0;">&amp;</span>
-        spin_independent) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_set_jastrow_champ_spin_independent</span><span style="color: #a0522d;">(context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        spin_independent) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1310,8 +1252,8 @@ are precontracted using BLAS LEVEL 3 operations.
 </div>
 </div>
 
-<div id="outline-container-org8ed2964" class="outline-3">
-<h3 id="org8ed2964"><span class="section-number-3">2.3</span> Access functions</h3>
+<div id="outline-container-org5a97852" class="outline-3">
+<h3 id="org5a97852"><span class="section-number-3">2.3.</span> Access functions</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Along with these core functions, calculation of the jastrow factor
@@ -1330,13 +1272,13 @@ function returns <code>true</code>.
 </div>
 </div>
 
-<div id="outline-container-orgdab865d" class="outline-5">
-<h5 id="orgdab865d"><span class="section-number-5">2.3.0.1</span> Fortran interface</h5>
+<div id="outline-container-orgffc4542" class="outline-5">
+<h5 id="orgffc4542"><span class="section-number-5">2.3.0.1.</span> Fortran interface</h5>
 <div class="outline-text-5" id="text-2-3-0-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_rescale_factor_ee (context, </span><span style="color: #a020f0;">&amp;</span>
-        kappa_ee) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_rescale_factor_ee</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        kappa_ee) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1344,8 +1286,8 @@ function returns <code>true</code>.
      <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> kappa_ee</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_rescale_factor_ee</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_rescale_factor_en (context, </span><span style="color: #a020f0;">&amp;</span>
-        kappa_en, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_rescale_factor_en</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        kappa_en, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1354,8 +1296,8 @@ function returns <code>true</code>.
      <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(out)               ::<span style="color: #a0522d;"> kappa_en(size_max)</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_rescale_factor_en</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_aord_num (context, </span><span style="color: #a020f0;">&amp;</span>
-        aord_num) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_aord_num</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        aord_num) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1363,8 +1305,8 @@ function returns <code>true</code>.
      <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(out)             ::<span style="color: #a0522d;"> aord_num</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_aord_num</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_bord_num (context, </span><span style="color: #a020f0;">&amp;</span>
-        bord_num) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_bord_num</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        bord_num) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1372,8 +1314,8 @@ function returns <code>true</code>.
      <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(out)             ::<span style="color: #a0522d;"> bord_num</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_bord_num</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_cord_num (context, </span><span style="color: #a020f0;">&amp;</span>
-        cord_num) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_cord_num</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        cord_num) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1381,8 +1323,8 @@ function returns <code>true</code>.
      <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(out)             ::<span style="color: #a0522d;"> cord_num</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_cord_num</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_type_nucl_num (context, </span><span style="color: #a020f0;">&amp;</span>
-        type_nucl_num) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_type_nucl_num</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        type_nucl_num) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1390,8 +1332,8 @@ function returns <code>true</code>.
      <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(out)              ::<span style="color: #a0522d;"> type_nucl_num</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_type_nucl_num</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_type_nucl_vector (context, </span><span style="color: #a020f0;">&amp;</span>
-        type_nucl_vector, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_type_nucl_vector</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        type_nucl_vector, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1400,8 +1342,8 @@ function returns <code>true</code>.
      <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>), <span style="color: #a020f0;">intent</span>(out)            ::<span style="color: #a0522d;"> type_nucl_vector(size_max)</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_type_nucl_vector</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_a_vector(context, </span><span style="color: #a020f0;">&amp;</span>
-        a_vector, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_a_vector</span><span style="color: #a0522d;">(context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        a_vector, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1410,8 +1352,8 @@ function returns <code>true</code>.
      <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(out)               ::<span style="color: #a0522d;"> a_vector(size_max)</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_a_vector</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_b_vector(context, </span><span style="color: #a020f0;">&amp;</span>
-        b_vector, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_b_vector</span><span style="color: #a0522d;">(context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        b_vector, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1420,8 +1362,8 @@ function returns <code>true</code>.
      <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(out)                 ::<span style="color: #a0522d;"> b_vector(size_max)</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_b_vector</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_c_vector(context, </span><span style="color: #a020f0;">&amp;</span>
-        c_vector, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_c_vector</span><span style="color: #a0522d;">(context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        c_vector, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1430,8 +1372,8 @@ function returns <code>true</code>.
      <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>),   <span style="color: #a020f0;">intent</span>(out)                 ::<span style="color: #a0522d;"> c_vector(size_max)</span>
    <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_c_vector</span>
 
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_spin_independent(context, </span><span style="color: #a020f0;">&amp;</span>
-        spin_independent) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_spin_independent</span><span style="color: #a0522d;">(context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        spin_independent) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1447,8 +1389,8 @@ function returns <code>true</code>.
 </div>
 </div>
 
-<div id="outline-container-org5823607" class="outline-2">
-<h2 id="org5823607"><span class="section-number-2">3</span> Computation</h2>
+<div id="outline-container-org3f01fb1" class="outline-2">
+<h2 id="org3f01fb1"><span class="section-number-2">3.</span> Computation</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 The computed data is stored in the context so that it can be reused
@@ -1461,12 +1403,12 @@ current date is stored.
 </p>
 </div>
 
-<div id="outline-container-orgbe12d5a" class="outline-3">
-<h3 id="orgbe12d5a"><span class="section-number-3">3.1</span> Electron-electron component</h3>
+<div id="outline-container-org4245105" class="outline-3">
+<h3 id="org4245105"><span class="section-number-3">3.1.</span> Electron-electron component</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-orgdcf5617" class="outline-4">
-<h4 id="orgdcf5617"><span class="section-number-4">3.1.1</span> Asymptotic component</h4>
+<div id="outline-container-org90d83c5" class="outline-4">
+<h4 id="org90d83c5"><span class="section-number-4">3.1.1.</span> Asymptotic component</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 Calculate the asymptotic component <code>asymp_jasb</code> to be subtracted from the
@@ -1485,8 +1427,8 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </p>
 </div>
 
-<div id="outline-container-org3ab2402" class="outline-5">
-<h5 id="org3ab2402"><span class="section-number-5">3.1.1.1</span> Get</h5>
+<div id="outline-container-org41cc5a8" class="outline-5">
+<h5 id="org41cc5a8"><span class="section-number-5">3.1.1.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-1-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1498,12 +1440,12 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </div>
 
 <ol class="org-ol">
-<li><a id="orge16fa0b"></a>Fortran interface<br />
+<li><a id="org1cbd4e0"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-1-1-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_asymp_jasb(context, </span><span style="color: #a020f0;">&amp;</span>
-        asymp_jasb, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_asymp_jasb</span><span style="color: #a0522d;">(context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        asymp_jasb, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1519,10 +1461,10 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </ol>
 </div>
 
-<div id="outline-container-orga94c2c6" class="outline-5">
-<h5 id="orga94c2c6"><span class="section-number-5">3.1.1.2</span> Compute</h5>
+<div id="outline-container-org5fa272c" class="outline-5">
+<h5 id="org5fa272c"><span class="section-number-5">3.1.1.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-1-1-2">
-<table id="org7cbb8dc" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org101eaf7" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1695,8 +1637,8 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </div>
 </div>
 
-<div id="outline-container-orgc1ccc3d" class="outline-4">
-<h4 id="orgc1ccc3d"><span class="section-number-4">3.1.2</span> Electron-electron rescaled distances</h4>
+<div id="outline-container-orgd6c9681" class="outline-4">
+<h4 id="orgd6c9681"><span class="section-number-4">3.1.2.</span> Electron-electron rescaled distances</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <p>
 <code>ee_distance_rescaled</code> stores the matrix of the rescaled distances between all
@@ -1714,8 +1656,8 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </p>
 </div>
 
-<div id="outline-container-org7606911" class="outline-5">
-<h5 id="org7606911"><span class="section-number-5">3.1.2.1</span> Get</h5>
+<div id="outline-container-org33f82d7" class="outline-5">
+<h5 id="org33f82d7"><span class="section-number-5">3.1.2.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-1-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_ee_distance_rescaled</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
@@ -1726,10 +1668,10 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </div>
 </div>
 
-<div id="outline-container-orga694388" class="outline-5">
-<h5 id="orga694388"><span class="section-number-5">3.1.2.2</span> Compute</h5>
+<div id="outline-container-orgbba6758" class="outline-5">
+<h5 id="orgbba6758"><span class="section-number-5">3.1.2.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-1-2-2">
-<table id="org1e87b5c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org33db68b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1846,8 +1788,8 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </div>
 </div>
 
-<div id="outline-container-org1b1cb74" class="outline-4">
-<h4 id="org1b1cb74"><span class="section-number-4">3.1.3</span> Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</h4>
+<div id="outline-container-org0f2cc5e" class="outline-4">
+<h4 id="org0f2cc5e"><span class="section-number-4">3.1.3.</span> Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <p>
 The rescaled distances, represented by \(C_{ij} = (1 - e^{-\kappa_\text{e} r_{ij}})/\kappa_\text{e}\)
@@ -1859,8 +1801,8 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 </p>
 </div>
 
-<div id="outline-container-orgac342b4" class="outline-5">
-<h5 id="orgac342b4"><span class="section-number-5">3.1.3.1</span> Get</h5>
+<div id="outline-container-orgd92637b" class="outline-5">
+<h5 id="orgd92637b"><span class="section-number-5">3.1.3.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-1-3-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_ee_distance_rescaled_gl</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
@@ -1871,10 +1813,10 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 </div>
 </div>
 
-<div id="outline-container-org1fd9728" class="outline-5">
-<h5 id="org1fd9728"><span class="section-number-5">3.1.3.2</span> Compute</h5>
+<div id="outline-container-orga242c12" class="outline-5">
+<h5 id="orga242c12"><span class="section-number-5">3.1.3.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-1-3-2">
-<table id="orgc579f1c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org550302a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1990,8 +1932,8 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 </div>
 </div>
 
-<div id="outline-container-org377f30d" class="outline-4">
-<h4 id="org377f30d"><span class="section-number-4">3.1.4</span> Electron-electron component</h4>
+<div id="outline-container-org73f90de" class="outline-4">
+<h4 id="org73f90de"><span class="section-number-4">3.1.4.</span> Electron-electron component</h4>
 <div class="outline-text-4" id="text-3-1-4">
 <p>
 Calculate the electron-electron jastrow component <code>factor_ee</code> using the <code>asymp_jasb</code>
@@ -2024,8 +1966,8 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </p>
 </div>
 
-<div id="outline-container-org9751c8d" class="outline-5">
-<h5 id="org9751c8d"><span class="section-number-5">3.1.4.1</span> Get</h5>
+<div id="outline-container-org77f2c4e" class="outline-5">
+<h5 id="org77f2c4e"><span class="section-number-5">3.1.4.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-1-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2037,12 +1979,12 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </div>
 
 <ol class="org-ol">
-<li><a id="org3d586f4"></a>Fortran interface<br />
+<li><a id="orge6ebe7b"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-1-4-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_factor_ee (context, </span><span style="color: #a020f0;">&amp;</span>
-        factor_ee, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_factor_ee</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        factor_ee, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -2058,10 +2000,10 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </ol>
 </div>
 
-<div id="outline-container-org3837b84" class="outline-5">
-<h5 id="org3837b84"><span class="section-number-5">3.1.4.2</span> Compute</h5>
+<div id="outline-container-org82eb54a" class="outline-5">
+<h5 id="org82eb54a"><span class="section-number-5">3.1.4.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-1-4-2">
-<table id="org1cafb97" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgfab95a8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2346,8 +2288,8 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </div>
 </div>
 
-<div id="outline-container-org2e2defc" class="outline-4">
-<h4 id="org2e2defc"><span class="section-number-4">3.1.5</span> Derivative</h4>
+<div id="outline-container-org45ffa52" class="outline-4">
+<h4 id="org45ffa52"><span class="section-number-4">3.1.5.</span> Derivative</h4>
 <div class="outline-text-4" id="text-3-1-5">
 <p>
 The derivative of <code>factor_ee</code> is computed using the <code>ee_distance_rescaled</code> and
@@ -2373,8 +2315,8 @@ directions and the laplacian as the last component.
 </p>
 </div>
 
-<div id="outline-container-org5b61226" class="outline-5">
-<h5 id="org5b61226"><span class="section-number-5">3.1.5.1</span> Get</h5>
+<div id="outline-container-org1694932" class="outline-5">
+<h5 id="org1694932"><span class="section-number-5">3.1.5.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-1-5-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2386,12 +2328,12 @@ directions and the laplacian as the last component.
 </div>
 
 <ol class="org-ol">
-<li><a id="org2b61e0b"></a>Fortran interface<br />
+<li><a id="orgf1328e2"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-1-5-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_factor_ee_gl (context, </span><span style="color: #a020f0;">&amp;</span>
-        factor_ee_gl, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_factor_ee_gl</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        factor_ee_gl, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -2407,10 +2349,10 @@ directions and the laplacian as the last component.
 </ol>
 </div>
 
-<div id="outline-container-org23d9ca7" class="outline-5">
-<h5 id="org23d9ca7"><span class="section-number-5">3.1.5.2</span> Compute</h5>
+<div id="outline-container-orgd04af79" class="outline-5">
+<h5 id="orgd04af79"><span class="section-number-5">3.1.5.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-1-5-2">
-<table id="org018be5e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgb7645b0" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2792,12 +2734,12 @@ directions and the laplacian as the last component.
 </div>
 </div>
 
-<div id="outline-container-orgf17c3ff" class="outline-3">
-<h3 id="orgf17c3ff"><span class="section-number-3">3.2</span> Electron-nucleus component</h3>
+<div id="outline-container-org3acbe4c" class="outline-3">
+<h3 id="org3acbe4c"><span class="section-number-3">3.2.</span> Electron-nucleus component</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-orgc29165c" class="outline-4">
-<h4 id="orgc29165c"><span class="section-number-4">3.2.1</span> Asymptotic component</h4>
+<div id="outline-container-org34ea8f5" class="outline-4">
+<h4 id="org34ea8f5"><span class="section-number-4">3.2.1.</span> Asymptotic component</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 Calculate the asymptotic component <code>asymp_jasa</code> to be subtracted from the final
@@ -2812,8 +2754,8 @@ via the <code>a_vector</code> and the electron-nucleus rescale factors <code>res
 </p>
 </div>
 
-<div id="outline-container-orgc78ee9b" class="outline-5">
-<h5 id="orgc78ee9b"><span class="section-number-5">3.2.1.1</span> Get</h5>
+<div id="outline-container-org2ab1bb1" class="outline-5">
+<h5 id="org2ab1bb1"><span class="section-number-5">3.2.1.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-2-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2825,12 +2767,12 @@ via the <code>a_vector</code> and the electron-nucleus rescale factors <code>res
 </div>
 
 <ol class="org-ol">
-<li><a id="org3a2e3c8"></a>Fortran interface<br />
+<li><a id="orgadfe08d"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-2-1-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_asymp_jasa(context, </span><span style="color: #a020f0;">&amp;</span>
-        asymp_jasa, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_asymp_jasa</span><span style="color: #a0522d;">(context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        asymp_jasa, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -2846,10 +2788,10 @@ via the <code>a_vector</code> and the electron-nucleus rescale factors <code>res
 </ol>
 </div>
 
-<div id="outline-container-orge3a3a30" class="outline-5">
-<h5 id="orge3a3a30"><span class="section-number-5">3.2.1.2</span> Compute</h5>
+<div id="outline-container-orga9614a2" class="outline-5">
+<h5 id="orga9614a2"><span class="section-number-5">3.2.1.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-2-1-2">
-<table id="org6f6507f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgd28c04a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2964,6 +2906,7 @@ via the <code>a_vector</code> and the electron-nucleus rescale factors <code>res
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_asymp_jasa</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">aord_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">type_nucl_num</span>,
@@ -2976,8 +2919,8 @@ via the <code>a_vector</code> and the electron-nucleus rescale factors <code>res
 </div>
 </div>
 
-<div id="outline-container-org6fca63d" class="outline-4">
-<h4 id="org6fca63d"><span class="section-number-4">3.2.2</span> Electron-nucleus rescaled distances</h4>
+<div id="outline-container-org51c56eb" class="outline-4">
+<h4 id="org51c56eb"><span class="section-number-4">3.2.2.</span> Electron-nucleus rescaled distances</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 <code>en_distance_rescaled</code> stores the matrix of the rescaled distances between
@@ -2995,8 +2938,8 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 </p>
 </div>
 
-<div id="outline-container-orgc15eb14" class="outline-5">
-<h5 id="orgc15eb14"><span class="section-number-5">3.2.2.1</span> Get</h5>
+<div id="outline-container-org0d284b2" class="outline-5">
+<h5 id="org0d284b2"><span class="section-number-5">3.2.2.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-2-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3009,10 +2952,10 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 </div>
 
 
-<div id="outline-container-orgc2f232b" class="outline-5">
-<h5 id="orgc2f232b"><span class="section-number-5">3.2.2.2</span> Compute</h5>
+<div id="outline-container-org3524489" class="outline-5">
+<h5 id="org3524489"><span class="section-number-5">3.2.2.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-2-2-2">
-<table id="orgd6d8bbb" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgc1fb446" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3091,7 +3034,7 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 
 <tr>
 <td class="org-left"><code>nucl_coord</code></td>
-<td class="org-left"><code>double[3][elec_num]</code></td>
+<td class="org-left"><code>double[3][nucl_num]</code></td>
 <td class="org-left">in</td>
 <td class="org-left">Nuclear coordinates</td>
 </tr>
@@ -3169,8 +3112,8 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 </div>
 </div>
 
-<div id="outline-container-orgc7b8935" class="outline-4">
-<h4 id="orgc7b8935"><span class="section-number-4">3.2.3</span> Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</h4>
+<div id="outline-container-org4f31dcd" class="outline-4">
+<h4 id="org4f31dcd"><span class="section-number-4">3.2.3.</span> Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <p>
 The rescaled distances, represented by \(C_{i\alpha} = (1 - e^{-\kappa_\alpha R_{i\alpha}})/\kappa\)
@@ -3182,8 +3125,8 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 </p>
 </div>
 
-<div id="outline-container-org814320f" class="outline-5">
-<h5 id="org814320f"><span class="section-number-5">3.2.3.1</span> Get</h5>
+<div id="outline-container-org311cf2d" class="outline-5">
+<h5 id="org311cf2d"><span class="section-number-5">3.2.3.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-2-3-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3195,10 +3138,10 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 </div>
 </div>
 
-<div id="outline-container-org07eac62" class="outline-5">
-<h5 id="org07eac62"><span class="section-number-5">3.2.3.2</span> Compute</h5>
+<div id="outline-container-org7f75404" class="outline-5">
+<h5 id="org7f75404"><span class="section-number-5">3.2.3.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-2-3-2">
-<table id="org754cd95" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgc3b78d7" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3277,7 +3220,7 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 
 <tr>
 <td class="org-left"><code>nucl_coord</code></td>
-<td class="org-left"><code>double[3][elec_num]</code></td>
+<td class="org-left"><code>double[3][nucl_num]</code></td>
 <td class="org-left">in</td>
 <td class="org-left">Nuclear coordinates</td>
 </tr>
@@ -3355,8 +3298,8 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 </div>
 </div>
 
-<div id="outline-container-org3fe7bfd" class="outline-4">
-<h4 id="org3fe7bfd"><span class="section-number-4">3.2.4</span> Electron-nucleus component</h4>
+<div id="outline-container-orgad293c4" class="outline-4">
+<h4 id="orgad293c4"><span class="section-number-4">3.2.4.</span> Electron-nucleus component</h4>
 <div class="outline-text-4" id="text-3-2-4">
 <p>
 Calculate the electron-electron jastrow component <code>factor_en</code> using the <code>a_vector</code>
@@ -3365,14 +3308,14 @@ coeffecients and the electron-nucleus rescaled distances <code>en_distance_resca
 
 <p>
 \[
- f_{\alpha}(R_{i\alpha}) = - \sum_{i,j<i} \left[ \frac{ A_0 C_{ij}}{1 - A_1 C_{ij}} + \sum^{N^\alpha_{\text{ord}}}_{k}A_k C_{ij}^k \right]
+ f_{\alpha}(R_{i\alpha}) = - \sum_{i,j<i} \left[ \frac{ A_0 C_{ij}}{1 + A_1 C_{ij}} + \sum_{k=2}^{N^\alpha_{\text{ord}}}A_k C_{ij}^k \right]
    \]
 </p>
 </div>
 
 
-<div id="outline-container-org65babf1" class="outline-5">
-<h5 id="org65babf1"><span class="section-number-5">3.2.4.1</span> Get</h5>
+<div id="outline-container-orgd956dd3" class="outline-5">
+<h5 id="orgd956dd3"><span class="section-number-5">3.2.4.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-2-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3384,12 +3327,12 @@ coeffecients and the electron-nucleus rescaled distances <code>en_distance_resca
 </div>
 
 <ol class="org-ol">
-<li><a id="orga968f36"></a>Fortran interface<br />
+<li><a id="org4877782"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-2-4-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_factor_en (context, </span><span style="color: #a020f0;">&amp;</span>
-        factor_en, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_factor_en</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        factor_en, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -3405,10 +3348,10 @@ coeffecients and the electron-nucleus rescaled distances <code>en_distance_resca
 </ol>
 </div>
 
-<div id="outline-container-org7897737" class="outline-5">
-<h5 id="org7897737"><span class="section-number-5">3.2.4.2</span> Compute</h5>
+<div id="outline-container-org4cc3b79" class="outline-5">
+<h5 id="org4cc3b79"><span class="section-number-5">3.2.4.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-2-4-2">
-<table id="orgcd939e0" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgb80e73c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3590,6 +3533,7 @@ coeffecients and the electron-nucleus rescaled distances <code>en_distance_resca
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_factor_en_doc</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">elec_num</span>,
@@ -3633,8 +3577,8 @@ coeffecients and the electron-nucleus rescaled distances <code>en_distance_resca
 </div>
 </div>
 
-<div id="outline-container-orga0ecd50" class="outline-4">
-<h4 id="orga0ecd50"><span class="section-number-4">3.2.5</span> Derivative</h4>
+<div id="outline-container-org03dc7bf" class="outline-4">
+<h4 id="org03dc7bf"><span class="section-number-4">3.2.5.</span> Derivative</h4>
 <div class="outline-text-4" id="text-3-2-5">
 <p>
 Calculate the electron-electron jastrow component <code>factor_en_gl</code> derivative
@@ -3643,12 +3587,28 @@ with respect to the electron coordinates using the <code>en_distance_rescaled</c
 </p>
 
 <p>
-TODO: write equations.
+The derivative is calculated in the function <code>qmckl_compute_jastrow_champ_factor_en_gl</code>.
+The formula is given by:
+\[
+\nabla_i f_{\alpha}(R_{i\alpha}) = \sum_{j=1}^{N_\text{elec}} \left[
+   \frac{ A_0\, \nabla_i C_{ij} }{(1 + A_1 C_{ij})^2} + 
+  \sum_{k=2}^{N^\alpha_{\text{ord}}} A_k\, k\, C_{ij}^{k-1}\,\nabla_i C_{ij} \right] 
+   \]
+</p>
+
+<p>
+\[
+\Delta_i f_{\alpha}(R_{i\alpha}) = \sum_{j=1}^{N_\text{elec}} \left[
+   \frac{ A_0\, \Delta_i C_{ij} }{(1 + A_1 C_{ij})^2} - 
+   \frac{ 2 A_0\, A_1 (\nabla_i C_{ij})^2}{(1 + A_1 C_{ij})^3} + 
+  \sum_{k=2}^{N^\alpha_{\text{ord}}} A_k\, k\, C_{ij}^{k-1} C_{ij}^{k-2}
+\left[ \Delta_i C_{ij} + (k-1)(\nabla_i C_{ij})^2 \right] \right] 
+   \]
 </p>
 </div>
 
-<div id="outline-container-orgffe9e31" class="outline-5">
-<h5 id="orgffe9e31"><span class="section-number-5">3.2.5.1</span> Get</h5>
+<div id="outline-container-org32a11df" class="outline-5">
+<h5 id="org32a11df"><span class="section-number-5">3.2.5.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-2-5-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3660,12 +3620,12 @@ TODO: write equations.
 </div>
 
 <ol class="org-ol">
-<li><a id="org382f3e9"></a>Fortran interface<br />
+<li><a id="org0a2c294"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-2-5-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_factor_en_gl (context, </span><span style="color: #a020f0;">&amp;</span>
-        factor_en_gl, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_factor_en_gl</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        factor_en_gl, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -3681,10 +3641,10 @@ TODO: write equations.
 </ol>
 </div>
 
-<div id="outline-container-org2fffd6a" class="outline-5">
-<h5 id="org2fffd6a"><span class="section-number-5">3.2.5.2</span> Compute</h5>
+<div id="outline-container-org5e63e93" class="outline-5">
+<h5 id="org5e63e93"><span class="section-number-5">3.2.5.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-2-5-2">
-<table id="orga5f976b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org491ac10" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3840,30 +3800,30 @@ TODO: write equations.
   <span style="color: #a020f0;">endif</span>
 
   <span style="color: #a020f0;">do</span> nw =1, walk_num
-    factor_en_gl(:,:,nw) = 0.0d0
-    <span style="color: #a020f0;">do</span> a = 1, nucl_num
-       <span style="color: #a020f0;">do</span> i = 1, elec_num
+     factor_en_gl(:,:,nw) = 0.0d0
+     <span style="color: #a020f0;">do</span> a = 1, nucl_num
+        <span style="color: #a020f0;">do</span> i = 1, elec_num
 
-          x = en_distance_rescaled(i,a,nw)
-          <span style="color: #a020f0;">if</span>(<span style="color: #a020f0;">abs</span>(x) &lt; 1.d-12) <span style="color: #a020f0;">continue</span>
+           x = en_distance_rescaled(i,a,nw)
+           <span style="color: #a020f0;">if</span>(<span style="color: #a020f0;">abs</span>(x) &lt; 1.d-12) <span style="color: #a020f0;">continue</span>
 
-          denom = 1.0d0 + a_vector(2, type_nucl_vector(a)+1) * x
-          invdenom = 1.0d0 / denom
-          invdenom2 = invdenom*invdenom
+           denom = 1.0d0 + a_vector(2, type_nucl_vector(a)+1) * x
+           invdenom = 1.0d0 / denom
+           invdenom2 = invdenom*invdenom
 
-          dx(1) = en_distance_rescaled_gl(1,i,a,nw)
-          dx(2) = en_distance_rescaled_gl(2,i,a,nw)
-          dx(3) = en_distance_rescaled_gl(3,i,a,nw)
-          dx(4) = en_distance_rescaled_gl(4,i,a,nw)
+           dx(1) = en_distance_rescaled_gl(1,i,a,nw)
+           dx(2) = en_distance_rescaled_gl(2,i,a,nw)
+           dx(3) = en_distance_rescaled_gl(3,i,a,nw)
+           dx(4) = en_distance_rescaled_gl(4,i,a,nw)
 
-          f = a_vector(1, type_nucl_vector(a)+1) * invdenom2
-          grad_c2 = dx(1)*dx(1) + dx(2)*dx(2) + dx(3)*dx(3)
+           f = a_vector(1, type_nucl_vector(a)+1) * invdenom2
+           grad_c2 = dx(1)*dx(1) + dx(2)*dx(2) + dx(3)*dx(3)
 
-          factor_en_gl(i,1,nw) = factor_en_gl(i,1,nw) + f * dx(1)
-          factor_en_gl(i,2,nw) = factor_en_gl(i,2,nw) + f * dx(2)
-          factor_en_gl(i,3,nw) = factor_en_gl(i,3,nw) + f * dx(3)
-          factor_en_gl(i,4,nw) = factor_en_gl(i,4,nw) <span style="color: #a020f0;">&amp;</span>
-               + f * (dx(4) - 2.d0 * a_vector(2, type_nucl_vector(a)+1) * grad_c2 * invdenom)
+           factor_en_gl(i,1,nw) = factor_en_gl(i,1,nw) + f * dx(1)
+           factor_en_gl(i,2,nw) = factor_en_gl(i,2,nw) + f * dx(2)
+           factor_en_gl(i,3,nw) = factor_en_gl(i,3,nw) + f * dx(3)
+           factor_en_gl(i,4,nw) = factor_en_gl(i,4,nw) <span style="color: #a020f0;">&amp;</span>
+                + f * (dx(4) - 2.d0 * a_vector(2, type_nucl_vector(a)+1) * grad_c2 * invdenom)
 
 
            kf = 2.d0
@@ -3890,8 +3850,8 @@ TODO: write equations.
 </div>
 </div>
 
-<div id="outline-container-org089bf4c" class="outline-5">
-<h5 id="org089bf4c"><span class="section-number-5">3.2.5.3</span> Test</h5>
+<div id="outline-container-org90af122" class="outline-5">
+<h5 id="org90af122"><span class="section-number-5">3.2.5.3.</span> Test</h5>
 <div class="outline-text-5" id="text-3-2-5-3">
 <div class="org-src-container">
 <pre class="src src-c">/* <span style="color: #b22222;">Check if Jastrow is properly initialized</span> */
@@ -4049,12 +4009,12 @@ TODO: write equations.
 </div>
 </div>
 
-<div id="outline-container-orge682cfc" class="outline-3">
-<h3 id="orge682cfc"><span class="section-number-3">3.3</span> Electron-electron-nucleus component</h3>
+<div id="outline-container-org3bd6636" class="outline-3">
+<h3 id="org3bd6636"><span class="section-number-3">3.3.</span> Electron-electron-nucleus component</h3>
 <div class="outline-text-3" id="text-3-3">
 </div>
-<div id="outline-container-org3c4ca56" class="outline-4">
-<h4 id="org3c4ca56"><span class="section-number-4">3.3.1</span> Electron-electron rescaled distances in \(J_\text{eeN}\)</h4>
+<div id="outline-container-org0d2b84f" class="outline-4">
+<h4 id="org0d2b84f"><span class="section-number-4">3.3.1.</span> Electron-electron rescaled distances in \(J_\text{eeN}\)</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <p>
 <code>een_rescaled_e</code> stores the table of the rescaled distances between all
@@ -4063,7 +4023,9 @@ pairs of electrons and raised to the power \(p\) defined by <code>cord_num</code
 
 <p>
 \[
-    C_{ij,p} = \left[ \exp\left(-\kappa_\text{e}\, r_{ij}\right) \right]^p
+    [g_e(r)_{ij}]^p = \begin{cases}
+     \exp\left(-p\,\kappa_\text{e}\, r_{ij}\right) & \text{for } i \ne j \\
+     0 &  \text{for } i = j 
     \]
 </p>
 
@@ -4072,8 +4034,8 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </p>
 </div>
 
-<div id="outline-container-orgf93a9a0" class="outline-5">
-<h5 id="orgf93a9a0"><span class="section-number-5">3.3.1.1</span> Get</h5>
+<div id="outline-container-org04f56a9" class="outline-5">
+<h5 id="org04f56a9"><span class="section-number-5">3.3.1.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -4085,10 +4047,10 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </div>
 </div>
 
-<div id="outline-container-org190208b" class="outline-5">
-<h5 id="org190208b"><span class="section-number-5">3.3.1.2</span> Compute</h5>
+<div id="outline-container-orga8139aa" class="outline-5">
+<h5 id="orga8139aa"><span class="section-number-5">3.3.1.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-3-1-2">
-<table id="orgb9d2ec0" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgad44a88" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4177,7 +4139,6 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
   <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(out)         ::<span style="color: #a0522d;"> een_rescaled_e(elec_num,elec_num,0:cord_num,walk_num)</span>
   <span style="color: #228b22;">integer</span>(qmckl_exit_code)                  ::<span style="color: #a0522d;"> info</span>
 
-  <span style="color: #228b22;">double precision</span>,<span style="color: #a020f0;">dimension</span>(:,:),<span style="color: #a020f0;">allocatable</span> ::<span style="color: #a0522d;"> een_rescaled_e_ij</span>
   <span style="color: #228b22;">double precision</span>                    ::<span style="color: #a0522d;"> x</span>
   <span style="color: #228b22;">integer</span>*8                           ::<span style="color: #a0522d;"> i, j, k, l, nw</span>
 
@@ -4203,47 +4164,15 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
      <span style="color: #a020f0;">return</span>
   <span style="color: #a020f0;">endif</span>
 
-  <span style="color: #a020f0;">allocate</span>(een_rescaled_e_ij(elec_num * (elec_num - 1) / 2, cord_num + 1))
-
-  ! <span style="color: #b22222;">Prepare table of exponentiated distances raised to appropriate power</span>
   <span style="color: #a020f0;">do</span> nw = 1, walk_num
-     een_rescaled_e_ij(:, 1) = 1.0d0
-
-
-     k = 0
-     <span style="color: #a020f0;">do</span> j = 1, elec_num
-        <span style="color: #a020f0;">do</span> i = 1, j - 1
-           k = k + 1
-           een_rescaled_e_ij(k, 2) = dexp(-rescale_factor_ee * ee_distance(i, j, nw))
-        <span style="color: #a020f0;">end do</span>
-     <span style="color: #a020f0;">end do</span>
-
-
-     <span style="color: #a020f0;">do</span> l = 2, cord_num
-        <span style="color: #a020f0;">do</span> k = 1, elec_num * (elec_num - 1)/2
-           een_rescaled_e_ij(k, l+1) = een_rescaled_e_ij(k, l) * een_rescaled_e_ij(k, 2)
-        <span style="color: #a020f0;">end do</span>
-     <span style="color: #a020f0;">end do</span>
-
-     ! <span style="color: #b22222;">prepare the actual een table</span>
-     een_rescaled_e(:, :, 0, nw) = 1.0d0
-     <span style="color: #a020f0;">do</span> j = 1, elec_num
-        een_rescaled_e(j, j, 0, nw) = 0.0d0
-     <span style="color: #a020f0;">end do</span>
-
-     <span style="color: #a020f0;">do</span> l = 1, cord_num
-        k = 0
+     <span style="color: #a020f0;">do</span> l = 0, cord_num
         <span style="color: #a020f0;">do</span> j = 1, elec_num
-           <span style="color: #a020f0;">do</span> i = 1, j - 1
-              k = k + 1
-              x = een_rescaled_e_ij(k, l+1)
-              een_rescaled_e(i, j, l, nw) = x
-              een_rescaled_e(j, i, l, nw) = x
+           <span style="color: #a020f0;">do</span> i = 1, elec_num
+              een_rescaled_e(i, j, l, nw) = dexp(-rescale_factor_ee * ee_distance(i, j, nw))**l
            <span style="color: #a020f0;">end do</span>
-           een_rescaled_e(j, j, l, nw) = 0.0d0
+           een_rescaled_e(j, j, l, nw) = 0.d0
         <span style="color: #a020f0;">end do</span>
      <span style="color: #a020f0;">end do</span>
-
   <span style="color: #a020f0;">end do</span>
 
 <span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">qmckl_compute_een_rescaled_e_doc</span>
@@ -4259,6 +4188,13 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
                                                   <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">ee_distance</span>,
                                                   <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">const</span> <span style="color: #a0522d;">een_rescaled_e</span> ) {
 
+<span style="color: #a020f0;">return</span> qmckl_compute_een_rescaled_e_doc (context,
+                                                  walk_num,
+                                                  elec_num,
+                                                  cord_num,
+                                                  rescale_factor_ee,
+                                                  ee_distance,
+                                                  een_rescaled_e ) ;
   <span style="color: #a020f0;">if</span> (context == QMCKL_NULL_CONTEXT) {
     <span style="color: #a020f0;">return</span> QMCKL_INVALID_CONTEXT;
   }
@@ -4310,9 +4246,9 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 <span style="color: #483d8b;">#pragma</span> omp simd
 <span style="color: #483d8b;">#endif</span>
       <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">j</span> = 0; j &lt; i; ++j) {
-//        <span style="color: #b22222;">een_rescaled_e_ij[j + kk + elec_pairs] = -rescale_factor_ee * ee_distance[j + i*elec_num + nw*e2];</span>
         ee1[j] = -rescale_factor_ee * ee2[j];
       }
+      ee1[i] = 0.;
       kk += i;
     }
 
@@ -4429,23 +4365,70 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </div>
 </div>
 
-<div id="outline-container-org9a4e7c3" class="outline-5">
-<h5 id="org9a4e7c3"><span class="section-number-5">3.3.1.3</span> Test</h5>
+<div id="outline-container-orgab1f98a" class="outline-5">
+<h5 id="orgab1f98a"><span class="section-number-5">3.3.1.3.</span> Test</h5>
 <div class="outline-text-5" id="text-3-3-1-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #0000ff;">assert</span>(<span style="color: #228b22;">qmckl_electron_provided</span>(<span style="color: #a0522d;">context</span>));
 {
 
-<span style="color: #228b22;">double</span> <span style="color: #a0522d;">een_rescaled_e</span>[walk_num][(cord_num + 1)][elec_num][elec_num];
-rc = qmckl_get_jastrow_champ_een_rescaled_e(context, &amp;(een_rescaled_e[0][0][0][0]),elec_num*elec_num*(cord_num+1)*walk_num);
+  <span style="color: #228b22;">double</span> <span style="color: #a0522d;">een_rescaled_e</span>[walk_num][(cord_num + 1)][elec_num][elec_num];
+  rc = qmckl_get_jastrow_champ_een_rescaled_e(context, &amp;(een_rescaled_e[0][0][0][0]),elec_num*elec_num*(cord_num+1)*walk_num);
 
-// <span style="color: #b22222;">value of (0,2,1)</span>
-assert(fabs(een_rescaled_e[0][1][0][2]- 0.2211015082992776 ) &lt; 1.e-12);
-assert(fabs(een_rescaled_e[0][1][0][3]- 0.2611178387068169 ) &lt; 1.e-12);
-assert(fabs(een_rescaled_e[0][1][0][4]- 0.0884012350763747 ) &lt; 1.e-12);
-assert(fabs(een_rescaled_e[0][2][1][3]- 0.1016685507354656 ) &lt; 1.e-12);
-assert(fabs(een_rescaled_e[0][2][1][4]- 0.0113118073246869 ) &lt; 1.e-12);
-assert(fabs(een_rescaled_e[0][2][1][5]- 0.5257156022077619 ) &lt; 1.e-12);
+  assert( fabs(een_rescaled_e[0][0][0][0] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][0][0][1] - (1.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][0][0][2] - (1.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][0][1][0] - (1.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][0][1][1] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][0][1][2] - (1.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][0][2][0] - (1.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][0][2][1] - (1.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][0][2][2] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][1][0][0] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][1][0][1] - (0.6191495547586775)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][1][0][2] - (0.2211015082992776)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][1][1][0] - (0.6191495547586775)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][1][1][1] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][1][1][2] - (0.1891080158548495)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][1][2][0] - (0.2211015082992776)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][1][2][1] - (0.1891080158548495)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][1][2][2] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][2][0][0] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][2][0][1] - (0.38334617115786856)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][2][0][2] - (0.048885876972215525)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][2][1][0] - (0.38334617115786856)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][2][1][1] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][2][1][2] - (0.03576184166055801)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][2][2][0] - (0.048885876972215525)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][2][2][1] - (0.03576184166055801)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][2][2][2] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][3][0][0] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][3][0][1] - (0.23734861119083814)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][3][0][2] - (0.010808741133089782)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][3][1][0] - (0.23734861119083814)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][3][1][1] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][3][1][2] - (0.006762850919743422)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][3][2][0] - (0.010808741133089782)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][3][2][1] - (0.006762850919743422)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][3][2][2] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][4][0][0] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][4][0][1] - (0.14695428694139787)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][4][0][2] - (0.002389828967342592)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][4][1][0] - (0.14695428694139787)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][4][1][1] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][4][1][2] - (0.0012789093189548221)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][4][2][0] - (0.002389828967342592)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][4][2][1] - (0.0012789093189548221)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][4][2][2] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][5][0][0] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][5][0][1] - (0.09098668132964542)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][5][0][2] - (0.0005283947892567522)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][5][1][0] - (0.09098668132964542)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][5][1][1] - (0.0)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][5][1][2] - (0.0002418520037658232)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][5][2][0] - (0.0005283947892567522)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][5][2][1] - (0.0002418520037658232)) &lt; 1.e-10 );
+  assert( fabs(een_rescaled_e[0][5][2][2] - (0.0)) &lt; 1.e-10 );
 }
 
 {
@@ -4457,13 +4440,13 @@ assert(fabs(een_rescaled_e[0][2][1][5]- 0.5257156022077619 ) &lt; 1.e-12);
   <span style="color: #228b22;">double</span> <span style="color: #a0522d;">een_rescaled_e_doc</span>[walk_num][cord_num+1][elec_num][elec_num];
   memset(&amp;(een_rescaled_e_doc[0][0][0][0]), 0, <span style="color: #a020f0;">sizeof</span>(een_rescaled_e_doc));
   rc = qmckl_compute_een_rescaled_e(context, walk_num, elec_num, cord_num,
-                0.6, &amp;(ee_distance[0]), &amp;(een_rescaled_e_doc[0][0][0][0]));
+                                    rescale_factor_ee, &amp;(ee_distance[0]), &amp;(een_rescaled_e_doc[0][0][0][0]));
   assert(rc == QMCKL_SUCCESS);
 
   <span style="color: #228b22;">double</span> <span style="color: #a0522d;">een_rescaled_e_hpc</span>[walk_num][cord_num+1][elec_num][elec_num];
   memset(&amp;(een_rescaled_e_hpc[0][0][0][0]), 0, <span style="color: #a020f0;">sizeof</span>(een_rescaled_e_hpc));
   rc = qmckl_compute_een_rescaled_e_hpc(context, walk_num, elec_num, cord_num,
-                0.6, &amp;(ee_distance[0]), &amp;(een_rescaled_e_hpc[0][0][0][0]));
+                                        rescale_factor_ee, &amp;(ee_distance[0]), &amp;(een_rescaled_e_hpc[0][0][0][0]));
   assert(rc == QMCKL_SUCCESS);
 
   <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">i</span> = 0; i &lt; walk_num; i++) {
@@ -4486,8 +4469,8 @@ assert(fabs(een_rescaled_e[0][2][1][5]- 0.5257156022077619 ) &lt; 1.e-12);
 </div>
 </div>
 
-<div id="outline-container-org3c5c0ca" class="outline-4">
-<h4 id="org3c5c0ca"><span class="section-number-4">3.3.2</span> Electron-electron rescaled distances derivatives in \(J_\text{eeN}\)</h4>
+<div id="outline-container-org7e98ee1" class="outline-4">
+<h4 id="org7e98ee1"><span class="section-number-4">3.3.2.</span> Electron-electron rescaled distances derivatives in \(J_\text{eeN}\)</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <p>
 <code>een_rescaled_e_gl</code> stores the table of the derivatives of the
@@ -4499,12 +4482,21 @@ required for the een jastrow<sub>champ</sub>.
 <p>
 \[ \frac{\partial}{\partial x} \left[ {g_\text{e}(r)}\right]^p =
     -\frac{x}{r} \kappa_\text{e}\, p\,\left[ {g_\text{e}(r)}\right]^p \]
-\[ \Delta \left[ {g_\text{e}(r)}\right]^p = \frac{2}{r} \kappa_\text{e}\, p\,\left[ {g_\text{e}(r)}\right]^p \right]  + \left(\frac{\partial}{\partial x}\left[ {g_\text{e}(r)}\right]^p \right)^2 + \left(\frac{\partial}{\partial y}\left[ {g_\text{e}(r)}\right]^p \right)^2 + \left(\frac{\partial}{\partial z}\left[ {g_\text{e}(r)}\right]^p \right)^2 \]
+</p>
+
+<p>
+\[ \Delta \left[ {g_\text{e}(r)}\right]^p = \kappa_\text{e}\,
+    p\,\left[ - \frac{2}{r} + \kappa_\text{e}\, p \right] \left[
+    {g_\text{e}(r)} \right]^p \]
+</p>
+
+<p>
+Derivatives are set to zero at \(r_{ii}\) to avoid NaNs.
 </p>
 </div>
 
-<div id="outline-container-orgbaccb87" class="outline-5">
-<h5 id="orgbaccb87"><span class="section-number-5">3.3.2.1</span> Get</h5>
+<div id="outline-container-orgcfee939" class="outline-5">
+<h5 id="orgcfee939"><span class="section-number-5">3.3.2.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -4516,10 +4508,10 @@ required for the een jastrow<sub>champ</sub>.
 </div>
 </div>
 
-<div id="outline-container-orge019586" class="outline-5">
-<h5 id="orge019586"><span class="section-number-5">3.3.2.2</span> Compute</h5>
+<div id="outline-container-orgc76c392" class="outline-5">
+<h5 id="orgc76c392"><span class="section-number-5">3.3.2.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-3-2-2">
-<table id="org99153e9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgdad1936" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4577,7 +4569,7 @@ required for the een jastrow<sub>champ</sub>.
 
 <tr>
 <td class="org-left"><code>coord_ee</code></td>
-<td class="org-left"><code>double[walk_num][3][elec_num]</code></td>
+<td class="org-left"><code>double[3][walk_num][elec_num]</code></td>
 <td class="org-left">in</td>
 <td class="org-left">Electron coordinates</td>
 </tr>
@@ -4618,7 +4610,7 @@ required for the een jastrow<sub>champ</sub>.
   <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> elec_num</span>
   <span style="color: #228b22;">integer</span>(<span style="color: #008b8b;">c_int64_t</span>)    , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> cord_num</span>
   <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in), <span style="color: #a020f0;">value</span>  ::<span style="color: #a0522d;"> rescale_factor_ee</span>
-  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> coord_ee(elec_num,3,walk_num)</span>
+  <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> coord_ee(elec_num,walk_num,3)</span>
   <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> ee_distance(elec_num,elec_num,walk_num)</span>
   <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(in)  ::<span style="color: #a0522d;"> een_rescaled_e(elec_num,elec_num,0:cord_num,walk_num)</span>
   <span style="color: #228b22;">real</span>(<span style="color: #008b8b;">c_double</span>)        , <span style="color: #a020f0;">intent</span>(out) ::<span style="color: #a0522d;"> een_rescaled_e_gl(elec_num,4,elec_num,0:cord_num,walk_num)</span>
@@ -4630,7 +4622,10 @@ required for the een jastrow<sub>champ</sub>.
 
   <span style="color: #228b22;">double precision</span>  ::<span style="color: #a0522d;"> rij_inv(elec_num)</span>
 
+
   <span style="color: #a020f0;">allocate</span>(elec_dist_gl(elec_num, 4, elec_num))
+  elec_dist_gl = 0.d0
+  een_rescaled_e_gl = 0.d0
 
   info = QMCKL_SUCCESS
 
@@ -4667,7 +4662,7 @@ required for the een jastrow<sub>champ</sub>.
         <span style="color: #a020f0;">enddo</span>
         <span style="color: #a020f0;">do</span> i = 1, elec_num
            <span style="color: #a020f0;">do</span> ii = 1, 3
-              elec_dist_gl(i, ii, j) = (coord_ee(i, ii, nw) - coord_ee(j, ii, nw)) * rij_inv(i)
+              elec_dist_gl(i, ii, j) = (coord_ee(i, nw, ii) - coord_ee(j, nw, ii)) * rij_inv(i)
            <span style="color: #a020f0;">end do</span>
            elec_dist_gl(i, 4, j) = 2.0d0 * rij_inv(i)
         <span style="color: #a020f0;">end do</span>
@@ -4677,27 +4672,20 @@ required for the een jastrow<sub>champ</sub>.
      een_rescaled_e_gl(:,:,:,0,nw) = 0.d0
 
      <span style="color: #a020f0;">do</span> l = 1, cord_num
-        kappa_l = - <span style="color: #a020f0;">dble</span>(l) * rescale_factor_ee
+        kappa_l = -<span style="color: #a020f0;">dble</span>(l) * rescale_factor_ee
         <span style="color: #a020f0;">do</span> j = 1, elec_num
            <span style="color: #a020f0;">do</span> i = 1, elec_num
-              een_rescaled_e_gl(i, 1, j, l, nw) = kappa_l * elec_dist_gl(i, 1, j)
-              een_rescaled_e_gl(i, 2, j, l, nw) = kappa_l * elec_dist_gl(i, 2, j)
-              een_rescaled_e_gl(i, 3, j, l, nw) = kappa_l * elec_dist_gl(i, 3, j)
-              een_rescaled_e_gl(i, 4, j, l, nw) = kappa_l * elec_dist_gl(i, 4, j)
-           <span style="color: #a020f0;">end do</span>
-
-           <span style="color: #a020f0;">do</span> i = 1, elec_num
-              een_rescaled_e_gl(i, 4, j, l, nw) = een_rescaled_e_gl(i, 4, j, l, nw)              <span style="color: #a020f0;">&amp;</span>
-                   + een_rescaled_e_gl(i, 1, j, l, nw) * een_rescaled_e_gl(i, 1, j, l, nw)  <span style="color: #a020f0;">&amp;</span>
-                   + een_rescaled_e_gl(i, 2, j, l, nw) * een_rescaled_e_gl(i, 2, j, l, nw)  <span style="color: #a020f0;">&amp;</span>
-                   + een_rescaled_e_gl(i, 3, j, l, nw) * een_rescaled_e_gl(i, 3, j, l, nw)
-           <span style="color: #a020f0;">end do</span>
-
-           <span style="color: #a020f0;">do</span> i = 1, elec_num
-              een_rescaled_e_gl(i,1,j,l,nw) = een_rescaled_e_gl(i,1,j,l,nw) * een_rescaled_e(i,j,l,nw)
-              een_rescaled_e_gl(i,2,j,l,nw) = een_rescaled_e_gl(i,2,j,l,nw) * een_rescaled_e(i,j,l,nw)
-              een_rescaled_e_gl(i,3,j,l,nw) = een_rescaled_e_gl(i,3,j,l,nw) * een_rescaled_e(i,j,l,nw)
-              een_rescaled_e_gl(i,4,j,l,nw) = een_rescaled_e_gl(i,4,j,l,nw) * een_rescaled_e(i,j,l,nw)
+              <span style="color: #a020f0;">if</span> (i /= j) <span style="color: #a020f0;">then</span>
+                 een_rescaled_e_gl(i, 1, j, l, nw) = kappa_l *  elec_dist_gl(i, 1, j) * een_rescaled_e(i,j,l,nw)
+                 een_rescaled_e_gl(i, 2, j, l, nw) = kappa_l *  elec_dist_gl(i, 2, j) * een_rescaled_e(i,j,l,nw)
+                 een_rescaled_e_gl(i, 3, j, l, nw) = kappa_l *  elec_dist_gl(i, 3, j) * een_rescaled_e(i,j,l,nw)
+                 een_rescaled_e_gl(i, 4, j, l, nw) = kappa_l * (elec_dist_gl(i, 4, j) + kappa_l) * een_rescaled_e(i,j,l,nw)
+              <span style="color: #a020f0;">else</span>
+                 een_rescaled_e_gl(i, 1, j, l, nw) = 0.d0
+                 een_rescaled_e_gl(i, 2, j, l, nw) = 0.d0
+                 een_rescaled_e_gl(i, 3, j, l, nw) = 0.d0
+                 een_rescaled_e_gl(i, 4, j, l, nw) = 0.d0
+              <span style="color: #a020f0;">end if</span>
            <span style="color: #a020f0;">end do</span>
         <span style="color: #a020f0;">end do</span>
      <span style="color: #a020f0;">end do</span>
@@ -4743,9 +4731,9 @@ required for the een jastrow<sub>champ</sub>.
 <span style="color: #483d8b;">#endif</span>
     <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">nw</span> = 0; nw &lt; walk_num; ++nw) {
 
-      <span style="color: #228b22;">double</span> <span style="color: #a0522d;">rij_inv</span>[elec_num];
-
       <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">j</span>=0; j&lt;elec_num; ++j) {
+
+        <span style="color: #228b22;">double</span> <span style="color: #a0522d;">rij_inv</span>[elec_num];
 
 <span style="color: #483d8b;">#ifdef</span> HAVE_OPENMP
 <span style="color: #483d8b;">#pragma</span> omp simd
@@ -4763,18 +4751,18 @@ required for the een jastrow<sub>champ</sub>.
         }
         rij_inv[j] = 0.0;
 
-        <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">xj</span> = coord_ee[j + nw * elec_num * 3];
-        <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">yj</span> = coord_ee[j + elec_num + nw * elec_num * 3];
-        <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">zj</span> = coord_ee[j + 2 * elec_num + nw * elec_num * 3];
+        <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">xj</span> = coord_ee[j+elec_num*nw];
+        <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">yj</span> = coord_ee[j+elec_num*(nw+walk_num) ];
+        <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">zj</span> = coord_ee[j+elec_num*(nw+walk_num*2)];
 
 <span style="color: #483d8b;">#ifdef</span> HAVE_OPENMP
 <span style="color: #483d8b;">#pragma</span> omp simd
 <span style="color: #483d8b;">#endif</span>
         <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">i</span> = 0; i &lt; elec_num ; ++i) {
 
-          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">xi</span> = coord_ee[i + nw * elec_num * 3];
-          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">yi</span> = coord_ee[i + elec_num + nw * elec_num * 3];
-          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">zi</span> = coord_ee[i + 2 * elec_num + nw * elec_num * 3];
+          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">xi</span> = coord_ee[i+elec_num*nw];
+          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">yi</span> = coord_ee[i+elec_num*(nw+walk_num) ];
+          <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">zi</span> = coord_ee[i+elec_num*(nw+walk_num*2)];
 
           elec_dist_gl0[i + j * elec_num] = rij_inv[i] * (xi-xj);
           elec_dist_gl1[i + j * elec_num] = rij_inv[i] * (yi-yj);
@@ -4783,46 +4771,17 @@ required for the een jastrow<sub>champ</sub>.
         }
       }
 
-      <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">j</span> = 0; j &lt; elec_num; ++j) {
-
-        <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">restrict</span> <span style="color: #a0522d;">eegl</span> = &amp;een_rescaled_e_gl[ elec_num * 4 * (j + elec_num * (cord_num + 1) * nw)];
-<span style="color: #483d8b;">#ifdef</span> HAVE_OPENMP
-<span style="color: #483d8b;">#pragma</span> omp simd
-<span style="color: #483d8b;">#endif</span>
-        <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">i</span> = 0; i &lt; 4*elec_num; ++i) {
-          eegl[i] = 0.0;
-        }
-
-      }
+      <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">restrict</span> <span style="color: #a0522d;">eegl</span> = &amp;een_rescaled_e_gl[elec_num*4*elec_num*(cord_num+1)*nw];
+      memset(eegl, 0, 4*elec_num*elec_num*<span style="color: #a020f0;">sizeof</span>(<span style="color: #228b22;">double</span>));
 
       <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">l</span>=1; l&lt;=cord_num; ++l) {
 
-        <span style="color: #228b22;">double</span> <span style="color: #a0522d;">kappa_l</span> = - (<span style="color: #228b22;">double</span>)<span style="color: #228b22;">l</span> * <span style="color: #a0522d;">rescale_factor_ee</span>;
+        <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span> <span style="color: #a0522d;">kappa_l</span>  = -rescale_factor_ee * (<span style="color: #228b22;">double</span>) l;
 
         <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">j</span>=0; j&lt;elec_num; ++j) {
 
           <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">restrict</span> <span style="color: #a0522d;">eegl</span> =
             &amp;een_rescaled_e_gl[elec_num*4*(j+elec_num*(l+(cord_num+1)*nw))];
-
-<span style="color: #483d8b;">#ifdef</span> HAVE_OPENMP
-<span style="color: #483d8b;">#pragma</span> omp simd
-<span style="color: #483d8b;">#endif</span>
-          <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">i</span>=0; i&lt;elec_num; ++i) {
-            eegl[i               ] = kappa_l * elec_dist_gl0[i + j * elec_num];
-            eegl[i + elec_num    ] = kappa_l * elec_dist_gl1[i + j * elec_num];
-            eegl[i + elec_num * 2] = kappa_l * elec_dist_gl2[i + j * elec_num];
-            eegl[i + elec_num * 3] = kappa_l * elec_dist_gl3[i + j * elec_num];
-          }
-
-<span style="color: #483d8b;">#ifdef</span> HAVE_OPENMP
-<span style="color: #483d8b;">#pragma</span> omp simd
-<span style="color: #483d8b;">#endif</span>
-          <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">i</span>=0; i&lt;elec_num; ++i) {
-            eegl[i + elec_num*3] = eegl[i + elec_num*3] +
-              eegl[i] * eegl[i] +
-              eegl[i + elec_num*1] * eegl[i + elec_num*1] +
-              eegl[i + elec_num*2] * eegl[i + elec_num*2];
-          }
 
           <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span>* <span style="color: #a020f0;">restrict</span> <span style="color: #a0522d;">ee</span> =
             &amp;een_rescaled_e[elec_num*(j+elec_num*(l+(cord_num+1)*nw))];
@@ -4831,11 +4790,15 @@ required for the een jastrow<sub>champ</sub>.
 <span style="color: #483d8b;">#pragma</span> omp simd
 <span style="color: #483d8b;">#endif</span>
           <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">i</span>=0; i&lt;elec_num; ++i) {
-            eegl[i               ] *= ee[i];
-            eegl[i + elec_num * 1] *= ee[i];
-            eegl[i + elec_num * 2] *= ee[i];
-            eegl[i + elec_num * 3] *= ee[i];
+            eegl[i           ] = kappa_l * ee[i] *  elec_dist_gl0[i+j*elec_num];
+            eegl[i+elec_num  ] = kappa_l * ee[i] *  elec_dist_gl1[i+j*elec_num];
+            eegl[i+elec_num*2] = kappa_l * ee[i] *  elec_dist_gl2[i+j*elec_num];
+            eegl[i+elec_num*3] = kappa_l * ee[i] * (elec_dist_gl3[i+j*elec_num] + kappa_l);
           }
+          eegl[j           ] = 0.0;
+          eegl[j+elec_num  ] = 0.0;
+          eegl[j+elec_num*2] = 0.0;
+          eegl[j+elec_num*3] = 0.0;
         }
       }
     }
@@ -4877,8 +4840,8 @@ required for the een jastrow<sub>champ</sub>.
 </div>
 </div>
 
-<div id="outline-container-org17e1686" class="outline-4">
-<h4 id="org17e1686"><span class="section-number-4">3.3.3</span> Electron-nucleus rescaled distances in \(J_\text{eeN}\)</h4>
+<div id="outline-container-org8a4530e" class="outline-4">
+<h4 id="org8a4530e"><span class="section-number-4">3.3.3.</span> Electron-nucleus rescaled distances in \(J_\text{eeN}\)</h4>
 <div class="outline-text-4" id="text-3-3-3">
 <p>
 <code>een_rescaled_n</code> stores the table of the rescaled distances between
@@ -4887,7 +4850,7 @@ electrons and nuclei raised to the power \(p\) defined by <code>cord_num</code>:
 
 <p>
 \[
-    C_{i\alpha,p} = \left[ \exp\left(-\kappa_\alpha\, R_{i\alpha}\right) \right]^p
+    [g_{\alpha}(R_{i\alpha})]^p = \exp\left(-p\, \kappa_\alpha\, R_{i\alpha}\right) 
     \]
 </p>
 
@@ -4896,8 +4859,8 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 </p>
 </div>
 
-<div id="outline-container-org82ea625" class="outline-5">
-<h5 id="org82ea625"><span class="section-number-5">3.3.3.1</span> Get</h5>
+<div id="outline-container-org6a7187a" class="outline-5">
+<h5 id="org6a7187a"><span class="section-number-5">3.3.3.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-3-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -4909,10 +4872,10 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 </div>
 </div>
 
-<div id="outline-container-orga8d0ee3" class="outline-5">
-<h5 id="orga8d0ee3"><span class="section-number-5">3.3.3.2</span> Compute</h5>
+<div id="outline-container-orga4097cd" class="outline-5">
+<h5 id="orga4097cd"><span class="section-number-5">3.3.3.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-3-3-2">
-<table id="org77341e9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org271ab54" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5151,8 +5114,8 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 </div>
 </div>
 
-<div id="outline-container-org736d207" class="outline-4">
-<h4 id="org736d207"><span class="section-number-4">3.3.4</span> Electron-nucleus rescaled distances derivatives in \(J_\text{eeN}\)</h4>
+<div id="outline-container-org8f276d6" class="outline-4">
+<h4 id="org8f276d6"><span class="section-number-4">3.3.4.</span> Electron-nucleus rescaled distances derivatives in \(J_\text{eeN}\)</h4>
 <div class="outline-text-4" id="text-3-3-4">
 <p>
 <code>een_rescaled_n_gl</code> stores the table of the derivatives of the
@@ -5173,8 +5136,8 @@ required for the een jastrow<sub>champ</sub>.
 </p>
 </div>
 
-<div id="outline-container-org23b75c0" class="outline-5">
-<h5 id="org23b75c0"><span class="section-number-5">3.3.4.1</span> Get</h5>
+<div id="outline-container-org06caf91" class="outline-5">
+<h5 id="org06caf91"><span class="section-number-5">3.3.4.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -5186,10 +5149,10 @@ required for the een jastrow<sub>champ</sub>.
 </div>
 </div>
 
-<div id="outline-container-orgd60825d" class="outline-5">
-<h5 id="orgd60825d"><span class="section-number-5">3.3.4.2</span> Compute</h5>
+<div id="outline-container-org564f4f8" class="outline-5">
+<h5 id="org564f4f8"><span class="section-number-5">3.3.4.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-3-4-2">
-<table id="orgfb7d6b3" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org01f08ee" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5268,7 +5231,7 @@ required for the een jastrow<sub>champ</sub>.
 
 <tr>
 <td class="org-left"><code>coord_ee</code></td>
-<td class="org-left"><code>double[walk_num][3][elec_num]</code></td>
+<td class="org-left"><code>double[3][walk_num][elec_num]</code></td>
 <td class="org-left">in</td>
 <td class="org-left">Electron coordinates</td>
 </tr>
@@ -5320,7 +5283,7 @@ required for the een jastrow<sub>champ</sub>.
   <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>) , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> type_nucl_vector(nucl_num)</span>
   <span style="color: #228b22;">integer</span> (<span style="color: #008b8b;">c_int64_t</span>) , <span style="color: #a020f0;">intent</span>(in)  , <span style="color: #a020f0;">value</span> ::<span style="color: #a0522d;"> cord_num</span>
   <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> rescale_factor_en(nucl_num)</span>
-  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> coord_ee(elec_num,3,walk_num)</span>
+  <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> coord_ee(elec_num,walk_num,3)</span>
   <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> coord_n(nucl_num,3)</span>
   <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> en_distance(nucl_num,elec_num,walk_num)</span>
   <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(in)          ::<span style="color: #a0522d;"> een_rescaled_n(elec_num,nucl_num,0:cord_num,walk_num)</span>
@@ -5369,7 +5332,7 @@ required for the een jastrow<sub>champ</sub>.
         <span style="color: #a020f0;">do</span> i = 1, elec_num
            ria_inv = 1.0d0 / en_distance(a, i, nw)
            <span style="color: #a020f0;">do</span> ii = 1, 3
-              elnuc_dist_gl(i, ii, a) = (coord_ee(i, ii, nw) - coord_n(a, ii)) * ria_inv
+              elnuc_dist_gl(i, ii, a) = (coord_ee(i, nw, ii) - coord_n(a, ii)) * ria_inv
            <span style="color: #a020f0;">end do</span>
            elnuc_dist_gl(i, 4, a) = 2.0d0 * ria_inv
         <span style="color: #a020f0;">end do</span>
@@ -5409,18 +5372,38 @@ required for the een jastrow<sub>champ</sub>.
 </div>
 </div>
 
-<div id="outline-container-org37c41fb" class="outline-4">
-<h4 id="org37c41fb"><span class="section-number-4">3.3.5</span> Temporary arrays for electron-electron-nucleus Jastrow \(f_{een}\)</h4>
+<div id="outline-container-orgde6f67c" class="outline-4">
+<h4 id="orgde6f67c"><span class="section-number-4">3.3.5.</span> Temporary arrays for electron-electron-nucleus Jastrow \(f_{een}\)</h4>
 <div class="outline-text-4" id="text-3-3-5">
 <p>
 Prepare <code>c_vector_full</code> and <code>lkpm_combined_index</code> tables required for the
 calculation of the three-body jastrow <code>factor_een</code> and its derivative
 <code>factor_een_gl</code>.
 </p>
-</div>
 
-<div id="outline-container-org232308e" class="outline-5">
-<h5 id="org232308e"><span class="section-number-5">3.3.5.1</span> Compute dim<sub>c</sub><sub>vector</sub></h5>
+<p>
+The array <code>tmp_c</code> corresponds to the tensor \(P\) defined at the
+beginning of this section:
+</p>
+
+<p>
+\[ P_{i\alpha}^{km} = 
+      \sum_{j=1}^{N_{\text{elec}}} 
+             \left[ g_\text{e}({r}_{ij}) \right]^k
+             \left[ g_\alpha({R}_{j\alpha}) \right]^{m}
+             \]
+</p>
+
+<p>
+\[ \nabla_i P_{i\alpha}^{km} = 
+      \sum_{j=1}^{N_{\text{elec}}} 
+             \nabla_i \left[ g_\text{e}({r}_{ij}) \right]^k
+             \left[ g_\alpha({R}_{j\alpha}) \right]^{m}
+             \]
+</p>
+</div>
+<div id="outline-container-orgdd4e5f8" class="outline-5">
+<h5 id="orgdd4e5f8"><span class="section-number-5">3.3.5.1.</span> Compute dim<sub>c</sub><sub>vector</sub></h5>
 <div class="outline-text-5" id="text-3-3-5-1">
 <p>
 Computes the dimension of the vector of parameters.
@@ -5497,7 +5480,7 @@ Computes the dimension of the vector of parameters.
 </tbody>
 </table>
 
-<table id="orga6de374" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org75091a8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5590,8 +5573,8 @@ Computes the dimension of the vector of parameters.
 </div>
 </div>
 
-<div id="outline-container-org7d81026" class="outline-5">
-<h5 id="org7d81026"><span class="section-number-5">3.3.5.2</span> Get</h5>
+<div id="outline-container-org6cd7516" class="outline-5">
+<h5 id="org6cd7516"><span class="section-number-5">3.3.5.2.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-5-2">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -5608,10 +5591,10 @@ Computes the dimension of the vector of parameters.
 </div>
 </div>
 
-<div id="outline-container-orga5565c1" class="outline-5">
-<h5 id="orga5565c1"><span class="section-number-5">3.3.5.3</span> Compute c<sub>vector</sub><sub>full</sub></h5>
+<div id="outline-container-orgb409589" class="outline-5">
+<h5 id="orgb409589"><span class="section-number-5">3.3.5.3.</span> Compute c<sub>vector</sub><sub>full</sub></h5>
 <div class="outline-text-5" id="text-3-3-5-3">
-<table id="org93f5fa5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org4dfd1bb" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5795,10 +5778,10 @@ Computes the dimension of the vector of parameters.
 </div>
 </div>
 
-<div id="outline-container-org9625b6a" class="outline-5">
-<h5 id="org9625b6a"><span class="section-number-5">3.3.5.4</span> Compute lkpm<sub>combined</sub><sub>index</sub></h5>
+<div id="outline-container-org7835eae" class="outline-5">
+<h5 id="org7835eae"><span class="section-number-5">3.3.5.4.</span> Compute lkpm<sub>combined</sub><sub>index</sub></h5>
 <div class="outline-text-5" id="text-3-3-5-4">
-<table id="org4bfb0e8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org38365be" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5955,6 +5938,7 @@ Computes the dimension of the vector of parameters.
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_lkpm_combined_index</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">cord_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">dim_c_vector</span>,
@@ -5964,6 +5948,7 @@ Computes the dimension of the vector of parameters.
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_lkpm_combined_index_doc</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">cord_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">dim_c_vector</span>,
@@ -5973,6 +5958,7 @@ Computes the dimension of the vector of parameters.
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_lkpm_combined_index_hpc</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">cord_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">dim_c_vector</span>,
@@ -5982,6 +5968,7 @@ Computes the dimension of the vector of parameters.
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_lkpm_combined_index</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">cord_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">dim_c_vector</span>,
@@ -5991,10 +5978,10 @@ Computes the dimension of the vector of parameters.
 </div>
 </div>
 
-<div id="outline-container-orge49845b" class="outline-5">
-<h5 id="orge49845b"><span class="section-number-5">3.3.5.5</span> Compute tmp<sub>c</sub></h5>
+<div id="outline-container-org38e0921" class="outline-5">
+<h5 id="org38e0921"><span class="section-number-5">3.3.5.5.</span> Compute tmp<sub>c</sub></h5>
 <div class="outline-text-5" id="text-3-3-5-5">
-<table id="org4775691" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orga258dd8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -6169,10 +6156,10 @@ Computes the dimension of the vector of parameters.
 </div>
 </div>
 
-<div id="outline-container-orgc9e2aaa" class="outline-5">
-<h5 id="orgc9e2aaa"><span class="section-number-5">3.3.5.6</span> Compute dtmp<sub>c</sub></h5>
+<div id="outline-container-orge8d3ec6" class="outline-5">
+<h5 id="orge8d3ec6"><span class="section-number-5">3.3.5.6.</span> Compute dtmp<sub>c</sub></h5>
 <div class="outline-text-5" id="text-3-3-5-6">
-<table id="org59c8719" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgb85fc40" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -6244,7 +6231,7 @@ Computes the dimension of the vector of parameters.
 
 <tr>
 <td class="org-left"><code>dtmp_c</code></td>
-<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][nucl_num][elec_num]</code></td>
+<td class="org-left"><code>double[walk_num][0:cord_num-1][0:cord_num][nucl_num][4][elec_num]</code></td>
 <td class="org-left">out</td>
 <td class="org-left">vector of non-zero coefficients</td>
 </tr>
@@ -6336,8 +6323,8 @@ Computes the dimension of the vector of parameters.
 </div>
 </div>
 
-<div id="outline-container-org5e2372f" class="outline-4">
-<h4 id="org5e2372f"><span class="section-number-4">3.3.6</span> Electron-electron-nucleus Jastrow \(f_{een}\)</h4>
+<div id="outline-container-org2fa465f" class="outline-4">
+<h4 id="org2fa465f"><span class="section-number-4">3.3.6.</span> Electron-electron-nucleus Jastrow \(f_{een}\)</h4>
 <div class="outline-text-4" id="text-3-3-6">
 <p>
 Calculate the electron-electron-nuclear three-body jastrow component <code>factor_een</code>
@@ -6349,8 +6336,8 @@ TODO: write equations.
 </p>
 </div>
 
-<div id="outline-container-org2f271cc" class="outline-5">
-<h5 id="org2f271cc"><span class="section-number-5">3.3.6.1</span> Get</h5>
+<div id="outline-container-orgd73c33b" class="outline-5">
+<h5 id="orgd73c33b"><span class="section-number-5">3.3.6.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-6-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -6362,12 +6349,12 @@ TODO: write equations.
 </div>
 
 <ol class="org-ol">
-<li><a id="orgeae736b"></a>Fortran interface<br />
+<li><a id="org65e8b56"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-3-6-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_factor_een (context, </span><span style="color: #a020f0;">&amp;</span>
-        factor_een, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_factor_een</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        factor_een, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -6383,10 +6370,10 @@ TODO: write equations.
 </ol>
 </div>
 
-<div id="outline-container-orgfda5611" class="outline-5">
-<h5 id="orgfda5611"><span class="section-number-5">3.3.6.2</span> Compute naive</h5>
+<div id="outline-container-org1c7eb94" class="outline-5">
+<h5 id="org1c7eb94"><span class="section-number-5">3.3.6.2.</span> Compute naive</h5>
 <div class="outline-text-5" id="text-3-3-6-2">
-<table id="org31d1e98" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org4ee9192" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -6508,8 +6495,8 @@ TODO: write equations.
   <span style="color: #228b22;">real</span>    (<span style="color: #008b8b;">c_double</span> ) , <span style="color: #a020f0;">intent</span>(out)         ::<span style="color: #a0522d;"> factor_een(walk_num)</span>
   <span style="color: #228b22;">integer</span>(qmckl_exit_code)                  ::<span style="color: #a0522d;"> info</span>
 
-  <span style="color: #228b22;">integer</span>*8 ::<span style="color: #a0522d;"> i, a, j, l, k, p, m, n, nw</span>
-  <span style="color: #228b22;">double precision</span> ::<span style="color: #a0522d;"> accu, accu2, cn</span>
+  <span style="color: #228b22;">integer</span>*8 ::<span style="color: #a0522d;"> i, a, j, l, k, m, n, p, nw</span>
+  <span style="color: #228b22;">double precision</span> ::<span style="color: #a0522d;"> cn</span>
 
   info = QMCKL_SUCCESS
 
@@ -6525,22 +6512,20 @@ TODO: write equations.
      <span style="color: #a020f0;">do</span> n = 1, dim_c_vector
         l = lkpm_combined_index(n, 1)
         k = lkpm_combined_index(n, 2)
+        p = lkpm_combined_index(n, 3)
         m = lkpm_combined_index(n, 4)
 
         <span style="color: #a020f0;">do</span> a = 1, nucl_num
-           accu2 = 0.0d0
            cn = c_vector_full(a, n)
+           <span style="color: #a020f0;">if</span> (cn == 0.d0) <span style="color: #a020f0;">cycle</span>
            <span style="color: #a020f0;">do</span> j = 1, elec_num
-              accu = 0.0d0
               <span style="color: #a020f0;">do</span> i = 1, j-1
-
-                 accu = accu + een_rescaled_e(i,j,k,nw) *       <span style="color: #a020f0;">&amp;</span>
+                 factor_een(nw) = factor_een(nw) + cn*( <span style="color: #a020f0;">&amp;</span>
+                      een_rescaled_e(i,j,k,nw) *       <span style="color: #a020f0;">&amp;</span>
                       (een_rescaled_n(i,a,l,nw) + een_rescaled_n(j,a,l,nw)) * <span style="color: #a020f0;">&amp;</span>
-                      (een_rescaled_n(i,a,m,nw) * een_rescaled_n(j,a,m,nw))
+                      (een_rescaled_n(i,a,m,nw) * een_rescaled_n(j,a,m,nw)) )
               <span style="color: #a020f0;">end do</span>
-              accu2 = accu2 + accu
            <span style="color: #a020f0;">end do</span>
-           factor_een(nw) = factor_een(nw) + accu2 * cn
         <span style="color: #a020f0;">end do</span>
      <span style="color: #a020f0;">end do</span>
   <span style="color: #a020f0;">end do</span>
@@ -6552,10 +6537,10 @@ TODO: write equations.
 </div>
 </div>
 
-<div id="outline-container-orgb1f8fa1" class="outline-5">
-<h5 id="orgb1f8fa1"><span class="section-number-5">3.3.6.3</span> Compute</h5>
+<div id="outline-container-org8d36a22" class="outline-5">
+<h5 id="org8d36a22"><span class="section-number-5">3.3.6.3.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-3-6-3">
-<table id="orgf8f3c56" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org787c725" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -6719,8 +6704,8 @@ TODO: write equations.
 </div>
 </div>
 
-<div id="outline-container-orgd8a54a2" class="outline-4">
-<h4 id="orgd8a54a2"><span class="section-number-4">3.3.7</span> Electron-electron-nucleus Jastrow \(f_{een}\) derivative</h4>
+<div id="outline-container-org12c105f" class="outline-4">
+<h4 id="org12c105f"><span class="section-number-4">3.3.7.</span> Electron-electron-nucleus Jastrow \(f_{een}\) derivative</h4>
 <div class="outline-text-4" id="text-3-3-7">
 <p>
 Calculate the electron-electron-nuclear three-body jastrow component <code>factor_een_gl</code>
@@ -6732,8 +6717,8 @@ TODO: write equations.
 </p>
 </div>
 
-<div id="outline-container-org5d00c53" class="outline-5">
-<h5 id="org5d00c53"><span class="section-number-5">3.3.7.1</span> Get</h5>
+<div id="outline-container-orga0835ec" class="outline-5">
+<h5 id="orga0835ec"><span class="section-number-5">3.3.7.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-7-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -6753,12 +6738,12 @@ TODO: write equations.
 </div>
 
 <ol class="org-ol">
-<li><a id="org3f0ff83"></a>Fortran interface<br />
+<li><a id="orga15af8b"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-3-7-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_factor_een_gl (context, </span><span style="color: #a020f0;">&amp;</span>
-        factor_een_gl, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_factor_een_gl</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        factor_een_gl, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -6769,8 +6754,8 @@ TODO: write equations.
 <span style="color: #a020f0;">end interface</span>
 
 <span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_factor_een_grad (context, </span><span style="color: #a020f0;">&amp;</span>
-        factor_een_grad, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_factor_een_grad</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        factor_een_grad, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -6786,10 +6771,10 @@ TODO: write equations.
 </ol>
 </div>
 
-<div id="outline-container-org92788ba" class="outline-5">
-<h5 id="org92788ba"><span class="section-number-5">3.3.7.2</span> Compute Naive</h5>
+<div id="outline-container-orga30e949" class="outline-5">
+<h5 id="orga30e949"><span class="section-number-5">3.3.7.2.</span> Compute Naive</h5>
 <div class="outline-text-5" id="text-3-3-7-2">
-<table id="orgb4f6928" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgd861fbd" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -6988,10 +6973,10 @@ TODO: write equations.
 </div>
 </div>
 
-<div id="outline-container-org2d53196" class="outline-5">
-<h5 id="org2d53196"><span class="section-number-5">3.3.7.3</span> Compute GL</h5>
+<div id="outline-container-orgddcf96d" class="outline-5">
+<h5 id="orgddcf96d"><span class="section-number-5">3.3.7.3.</span> Compute GL</h5>
 <div class="outline-text-5" id="text-3-3-7-3">
-<table id="orgab9b0ec" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgf5fa319" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -7258,10 +7243,10 @@ TODO: write equations.
 </div>
 </div>
 
-<div id="outline-container-orgbd8117e" class="outline-5">
-<h5 id="orgbd8117e"><span class="section-number-5">3.3.7.4</span> Compute Gradient only</h5>
+<div id="outline-container-orged73bbf" class="outline-5">
+<h5 id="orged73bbf"><span class="section-number-5">3.3.7.4.</span> Compute Gradient only</h5>
 <div class="outline-text-5" id="text-3-3-7-4">
-<table id="org4f8ff47" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org62c867f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -7451,6 +7436,7 @@ TODO: write equations.
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_factor_een_grad_doc</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">elec_num</span>,
@@ -7469,6 +7455,7 @@ TODO: write equations.
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_factor_een_grad</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">elec_num</span>,
@@ -7516,7 +7503,7 @@ TODO: write equations.
 </div>
 </div>
 <ol class="org-ol">
-<li><a id="orgf844474"></a>Test<br />
+<li><a id="org908cc14"></a>Test<br />
 <div class="outline-text-6" id="text-3-3-7-4-1">
 <div class="org-src-container">
 <pre class="src src-c">/* <span style="color: #b22222;">Check if Jastrow is properly initialized</span> */
@@ -7546,20 +7533,20 @@ TODO: write equations.
 </div>
 </div>
 
-<div id="outline-container-org34f97e5" class="outline-3">
-<h3 id="org34f97e5"><span class="section-number-3">3.4</span> Total Jastrow</h3>
+<div id="outline-container-orgf116f28" class="outline-3">
+<h3 id="orgf116f28"><span class="section-number-3">3.4.</span> Total Jastrow</h3>
 <div class="outline-text-3" id="text-3-4">
 </div>
-<div id="outline-container-orgbfb614c" class="outline-4">
-<h4 id="orgbfb614c"><span class="section-number-4">3.4.1</span> Value</h4>
+<div id="outline-container-org0e32067" class="outline-4">
+<h4 id="org0e32067"><span class="section-number-4">3.4.1.</span> Value</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 Value of the total Jastrow factor: \(\exp(J)\)
 </p>
 </div>
 
-<div id="outline-container-org1737423" class="outline-5">
-<h5 id="org1737423"><span class="section-number-5">3.4.1.1</span> Get</h5>
+<div id="outline-container-org4f31570" class="outline-5">
+<h5 id="org4f31570"><span class="section-number-5">3.4.1.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-4-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -7571,12 +7558,12 @@ Value of the total Jastrow factor: \(\exp(J)\)
 </div>
 
 <ol class="org-ol">
-<li><a id="org9ab06b0"></a>Fortran interface<br />
+<li><a id="org54ffdc7"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-4-1-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_value (context, </span><span style="color: #a020f0;">&amp;</span>
-        <span style="color: #a020f0;">value</span>, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_value</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        value, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -7592,10 +7579,10 @@ Value of the total Jastrow factor: \(\exp(J)\)
 </ol>
 </div>
 
-<div id="outline-container-orga1b3daa" class="outline-5">
-<h5 id="orga1b3daa"><span class="section-number-5">3.4.1.2</span> Compute</h5>
+<div id="outline-container-orga7c84d8" class="outline-5">
+<h5 id="orga7c84d8"><span class="section-number-5">3.4.1.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-4-1-2">
-<table id="org28a205a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org79a266c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -7708,6 +7695,7 @@ Value of the total Jastrow factor: \(\exp(J)\)
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_value</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">f_ee</span>,
@@ -7719,6 +7707,7 @@ Value of the total Jastrow factor: \(\exp(J)\)
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_value_doc</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">f_ee</span>,
@@ -7730,6 +7719,7 @@ Value of the total Jastrow factor: \(\exp(J)\)
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_value_hpc</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">double</span>* <span style="color: #a0522d;">f_ee</span>,
@@ -7762,8 +7752,8 @@ Value of the total Jastrow factor: \(\exp(J)\)
 </div>
 </div>
 
-<div id="outline-container-orgc45d25b" class="outline-4">
-<h4 id="orgc45d25b"><span class="section-number-4">3.4.2</span> Derivatives</h4>
+<div id="outline-container-orgf700f4a" class="outline-4">
+<h4 id="orgf700f4a"><span class="section-number-4">3.4.2.</span> Derivatives</h4>
 <div class="outline-text-4" id="text-3-4-2">
 <p>
 Gradients and Laplacian of the total Jastrow factor:
@@ -7777,8 +7767,8 @@ Gradients and Laplacian of the total Jastrow factor:
 </p>
 </div>
 
-<div id="outline-container-org17ee591" class="outline-5">
-<h5 id="org17ee591"><span class="section-number-5">3.4.2.1</span> Get</h5>
+<div id="outline-container-orgef7c0c1" class="outline-5">
+<h5 id="orgef7c0c1"><span class="section-number-5">3.4.2.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-4-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -7803,12 +7793,12 @@ Gradients and Laplacian of the total Jastrow factor:
 </div>
 
 <ol class="org-ol">
-<li><a id="org18da1ef"></a>Fortran interface<br />
+<li><a id="orgd7648cb"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-4-2-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
-   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> function qmckl_get_jastrow_champ_gl (context, </span><span style="color: #a020f0;">&amp;</span>
-        gl, size_max) <span style="color: #a020f0;">bind</span>(C)
+   <span style="color: #228b22;">integer</span>(qmckl_exit_code)<span style="color: #a0522d;"> </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">qmckl_get_jastrow_champ_gl</span><span style="color: #a0522d;"> (context, </span><span style="color: #a020f0;">&amp;</span>
+<span style="color: #a0522d;">        gl, size_max) bind(C)</span>
      <span style="color: #a020f0;">use</span>, <span style="color: #a020f0;">intrinsic</span> :: <span style="color: #0000ff;">iso_c_binding</span>
      <span style="color: #a020f0;">import</span>
      <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -7824,10 +7814,10 @@ Gradients and Laplacian of the total Jastrow factor:
 </ol>
 </div>
 
-<div id="outline-container-org8c23bb4" class="outline-5">
-<h5 id="org8c23bb4"><span class="section-number-5">3.4.2.2</span> Compute GL</h5>
+<div id="outline-container-orgb5c8e28" class="outline-5">
+<h5 id="orgb5c8e28"><span class="section-number-5">3.4.2.2.</span> Compute GL</h5>
 <div class="outline-text-5" id="text-3-4-2-2">
-<table id="org939145f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgb985e45" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -7959,6 +7949,7 @@ Gradients and Laplacian of the total Jastrow factor:
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_gl</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">elec_num</span>,
@@ -7972,6 +7963,7 @@ Gradients and Laplacian of the total Jastrow factor:
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_gl_doc</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">elec_num</span>,
@@ -7985,6 +7977,7 @@ Gradients and Laplacian of the total Jastrow factor:
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_gl_hpc</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">elec_num</span>,
@@ -8020,7 +8013,7 @@ Gradients and Laplacian of the total Jastrow factor:
 </div>
 
 <ol class="org-ol">
-<li><a id="org0ba24a2"></a>Test<br />
+<li><a id="orgb393b0b"></a>Test<br />
 <div class="outline-text-6" id="text-3-4-2-2-1">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Total Jastrow derivatives\n"</span>);
@@ -8085,10 +8078,10 @@ Gradients and Laplacian of the total Jastrow factor:
 </ol>
 </div>
 
-<div id="outline-container-org288ff7f" class="outline-5">
-<h5 id="org288ff7f"><span class="section-number-5">3.4.2.3</span> Compute Gradient only</h5>
+<div id="outline-container-org7a6d13b" class="outline-5">
+<h5 id="org7a6d13b"><span class="section-number-5">3.4.2.3.</span> Compute Gradient only</h5>
 <div class="outline-text-5" id="text-3-4-2-3">
-<table id="org9eae99d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgbc57df2" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -8214,6 +8207,7 @@ Gradients and Laplacian of the total Jastrow factor:
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_grad</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">elec_num</span>,
@@ -8227,6 +8221,7 @@ Gradients and Laplacian of the total Jastrow factor:
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_grad_doc</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">elec_num</span>,
@@ -8240,6 +8235,7 @@ Gradients and Laplacian of the total Jastrow factor:
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_compute_jastrow_champ_grad_hpc</span> (
+      <span style="color: #228b22;">Type</span> <span style="color: #a0522d;">Variable</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">walk_num</span>,
       <span style="color: #a020f0;">const</span> <span style="color: #228b22;">int64_t</span> <span style="color: #a0522d;">elec_num</span>,
@@ -8276,7 +8272,7 @@ Gradients and Laplacian of the total Jastrow factor:
 </div>
 
 <ol class="org-ol">
-<li><a id="org1822024"></a>Test<br />
+<li><a id="org531d4da"></a>Test<br />
 <div class="outline-text-6" id="text-3-4-2-3-1">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Total Jastrow gradient only\n"</span>);
@@ -8327,8 +8323,8 @@ Gradients and Laplacian of the total Jastrow factor:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2024-12-14 Sat 21:40</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2025-04-03 Thu 12:57</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
