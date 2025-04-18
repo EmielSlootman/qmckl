@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-18 Fri 11:51 -->
+<!-- 2025-04-18 Fri 11:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Error handling</title>
@@ -226,29 +226,29 @@ org_html_manager.setup();  // activate after the parameters are set
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org309bf8e">-</a></li>
-<li><a href="#org980d651">1. Decoding errors</a></li>
-<li><a href="#org19c356c">2. Data structure in context</a></li>
-<li><a href="#org723db60">3. Updating errors in the context</a></li>
-<li><a href="#orgedf75fa">4. Get the error</a></li>
-<li><a href="#org5764f3d">5. Failing</a></li>
-<li><a href="#orgc91a6c7">6. Last error</a>
+<li><a href="#orgac2d624">-</a></li>
+<li><a href="#org5e376ad">1. Decoding errors</a></li>
+<li><a href="#orgcb86b56">2. Data structure in context</a></li>
+<li><a href="#org9354155">3. Updating errors in the context</a></li>
+<li><a href="#org3634e1f">4. Get the error</a></li>
+<li><a href="#orgfba4706">5. Failing</a></li>
+<li><a href="#orgd55194c">6. Last error</a>
 <ul>
-<li><a href="#orgd882f7e">6.1. Fortran inteface</a></li>
+<li><a href="#orgb831831">6.1. Fortran inteface</a></li>
 </ul>
 </li>
-<li><a href="#orgabfec56">7. Helper functions for debugging</a>
+<li><a href="#orgbafa15d">7. Helper functions for debugging</a>
 <ul>
-<li><a href="#org1d6ff14">7.1. Fortran inteface</a></li>
+<li><a href="#orgda41ea5">7.1. Fortran inteface</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org309bf8e" class="outline-2">
-<h2 id="org309bf8e">-</h2>
-<div class="outline-text-2" id="text-org309bf8e">
+<div id="outline-container-orgac2d624" class="outline-2">
+<h2 id="orgac2d624">-</h2>
+<div class="outline-text-2" id="text-orgac2d624">
 <p>
 The library should never make the calling programs abort, nor
 perform any input/output operations. This decision has to be taken
@@ -259,7 +259,7 @@ by the developer of the code calling the library.
 All the functions return with an exit code, defined as
 </p>
 <div class="org-src-container">
-<pre class="src src-c" id="org4906d6a"><span style="color: #a020f0;">typedef</span> <span style="color: #228b22;">int32_t</span> <span style="color: #228b22;">qmckl_exit_code</span>;
+<pre class="src src-c" id="orgc6bdb38"><span style="color: #a020f0;">typedef</span> <span style="color: #228b22;">int32_t</span> <span style="color: #228b22;">qmckl_exit_code</span>;
 </pre>
 </div>
 
@@ -276,7 +276,7 @@ error code is returned to the program.
 Here is the complete list of exit codes.
 </p>
 
-<table id="orgfd1fddd" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org72125ec" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -484,8 +484,8 @@ string is assumed to be large enough to contain the error message
 </div>
 </div>
 
-<div id="outline-container-org980d651" class="outline-2">
-<h2 id="org980d651"><span class="section-number-2">1.</span> Decoding errors</h2>
+<div id="outline-container-org5e376ad" class="outline-2">
+<h2 id="org5e376ad"><span class="section-number-2">1.</span> Decoding errors</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 To decode the error messages, <code>qmckl_string_of_error</code> converts an
@@ -503,8 +503,8 @@ The text strings are extracted from the previous table.
 </p>
 </div>
 </div>
-<div id="outline-container-org19c356c" class="outline-2">
-<h2 id="org19c356c"><span class="section-number-2">2.</span> Data structure in context</h2>
+<div id="outline-container-orgcb86b56" class="outline-2">
+<h2 id="orgcb86b56"><span class="section-number-2">2.</span> Data structure in context</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The strings are declared internally with a maximum fixed size to avoid
@@ -527,8 +527,8 @@ dynamic memory allocation.
 </div>
 </div>
 
-<div id="outline-container-org723db60" class="outline-2">
-<h2 id="org723db60"><span class="section-number-2">3.</span> Updating errors in the context</h2>
+<div id="outline-container-org9354155" class="outline-2">
+<h2 id="org9354155"><span class="section-number-2">3.</span> Updating errors in the context</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 The error is updated in the context using <code>qmckl_set_error</code>.
@@ -547,8 +547,8 @@ explaining the error. The exit code can't be <code>QMCKL_SUCCESS</code>.
 </div>
 </div>
 </div>
-<div id="outline-container-orgedf75fa" class="outline-2">
-<h2 id="orgedf75fa"><span class="section-number-2">4.</span> Get the error</h2>
+<div id="outline-container-org3634e1f" class="outline-2">
+<h2 id="org3634e1f"><span class="section-number-2">4.</span> Get the error</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Upon error, the error type and message can be obtained from the
@@ -567,8 +567,8 @@ function name and message is mandatory.
 </div>
 </div>
 </div>
-<div id="outline-container-org5764f3d" class="outline-2">
-<h2 id="org5764f3d"><span class="section-number-2">5.</span> Failing</h2>
+<div id="outline-container-orgfba4706" class="outline-2">
+<h2 id="orgfba4706"><span class="section-number-2">5.</span> Failing</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 To make a function fail, the <code>qmckl_failwith</code> function should be
@@ -605,8 +605,8 @@ For example, this function can be used as
 </div>
 </div>
 
-<div id="outline-container-orgc91a6c7" class="outline-2">
-<h2 id="orgc91a6c7"><span class="section-number-2">6.</span> Last error</h2>
+<div id="outline-container-orgd55194c" class="outline-2">
+<h2 id="orgd55194c"><span class="section-number-2">6.</span> Last error</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Returns a string describing the last error, using <code>qmckl_get_error</code>.
@@ -618,13 +618,13 @@ Returns a string describing the last error, using <code>qmckl_get_error</code>.
 </pre>
 </div>
 </div>
-<div id="outline-container-orgd882f7e" class="outline-3">
-<h3 id="orgd882f7e"><span class="section-number-3">6.1.</span> Fortran inteface</h3>
+<div id="outline-container-orgb831831" class="outline-3">
+<h3 id="orgb831831"><span class="section-number-3">6.1.</span> Fortran inteface</h3>
 </div>
 </div>
 
-<div id="outline-container-orgabfec56" class="outline-2">
-<h2 id="orgabfec56"><span class="section-number-2">7.</span> Helper functions for debugging</h2>
+<div id="outline-container-orgbafa15d" class="outline-2">
+<h2 id="orgbafa15d"><span class="section-number-2">7.</span> Helper functions for debugging</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 The following function prints to <code>stderr</code> an error message is the return code is
@@ -650,14 +650,14 @@ It should be used as:
 </div>
 </div>
 
-<div id="outline-container-org1d6ff14" class="outline-3">
-<h3 id="org1d6ff14"><span class="section-number-3">7.1.</span> Fortran inteface</h3>
+<div id="outline-container-orgda41ea5" class="outline-3">
+<h3 id="orgda41ea5"><span class="section-number-3">7.1.</span> Fortran inteface</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2025-04-18 Fri 11:51</p>
+<p class="date">Created: 2025-04-18 Fri 11:53</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
