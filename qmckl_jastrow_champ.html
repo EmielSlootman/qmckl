@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-18 Fri 12:41 -->
+<!-- 2025-04-24 Thu 12:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CHAMP Jastrow Factor</title>
@@ -258,172 +258,172 @@ org_html_manager.setup();  // activate after the parameters are set
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org106094d">1. Introduction</a>
+<li><a href="#org85fcabc">1. Introduction</a>
 <ul>
-<li><a href="#org1fd10bb">1.1. Reformulation of the three-body part</a></li>
+<li><a href="#orgb61a942">1.1. Reformulation of the three-body part</a></li>
 </ul>
 </li>
-<li><a href="#orgeef800e">2. Context</a>
+<li><a href="#org6c4ba28">2. Context</a>
 <ul>
-<li><a href="#org9888dfd">2.1. Data structure</a></li>
-<li><a href="#org820d88b">2.2. Initialization functions</a>
+<li><a href="#org4272315">2.1. Data structure</a></li>
+<li><a href="#org691942a">2.2. Initialization functions</a>
 <ul>
 <li>
 <ul>
-<li><a href="#org8ce000b">2.2.0.1. Fortran interface</a></li>
+<li><a href="#org60af7f7">2.2.0.1. Fortran interface</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge7e941b">2.3. Access functions</a>
+<li><a href="#org5653c6e">2.3. Access functions</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orgf69d9d3">2.3.0.1. Fortran interface</a></li>
+<li><a href="#orgc9e2981">2.3.0.1. Fortran interface</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgcf36a16">3. Computation</a>
+<li><a href="#org40a05e7">3. Computation</a>
 <ul>
-<li><a href="#org77b0976">3.1. Electron-electron component</a>
+<li><a href="#orgbab30aa">3.1. Electron-electron component</a>
 <ul>
-<li><a href="#org5d339d0">3.1.1. Asymptotic component</a>
+<li><a href="#org58ef17a">3.1.1. Asymptotic component</a>
 <ul>
-<li><a href="#org4551f76">3.1.1.1. Get</a></li>
-<li><a href="#orga01692a">3.1.1.2. Compute</a></li>
+<li><a href="#orga76b147">3.1.1.1. Get</a></li>
+<li><a href="#org4d5ac3b">3.1.1.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org8ac404f">3.1.2. Electron-electron rescaled distances</a>
+<li><a href="#orgaca0096">3.1.2. Electron-electron rescaled distances</a>
 <ul>
-<li><a href="#orga1d6a21">3.1.2.1. Get</a></li>
-<li><a href="#orgf050626">3.1.2.2. Compute</a></li>
+<li><a href="#org7999fb7">3.1.2.1. Get</a></li>
+<li><a href="#org435d360">3.1.2.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#orgd497e5a">3.1.3. Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</a>
+<li><a href="#org2d56916">3.1.3. Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</a>
 <ul>
-<li><a href="#orgac96b0f">3.1.3.1. Get</a></li>
-<li><a href="#orgd361a35">3.1.3.2. Compute</a></li>
+<li><a href="#orgb2736d7">3.1.3.1. Get</a></li>
+<li><a href="#org61e537b">3.1.3.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#orgdf4a71e">3.1.4. Electron-electron component</a>
+<li><a href="#org50ff68c">3.1.4. Electron-electron component</a>
 <ul>
-<li><a href="#org07ac5fa">3.1.4.1. Get</a></li>
-<li><a href="#org07191b4">3.1.4.2. Compute</a></li>
+<li><a href="#org5ee714b">3.1.4.1. Get</a></li>
+<li><a href="#org794f4e9">3.1.4.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#orga75337e">3.1.5. Derivative</a>
+<li><a href="#org3aa079a">3.1.5. Derivative</a>
 <ul>
-<li><a href="#orgaa88b77">3.1.5.1. Get</a></li>
-<li><a href="#org4d8f7a6">3.1.5.2. Compute</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org55946b1">3.2. Electron-nucleus component</a>
-<ul>
-<li><a href="#orgdea0020">3.2.1. Asymptotic component</a>
-<ul>
-<li><a href="#org069a7b7">3.2.1.1. Get</a></li>
-<li><a href="#orgfc87059">3.2.1.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#org9ce3284">3.2.2. Electron-nucleus rescaled distances</a>
-<ul>
-<li><a href="#orgd11e79f">3.2.2.1. Get</a></li>
-<li><a href="#orgd3710de">3.2.2.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#org8f1b55a">3.2.3. Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</a>
-<ul>
-<li><a href="#org3817c06">3.2.3.1. Get</a></li>
-<li><a href="#orga513470">3.2.3.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#org70862e5">3.2.4. Electron-nucleus component</a>
-<ul>
-<li><a href="#org038aae2">3.2.4.1. Get</a></li>
-<li><a href="#org658b821">3.2.4.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#orgb00f3f0">3.2.5. Derivative</a>
-<ul>
-<li><a href="#org870b1a1">3.2.5.1. Get</a></li>
-<li><a href="#org4927d9a">3.2.5.2. Compute</a></li>
-<li><a href="#orgbb05bd1">3.2.5.3. Test</a></li>
+<li><a href="#org7186e07">3.1.5.1. Get</a></li>
+<li><a href="#org8dfd012">3.1.5.2. Compute</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgba93442">3.3. Electron-electron-nucleus component</a>
+<li><a href="#org9c8c412">3.2. Electron-nucleus component</a>
 <ul>
-<li><a href="#org4c1366c">3.3.1. Electron-electron rescaled distances in \(J_\text{eeN}\)</a>
+<li><a href="#orgf433ec6">3.2.1. Asymptotic component</a>
 <ul>
-<li><a href="#orgde47cd0">3.3.1.1. Get</a></li>
-<li><a href="#orgbbe8056">3.3.1.2. Compute</a></li>
-<li><a href="#orgfb626fb">3.3.1.3. Test</a></li>
+<li><a href="#orgeaee38d">3.2.1.1. Get</a></li>
+<li><a href="#org568e855">3.2.1.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#orgb38687e">3.3.2. Electron-electron rescaled distances derivatives in \(J_\text{eeN}\)</a>
+<li><a href="#orga366820">3.2.2. Electron-nucleus rescaled distances</a>
 <ul>
-<li><a href="#org9f95733">3.3.2.1. Get</a></li>
-<li><a href="#orgdadebc2">3.3.2.2. Compute</a></li>
+<li><a href="#orgcab3b58">3.2.2.1. Get</a></li>
+<li><a href="#orgf72cfc5">3.2.2.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org90470de">3.3.3. Electron-nucleus rescaled distances in \(J_\text{eeN}\)</a>
+<li><a href="#org6195e6d">3.2.3. Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</a>
 <ul>
-<li><a href="#org5610f8c">3.3.3.1. Get</a></li>
-<li><a href="#orgb10c9a2">3.3.3.2. Compute</a></li>
+<li><a href="#orgb960ffe">3.2.3.1. Get</a></li>
+<li><a href="#orgb2b8832">3.2.3.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org599d53a">3.3.4. Electron-nucleus rescaled distances derivatives in \(J_\text{eeN}\)</a>
+<li><a href="#org0315ba1">3.2.4. Electron-nucleus component</a>
 <ul>
-<li><a href="#org21bb093">3.3.4.1. Get</a></li>
-<li><a href="#orga78907e">3.3.4.2. Compute</a></li>
+<li><a href="#orgba5ecc9">3.2.4.1. Get</a></li>
+<li><a href="#org2f76838">3.2.4.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org596d83e">3.3.5. Temporary arrays for electron-electron-nucleus Jastrow \(f_{een}\)</a>
+<li><a href="#orgcbcefe8">3.2.5. Derivative</a>
 <ul>
-<li><a href="#org65dd11e">3.3.5.1. Compute dim<sub>c</sub><sub>vector</sub></a></li>
-<li><a href="#org50a68ad">3.3.5.2. Get</a></li>
-<li><a href="#orgbba6e3e">3.3.5.3. Compute c<sub>vector</sub><sub>full</sub></a></li>
-<li><a href="#orga99fee1">3.3.5.4. Compute lkpm<sub>combined</sub><sub>index</sub></a></li>
-<li><a href="#org7a88387">3.3.5.5. Compute tmp<sub>c</sub></a></li>
-<li><a href="#orgcc08630">3.3.5.6. Compute dtmp<sub>c</sub></a></li>
-</ul>
-</li>
-<li><a href="#orge73e281">3.3.6. Electron-electron-nucleus Jastrow \(f_{een}\)</a>
-<ul>
-<li><a href="#org19a8c6e">3.3.6.1. Get</a></li>
-<li><a href="#orgca3ae67">3.3.6.2. Compute naive</a></li>
-<li><a href="#org211bbf3">3.3.6.3. Compute</a></li>
-</ul>
-</li>
-<li><a href="#org24864f7">3.3.7. Electron-electron-nucleus Jastrow \(f_{een}\) derivative</a>
-<ul>
-<li><a href="#orgae80fac">3.3.7.1. Get</a></li>
-<li><a href="#org94f92ef">3.3.7.2. Compute Naive</a></li>
-<li><a href="#org8adb078">3.3.7.3. Compute GL</a></li>
-<li><a href="#org361a0b4">3.3.7.4. Compute Gradient only</a></li>
+<li><a href="#orgab03fb5">3.2.5.1. Get</a></li>
+<li><a href="#org3bbd890">3.2.5.2. Compute</a></li>
+<li><a href="#org690d6eb">3.2.5.3. Test</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org873c85d">3.4. Total Jastrow</a>
+<li><a href="#org10c748f">3.3. Electron-electron-nucleus component</a>
 <ul>
-<li><a href="#org400a34a">3.4.1. Value</a>
+<li><a href="#orgdf3f4f2">3.3.1. Electron-electron rescaled distances in \(J_\text{eeN}\)</a>
 <ul>
-<li><a href="#org8fc7b9b">3.4.1.1. Get</a></li>
-<li><a href="#orgfb6394c">3.4.1.2. Compute</a></li>
+<li><a href="#orga8b8bb4">3.3.1.1. Get</a></li>
+<li><a href="#org840455f">3.3.1.2. Compute</a></li>
+<li><a href="#org314dc31">3.3.1.3. Test</a></li>
 </ul>
 </li>
-<li><a href="#orga40f23a">3.4.2. Derivatives</a>
+<li><a href="#org0995c7b">3.3.2. Electron-electron rescaled distances derivatives in \(J_\text{eeN}\)</a>
 <ul>
-<li><a href="#org8c3052e">3.4.2.1. Get</a></li>
-<li><a href="#orgff73f1b">3.4.2.2. Compute GL</a></li>
-<li><a href="#org2166c8b">3.4.2.3. Compute Gradient only</a></li>
+<li><a href="#orgcf55495">3.3.2.1. Get</a></li>
+<li><a href="#org733fcac">3.3.2.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#org7e38d0f">3.3.3. Electron-nucleus rescaled distances in \(J_\text{eeN}\)</a>
+<ul>
+<li><a href="#org0535022">3.3.3.1. Get</a></li>
+<li><a href="#org1fd3c29">3.3.3.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#org77c899f">3.3.4. Electron-nucleus rescaled distances derivatives in \(J_\text{eeN}\)</a>
+<ul>
+<li><a href="#org374f0d0">3.3.4.1. Get</a></li>
+<li><a href="#orga41f197">3.3.4.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#org8090799">3.3.5. Temporary arrays for electron-electron-nucleus Jastrow \(f_{een}\)</a>
+<ul>
+<li><a href="#org1a0f80d">3.3.5.1. Compute dim<sub>c</sub><sub>vector</sub></a></li>
+<li><a href="#org0e48874">3.3.5.2. Get</a></li>
+<li><a href="#orgd7d7a2f">3.3.5.3. Compute c<sub>vector</sub><sub>full</sub></a></li>
+<li><a href="#org5352635">3.3.5.4. Compute lkpm<sub>combined</sub><sub>index</sub></a></li>
+<li><a href="#org5f93323">3.3.5.5. Compute tmp<sub>c</sub></a></li>
+<li><a href="#org7e5339e">3.3.5.6. Compute dtmp<sub>c</sub></a></li>
+</ul>
+</li>
+<li><a href="#org7264533">3.3.6. Electron-electron-nucleus Jastrow \(f_{een}\)</a>
+<ul>
+<li><a href="#org4eb3588">3.3.6.1. Get</a></li>
+<li><a href="#orgd930ba0">3.3.6.2. Compute naive</a></li>
+<li><a href="#org71a62fa">3.3.6.3. Compute</a></li>
+</ul>
+</li>
+<li><a href="#orgf5acaf2">3.3.7. Electron-electron-nucleus Jastrow \(f_{een}\) derivative</a>
+<ul>
+<li><a href="#org02510cd">3.3.7.1. Get</a></li>
+<li><a href="#orgad8fd5b">3.3.7.2. Compute Naive</a></li>
+<li><a href="#org11fae12">3.3.7.3. Compute GL</a></li>
+<li><a href="#org76b4e40">3.3.7.4. Compute Gradient only</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd4c6dd0">3.4. Total Jastrow</a>
+<ul>
+<li><a href="#orgb6511e0">3.4.1. Value</a>
+<ul>
+<li><a href="#org294a93c">3.4.1.1. Get</a></li>
+<li><a href="#orgc217911">3.4.1.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#orgdcc8b48">3.4.2. Derivatives</a>
+<ul>
+<li><a href="#orge6da3de">3.4.2.1. Get</a></li>
+<li><a href="#org99880e0">3.4.2.2. Compute GL</a></li>
+<li><a href="#orgd5cd419">3.4.2.3. Compute Gradient only</a></li>
 </ul>
 </li>
 </ul>
@@ -434,8 +434,8 @@ org_html_manager.setup();  // activate after the parameters are set
 </div>
 </div>
 
-<div id="outline-container-org106094d" class="outline-2">
-<h2 id="org106094d"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org85fcabc" class="outline-2">
+<h2 id="org85fcabc"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The Jastrow factor depends on the electronic (\(\mathbf{r}\)) and
@@ -526,8 +526,8 @@ The derivatives are computed with respect to the electron \(i\) for
 </p>
 </div>
 
-<div id="outline-container-org1fd10bb" class="outline-3">
-<h3 id="org1fd10bb"><span class="section-number-3">1.1.</span> Reformulation of the three-body part</h3>
+<div id="outline-container-orgb61a942" class="outline-3">
+<h3 id="orgb61a942"><span class="section-number-3">1.1.</span> Reformulation of the three-body part</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 To accelerate the computation of the three-body part, the Jastrow
@@ -592,14 +592,14 @@ the computation of \(J\) scales as \(\mathcal{O}(N_\text{elec}N_\text{nucl}n^2)\
 </div>
 </div>
 
-<div id="outline-container-orgeef800e" class="outline-2">
-<h2 id="orgeef800e"><span class="section-number-2">2.</span> Context</h2>
+<div id="outline-container-org6c4ba28" class="outline-2">
+<h2 id="org6c4ba28"><span class="section-number-2">2.</span> Context</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The following data stored in the context:
 </p>
 
-<table id="orgd86f9b1" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgce3fe94" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -992,8 +992,8 @@ Computed data:
 </table>
 </div>
 
-<div id="outline-container-org9888dfd" class="outline-3">
-<h3 id="org9888dfd"><span class="section-number-3">2.1.</span> Data structure</h3>
+<div id="outline-container-org4272315" class="outline-3">
+<h3 id="org4272315"><span class="section-number-3">2.1.</span> Data structure</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #a020f0;">typedef</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">qmckl_jastrow_champ_struct</span>{
@@ -1106,8 +1106,8 @@ this mechanism.
 </div>
 </div>
 
-<div id="outline-container-org820d88b" class="outline-3">
-<h3 id="org820d88b"><span class="section-number-3">2.2.</span> Initialization functions</h3>
+<div id="outline-container-org691942a" class="outline-3">
+<h3 id="org691942a"><span class="section-number-3">2.2.</span> Initialization functions</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 To prepare for the Jastrow and its derivative, all the following functions need to be
@@ -1136,8 +1136,8 @@ are precontracted using BLAS LEVEL 3 operations.
 </p>
 </div>
 
-<div id="outline-container-org8ce000b" class="outline-5">
-<h5 id="org8ce000b"><span class="section-number-5">2.2.0.1.</span> Fortran interface</h5>
+<div id="outline-container-org60af7f7" class="outline-5">
+<h5 id="org60af7f7"><span class="section-number-5">2.2.0.1.</span> Fortran interface</h5>
 <div class="outline-text-5" id="text-2-2-0-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
@@ -1252,8 +1252,8 @@ are precontracted using BLAS LEVEL 3 operations.
 </div>
 </div>
 
-<div id="outline-container-orge7e941b" class="outline-3">
-<h3 id="orge7e941b"><span class="section-number-3">2.3.</span> Access functions</h3>
+<div id="outline-container-org5653c6e" class="outline-3">
+<h3 id="org5653c6e"><span class="section-number-3">2.3.</span> Access functions</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Along with these core functions, calculation of the jastrow factor
@@ -1272,8 +1272,8 @@ function returns <code>true</code>.
 </div>
 </div>
 
-<div id="outline-container-orgf69d9d3" class="outline-5">
-<h5 id="orgf69d9d3"><span class="section-number-5">2.3.0.1.</span> Fortran interface</h5>
+<div id="outline-container-orgc9e2981" class="outline-5">
+<h5 id="orgc9e2981"><span class="section-number-5">2.3.0.1.</span> Fortran interface</h5>
 <div class="outline-text-5" id="text-2-3-0-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
@@ -1389,8 +1389,8 @@ function returns <code>true</code>.
 </div>
 </div>
 
-<div id="outline-container-orgcf36a16" class="outline-2">
-<h2 id="orgcf36a16"><span class="section-number-2">3.</span> Computation</h2>
+<div id="outline-container-org40a05e7" class="outline-2">
+<h2 id="org40a05e7"><span class="section-number-2">3.</span> Computation</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 The computed data is stored in the context so that it can be reused
@@ -1403,12 +1403,12 @@ current date is stored.
 </p>
 </div>
 
-<div id="outline-container-org77b0976" class="outline-3">
-<h3 id="org77b0976"><span class="section-number-3">3.1.</span> Electron-electron component</h3>
+<div id="outline-container-orgbab30aa" class="outline-3">
+<h3 id="orgbab30aa"><span class="section-number-3">3.1.</span> Electron-electron component</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org5d339d0" class="outline-4">
-<h4 id="org5d339d0"><span class="section-number-4">3.1.1.</span> Asymptotic component</h4>
+<div id="outline-container-org58ef17a" class="outline-4">
+<h4 id="org58ef17a"><span class="section-number-4">3.1.1.</span> Asymptotic component</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 Calculate the asymptotic component <code>asymp_jasb</code> to be subtracted from the
@@ -1427,8 +1427,8 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </p>
 </div>
 
-<div id="outline-container-org4551f76" class="outline-5">
-<h5 id="org4551f76"><span class="section-number-5">3.1.1.1.</span> Get</h5>
+<div id="outline-container-orga76b147" class="outline-5">
+<h5 id="orga76b147"><span class="section-number-5">3.1.1.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-1-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1440,7 +1440,7 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </div>
 
 <ol class="org-ol">
-<li><a id="org1ba7273"></a>Fortran interface<br />
+<li><a id="orgedc0538"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-1-1-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
@@ -1461,10 +1461,10 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </ol>
 </div>
 
-<div id="outline-container-orga01692a" class="outline-5">
-<h5 id="orga01692a"><span class="section-number-5">3.1.1.2.</span> Compute</h5>
+<div id="outline-container-org4d5ac3b" class="outline-5">
+<h5 id="org4d5ac3b"><span class="section-number-5">3.1.1.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-1-1-2">
-<table id="org8a4a524" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgbdab9db" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1637,8 +1637,8 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </div>
 </div>
 
-<div id="outline-container-org8ac404f" class="outline-4">
-<h4 id="org8ac404f"><span class="section-number-4">3.1.2.</span> Electron-electron rescaled distances</h4>
+<div id="outline-container-orgaca0096" class="outline-4">
+<h4 id="orgaca0096"><span class="section-number-4">3.1.2.</span> Electron-electron rescaled distances</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <p>
 <code>ee_distance_rescaled</code> stores the matrix of the rescaled distances between all
@@ -1656,8 +1656,8 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </p>
 </div>
 
-<div id="outline-container-orga1d6a21" class="outline-5">
-<h5 id="orga1d6a21"><span class="section-number-5">3.1.2.1.</span> Get</h5>
+<div id="outline-container-org7999fb7" class="outline-5">
+<h5 id="org7999fb7"><span class="section-number-5">3.1.2.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-1-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_ee_distance_rescaled</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
@@ -1668,10 +1668,10 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </div>
 </div>
 
-<div id="outline-container-orgf050626" class="outline-5">
-<h5 id="orgf050626"><span class="section-number-5">3.1.2.2.</span> Compute</h5>
+<div id="outline-container-org435d360" class="outline-5">
+<h5 id="org435d360"><span class="section-number-5">3.1.2.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-1-2-2">
-<table id="org6997528" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgb7cef1e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1788,8 +1788,8 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </div>
 </div>
 
-<div id="outline-container-orgd497e5a" class="outline-4">
-<h4 id="orgd497e5a"><span class="section-number-4">3.1.3.</span> Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</h4>
+<div id="outline-container-org2d56916" class="outline-4">
+<h4 id="org2d56916"><span class="section-number-4">3.1.3.</span> Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <p>
 The rescaled distances, represented by \(C_{ij} = (1 - e^{-\kappa_\text{e} r_{ij}})/\kappa_\text{e}\)
@@ -1801,8 +1801,8 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 </p>
 </div>
 
-<div id="outline-container-orgac96b0f" class="outline-5">
-<h5 id="orgac96b0f"><span class="section-number-5">3.1.3.1.</span> Get</h5>
+<div id="outline-container-orgb2736d7" class="outline-5">
+<h5 id="orgb2736d7"><span class="section-number-5">3.1.3.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-1-3-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span> <span style="color: #0000ff;">qmckl_get_jastrow_champ_ee_distance_rescaled_gl</span>(<span style="color: #228b22;">qmckl_context</span> <span style="color: #a0522d;">context</span>,
@@ -1813,10 +1813,10 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 </div>
 </div>
 
-<div id="outline-container-orgd361a35" class="outline-5">
-<h5 id="orgd361a35"><span class="section-number-5">3.1.3.2.</span> Compute</h5>
+<div id="outline-container-org61e537b" class="outline-5">
+<h5 id="org61e537b"><span class="section-number-5">3.1.3.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-1-3-2">
-<table id="orgf684eaa" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgf33192d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1932,8 +1932,8 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 </div>
 </div>
 
-<div id="outline-container-orgdf4a71e" class="outline-4">
-<h4 id="orgdf4a71e"><span class="section-number-4">3.1.4.</span> Electron-electron component</h4>
+<div id="outline-container-org50ff68c" class="outline-4">
+<h4 id="org50ff68c"><span class="section-number-4">3.1.4.</span> Electron-electron component</h4>
 <div class="outline-text-4" id="text-3-1-4">
 <p>
 Calculate the electron-electron jastrow component <code>factor_ee</code> using the <code>asymp_jasb</code>
@@ -1966,8 +1966,8 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </p>
 </div>
 
-<div id="outline-container-org07ac5fa" class="outline-5">
-<h5 id="org07ac5fa"><span class="section-number-5">3.1.4.1.</span> Get</h5>
+<div id="outline-container-org5ee714b" class="outline-5">
+<h5 id="org5ee714b"><span class="section-number-5">3.1.4.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-1-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1979,7 +1979,7 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </div>
 
 <ol class="org-ol">
-<li><a id="orgc756c04"></a>Fortran interface<br />
+<li><a id="orgb529b40"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-1-4-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
@@ -2000,10 +2000,10 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </ol>
 </div>
 
-<div id="outline-container-org07191b4" class="outline-5">
-<h5 id="org07191b4"><span class="section-number-5">3.1.4.2.</span> Compute</h5>
+<div id="outline-container-org794f4e9" class="outline-5">
+<h5 id="org794f4e9"><span class="section-number-5">3.1.4.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-1-4-2">
-<table id="org5297de2" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org173e305" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2288,8 +2288,8 @@ If the <code>spin_independent</code> variable is set to <code>1</code>, then
 </div>
 </div>
 
-<div id="outline-container-orga75337e" class="outline-4">
-<h4 id="orga75337e"><span class="section-number-4">3.1.5.</span> Derivative</h4>
+<div id="outline-container-org3aa079a" class="outline-4">
+<h4 id="org3aa079a"><span class="section-number-4">3.1.5.</span> Derivative</h4>
 <div class="outline-text-4" id="text-3-1-5">
 <p>
 The derivative of <code>factor_ee</code> is computed using the <code>ee_distance_rescaled</code> and
@@ -2315,8 +2315,8 @@ directions and the laplacian as the last component.
 </p>
 </div>
 
-<div id="outline-container-orgaa88b77" class="outline-5">
-<h5 id="orgaa88b77"><span class="section-number-5">3.1.5.1.</span> Get</h5>
+<div id="outline-container-org7186e07" class="outline-5">
+<h5 id="org7186e07"><span class="section-number-5">3.1.5.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-1-5-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2328,7 +2328,7 @@ directions and the laplacian as the last component.
 </div>
 
 <ol class="org-ol">
-<li><a id="org7c4c5c2"></a>Fortran interface<br />
+<li><a id="org63c01e8"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-1-5-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
@@ -2349,10 +2349,10 @@ directions and the laplacian as the last component.
 </ol>
 </div>
 
-<div id="outline-container-org4d8f7a6" class="outline-5">
-<h5 id="org4d8f7a6"><span class="section-number-5">3.1.5.2.</span> Compute</h5>
+<div id="outline-container-org8dfd012" class="outline-5">
+<h5 id="org8dfd012"><span class="section-number-5">3.1.5.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-1-5-2">
-<table id="orgba19cdd" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgf906d2f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2734,12 +2734,12 @@ directions and the laplacian as the last component.
 </div>
 </div>
 
-<div id="outline-container-org55946b1" class="outline-3">
-<h3 id="org55946b1"><span class="section-number-3">3.2.</span> Electron-nucleus component</h3>
+<div id="outline-container-org9c8c412" class="outline-3">
+<h3 id="org9c8c412"><span class="section-number-3">3.2.</span> Electron-nucleus component</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-orgdea0020" class="outline-4">
-<h4 id="orgdea0020"><span class="section-number-4">3.2.1.</span> Asymptotic component</h4>
+<div id="outline-container-orgf433ec6" class="outline-4">
+<h4 id="orgf433ec6"><span class="section-number-4">3.2.1.</span> Asymptotic component</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 Calculate the asymptotic component <code>asymp_jasa</code> to be subtracted from the final
@@ -2754,8 +2754,8 @@ via the <code>a_vector</code> and the electron-nucleus rescale factors <code>res
 </p>
 </div>
 
-<div id="outline-container-org069a7b7" class="outline-5">
-<h5 id="org069a7b7"><span class="section-number-5">3.2.1.1.</span> Get</h5>
+<div id="outline-container-orgeaee38d" class="outline-5">
+<h5 id="orgeaee38d"><span class="section-number-5">3.2.1.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-2-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2767,7 +2767,7 @@ via the <code>a_vector</code> and the electron-nucleus rescale factors <code>res
 </div>
 
 <ol class="org-ol">
-<li><a id="org84228ee"></a>Fortran interface<br />
+<li><a id="org637c604"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-2-1-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
@@ -2788,10 +2788,10 @@ via the <code>a_vector</code> and the electron-nucleus rescale factors <code>res
 </ol>
 </div>
 
-<div id="outline-container-orgfc87059" class="outline-5">
-<h5 id="orgfc87059"><span class="section-number-5">3.2.1.2.</span> Compute</h5>
+<div id="outline-container-org568e855" class="outline-5">
+<h5 id="org568e855"><span class="section-number-5">3.2.1.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-2-1-2">
-<table id="org5ca7505" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgeee47eb" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2919,8 +2919,8 @@ via the <code>a_vector</code> and the electron-nucleus rescale factors <code>res
 </div>
 </div>
 
-<div id="outline-container-org9ce3284" class="outline-4">
-<h4 id="org9ce3284"><span class="section-number-4">3.2.2.</span> Electron-nucleus rescaled distances</h4>
+<div id="outline-container-orga366820" class="outline-4">
+<h4 id="orga366820"><span class="section-number-4">3.2.2.</span> Electron-nucleus rescaled distances</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 <code>en_distance_rescaled</code> stores the matrix of the rescaled distances between
@@ -2938,8 +2938,8 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 </p>
 </div>
 
-<div id="outline-container-orgd11e79f" class="outline-5">
-<h5 id="orgd11e79f"><span class="section-number-5">3.2.2.1.</span> Get</h5>
+<div id="outline-container-orgcab3b58" class="outline-5">
+<h5 id="orgcab3b58"><span class="section-number-5">3.2.2.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-2-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2952,10 +2952,10 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 </div>
 
 
-<div id="outline-container-orgd3710de" class="outline-5">
-<h5 id="orgd3710de"><span class="section-number-5">3.2.2.2.</span> Compute</h5>
+<div id="outline-container-orgf72cfc5" class="outline-5">
+<h5 id="orgf72cfc5"><span class="section-number-5">3.2.2.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-2-2-2">
-<table id="orge38faaa" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgf30ddc1" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3112,8 +3112,8 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 </div>
 </div>
 
-<div id="outline-container-org8f1b55a" class="outline-4">
-<h4 id="org8f1b55a"><span class="section-number-4">3.2.3.</span> Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</h4>
+<div id="outline-container-org6195e6d" class="outline-4">
+<h4 id="org6195e6d"><span class="section-number-4">3.2.3.</span> Electron-electron rescaled distance gradients and Laplacian with respect to electron coordinates</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <p>
 The rescaled distances, represented by \(C_{i\alpha} = (1 - e^{-\kappa_\alpha R_{i\alpha}})/\kappa\)
@@ -3125,8 +3125,8 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 </p>
 </div>
 
-<div id="outline-container-org3817c06" class="outline-5">
-<h5 id="org3817c06"><span class="section-number-5">3.2.3.1.</span> Get</h5>
+<div id="outline-container-orgb960ffe" class="outline-5">
+<h5 id="orgb960ffe"><span class="section-number-5">3.2.3.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-2-3-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3138,10 +3138,10 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 </div>
 </div>
 
-<div id="outline-container-orga513470" class="outline-5">
-<h5 id="orga513470"><span class="section-number-5">3.2.3.2.</span> Compute</h5>
+<div id="outline-container-orgb2b8832" class="outline-5">
+<h5 id="orgb2b8832"><span class="section-number-5">3.2.3.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-2-3-2">
-<table id="org17974b9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org7788fc4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3298,8 +3298,8 @@ direction derivatives, while the fourth index corresponds to the Laplacian.
 </div>
 </div>
 
-<div id="outline-container-org70862e5" class="outline-4">
-<h4 id="org70862e5"><span class="section-number-4">3.2.4.</span> Electron-nucleus component</h4>
+<div id="outline-container-org0315ba1" class="outline-4">
+<h4 id="org0315ba1"><span class="section-number-4">3.2.4.</span> Electron-nucleus component</h4>
 <div class="outline-text-4" id="text-3-2-4">
 <p>
 Calculate the electron-electron jastrow component <code>factor_en</code> using the <code>a_vector</code>
@@ -3314,8 +3314,8 @@ coeffecients and the electron-nucleus rescaled distances <code>en_distance_resca
 </div>
 
 
-<div id="outline-container-org038aae2" class="outline-5">
-<h5 id="org038aae2"><span class="section-number-5">3.2.4.1.</span> Get</h5>
+<div id="outline-container-orgba5ecc9" class="outline-5">
+<h5 id="orgba5ecc9"><span class="section-number-5">3.2.4.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-2-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3327,7 +3327,7 @@ coeffecients and the electron-nucleus rescaled distances <code>en_distance_resca
 </div>
 
 <ol class="org-ol">
-<li><a id="orgca6a0fa"></a>Fortran interface<br />
+<li><a id="org5a4e3af"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-2-4-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
@@ -3348,10 +3348,10 @@ coeffecients and the electron-nucleus rescaled distances <code>en_distance_resca
 </ol>
 </div>
 
-<div id="outline-container-org658b821" class="outline-5">
-<h5 id="org658b821"><span class="section-number-5">3.2.4.2.</span> Compute</h5>
+<div id="outline-container-org2f76838" class="outline-5">
+<h5 id="org2f76838"><span class="section-number-5">3.2.4.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-2-4-2">
-<table id="orgb5ed7c7" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org80372d1" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3577,8 +3577,8 @@ coeffecients and the electron-nucleus rescaled distances <code>en_distance_resca
 </div>
 </div>
 
-<div id="outline-container-orgb00f3f0" class="outline-4">
-<h4 id="orgb00f3f0"><span class="section-number-4">3.2.5.</span> Derivative</h4>
+<div id="outline-container-orgcbcefe8" class="outline-4">
+<h4 id="orgcbcefe8"><span class="section-number-4">3.2.5.</span> Derivative</h4>
 <div class="outline-text-4" id="text-3-2-5">
 <p>
 Calculate the electron-electron jastrow component <code>factor_en_gl</code> derivative
@@ -3607,8 +3607,8 @@ The formula is given by:
 </p>
 </div>
 
-<div id="outline-container-org870b1a1" class="outline-5">
-<h5 id="org870b1a1"><span class="section-number-5">3.2.5.1.</span> Get</h5>
+<div id="outline-container-orgab03fb5" class="outline-5">
+<h5 id="orgab03fb5"><span class="section-number-5">3.2.5.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-2-5-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3620,7 +3620,7 @@ The formula is given by:
 </div>
 
 <ol class="org-ol">
-<li><a id="org2780c3c"></a>Fortran interface<br />
+<li><a id="orgf34f2ff"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-2-5-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
@@ -3641,10 +3641,10 @@ The formula is given by:
 </ol>
 </div>
 
-<div id="outline-container-org4927d9a" class="outline-5">
-<h5 id="org4927d9a"><span class="section-number-5">3.2.5.2.</span> Compute</h5>
+<div id="outline-container-org3bbd890" class="outline-5">
+<h5 id="org3bbd890"><span class="section-number-5">3.2.5.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-2-5-2">
-<table id="orgc464c8c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgee4c666" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3850,8 +3850,8 @@ The formula is given by:
 </div>
 </div>
 
-<div id="outline-container-orgbb05bd1" class="outline-5">
-<h5 id="orgbb05bd1"><span class="section-number-5">3.2.5.3.</span> Test</h5>
+<div id="outline-container-org690d6eb" class="outline-5">
+<h5 id="org690d6eb"><span class="section-number-5">3.2.5.3.</span> Test</h5>
 <div class="outline-text-5" id="text-3-2-5-3">
 <div class="org-src-container">
 <pre class="src src-c">/* <span style="color: #b22222;">Check if Jastrow is properly initialized</span> */
@@ -4009,12 +4009,12 @@ The formula is given by:
 </div>
 </div>
 
-<div id="outline-container-orgba93442" class="outline-3">
-<h3 id="orgba93442"><span class="section-number-3">3.3.</span> Electron-electron-nucleus component</h3>
+<div id="outline-container-org10c748f" class="outline-3">
+<h3 id="org10c748f"><span class="section-number-3">3.3.</span> Electron-electron-nucleus component</h3>
 <div class="outline-text-3" id="text-3-3">
 </div>
-<div id="outline-container-org4c1366c" class="outline-4">
-<h4 id="org4c1366c"><span class="section-number-4">3.3.1.</span> Electron-electron rescaled distances in \(J_\text{eeN}\)</h4>
+<div id="outline-container-orgdf3f4f2" class="outline-4">
+<h4 id="orgdf3f4f2"><span class="section-number-4">3.3.1.</span> Electron-electron rescaled distances in \(J_\text{eeN}\)</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <p>
 <code>een_rescaled_e</code> stores the table of the rescaled distances between all
@@ -4034,8 +4034,8 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </p>
 </div>
 
-<div id="outline-container-orgde47cd0" class="outline-5">
-<h5 id="orgde47cd0"><span class="section-number-5">3.3.1.1.</span> Get</h5>
+<div id="outline-container-orga8b8bb4" class="outline-5">
+<h5 id="orga8b8bb4"><span class="section-number-5">3.3.1.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -4047,10 +4047,10 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </div>
 </div>
 
-<div id="outline-container-orgbbe8056" class="outline-5">
-<h5 id="orgbbe8056"><span class="section-number-5">3.3.1.2.</span> Compute</h5>
+<div id="outline-container-org840455f" class="outline-5">
+<h5 id="org840455f"><span class="section-number-5">3.3.1.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-3-1-2">
-<table id="org852ae1f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgca2ba64" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4365,8 +4365,8 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </div>
 </div>
 
-<div id="outline-container-orgfb626fb" class="outline-5">
-<h5 id="orgfb626fb"><span class="section-number-5">3.3.1.3.</span> Test</h5>
+<div id="outline-container-org314dc31" class="outline-5">
+<h5 id="org314dc31"><span class="section-number-5">3.3.1.3.</span> Test</h5>
 <div class="outline-text-5" id="text-3-3-1-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #0000ff;">assert</span>(<span style="color: #228b22;">qmckl_electron_provided</span>(<span style="color: #a0522d;">context</span>));
@@ -4469,8 +4469,8 @@ where \(r_{ij}\) is the matrix of electron-electron distances.
 </div>
 </div>
 
-<div id="outline-container-orgb38687e" class="outline-4">
-<h4 id="orgb38687e"><span class="section-number-4">3.3.2.</span> Electron-electron rescaled distances derivatives in \(J_\text{eeN}\)</h4>
+<div id="outline-container-org0995c7b" class="outline-4">
+<h4 id="org0995c7b"><span class="section-number-4">3.3.2.</span> Electron-electron rescaled distances derivatives in \(J_\text{eeN}\)</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <p>
 <code>een_rescaled_e_gl</code> stores the table of the derivatives of the
@@ -4495,8 +4495,8 @@ Derivatives are set to zero at \(r_{ii}\) to avoid NaNs.
 </p>
 </div>
 
-<div id="outline-container-org9f95733" class="outline-5">
-<h5 id="org9f95733"><span class="section-number-5">3.3.2.1.</span> Get</h5>
+<div id="outline-container-orgcf55495" class="outline-5">
+<h5 id="orgcf55495"><span class="section-number-5">3.3.2.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -4508,10 +4508,10 @@ Derivatives are set to zero at \(r_{ii}\) to avoid NaNs.
 </div>
 </div>
 
-<div id="outline-container-orgdadebc2" class="outline-5">
-<h5 id="orgdadebc2"><span class="section-number-5">3.3.2.2.</span> Compute</h5>
+<div id="outline-container-org733fcac" class="outline-5">
+<h5 id="org733fcac"><span class="section-number-5">3.3.2.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-3-2-2">
-<table id="org29f9ba8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org63c165b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4840,8 +4840,8 @@ Derivatives are set to zero at \(r_{ii}\) to avoid NaNs.
 </div>
 </div>
 
-<div id="outline-container-org90470de" class="outline-4">
-<h4 id="org90470de"><span class="section-number-4">3.3.3.</span> Electron-nucleus rescaled distances in \(J_\text{eeN}\)</h4>
+<div id="outline-container-org7e38d0f" class="outline-4">
+<h4 id="org7e38d0f"><span class="section-number-4">3.3.3.</span> Electron-nucleus rescaled distances in \(J_\text{eeN}\)</h4>
 <div class="outline-text-4" id="text-3-3-3">
 <p>
 <code>een_rescaled_n</code> stores the table of the rescaled distances between
@@ -4859,8 +4859,8 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 </p>
 </div>
 
-<div id="outline-container-org5610f8c" class="outline-5">
-<h5 id="org5610f8c"><span class="section-number-5">3.3.3.1.</span> Get</h5>
+<div id="outline-container-org0535022" class="outline-5">
+<h5 id="org0535022"><span class="section-number-5">3.3.3.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-3-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -4872,10 +4872,10 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 </div>
 </div>
 
-<div id="outline-container-orgb10c9a2" class="outline-5">
-<h5 id="orgb10c9a2"><span class="section-number-5">3.3.3.2.</span> Compute</h5>
+<div id="outline-container-org1fd3c29" class="outline-5">
+<h5 id="org1fd3c29"><span class="section-number-5">3.3.3.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-3-3-2">
-<table id="org9d4a28c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org14eca6f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5114,8 +5114,8 @@ where \(R_{i\alpha}\) is the matrix of electron-nucleus distances.
 </div>
 </div>
 
-<div id="outline-container-org599d53a" class="outline-4">
-<h4 id="org599d53a"><span class="section-number-4">3.3.4.</span> Electron-nucleus rescaled distances derivatives in \(J_\text{eeN}\)</h4>
+<div id="outline-container-org77c899f" class="outline-4">
+<h4 id="org77c899f"><span class="section-number-4">3.3.4.</span> Electron-nucleus rescaled distances derivatives in \(J_\text{eeN}\)</h4>
 <div class="outline-text-4" id="text-3-3-4">
 <p>
 <code>een_rescaled_n_gl</code> stores the table of the derivatives of the
@@ -5136,8 +5136,8 @@ required for the een jastrow<sub>champ</sub>.
 </p>
 </div>
 
-<div id="outline-container-org21bb093" class="outline-5">
-<h5 id="org21bb093"><span class="section-number-5">3.3.4.1.</span> Get</h5>
+<div id="outline-container-org374f0d0" class="outline-5">
+<h5 id="org374f0d0"><span class="section-number-5">3.3.4.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -5149,10 +5149,10 @@ required for the een jastrow<sub>champ</sub>.
 </div>
 </div>
 
-<div id="outline-container-orga78907e" class="outline-5">
-<h5 id="orga78907e"><span class="section-number-5">3.3.4.2.</span> Compute</h5>
+<div id="outline-container-orga41f197" class="outline-5">
+<h5 id="orga41f197"><span class="section-number-5">3.3.4.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-3-4-2">
-<table id="orgbd65aec" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org8b8a327" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5372,8 +5372,8 @@ required for the een jastrow<sub>champ</sub>.
 </div>
 </div>
 
-<div id="outline-container-org596d83e" class="outline-4">
-<h4 id="org596d83e"><span class="section-number-4">3.3.5.</span> Temporary arrays for electron-electron-nucleus Jastrow \(f_{een}\)</h4>
+<div id="outline-container-org8090799" class="outline-4">
+<h4 id="org8090799"><span class="section-number-4">3.3.5.</span> Temporary arrays for electron-electron-nucleus Jastrow \(f_{een}\)</h4>
 <div class="outline-text-4" id="text-3-3-5">
 <p>
 Prepare <code>c_vector_full</code> and <code>lkpm_combined_index</code> tables required for the
@@ -5402,8 +5402,8 @@ beginning of this section:
              \]
 </p>
 </div>
-<div id="outline-container-org65dd11e" class="outline-5">
-<h5 id="org65dd11e"><span class="section-number-5">3.3.5.1.</span> Compute dim<sub>c</sub><sub>vector</sub></h5>
+<div id="outline-container-org1a0f80d" class="outline-5">
+<h5 id="org1a0f80d"><span class="section-number-5">3.3.5.1.</span> Compute dim<sub>c</sub><sub>vector</sub></h5>
 <div class="outline-text-5" id="text-3-3-5-1">
 <p>
 Computes the dimension of the vector of parameters.
@@ -5480,7 +5480,7 @@ Computes the dimension of the vector of parameters.
 </tbody>
 </table>
 
-<table id="org046b062" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgc03f197" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5573,8 +5573,8 @@ Computes the dimension of the vector of parameters.
 </div>
 </div>
 
-<div id="outline-container-org50a68ad" class="outline-5">
-<h5 id="org50a68ad"><span class="section-number-5">3.3.5.2.</span> Get</h5>
+<div id="outline-container-org0e48874" class="outline-5">
+<h5 id="org0e48874"><span class="section-number-5">3.3.5.2.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-5-2">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -5591,10 +5591,10 @@ Computes the dimension of the vector of parameters.
 </div>
 </div>
 
-<div id="outline-container-orgbba6e3e" class="outline-5">
-<h5 id="orgbba6e3e"><span class="section-number-5">3.3.5.3.</span> Compute c<sub>vector</sub><sub>full</sub></h5>
+<div id="outline-container-orgd7d7a2f" class="outline-5">
+<h5 id="orgd7d7a2f"><span class="section-number-5">3.3.5.3.</span> Compute c<sub>vector</sub><sub>full</sub></h5>
 <div class="outline-text-5" id="text-3-3-5-3">
-<table id="org376e958" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgaf097f3" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5778,10 +5778,10 @@ Computes the dimension of the vector of parameters.
 </div>
 </div>
 
-<div id="outline-container-orga99fee1" class="outline-5">
-<h5 id="orga99fee1"><span class="section-number-5">3.3.5.4.</span> Compute lkpm<sub>combined</sub><sub>index</sub></h5>
+<div id="outline-container-org5352635" class="outline-5">
+<h5 id="org5352635"><span class="section-number-5">3.3.5.4.</span> Compute lkpm<sub>combined</sub><sub>index</sub></h5>
 <div class="outline-text-5" id="text-3-3-5-4">
-<table id="org5a49e8f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org55c5368" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -5978,10 +5978,10 @@ Computes the dimension of the vector of parameters.
 </div>
 </div>
 
-<div id="outline-container-org7a88387" class="outline-5">
-<h5 id="org7a88387"><span class="section-number-5">3.3.5.5.</span> Compute tmp<sub>c</sub></h5>
+<div id="outline-container-org5f93323" class="outline-5">
+<h5 id="org5f93323"><span class="section-number-5">3.3.5.5.</span> Compute tmp<sub>c</sub></h5>
 <div class="outline-text-5" id="text-3-3-5-5">
-<table id="orga3ff869" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org1006761" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -6156,10 +6156,10 @@ Computes the dimension of the vector of parameters.
 </div>
 </div>
 
-<div id="outline-container-orgcc08630" class="outline-5">
-<h5 id="orgcc08630"><span class="section-number-5">3.3.5.6.</span> Compute dtmp<sub>c</sub></h5>
+<div id="outline-container-org7e5339e" class="outline-5">
+<h5 id="org7e5339e"><span class="section-number-5">3.3.5.6.</span> Compute dtmp<sub>c</sub></h5>
 <div class="outline-text-5" id="text-3-3-5-6">
-<table id="orge2cf56d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org3a3a1cd" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -6323,8 +6323,8 @@ Computes the dimension of the vector of parameters.
 </div>
 </div>
 
-<div id="outline-container-orge73e281" class="outline-4">
-<h4 id="orge73e281"><span class="section-number-4">3.3.6.</span> Electron-electron-nucleus Jastrow \(f_{een}\)</h4>
+<div id="outline-container-org7264533" class="outline-4">
+<h4 id="org7264533"><span class="section-number-4">3.3.6.</span> Electron-electron-nucleus Jastrow \(f_{een}\)</h4>
 <div class="outline-text-4" id="text-3-3-6">
 <p>
 Calculate the electron-electron-nuclear three-body jastrow component <code>factor_een</code>
@@ -6336,8 +6336,8 @@ TODO: write equations.
 </p>
 </div>
 
-<div id="outline-container-org19a8c6e" class="outline-5">
-<h5 id="org19a8c6e"><span class="section-number-5">3.3.6.1.</span> Get</h5>
+<div id="outline-container-org4eb3588" class="outline-5">
+<h5 id="org4eb3588"><span class="section-number-5">3.3.6.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-6-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -6349,7 +6349,7 @@ TODO: write equations.
 </div>
 
 <ol class="org-ol">
-<li><a id="org1e7140d"></a>Fortran interface<br />
+<li><a id="org13b8d22"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-3-6-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
@@ -6370,10 +6370,10 @@ TODO: write equations.
 </ol>
 </div>
 
-<div id="outline-container-orgca3ae67" class="outline-5">
-<h5 id="orgca3ae67"><span class="section-number-5">3.3.6.2.</span> Compute naive</h5>
+<div id="outline-container-orgd930ba0" class="outline-5">
+<h5 id="orgd930ba0"><span class="section-number-5">3.3.6.2.</span> Compute naive</h5>
 <div class="outline-text-5" id="text-3-3-6-2">
-<table id="orgf0c7b80" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org8c54068" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -6537,10 +6537,10 @@ TODO: write equations.
 </div>
 </div>
 
-<div id="outline-container-org211bbf3" class="outline-5">
-<h5 id="org211bbf3"><span class="section-number-5">3.3.6.3.</span> Compute</h5>
+<div id="outline-container-org71a62fa" class="outline-5">
+<h5 id="org71a62fa"><span class="section-number-5">3.3.6.3.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-3-6-3">
-<table id="orgcbecf48" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org2981328" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -6704,8 +6704,8 @@ TODO: write equations.
 </div>
 </div>
 
-<div id="outline-container-org24864f7" class="outline-4">
-<h4 id="org24864f7"><span class="section-number-4">3.3.7.</span> Electron-electron-nucleus Jastrow \(f_{een}\) derivative</h4>
+<div id="outline-container-orgf5acaf2" class="outline-4">
+<h4 id="orgf5acaf2"><span class="section-number-4">3.3.7.</span> Electron-electron-nucleus Jastrow \(f_{een}\) derivative</h4>
 <div class="outline-text-4" id="text-3-3-7">
 <p>
 Calculate the electron-electron-nuclear three-body jastrow component <code>factor_een_gl</code>
@@ -6717,8 +6717,8 @@ TODO: write equations.
 </p>
 </div>
 
-<div id="outline-container-orgae80fac" class="outline-5">
-<h5 id="orgae80fac"><span class="section-number-5">3.3.7.1.</span> Get</h5>
+<div id="outline-container-org02510cd" class="outline-5">
+<h5 id="org02510cd"><span class="section-number-5">3.3.7.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-3-7-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -6738,7 +6738,7 @@ TODO: write equations.
 </div>
 
 <ol class="org-ol">
-<li><a id="orgb0bfc8b"></a>Fortran interface<br />
+<li><a id="orgba0d500"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-3-7-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
@@ -6771,10 +6771,10 @@ TODO: write equations.
 </ol>
 </div>
 
-<div id="outline-container-org94f92ef" class="outline-5">
-<h5 id="org94f92ef"><span class="section-number-5">3.3.7.2.</span> Compute Naive</h5>
+<div id="outline-container-orgad8fd5b" class="outline-5">
+<h5 id="orgad8fd5b"><span class="section-number-5">3.3.7.2.</span> Compute Naive</h5>
 <div class="outline-text-5" id="text-3-3-7-2">
-<table id="orgea48250" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orge4707fa" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -6973,10 +6973,10 @@ TODO: write equations.
 </div>
 </div>
 
-<div id="outline-container-org8adb078" class="outline-5">
-<h5 id="org8adb078"><span class="section-number-5">3.3.7.3.</span> Compute GL</h5>
+<div id="outline-container-org11fae12" class="outline-5">
+<h5 id="org11fae12"><span class="section-number-5">3.3.7.3.</span> Compute GL</h5>
 <div class="outline-text-5" id="text-3-3-7-3">
-<table id="org3f3893e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orge68fba9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -7243,10 +7243,10 @@ TODO: write equations.
 </div>
 </div>
 
-<div id="outline-container-org361a0b4" class="outline-5">
-<h5 id="org361a0b4"><span class="section-number-5">3.3.7.4.</span> Compute Gradient only</h5>
+<div id="outline-container-org76b4e40" class="outline-5">
+<h5 id="org76b4e40"><span class="section-number-5">3.3.7.4.</span> Compute Gradient only</h5>
 <div class="outline-text-5" id="text-3-3-7-4">
-<table id="orga1f2615" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgd58399c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -7503,7 +7503,7 @@ TODO: write equations.
 </div>
 </div>
 <ol class="org-ol">
-<li><a id="orga20c0ac"></a>Test<br />
+<li><a id="org800c7fb"></a>Test<br />
 <div class="outline-text-6" id="text-3-3-7-4-1">
 <div class="org-src-container">
 <pre class="src src-c">/* <span style="color: #b22222;">Check if Jastrow is properly initialized</span> */
@@ -7533,20 +7533,20 @@ TODO: write equations.
 </div>
 </div>
 
-<div id="outline-container-org873c85d" class="outline-3">
-<h3 id="org873c85d"><span class="section-number-3">3.4.</span> Total Jastrow</h3>
+<div id="outline-container-orgd4c6dd0" class="outline-3">
+<h3 id="orgd4c6dd0"><span class="section-number-3">3.4.</span> Total Jastrow</h3>
 <div class="outline-text-3" id="text-3-4">
 </div>
-<div id="outline-container-org400a34a" class="outline-4">
-<h4 id="org400a34a"><span class="section-number-4">3.4.1.</span> Value</h4>
+<div id="outline-container-orgb6511e0" class="outline-4">
+<h4 id="orgb6511e0"><span class="section-number-4">3.4.1.</span> Value</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 Value of the total Jastrow factor: \(\exp(J)\)
 </p>
 </div>
 
-<div id="outline-container-org8fc7b9b" class="outline-5">
-<h5 id="org8fc7b9b"><span class="section-number-5">3.4.1.1.</span> Get</h5>
+<div id="outline-container-org294a93c" class="outline-5">
+<h5 id="org294a93c"><span class="section-number-5">3.4.1.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-4-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -7558,7 +7558,7 @@ Value of the total Jastrow factor: \(\exp(J)\)
 </div>
 
 <ol class="org-ol">
-<li><a id="org0135256"></a>Fortran interface<br />
+<li><a id="orgca80413"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-4-1-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
@@ -7579,10 +7579,10 @@ Value of the total Jastrow factor: \(\exp(J)\)
 </ol>
 </div>
 
-<div id="outline-container-orgfb6394c" class="outline-5">
-<h5 id="orgfb6394c"><span class="section-number-5">3.4.1.2.</span> Compute</h5>
+<div id="outline-container-orgc217911" class="outline-5">
+<h5 id="orgc217911"><span class="section-number-5">3.4.1.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-3-4-1-2">
-<table id="orgdfef4b3" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org86a9a28" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -7752,8 +7752,8 @@ Value of the total Jastrow factor: \(\exp(J)\)
 </div>
 </div>
 
-<div id="outline-container-orga40f23a" class="outline-4">
-<h4 id="orga40f23a"><span class="section-number-4">3.4.2.</span> Derivatives</h4>
+<div id="outline-container-orgdcc8b48" class="outline-4">
+<h4 id="orgdcc8b48"><span class="section-number-4">3.4.2.</span> Derivatives</h4>
 <div class="outline-text-4" id="text-3-4-2">
 <p>
 Gradients and Laplacian of the total Jastrow factor:
@@ -7767,8 +7767,8 @@ Gradients and Laplacian of the total Jastrow factor:
 </p>
 </div>
 
-<div id="outline-container-org8c3052e" class="outline-5">
-<h5 id="org8c3052e"><span class="section-number-5">3.4.2.1.</span> Get</h5>
+<div id="outline-container-orge6da3de" class="outline-5">
+<h5 id="orge6da3de"><span class="section-number-5">3.4.2.1.</span> Get</h5>
 <div class="outline-text-5" id="text-3-4-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -7793,7 +7793,7 @@ Gradients and Laplacian of the total Jastrow factor:
 </div>
 
 <ol class="org-ol">
-<li><a id="org3eb743d"></a>Fortran interface<br />
+<li><a id="orgd28d6c1"></a>Fortran interface<br />
 <div class="outline-text-6" id="text-3-4-2-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">interface</span>
@@ -7814,10 +7814,10 @@ Gradients and Laplacian of the total Jastrow factor:
 </ol>
 </div>
 
-<div id="outline-container-orgff73f1b" class="outline-5">
-<h5 id="orgff73f1b"><span class="section-number-5">3.4.2.2.</span> Compute GL</h5>
+<div id="outline-container-org99880e0" class="outline-5">
+<h5 id="org99880e0"><span class="section-number-5">3.4.2.2.</span> Compute GL</h5>
 <div class="outline-text-5" id="text-3-4-2-2">
-<table id="org71013d8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgf36207d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -8013,7 +8013,7 @@ Gradients and Laplacian of the total Jastrow factor:
 </div>
 
 <ol class="org-ol">
-<li><a id="orgd2208fd"></a>Test<br />
+<li><a id="org3526bf4"></a>Test<br />
 <div class="outline-text-6" id="text-3-4-2-2-1">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Total Jastrow derivatives\n"</span>);
@@ -8078,10 +8078,10 @@ Gradients and Laplacian of the total Jastrow factor:
 </ol>
 </div>
 
-<div id="outline-container-org2166c8b" class="outline-5">
-<h5 id="org2166c8b"><span class="section-number-5">3.4.2.3.</span> Compute Gradient only</h5>
+<div id="outline-container-orgd5cd419" class="outline-5">
+<h5 id="orgd5cd419"><span class="section-number-5">3.4.2.3.</span> Compute Gradient only</h5>
 <div class="outline-text-5" id="text-3-4-2-3">
-<table id="org79ba369" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgaebe444" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -8272,7 +8272,7 @@ Gradients and Laplacian of the total Jastrow factor:
 </div>
 
 <ol class="org-ol">
-<li><a id="org04fe54e"></a>Test<br />
+<li><a id="org1790d96"></a>Test<br />
 <div class="outline-text-6" id="text-3-4-2-3-1">
 <div class="org-src-container">
 <pre class="src src-c">printf(<span style="color: #8b2252;">"Total Jastrow gradient only\n"</span>);
@@ -8323,7 +8323,7 @@ Gradients and Laplacian of the total Jastrow factor:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2025-04-18 Fri 12:41</p>
+<p class="date">Created: 2025-04-24 Thu 12:23</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
