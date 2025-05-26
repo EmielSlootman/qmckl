@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-28 Mon 13:52 -->
+<!-- 2025-05-26 Mon 11:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Forces</title>
@@ -258,121 +258,121 @@ org_html_manager.setup();  // activate after the parameters are set
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0e5eabc">1. Introduction</a></li>
-<li><a href="#org176c81d">2. Context</a>
+<li><a href="#org116fa7e">1. Introduction</a></li>
+<li><a href="#orgd5ad336">2. Context</a>
 <ul>
-<li><a href="#org2e8c0f8">2.1. Data structure</a></li>
+<li><a href="#orgb81bacc">2.1. Data structure</a></li>
 </ul>
 </li>
-<li><a href="#org7b17bc5">3. Finite-difference function</a></li>
-<li><a href="#orgfe6c24d">4. Forces of the Jastrow function</a>
+<li><a href="#org00e0afb">3. Finite-difference function</a></li>
+<li><a href="#org76bc55b">4. Forces of the Jastrow function</a>
 <ul>
-<li><a href="#orgb95f54b">4.1. Electron-nucleus Jastrow</a>
+<li><a href="#orgd012199">4.1. Electron-nucleus Jastrow</a>
 <ul>
-<li><a href="#orga568e52">4.1.1. Force of electron-nucleus Jastrow value</a>
+<li><a href="#orgf97bbc8">4.1.1. Force of electron-nucleus Jastrow value</a>
 <ul>
-<li><a href="#orge06bc91">4.1.1.1. Get</a></li>
-<li><a href="#org60cda6b">4.1.1.2. Compute</a></li>
+<li><a href="#org38ceccc">4.1.1.1. Get</a></li>
+<li><a href="#org586fe69">4.1.1.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org6df29a0">4.1.2. Force of electron-nucleus Jastrow gradient</a>
+<li><a href="#org0b7a941">4.1.2. Force of electron-nucleus Jastrow gradient</a>
 <ul>
-<li><a href="#org503a2d6">4.1.2.1. Get</a></li>
-<li><a href="#org22d1592">4.1.2.2. Compute</a></li>
+<li><a href="#org4683b6f">4.1.2.1. Get</a></li>
+<li><a href="#orgfdc5b14">4.1.2.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org05ff3d7">4.1.3. Force of electron-nucleus Jastrow Laplacian</a>
+<li><a href="#org4185672">4.1.3. Force of electron-nucleus Jastrow Laplacian</a>
 <ul>
-<li><a href="#org589f4ef">4.1.3.1. Get</a></li>
-<li><a href="#org86520d6">4.1.3.2. Compute</a></li>
+<li><a href="#org87dfc30">4.1.3.1. Get</a></li>
+<li><a href="#orgccb5da3">4.1.3.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org967c4ad">4.1.4. Force of single electron-nucleus Jastrow value</a>
+<li><a href="#orgce73500">4.1.4. Force of single electron-nucleus Jastrow value</a>
 <ul>
-<li><a href="#org8b5a4e1">4.1.4.1. Get</a></li>
-<li><a href="#orgcb8a1ae">4.1.4.2. Compute</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org9dd91e6">4.2. Electron-electron-nucleus Jastrow</a>
-<ul>
-<li><a href="#org77443f1">4.2.1. Force of P matrix</a>
-<ul>
-<li><a href="#orge714073">4.2.1.1. Get</a></li>
-<li><a href="#org83d186f">4.2.1.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#org0b4031f">4.2.2. Force of derivative of the \(P\) matrix</a>
-<ul>
-<li><a href="#org9ebfbe3">4.2.2.1. Get</a></li>
-<li><a href="#org1ff3a32">4.2.2.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#org59479aa">4.2.3. Force of electron-electron-nucleus Jastrow value</a>
-<ul>
-<li><a href="#orgc5d6064">4.2.3.1. Get</a></li>
-<li><a href="#org2970b79">4.2.3.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#orga10157b">4.2.4. Force of derivatives of electron-nucleus rescaled distance</a>
-<ul>
-<li><a href="#org2669306">4.2.4.1. Get</a></li>
-<li><a href="#org496f8d5">4.2.4.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#org0291440">4.2.5. Force of electron-electron-nucleus Jastrow gradient</a>
-<ul>
-<li><a href="#org51da939">4.2.5.1. Get</a></li>
-<li><a href="#org05ef809">4.2.5.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#org524c9a9">4.2.6. Force of electron-electron-nucleus Jastrow Laplacian</a>
-<ul>
-<li><a href="#org428cf88">4.2.6.1. Get</a></li>
-<li><a href="#org51912b8">4.2.6.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#org2757ff5">4.2.7. Force of \(\delta P\) matrix</a>
-<ul>
-<li><a href="#org4fcaee5">4.2.7.1. Get</a></li>
-<li><a href="#org780ddfb">4.2.7.2. Compute</a></li>
-</ul>
-</li>
-<li><a href="#orgb2a5cf8">4.2.8. Force of single electron-electron-nucleus Jastrow value</a>
-<ul>
-<li><a href="#org5c861bf">4.2.8.1. Get</a></li>
-<li><a href="#org902b273">4.2.8.2. Compute</a></li>
+<li><a href="#org4c42dc9">4.1.4.1. Get</a></li>
+<li><a href="#org917b2b1">4.1.4.2. Compute</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#org99b852f">4.2. Electron-electron-nucleus Jastrow</a>
+<ul>
+<li><a href="#org0fda6be">4.2.1. Force of P matrix</a>
+<ul>
+<li><a href="#orga242f3c">4.2.1.1. Get</a></li>
+<li><a href="#org3b519e7">4.2.1.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#orgbb580a0">5. Forces of the orbitals</a>
+<li><a href="#orgd82821e">4.2.2. Force of derivative of the \(P\) matrix</a>
 <ul>
-<li><a href="#org444fa56">5.1. Force of AO value</a>
-<ul>
-<li><a href="#orgdd4ed67">5.1.1. Get</a></li>
-<li><a href="#org24654a6">5.1.2. Compute</a></li>
+<li><a href="#org36f7724">4.2.2.1. Get</a></li>
+<li><a href="#orgac99b9e">4.2.2.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org1581d2a">5.2. Force of MO value</a>
+<li><a href="#org27da528">4.2.3. Force of electron-electron-nucleus Jastrow value</a>
 <ul>
-<li><a href="#org93e5f8e">5.2.1. Get</a></li>
-<li><a href="#org22e5a45">5.2.2. Compute</a></li>
+<li><a href="#orgbe015e9">4.2.3.1. Get</a></li>
+<li><a href="#org6ca0c40">4.2.3.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org41e5df2">5.3. Force of MO gradient</a>
+<li><a href="#org8c1edb6">4.2.4. Force of derivatives of electron-nucleus rescaled distance</a>
 <ul>
-<li><a href="#orgdab6a27">5.3.1. Get</a></li>
-<li><a href="#orge86eb0b">5.3.2. Compute</a></li>
+<li><a href="#org1d898d0">4.2.4.1. Get</a></li>
+<li><a href="#org14b62e0">4.2.4.2. Compute</a></li>
 </ul>
 </li>
-<li><a href="#org2f09010">5.4. Force of MO Laplacian</a>
+<li><a href="#orgfca18ed">4.2.5. Force of electron-electron-nucleus Jastrow gradient</a>
 <ul>
-<li><a href="#org44404e3">5.4.1. Get</a></li>
-<li><a href="#org04b7651">5.4.2. Compute</a></li>
+<li><a href="#org3e5fb48">4.2.5.1. Get</a></li>
+<li><a href="#org1fdd228">4.2.5.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#orgc1adcb6">4.2.6. Force of electron-electron-nucleus Jastrow Laplacian</a>
+<ul>
+<li><a href="#org3828c72">4.2.6.1. Get</a></li>
+<li><a href="#org37837da">4.2.6.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#org654aad7">4.2.7. Force of \(\delta P\) matrix</a>
+<ul>
+<li><a href="#orgf54f5f1">4.2.7.1. Get</a></li>
+<li><a href="#org25087ec">4.2.7.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#org40a3e81">4.2.8. Force of single electron-electron-nucleus Jastrow value</a>
+<ul>
+<li><a href="#org29dd51c">4.2.8.1. Get</a></li>
+<li><a href="#org4b148b9">4.2.8.2. Compute</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgafd7a29">5. Forces of the orbitals</a>
+<ul>
+<li><a href="#org1c14592">5.1. Force of AO value</a>
+<ul>
+<li><a href="#orgc25769a">5.1.1. Get</a></li>
+<li><a href="#orga29f2ee">5.1.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#org92d7318">5.2. Force of MO value</a>
+<ul>
+<li><a href="#org2476da9">5.2.1. Get</a></li>
+<li><a href="#org9d7c23f">5.2.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#org3a44118">5.3. Force of MO gradient</a>
+<ul>
+<li><a href="#org753ea8c">5.3.1. Get</a></li>
+<li><a href="#org8f0d297">5.3.2. Compute</a></li>
+</ul>
+</li>
+<li><a href="#org3280d0d">5.4. Force of MO Laplacian</a>
+<ul>
+<li><a href="#org67a2260">5.4.1. Get</a></li>
+<li><a href="#orgd02e0eb">5.4.2. Compute</a></li>
 </ul>
 </li>
 </ul>
@@ -381,8 +381,8 @@ org_html_manager.setup();  // activate after the parameters are set
 </div>
 </div>
 
-<div id="outline-container-org0e5eabc" class="outline-2">
-<h2 id="org0e5eabc"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org116fa7e" class="outline-2">
+<h2 id="org116fa7e"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 To calculate interatomic forces, a derivative (with respect to nuclei) of the values, gradient and Laplacian of the Jastrow and the molecular orbitals (MO) is required.
@@ -391,12 +391,12 @@ Furthermore, for the nonlocal pseudopotential, also the forces of the values of 
 </div>
 </div>
 
-<div id="outline-container-org176c81d" class="outline-2">
-<h2 id="org176c81d"><span class="section-number-2">2.</span> Context</h2>
+<div id="outline-container-orgd5ad336" class="outline-2">
+<h2 id="orgd5ad336"><span class="section-number-2">2.</span> Context</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org2e8c0f8" class="outline-3">
-<h3 id="org2e8c0f8"><span class="section-number-3">2.1.</span> Data structure</h3>
+<div id="outline-container-orgb81bacc" class="outline-3">
+<h3 id="orgb81bacc"><span class="section-number-3">2.1.</span> Data structure</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #a020f0;">typedef</span> <span style="color: #a020f0;">struct</span> <span style="color: #228b22;">qmckl_forces_struct</span>{
@@ -441,8 +441,8 @@ Furthermore, for the nonlocal pseudopotential, also the forces of the values of 
 </div>
 </div>
 
-<div id="outline-container-org7b17bc5" class="outline-2">
-<h2 id="org7b17bc5"><span class="section-number-2">3.</span> Finite-difference function</h2>
+<div id="outline-container-org00e0afb" class="outline-2">
+<h2 id="org00e0afb"><span class="section-number-2">3.</span> Finite-difference function</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 We introduce here a general function to compute the derivatives of any quantity with respect to nuclear coordinates.
@@ -559,20 +559,20 @@ using finite-differences.
 </div>
 </div>
 
-<div id="outline-container-orgfe6c24d" class="outline-2">
-<h2 id="orgfe6c24d"><span class="section-number-2">4.</span> Forces of the Jastrow function</h2>
+<div id="outline-container-org76bc55b" class="outline-2">
+<h2 id="org76bc55b"><span class="section-number-2">4.</span> Forces of the Jastrow function</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 For the forces of the Jastrow function, there is only a contribution from the electron-nucleus and electron-electron-nucleus Jastrow, since the electron-electron Jastrow does not depend on nuclear coordinates.
 </p>
 </div>
 
-<div id="outline-container-orgb95f54b" class="outline-3">
-<h3 id="orgb95f54b"><span class="section-number-3">4.1.</span> Electron-nucleus Jastrow</h3>
+<div id="outline-container-orgd012199" class="outline-3">
+<h3 id="orgd012199"><span class="section-number-3">4.1.</span> Electron-nucleus Jastrow</h3>
 <div class="outline-text-3" id="text-4-1">
 </div>
-<div id="outline-container-orga568e52" class="outline-4">
-<h4 id="orga568e52"><span class="section-number-4">4.1.1.</span> Force of electron-nucleus Jastrow value</h4>
+<div id="outline-container-orgf97bbc8" class="outline-4">
+<h4 id="orgf97bbc8"><span class="section-number-4">4.1.1.</span> Force of electron-nucleus Jastrow value</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <p>
 Calculates the force of the electron-nucleus Jastrow value.
@@ -583,8 +583,8 @@ The terms of the force of the electron-nucleus Jastrow value are identical to th
 </p>
 </div>
 
-<div id="outline-container-orge06bc91" class="outline-5">
-<h5 id="orge06bc91"><span class="section-number-5">4.1.1.1.</span> Get</h5>
+<div id="outline-container-org38ceccc" class="outline-5">
+<h5 id="org38ceccc"><span class="section-number-5">4.1.1.1.</span> Get</h5>
 <div class="outline-text-5" id="text-4-1-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -611,10 +611,10 @@ The terms of the force of the electron-nucleus Jastrow value are identical to th
 </div>
 </div>
 
-<div id="outline-container-org60cda6b" class="outline-5">
-<h5 id="org60cda6b"><span class="section-number-5">4.1.1.2.</span> Compute</h5>
+<div id="outline-container-org586fe69" class="outline-5">
+<h5 id="org586fe69"><span class="section-number-5">4.1.1.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-4-1-1-2">
-<table id="orga35edb9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgf828fb2" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -816,8 +816,8 @@ The terms of the force of the electron-nucleus Jastrow value are identical to th
 </div>
 
 
-<div id="outline-container-org6df29a0" class="outline-4">
-<h4 id="org6df29a0"><span class="section-number-4">4.1.2.</span> Force of electron-nucleus Jastrow gradient</h4>
+<div id="outline-container-org0b7a941" class="outline-4">
+<h4 id="org0b7a941"><span class="section-number-4">4.1.2.</span> Force of electron-nucleus Jastrow gradient</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <p>
 To avoid having to create new arrays for the Hessian of the rescaled distances, we compute parts of it manually in this routine.
@@ -829,8 +829,8 @@ To avoid having to create new arrays for the Hessian of the rescaled distances, 
 \end{eqnarray}
 </div>
 
-<div id="outline-container-org503a2d6" class="outline-5">
-<h5 id="org503a2d6"><span class="section-number-5">4.1.2.1.</span> Get</h5>
+<div id="outline-container-org4683b6f" class="outline-5">
+<h5 id="org4683b6f"><span class="section-number-5">4.1.2.1.</span> Get</h5>
 <div class="outline-text-5" id="text-4-1-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -857,10 +857,10 @@ To avoid having to create new arrays for the Hessian of the rescaled distances, 
 </div>
 </div>
 
-<div id="outline-container-org22d1592" class="outline-5">
-<h5 id="org22d1592"><span class="section-number-5">4.1.2.2.</span> Compute</h5>
+<div id="outline-container-orgfdc5b14" class="outline-5">
+<h5 id="orgfdc5b14"><span class="section-number-5">4.1.2.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-4-1-2-2">
-<table id="org669f24d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgeda3752" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1093,8 +1093,8 @@ To avoid having to create new arrays for the Hessian of the rescaled distances, 
 </div>
 </div>
 
-<div id="outline-container-org05ff3d7" class="outline-4">
-<h4 id="org05ff3d7"><span class="section-number-4">4.1.3.</span> Force of electron-nucleus Jastrow Laplacian</h4>
+<div id="outline-container-org4185672" class="outline-4">
+<h4 id="org4185672"><span class="section-number-4">4.1.3.</span> Force of electron-nucleus Jastrow Laplacian</h4>
 <div class="outline-text-4" id="text-4-1-3">
 <p>
 Calculates the force of the electron-nucleus Jastrow Laplacian. 
@@ -1107,8 +1107,8 @@ To avoid having to calculate higher order derivatives of the rescaled distances 
 \end{eqnarray}
 </div>
 
-<div id="outline-container-org589f4ef" class="outline-5">
-<h5 id="org589f4ef"><span class="section-number-5">4.1.3.1.</span> Get</h5>
+<div id="outline-container-org87dfc30" class="outline-5">
+<h5 id="org87dfc30"><span class="section-number-5">4.1.3.1.</span> Get</h5>
 <div class="outline-text-5" id="text-4-1-3-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1135,10 +1135,10 @@ To avoid having to calculate higher order derivatives of the rescaled distances 
 </div>
 </div>
 
-<div id="outline-container-org86520d6" class="outline-5">
-<h5 id="org86520d6"><span class="section-number-5">4.1.3.2.</span> Compute</h5>
+<div id="outline-container-orgccb5da3" class="outline-5">
+<h5 id="orgccb5da3"><span class="section-number-5">4.1.3.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-4-1-3-2">
-<table id="org9bf7e7f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org6d07bac" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1372,8 +1372,8 @@ To avoid having to calculate higher order derivatives of the rescaled distances 
 </div>
 </div>
 
-<div id="outline-container-org967c4ad" class="outline-4">
-<h4 id="org967c4ad"><span class="section-number-4">4.1.4.</span> Force of single electron-nucleus Jastrow value</h4>
+<div id="outline-container-orgce73500" class="outline-4">
+<h4 id="orgce73500"><span class="section-number-4">4.1.4.</span> Force of single electron-nucleus Jastrow value</h4>
 <div class="outline-text-4" id="text-4-1-4">
 <p>
 Calculate the force of the single-electron contribution ot the electron-nucleus Jastrow value.
@@ -1387,8 +1387,8 @@ The function <code>qmckl_set_single_point</code> has to be called before this fu
 </p>
 </div>
 
-<div id="outline-container-org8b5a4e1" class="outline-5">
-<h5 id="org8b5a4e1"><span class="section-number-5">4.1.4.1.</span> Get</h5>
+<div id="outline-container-org4c42dc9" class="outline-5">
+<h5 id="org4c42dc9"><span class="section-number-5">4.1.4.1.</span> Get</h5>
 <div class="outline-text-5" id="text-4-1-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1400,10 +1400,10 @@ The function <code>qmckl_set_single_point</code> has to be called before this fu
 </div>
 </div>
 
-<div id="outline-container-orgcb8a1ae" class="outline-5">
-<h5 id="orgcb8a1ae"><span class="section-number-5">4.1.4.2.</span> Compute</h5>
+<div id="outline-container-org917b2b1" class="outline-5">
+<h5 id="org917b2b1"><span class="section-number-5">4.1.4.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-4-1-4-2">
-<table id="org53efa9d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org5292047" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1645,12 +1645,12 @@ The function <code>qmckl_set_single_point</code> has to be called before this fu
 </div>
 
 
-<div id="outline-container-org9dd91e6" class="outline-3">
-<h3 id="org9dd91e6"><span class="section-number-3">4.2.</span> Electron-electron-nucleus Jastrow</h3>
+<div id="outline-container-org99b852f" class="outline-3">
+<h3 id="org99b852f"><span class="section-number-3">4.2.</span> Electron-electron-nucleus Jastrow</h3>
 <div class="outline-text-3" id="text-4-2">
 </div>
-<div id="outline-container-org77443f1" class="outline-4">
-<h4 id="org77443f1"><span class="section-number-4">4.2.1.</span> Force of P matrix</h4>
+<div id="outline-container-org0fda6be" class="outline-4">
+<h4 id="org0fda6be"><span class="section-number-4">4.2.1.</span> Force of P matrix</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <p>
 Calculates the force of the P matrix. This is a required component to calculate the force on the 3-body Jastrow.
@@ -1660,8 +1660,8 @@ Calculates the force of the P matrix. This is a required component to calculate 
 </p>
 </div>
 
-<div id="outline-container-orge714073" class="outline-5">
-<h5 id="orge714073"><span class="section-number-5">4.2.1.1.</span> Get</h5>
+<div id="outline-container-orga242f3c" class="outline-5">
+<h5 id="orga242f3c"><span class="section-number-5">4.2.1.1.</span> Get</h5>
 <div class="outline-text-5" id="text-4-2-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1673,10 +1673,10 @@ Calculates the force of the P matrix. This is a required component to calculate 
 </div>
 </div>
 
-<div id="outline-container-org83d186f" class="outline-5">
-<h5 id="org83d186f"><span class="section-number-5">4.2.1.2.</span> Compute</h5>
+<div id="outline-container-org3b519e7" class="outline-5">
+<h5 id="org3b519e7"><span class="section-number-5">4.2.1.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-4-2-1-2">
-<table id="org4c89a9b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgb7bcdcd" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -1802,8 +1802,8 @@ Calculates the force of the P matrix. This is a required component to calculate 
 </div>
 </div>
 
-<div id="outline-container-org0b4031f" class="outline-4">
-<h4 id="org0b4031f"><span class="section-number-4">4.2.2.</span> Force of derivative of the \(P\) matrix</h4>
+<div id="outline-container-orgd82821e" class="outline-4">
+<h4 id="orgd82821e"><span class="section-number-4">4.2.2.</span> Force of derivative of the \(P\) matrix</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <p>
 Calculates the force of the derivative of the \(P\) matrix.
@@ -1813,8 +1813,8 @@ Calculates the force of the derivative of the \(P\) matrix.
 </p>
 </div>
 
-<div id="outline-container-org9ebfbe3" class="outline-5">
-<h5 id="org9ebfbe3"><span class="section-number-5">4.2.2.1.</span> Get</h5>
+<div id="outline-container-org36f7724" class="outline-5">
+<h5 id="org36f7724"><span class="section-number-5">4.2.2.1.</span> Get</h5>
 <div class="outline-text-5" id="text-4-2-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -1826,10 +1826,10 @@ Calculates the force of the derivative of the \(P\) matrix.
 </div>
 </div>
 
-<div id="outline-container-org1ff3a32" class="outline-5">
-<h5 id="org1ff3a32"><span class="section-number-5">4.2.2.2.</span> Compute</h5>
+<div id="outline-container-orgac99b9e" class="outline-5">
+<h5 id="orgac99b9e"><span class="section-number-5">4.2.2.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-4-2-2-2">
-<table id="org12b4882" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orged7dd43" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2013,8 +2013,8 @@ Calculates the force of the derivative of the \(P\) matrix.
 </div>
 </div>
 
-<div id="outline-container-org59479aa" class="outline-4">
-<h4 id="org59479aa"><span class="section-number-4">4.2.3.</span> Force of electron-electron-nucleus Jastrow value</h4>
+<div id="outline-container-org27da528" class="outline-4">
+<h4 id="org27da528"><span class="section-number-4">4.2.3.</span> Force of electron-electron-nucleus Jastrow value</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <p>
 Calculates the force of the eleectron-electorn-nucleus Jastrow value.
@@ -2024,8 +2024,8 @@ Calculates the force of the eleectron-electorn-nucleus Jastrow value.
 </p>
 </div>
 
-<div id="outline-container-orgc5d6064" class="outline-5">
-<h5 id="orgc5d6064"><span class="section-number-5">4.2.3.1.</span> Get</h5>
+<div id="outline-container-orgbe015e9" class="outline-5">
+<h5 id="orgbe015e9"><span class="section-number-5">4.2.3.1.</span> Get</h5>
 <div class="outline-text-5" id="text-4-2-3-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2052,10 +2052,10 @@ Calculates the force of the eleectron-electorn-nucleus Jastrow value.
 </div>
 </div>
 
-<div id="outline-container-org2970b79" class="outline-5">
-<h5 id="org2970b79"><span class="section-number-5">4.2.3.2.</span> Compute</h5>
+<div id="outline-container-org6ca0c40" class="outline-5">
+<h5 id="org6ca0c40"><span class="section-number-5">4.2.3.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-4-2-3-2">
-<table id="orgc0453af" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgc67e228" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2233,8 +2233,8 @@ Calculates the force of the eleectron-electorn-nucleus Jastrow value.
 </div>
 </div>
 
-<div id="outline-container-orga10157b" class="outline-4">
-<h4 id="orga10157b"><span class="section-number-4">4.2.4.</span> Force of derivatives of electron-nucleus rescaled distance</h4>
+<div id="outline-container-org8c1edb6" class="outline-4">
+<h4 id="org8c1edb6"><span class="section-number-4">4.2.4.</span> Force of derivatives of electron-nucleus rescaled distance</h4>
 <div class="outline-text-4" id="text-4-2-4">
 <p>
 Calculates the force of the derivatives of the electron-nucleus rescaled distance.
@@ -2247,8 +2247,8 @@ Calculates the force of the derivatives of the electron-nucleus rescaled distanc
 \end{eqnarray}
 </div>
 
-<div id="outline-container-org2669306" class="outline-5">
-<h5 id="org2669306"><span class="section-number-5">4.2.4.1.</span> Get</h5>
+<div id="outline-container-org1d898d0" class="outline-5">
+<h5 id="org1d898d0"><span class="section-number-5">4.2.4.1.</span> Get</h5>
 <div class="outline-text-5" id="text-4-2-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2260,10 +2260,10 @@ Calculates the force of the derivatives of the electron-nucleus rescaled distanc
 </div>
 </div>
 
-<div id="outline-container-org496f8d5" class="outline-5">
-<h5 id="org496f8d5"><span class="section-number-5">4.2.4.2.</span> Compute</h5>
+<div id="outline-container-org14b62e0" class="outline-5">
+<h5 id="org14b62e0"><span class="section-number-5">4.2.4.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-4-2-4-2">
-<table id="org0e7e803" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org0809818" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2494,8 +2494,8 @@ Calculates the force of the derivatives of the electron-nucleus rescaled distanc
 </div>
 </div>
 
-<div id="outline-container-org0291440" class="outline-4">
-<h4 id="org0291440"><span class="section-number-4">4.2.5.</span> Force of electron-electron-nucleus Jastrow gradient</h4>
+<div id="outline-container-orgfca18ed" class="outline-4">
+<h4 id="orgfca18ed"><span class="section-number-4">4.2.5.</span> Force of electron-electron-nucleus Jastrow gradient</h4>
 <div class="outline-text-4" id="text-4-2-5">
 <p>
 Calculates the force of the electron-electron-nucleus Jastrow gradient (and not the Laplacian).
@@ -2509,8 +2509,8 @@ Calculates the force of the electron-electron-nucleus Jastrow gradient (and not 
 \end{eqnarray}
 </div>
 
-<div id="outline-container-org51da939" class="outline-5">
-<h5 id="org51da939"><span class="section-number-5">4.2.5.1.</span> Get</h5>
+<div id="outline-container-org3e5fb48" class="outline-5">
+<h5 id="org3e5fb48"><span class="section-number-5">4.2.5.1.</span> Get</h5>
 <div class="outline-text-5" id="text-4-2-5-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2537,10 +2537,10 @@ Calculates the force of the electron-electron-nucleus Jastrow gradient (and not 
 </div>
 </div>
 
-<div id="outline-container-org05ef809" class="outline-5">
-<h5 id="org05ef809"><span class="section-number-5">4.2.5.2.</span> Compute</h5>
+<div id="outline-container-org1fdd228" class="outline-5">
+<h5 id="org1fdd228"><span class="section-number-5">4.2.5.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-4-2-5-2">
-<table id="orga29af73" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org8b717ab" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -2762,8 +2762,8 @@ Calculates the force of the electron-electron-nucleus Jastrow gradient (and not 
 </div>
 </div>
 
-<div id="outline-container-org524c9a9" class="outline-4">
-<h4 id="org524c9a9"><span class="section-number-4">4.2.6.</span> Force of electron-electron-nucleus Jastrow Laplacian</h4>
+<div id="outline-container-orgc1adcb6" class="outline-4">
+<h4 id="orgc1adcb6"><span class="section-number-4">4.2.6.</span> Force of electron-electron-nucleus Jastrow Laplacian</h4>
 <div class="outline-text-4" id="text-4-2-6">
 <p>
 Calculates the force of the electron-electron-nucleus Jastrow Laplacian.
@@ -2780,8 +2780,8 @@ Calculates the force of the electron-electron-nucleus Jastrow Laplacian.
 \end{eqnarray}
 </div>
 
-<div id="outline-container-org428cf88" class="outline-5">
-<h5 id="org428cf88"><span class="section-number-5">4.2.6.1.</span> Get</h5>
+<div id="outline-container-org3828c72" class="outline-5">
+<h5 id="org3828c72"><span class="section-number-5">4.2.6.1.</span> Get</h5>
 <div class="outline-text-5" id="text-4-2-6-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -2808,10 +2808,10 @@ Calculates the force of the electron-electron-nucleus Jastrow Laplacian.
 </div>
 </div>
 
-<div id="outline-container-org51912b8" class="outline-5">
-<h5 id="org51912b8"><span class="section-number-5">4.2.6.2.</span> Compute</h5>
+<div id="outline-container-org37837da" class="outline-5">
+<h5 id="org37837da"><span class="section-number-5">4.2.6.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-4-2-6-2">
-<table id="orgfa7cc2a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org12e476d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3043,8 +3043,8 @@ Calculates the force of the electron-electron-nucleus Jastrow Laplacian.
 </div>
 </div>
 
-<div id="outline-container-org2757ff5" class="outline-4">
-<h4 id="org2757ff5"><span class="section-number-4">4.2.7.</span> Force of \(\delta P\) matrix</h4>
+<div id="outline-container-org654aad7" class="outline-4">
+<h4 id="org654aad7"><span class="section-number-4">4.2.7.</span> Force of \(\delta P\) matrix</h4>
 <div class="outline-text-4" id="text-4-2-7">
 <p>
 Calculates the force of the \(\delta P\) matrix, required for force in a single-electron move. Here, the \(r^\text{new}\) and \(R^\text{new}\) are the new electron and nucleus positions of the electron that is being moved.
@@ -3065,8 +3065,8 @@ Calculates the force of the \(\delta P\) matrix, required for force in a single-
 The function <code>qmckl_set_single_point</code> has to be called before this function to set the new electron position.
 </p>
 </div>
-<div id="outline-container-org4fcaee5" class="outline-5">
-<h5 id="org4fcaee5"><span class="section-number-5">4.2.7.1.</span> Get</h5>
+<div id="outline-container-orgf54f5f1" class="outline-5">
+<h5 id="orgf54f5f1"><span class="section-number-5">4.2.7.1.</span> Get</h5>
 <div class="outline-text-5" id="text-4-2-7-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3078,10 +3078,10 @@ The function <code>qmckl_set_single_point</code> has to be called before this fu
 </div>
 </div>
 
-<div id="outline-container-org780ddfb" class="outline-5">
-<h5 id="org780ddfb"><span class="section-number-5">4.2.7.2.</span> Compute</h5>
+<div id="outline-container-org25087ec" class="outline-5">
+<h5 id="org25087ec"><span class="section-number-5">4.2.7.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-4-2-7-2">
-<table id="org08799dc" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org33b959e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3351,8 +3351,8 @@ The function <code>qmckl_set_single_point</code> has to be called before this fu
 </div>
 </div>
 
-<div id="outline-container-orgb2a5cf8" class="outline-4">
-<h4 id="orgb2a5cf8"><span class="section-number-4">4.2.8.</span> Force of single electron-electron-nucleus Jastrow value</h4>
+<div id="outline-container-org40a3e81" class="outline-4">
+<h4 id="org40a3e81"><span class="section-number-4">4.2.8.</span> Force of single electron-electron-nucleus Jastrow value</h4>
 <div class="outline-text-4" id="text-4-2-8">
 <p>
 Computes the single-electron contribution to the electron-electron-nucleus Jastrow value force.
@@ -3376,8 +3376,8 @@ Computes the single-electron contribution to the electron-electron-nucleus Jastr
 The function <code>qmckl_set_single_point</code> has to be called before this function to set the new electron position.
 </p>
 </div>
-<div id="outline-container-org5c861bf" class="outline-5">
-<h5 id="org5c861bf"><span class="section-number-5">4.2.8.1.</span> Get</h5>
+<div id="outline-container-org29dd51c" class="outline-5">
+<h5 id="org29dd51c"><span class="section-number-5">4.2.8.1.</span> Get</h5>
 <div class="outline-text-5" id="text-4-2-8-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3389,10 +3389,10 @@ The function <code>qmckl_set_single_point</code> has to be called before this fu
 </div>
 </div>
 
-<div id="outline-container-org902b273" class="outline-5">
-<h5 id="org902b273"><span class="section-number-5">4.2.8.2.</span> Compute</h5>
+<div id="outline-container-org4b148b9" class="outline-5">
+<h5 id="org4b148b9"><span class="section-number-5">4.2.8.2.</span> Compute</h5>
 <div class="outline-text-5" id="text-4-2-8-2">
-<table id="org639c26f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgfd3d5cb" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3733,20 +3733,20 @@ The function <code>qmckl_set_single_point</code> has to be called before this fu
 </div>
 </div>
 
-<div id="outline-container-orgbb580a0" class="outline-2">
-<h2 id="orgbb580a0"><span class="section-number-2">5.</span> Forces of the orbitals</h2>
+<div id="outline-container-orgafd7a29" class="outline-2">
+<h2 id="orgafd7a29"><span class="section-number-2">5.</span> Forces of the orbitals</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org444fa56" class="outline-3">
-<h3 id="org444fa56"><span class="section-number-3">5.1.</span> Force of AO value</h3>
+<div id="outline-container-org1c14592" class="outline-3">
+<h3 id="org1c14592"><span class="section-number-3">5.1.</span> Force of AO value</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Computes the forces on the values of the atomic orbitals (AO). These are equal to the gradients of the AOs multiplied with a minus sign, and summed over different indices.
 </p>
 </div>
 
-<div id="outline-container-orgdd4ed67" class="outline-4">
-<h4 id="orgdd4ed67"><span class="section-number-4">5.1.1.</span> Get</h4>
+<div id="outline-container-orgc25769a" class="outline-4">
+<h4 id="orgc25769a"><span class="section-number-4">5.1.1.</span> Get</h4>
 <div class="outline-text-4" id="text-5-1-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3758,10 +3758,10 @@ Computes the forces on the values of the atomic orbitals (AO). These are equal t
 </div>
 </div>
 
-<div id="outline-container-org24654a6" class="outline-4">
-<h4 id="org24654a6"><span class="section-number-4">5.1.2.</span> Compute</h4>
+<div id="outline-container-orga29f2ee" class="outline-4">
+<h4 id="orga29f2ee"><span class="section-number-4">5.1.2.</span> Compute</h4>
 <div class="outline-text-4" id="text-5-1-2">
-<table id="orgdc05a30" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org1936210" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -3938,16 +3938,16 @@ Computes the forces on the values of the atomic orbitals (AO). These are equal t
 </div>
 </div>
 
-<div id="outline-container-org1581d2a" class="outline-3">
-<h3 id="org1581d2a"><span class="section-number-3">5.2.</span> Force of MO value</h3>
+<div id="outline-container-org92d7318" class="outline-3">
+<h3 id="org92d7318"><span class="section-number-3">5.2.</span> Force of MO value</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Calculates the force on the molecular orbitals (MO) values. These are calculated by taking a linear combination of AOs.
 </p>
 </div>
 
-<div id="outline-container-org93e5f8e" class="outline-4">
-<h4 id="org93e5f8e"><span class="section-number-4">5.2.1.</span> Get</h4>
+<div id="outline-container-org2476da9" class="outline-4">
+<h4 id="org2476da9"><span class="section-number-4">5.2.1.</span> Get</h4>
 <div class="outline-text-4" id="text-5-2-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -3967,10 +3967,10 @@ Calculates the force on the molecular orbitals (MO) values. These are calculated
 </div>
 </div>
 
-<div id="outline-container-org22e5a45" class="outline-4">
-<h4 id="org22e5a45"><span class="section-number-4">5.2.2.</span> Compute</h4>
+<div id="outline-container-org9d7c23f" class="outline-4">
+<h4 id="org9d7c23f"><span class="section-number-4">5.2.2.</span> Compute</h4>
 <div class="outline-text-4" id="text-5-2-2">
-<table id="orgb309252" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgcb4b0d8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4173,16 +4173,16 @@ Calculates the force on the molecular orbitals (MO) values. These are calculated
 </div>
 </div>
 
-<div id="outline-container-org41e5df2" class="outline-3">
-<h3 id="org41e5df2"><span class="section-number-3">5.3.</span> Force of MO gradient</h3>
+<div id="outline-container-org3a44118" class="outline-3">
+<h3 id="org3a44118"><span class="section-number-3">5.3.</span> Force of MO gradient</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 Calculates the forces of the gradients of the MOs. These are calculated by taking a linear combination of the required components of the Hessian of the AOs.
 </p>
 </div>
 
-<div id="outline-container-orgdab6a27" class="outline-4">
-<h4 id="orgdab6a27"><span class="section-number-4">5.3.1.</span> Get</h4>
+<div id="outline-container-org753ea8c" class="outline-4">
+<h4 id="org753ea8c"><span class="section-number-4">5.3.1.</span> Get</h4>
 <div class="outline-text-4" id="text-5-3-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -4199,10 +4199,10 @@ Calculates the forces of the gradients of the MOs. These are calculated by takin
 </div>
 </div>
 
-<div id="outline-container-orge86eb0b" class="outline-4">
-<h4 id="orge86eb0b"><span class="section-number-4">5.3.2.</span> Compute</h4>
+<div id="outline-container-org8f0d297" class="outline-4">
+<h4 id="org8f0d297"><span class="section-number-4">5.3.2.</span> Compute</h4>
 <div class="outline-text-4" id="text-5-3-2">
-<table id="orge563eae" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org41103a6" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4472,16 +4472,16 @@ Calculates the forces of the gradients of the MOs. These are calculated by takin
 </div>
 </div>
 
-<div id="outline-container-org2f09010" class="outline-3">
-<h3 id="org2f09010"><span class="section-number-3">5.4.</span> Force of MO Laplacian</h3>
+<div id="outline-container-org3280d0d" class="outline-3">
+<h3 id="org3280d0d"><span class="section-number-3">5.4.</span> Force of MO Laplacian</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 Computes the forces on the Laplacian of the MOs. They are calculated by taking a linear combination of the <code>ao_hessian[:,:,:,3,:]</code> components of the AO Hessian. These store the derivatives of the Laplacian of the AO.
 </p>
 </div>
 
-<div id="outline-container-org44404e3" class="outline-4">
-<h4 id="org44404e3"><span class="section-number-4">5.4.1.</span> Get</h4>
+<div id="outline-container-org67a2260" class="outline-4">
+<h4 id="org67a2260"><span class="section-number-4">5.4.1.</span> Get</h4>
 <div class="outline-text-4" id="text-5-4-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">qmckl_exit_code</span>
@@ -4493,10 +4493,10 @@ Computes the forces on the Laplacian of the MOs. They are calculated by taking a
 </div>
 </div>
 
-<div id="outline-container-org04b7651" class="outline-4">
-<h4 id="org04b7651"><span class="section-number-4">5.4.2.</span> Compute</h4>
+<div id="outline-container-orgd02e0eb" class="outline-4">
+<h4 id="orgd02e0eb"><span class="section-number-4">5.4.2.</span> Compute</h4>
 <div class="outline-text-4" id="text-5-4-2">
-<table id="org92720fb" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org917158b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -4694,7 +4694,7 @@ Computes the forces on the Laplacian of the MOs. They are calculated by taking a
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: TREX CoE</p>
-<p class="date">Created: 2025-04-28 Mon 13:52</p>
+<p class="date">Created: 2025-05-26 Mon 11:56</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
